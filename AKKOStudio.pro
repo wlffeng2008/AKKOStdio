@@ -1,0 +1,88 @@
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+CONFIG += c++17
+
+LIBS += -L$$PWD -lhidapi
+
+# You can make your code fail to compile if it uses deprecated APIs.
+# In order to do so, uncomment the following line.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+INCLUDEPATH += ./Module
+
+SOURCES += \
+    ColorLabel.cpp \
+    DialogDeviceConnect.cpp \
+    DialogMainwork.cpp \
+    FrameAbout.cpp \
+    FrameKeySetting.cpp \
+    FrameLight.cpp \
+    FrameMacro.cpp \
+    FrameMagic.cpp \
+    FrameMain.cpp \
+    Module/ModuleEfColor.cpp \
+    Module/ModuleEfLumi.cpp \
+    Module/ModuleEfMode.cpp \
+    Module/ModuleEfSpeed.cpp \
+    Module/ModuleLinear.cpp \
+    Module/ModuleRtSet.cpp \
+    Module/ModuleKeyboard.cpp \
+    SuperLabel.cpp \
+    ToggleButton.cpp \
+    main.cpp \
+    MainWindow.cpp
+
+HEADERS += \
+    ColorLabel.h \
+    DialogDeviceConnect.h \
+    DialogMainwork.h \
+    FrameAbout.h \
+    FrameKeySetting.h \
+    FrameLight.h \
+    FrameMacro.h \
+    FrameMagic.h \
+    FrameMain.h \
+    MainWindow.h \
+    Module/ModuleEfColor.h \
+    Module/ModuleEfLumi.h \
+    Module/ModuleEfMode.h \
+    Module/ModuleEfSpeed.h \
+    Module/ModuleLinear.h \
+    Module/ModuleRtSet.h \
+    Module/ModuleKeyboard.h \
+    SuperLabel.h \
+    ToggleButton.h
+
+FORMS += \
+    DialogDeviceConnect.ui \
+    DialogMainwork.ui \
+    FrameAbout.ui \
+    FrameKeySetting.ui \
+    FrameLight.ui \
+    FrameMacro.ui \
+    FrameMagic.ui \
+    FrameMain.ui \
+    MainWindow.ui \
+    Module/ModuleEfColor.ui \
+    Module/ModuleEfLumi.ui \
+    Module/ModuleEfMode.ui \
+    Module/ModuleEfSpeed.ui \
+    Module/ModuleLinear.ui \
+    Module/ModuleRtSet.ui \
+    Module/ModuleKeyboard.ui
+
+TRANSLATIONS += \
+    AKKOStudio_en_US.ts \
+    AKKOStudio_zh_CN.ts
+CONFIG += lrelease
+CONFIG += embed_translations
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    res.qrc

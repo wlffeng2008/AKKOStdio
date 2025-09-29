@@ -1,0 +1,97 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/111.png</file>
+        <file>images/Action - Redo.png</file>
+        <file>images/Action - Undo.png</file>
+        <file>images/Add.png</file>
+        <file>images/BoxChecked.png</file>
+        <file>images/BoxUncheck.png</file>
+        <file>images/check.png</file>
+        <file>images/Checked-Hover.png</file>
+        <file>images/Checked-Normal.png</file>
+        <file>images/Clipboard - Copy.png</file>
+        <file>images/Clipboard - Cut.png</file>
+        <file>images/Clipboard - Paste.png</file>
+        <file>images/Correct.png</file>
+        <file>images/down-arrow.png</file>
+        <file>images/Email.png</file>
+        <file>images/Enter.png</file>
+        <file>images/Floppy.png</file>
+        <file>images/Forbidden.png</file>
+        <file>images/General_Add1.png</file>
+        <file>images/General_Add2.png</file>
+        <file>images/General_ArrowDown.png</file>
+        <file>images/General_ArrowLeft.png</file>
+        <file>images/General_ArrowRight.png</file>
+        <file>images/General_ArrowUp.png</file>
+        <file>images/General_Calendar.png</file>
+        <file>images/General_Heart1.png</file>
+        <file>images/General_Heart2.png</file>
+        <file>images/General_NG3.png</file>
+        <file>images/General_NG4.png</file>
+        <file>images/General_OK3.png</file>
+        <file>images/General_OK4.png</file>
+        <file>images/General_Remove1.png</file>
+        <file>images/General_Remove2.png</file>
+        <file>images/Heart.png</file>
+        <file>images/icon1.png</file>
+        <file>images/icon2.png</file>
+        <file>images/icon3.png</file>
+        <file>images/icon4.png</file>
+        <file>images/icon5.png</file>
+        <file>images/icon6.png</file>
+        <file>images/icon7.png</file>
+        <file>images/icon8.png</file>
+        <file>images/icon9.png</file>
+        <file>images/image-24.png</file>
+        <file>images/Information.png</file>
+        <file>images/Lightbulb Full.ico</file>
+        <file>images/Lightbulb Full.png</file>
+        <file>images/logo.png</file>
+        <file>images/Music.png</file>
+        <file>images/NO.png</file>
+        <file>images/Overlay - Add.png</file>
+        <file>images/Overlay - Pen.png</file>
+        <file>images/Question.png</file>
+        <file>images/Refresh.png</file>
+        <file>images/Sample 06.ico</file>
+        <file>images/Star.png</file>
+        <file>images/Start.png</file>
+        <file>images/Uncheck-Hover.png</file>
+        <file>images/Uncheck-Normal.png</file>
+        <file>images/User.png</file>
+        <file>images/Warning1.png</file>
+        <file>images/Warning2.png</file>
+        <file>images/Wrong.png</file>
+        <file>images/x.png</file>
+        <file>images/y.png</file>
+        <file>images/YES.png</file>
+        <file>images/AkkoFlag.png</file>
+        <file>images/Akko-Kb0.png</file>
+        <file>images/leftbtns/0/dengxiaoshezhi.png</file>
+        <file>images/leftbtns/0/guanyu.png</file>
+        <file>images/leftbtns/0/hongshezhi.png</file>
+        <file>images/leftbtns/0/jianweishezhi.png</file>
+        <file>images/leftbtns/0/shouye.png</file>
+        <file>images/leftbtns/1/dengxiaoshezhi.png</file>
+        <file>images/leftbtns/1/guanyu.png</file>
+        <file>images/leftbtns/1/hongshezhi.png</file>
+        <file>images/leftbtns/1/jianweishezhi.png</file>
+        <file>images/leftbtns/1/shouye.png</file>
+        <file>images/leftbtns/0/cizhoushezhi.png</file>
+        <file>images/leftbtns/1/cizhoushezhi.png</file>
+        <file>images/a-left.png</file>
+        <file>images/a-right.png</file>
+        <file>images/light/light.png</file>
+        <file>images/m/m-reset.png</file>
+        <file>images/m/m-fixline.png</file>
+        <file>images/m/m-lang.png</file>
+        <file>images/connect/2.4g-1.png</file>
+        <file>images/connect/2.4g-2.png</file>
+        <file>images/connect/BLE-1.png</file>
+        <file>images/connect/BLE-2.png</file>
+        <file>images/connect/USB-1.png</file>
+        <file>images/connect/USB-2.png</file>
+        <file>images/Color-picked.png</file>
+    </qresource>
+</RCC>
