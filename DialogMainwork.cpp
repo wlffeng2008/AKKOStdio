@@ -44,6 +44,9 @@ DialogMainwork::DialogMainwork(QWidget *parent)
     ui->horizontalLayoutBR->addWidget(pLight);
     ui->horizontalLayoutBR->addWidget(pAbout);
 
+    for(QFrame*frame:m_pFrames)
+        frame->setFixedSize(1126,800) ;
+
     m_pLBtns.push_back(ui->label1);
     m_pLBtns.push_back(ui->label2);
     m_pLBtns.push_back(ui->label3);

@@ -12,24 +12,23 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
 {
     ui->setupUi(this);
     QString strStyle(R"(
-            QPushButton{
-                color: black;
-                background-color: lightgray;
-                border-top: 3px soild green !important;
-                border-left: 1px soild green;
-                border-right: 1px soild green;
-                border-radius: 14px;
-                padding: 2px 2px;
+
+        QPushButton {
+            border: 1px solid #EAEAEA;
+            border-radius: 14px;
+            padding: 2px 2px;
+            color: black;
+            outline: none;
+            background-color: #FBFBFB;
                 min-width:48px;
                 min-height:48px;
                 max-width:548px;
-                max-height:48px;
-                }
+                max-height:48px; }
 
             QPushButton:hover { background-color: #87ceeb; border: 1px solid #AF00AF;}
 
             QPushButton:pressed { background-color: #3F3F3F; }
-            QPushButton:checked { background-color: #3F3F3F; }
+            QPushButton:checked { background-color: #3F3F3F; color:white; }
             QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }
         )");
 
@@ -46,6 +45,25 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
             ui->buttonGroup->addButton(btn,i) ;
 
             if(i==14)
+            {
+                btn->setEnabled(false) ;
+                btn->setFixedSize(48,48) ;
+                btn->setStyleSheet(R"(
+                    QPushButton
+                    {
+                     border: 1px solid #EAEAEA;
+                     border-radius: 24px;
+                     max-width:48px;
+                     max-height:48px;
+                     min-width:48px;
+                     min-height:48px;}
+
+                    QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }
+                )") ;
+            }
+
+
+            if(i==44)
                 btn->setEnabled(false) ;
         }
     }
@@ -54,7 +72,7 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
         qDebug() << "Clicked:" << id ;
     });
 
-    setStyleSheet("QFrame { border-radius: 8px; border: 1px solid #FF00FF; }") ;
+    //setStyleSheet("QFrame { border-radius: 8px; border: 1px solid #FF00FF; }") ;
 }
 
 ModuleKeyboard::~ModuleKeyboard()
@@ -62,13 +80,8 @@ ModuleKeyboard::~ModuleKeyboard()
     delete ui;
 }
 
-void ModuleKeyboard::paintEvent(QPaintEvent *event)
+void ModuleKeyboard::showFlag(bool show)
 {
-    //QFrame::paintEvent(event);
-    QPainter painter(this) ;
-    painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setPen(QPen(QColor(0xF6F6F6)));
-    painter.setBrush(QBrush(QColor(0xF6F6F6)));
-    painter.drawRoundedRect(rect(), 40, 40);
-    //event->accept() ;
+    ui->frameFlag->setVisible(show) ;
 }
+

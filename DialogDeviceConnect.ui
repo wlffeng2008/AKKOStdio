@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Akko Studio 设备调试</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QLineEdit" name="lineEditCmd">
    <property name="geometry">
     <rect>

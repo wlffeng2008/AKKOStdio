@@ -21,7 +21,7 @@ public:
     void setImage(const QString&text){ m_strImage = text ; } ;
     void setTableView(QTableView *pView){ tableView = pView ;} ;
 
-protected:
+private:
     QString m_strImage ;
     QTableView *tableView = nullptr ;
     int m_nSelect = 0 ;
@@ -79,6 +79,8 @@ public:
     explicit ModuleEfColor(QWidget *parent = nullptr);
     ~ModuleEfColor();
 
+protected:
+    bool eventFilter(QObject* watched, QEvent *event) override;
 private:
     Ui::ModuleEfColor *ui;
     QStandardItemModel *m_pModel = nullptr ;

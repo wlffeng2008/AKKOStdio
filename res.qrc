@@ -93,5 +93,9 @@
         <file>images/connect/USB-1.png</file>
         <file>images/connect/USB-2.png</file>
         <file>images/Color-picked.png</file>
+        <file>images/k/key-dpwn.png</file>
+        <file>images/k/key-left.png</file>
+        <file>images/k/key-right.png</file>
+        <file>images/k/key-up.png</file>
     </qresource>
 </RCC>

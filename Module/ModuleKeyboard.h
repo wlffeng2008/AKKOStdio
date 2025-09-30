@@ -15,8 +15,9 @@ public:
     explicit ModuleKeyboard(QWidget *parent = nullptr);
     ~ModuleKeyboard();
 
+    void showFlag(bool show=true);
+
 protected:
-    void paintEvent(QPaintEvent *event) override;
 
 private:
     Ui::ModuleKeyboard *ui;

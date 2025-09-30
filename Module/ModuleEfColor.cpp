@@ -1,5 +1,6 @@
 #include "ModuleEfColor.h"
 #include "ui_ModuleEfColor.h"
+#include <QColorDialog>
 
 ModuleEfColor::ModuleEfColor(QWidget *parent)
     : QFrame(parent)
@@ -48,9 +49,35 @@ ModuleEfColor::ModuleEfColor(QWidget *parent)
         }
     }
 
+    ui->labelAddColor->installEventFilter(this);
+
 }
 
 ModuleEfColor::~ModuleEfColor()
 {
     delete ui;
+}
+
+bool ModuleEfColor::eventFilter(QObject*watched ,QEvent *event)
+{
+    if(watched == ui->labelAddColor && event->type() == QEvent::MouseButtonRelease)
+    {
+        // QColor color = QColorDialog::getColor(Qt::red, nullptr, "选择颜色");
+        // if(color.isValid())
+        // {
+        //     qDebug() << "get Color ......" ;
+        // }
+
+        QColorDialog dialog(this);
+        dialog.setStyleSheet("QPushButton { border:1px solid gray; color:black; }");
+        //dialog.setStyleSheet("QColorDialog, QColorDialog * { all: initial; }");
+        dialog.setWindowTitle("恢复默认样式的颜色对话框");
+        dialog.setCurrentColor(Qt::blue);
+        if (dialog.exec() == QColorDialog::Accepted) {
+            QColor color = dialog.selectedColor();
+            qDebug() << color;
+            // 使用选中的颜色...
+        }
+    }
+    return QFrame::eventFilter(watched,event);
 }

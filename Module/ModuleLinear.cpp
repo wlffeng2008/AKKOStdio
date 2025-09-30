@@ -8,7 +8,7 @@ ModuleLinear::ModuleLinear(QWidget *parent)
     ui->setupUi(this);
 
     ui->verticalSlider2->setStyleSheet(R"(
-        QSlider::groove:vertical { width: 24px; background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #C3FFFD, stop:1 #39E1DC);; border-radius: 12px;}
+        QSlider::groove:vertical { width: 24px; background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #39E1DC, stop:1 #C3FFFD); border-radius: 12px;}
         QSlider::sub-page:vertical { background: #DCDCDC;  border-radius: 12px; }
         QSlider::handle:vertical {
             width: 32px;

@@ -24,18 +24,25 @@ int main(int argc, char *argv[])
 
     a.setStyleSheet(R"(
 
-        QTableView{ border: 1px solid gray; gridline-color: transparent;  background-color: rgb(226, 249, 255) !important; gridline-color: gray; alternate-background-color: #F0F0F0;}
-        QTableView::Item{ border: none;  padding-left:2px;  border-bottom: 0px solid gray;}
-        QTableView::Item::selected{ background-color: #a0bb9e !important; color:white; outline: none; }
-        QTableView QTableCornerButton::section { background-color: skyblue ; min-width: 24px; border-top: 0px solid gray; border-left: 0px solid gray; border-right: 1px solid gray; qproperty-text: 全选; }
+        QTableView{ border: 1px solid gray; gridline-color: transparent;  background-color: rgb(226, 249, 255) !important; gridline-color: gray;}
+        QTableView::Item{padding-left:2px;  border-top: 0px solid gray; border-bottom: 1px solid transparent;border-right: 0px solid gray;}
+        QTableView::Item::selected{ background-color: #a0bb9e !important; color:white; }
+        QTableView QTableCornerButton::section { background-color: skyblue ; min-width: 32px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-left: 0px solid gray; border-right: 1px solid gray; }
 
         QTableView QHeaderView::section{background-color:skyblue;}
         QTableView QHeaderView{background-color:skyblue;}
-        QHeaderView::section:horizontal{  padding-left: 2px; border-top: 0px solid gray; border-right: 1px solid gray; border-bottom: 1px solid gray; font-weight: bold;}
-        QHeaderView::section:vertical{  padding-left: 2px; min-width: 32px; border-top: 0px solid gray; border-left: 0px solid gray; border-right: 1px solid gray;}
+        QHeaderView::section:horizontal{  padding-left: 2px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-right: 1px solid gray; font-weight: bold;}
+        QHeaderView::section:vertical{  padding-left: 2px; min-width: 36px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-left: 0px solid gray; border-right: 1px solid gray;}
         QTableView::indicator { width: 18px; height: 18px; }
         QTableView::indicator:checked { image: url(:/images/BoxChecked.png); }
         QTableView::indicator:unchecked { image: url(:/images/BoxUncheck.png); }
+        QHeaderView::section:vertical{ text-align: right;}
+
+        QLineEdit { border: 1px solid gray; border-radius: 4px; }
+        QLineEdit:focus{ border: 1px solid #50b7c1; border-radius: 4px;  background-color: rgb(230, 240, 255);}
+
+        QTextEdit {border: 1px solid gray; border-radius: 0px; }
+        QTextEdit:focus{ border: 1px solid #50b7c1; border-radius: 4px; background-color: rgb(230, 240, 255);}
 
         QTableView::indicator:indeterminate { border: 2px solid #888; background-color: #ccc; }
 
@@ -44,6 +51,7 @@ int main(int argc, char *argv[])
 
         QTextEdit {border: 1px solid gray; border-radius: 4px; }
         QTextEdit:focus{ border: 1px solid #50b7c1; border-radius: 4px; background-color: rgb(220, 250, 255);}
+
         QPushButton {
                 background-color: #6C9F50;
                 border-radius: 8px;
@@ -54,12 +62,12 @@ int main(int argc, char *argv[])
                 min-height: 12px; }
 
         QPushButton:hover { background-color: #87ceeb; }
-        QPushButton:pressed { background-color: #1e90af;}
-        QPushButton:checked { background-color: #1e90ff;}
+        QPushButton:pressed { background-color: #1e90af; }
+        QPushButton:checked { background-color: #1e90ff; }
         QPushButton:disabled { background-color: gray; color: #cccccc;}
 
         QSlider::groove:horizontal { height: 12px; background: #DCDCDC; border-radius: 6px; }
-        QSlider::sub-page:horizontal { background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #FDDFBA, stop:1 #FFA73C);  border-radius: 6px;}
+        QSlider::sub-page:horizontal { background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #FDDFBA, stop:1 #FFA73C);  border-radius: 6px; }
         QSlider::handle:horizontal {
             width: 20px;
             height: 16px;
@@ -68,7 +76,7 @@ int main(int argc, char *argv[])
             background: white;
             border: 2px solid #FFB459; }
 
-        QSlider::groove:vertical { width: 24px; background: #DCDCDC; border-radius: 12px;}
+        QSlider::groove:vertical { width: 24px; background: #DCDCDC; border-radius: 12px; }
         QSlider::sub-page:vertical { background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #FDDFBA, stop:1 #FFA73C);  border-radius: 12px; }
         QSlider::handle:vertical {
             width: 32px;
@@ -76,9 +84,9 @@ int main(int argc, char *argv[])
             margin: 0 -6px;
             border-radius: 5px;
             background: #FFAF4E ;
-            border: 2px solid white;}
+            border: 2px solid white; }
 
-        QSlider::handle:hover { background: #F0F0F0;}
+        QSlider::handle:hover { background: #F0F0F0; }
         QSlider::handle:pressed { background: #E0E0E0; border-color: #2D7FDD; }
 
         QRadioButton { spacing: 5px; color: #333333; }
