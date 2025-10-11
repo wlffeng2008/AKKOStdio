@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QPaintEvent>
 #include "SuperLabel.h"
+#include "ModuleLangMenu.h"
 
 namespace Ui {
 class DialogMainwork;
@@ -36,6 +37,8 @@ private:
     QList<SuperLabel *>m_pLBtns ;
     QList<QFrame *>m_pFrames ;
     void clickLabel(QLabel *label,int index=0);
+
+    ModuleLangMenu *m_pLangMenu = nullptr ;
 };
 
 #endif // DIALOGMAINWORK_H

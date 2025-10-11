@@ -81,6 +81,7 @@ public:
 
 protected:
     bool eventFilter(QObject* watched, QEvent *event) override;
+
 private:
     Ui::ModuleEfColor *ui;
     QStandardItemModel *m_pModel = nullptr ;

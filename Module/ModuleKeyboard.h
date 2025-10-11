@@ -17,8 +17,11 @@ public:
 
     void showFlag(bool show=true);
 
-protected:
+    void setKeyCllickable(bool set=true) ;
+    void setkeyHited(int id) ;
 
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
 private:
     Ui::ModuleKeyboard *ui;
 };

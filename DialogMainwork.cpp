@@ -9,7 +9,10 @@
 #include "FrameMagic.h"
 #include "FrameLight.h"
 #include "FrameAbout.h"
-
+#include "ModuleLangMenu.h"
+#include "LinearFixing1.h"
+#include <QMenu>
+#include <QAction>
 
 DialogMainwork::DialogMainwork(QWidget *parent)
     : QDialog(parent)
@@ -18,8 +21,8 @@ DialogMainwork::DialogMainwork(QWidget *parent)
     ui->setupUi(this);
     setWindowFlags(windowFlags() | Qt::FramelessWindowHint|Qt::MSWindowsFixedSizeDialogHint|Qt::Desktop);
     setAttribute(Qt::WA_TranslucentBackground);
+    setFocusPolicy(Qt::StrongFocus) ;
 
-    setStyleSheet("QDialog{ background-color: white; border-radius: 10px; }");
     setFixedSize(1280,900) ;
 
     FrameKeySetting *pKS = new FrameKeySetting(this) ;
@@ -44,8 +47,8 @@ DialogMainwork::DialogMainwork(QWidget *parent)
     ui->horizontalLayoutBR->addWidget(pLight);
     ui->horizontalLayoutBR->addWidget(pAbout);
 
-    for(QFrame*frame:m_pFrames)
-        frame->setFixedSize(1126,800) ;
+    for(QFrame*frame:std::as_const(m_pFrames))
+        frame->setFixedSize(1124,800) ;
 
     m_pLBtns.push_back(ui->label1);
     m_pLBtns.push_back(ui->label2);
@@ -62,8 +65,7 @@ DialogMainwork::DialogMainwork(QWidget *parent)
             padding: 2px;
             border-radius: 8px;
             font-family: "微软雅黑";
-            font-size: 16px;
-        }
+            font-size: 16px; }
     )");
 
     int index = 0 ;
@@ -72,7 +74,7 @@ DialogMainwork::DialogMainwork(QWidget *parent)
         label->setCursor(Qt::PointingHandCursor);
         label->installEventFilter(this) ;
         label->setAlignment(Qt::AlignCenter) ;
-        label->setOwnSheet("QLabel{background-color:#6329B6;border-radius:16px;}","QLabel{background-color:transparent;}") ;
+        label->setOwnSheet("QLabel { background-color: #6329B6; border-radius: 16px;}","QLabel { background-color: transparent; }") ;
         QString strImg = images[index++] + ".png";
         label->setImages(QString(":/images/leftbtns/1/") + strImg,QString(":/images/leftbtns/0/") + strImg) ;
     }
@@ -87,13 +89,37 @@ DialogMainwork::DialogMainwork(QWidget *parent)
             margin-left:24px;
             border: none;
             background: transparent;
-        }
-        QPushButton::icon { margin-right: 18px; }
+            spacing:20px; }
+            QPushButton::icon { margin-right: 18px; }
 
         )") ;
     ui->pushButtonLang->setStyleSheet(strStyle);
     ui->pushButtonFixed->setStyleSheet(strStyle);
     ui->pushButtonReset->setStyleSheet(strStyle);
+    ui->pushButtonPaire->setStyleSheet(strStyle);
+
+    m_pLangMenu =  new ModuleLangMenu(this) ;
+    connect(m_pLangMenu,&ModuleLangMenu::onLangChanged,this,[=](int langId,const QString&lang){
+        ui->pushButtonLang->setText(QString(" ")+lang) ;
+    }) ;
+
+    connect(ui->pushButtonLang,&QPushButton::clicked,this,[=]{
+        ModuleLangMenu *pLangMenu = m_pLangMenu ;
+        if(!pLangMenu->isHidden())
+            return ;
+        QRect btnRect = ui->pushButtonLang->geometry() ;
+        QPoint PT = mapToGlobal(btnRect.bottomLeft());
+        qDebug() << btnRect << PT;
+        int mL,mT,mR,MB ;
+        ui->horizontalLayoutT->getContentsMargins(&mL,&mT,&mR,&MB);
+        pLangMenu->setGeometry(PT.x() + 30,PT.y(),100,250);
+        pLangMenu->show() ;
+    });
+
+    connect(ui->pushButtonFixed,&QPushButton::clicked,this,[=]{
+        LinearFixing1 T("","",this) ;
+        T.exec() ;
+    });
 }
 
 DialogMainwork::~DialogMainwork()
@@ -139,6 +165,10 @@ bool DialogMainwork::eventFilter(QObject *watch, QEvent *event)
             }
         }
     }
+    if(event->type() == QEvent::FocusOut)
+    {
+        m_pLangMenu->hide() ;
+    }
 
     return QDialog::eventFilter(watch, event);
 }
@@ -151,7 +181,7 @@ void DialogMainwork::paintEvent(QPaintEvent *event)
     QRect rect = this->rect();
     painter.setBrush(QBrush(Qt::white));
     painter.setPen(QPen(QColor(200, 200, 200), 1));
-    painter.drawRoundedRect(rect, 10, 10);
+    painter.drawRoundedRect(rect, 12, 12);
 
     event->accept() ;
 }
@@ -161,6 +191,7 @@ void DialogMainwork::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
     {
+        m_pLangMenu->hide() ;
         if(event->pos().y() < 50)
         {
             m_dragPosition = event->globalPos() - frameGeometry().topLeft();

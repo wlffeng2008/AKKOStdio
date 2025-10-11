@@ -97,5 +97,23 @@
         <file>images/k/key-left.png</file>
         <file>images/k/key-right.png</file>
         <file>images/k/key-up.png</file>
+        <file>images/macro/print 1@2x.png</file>
+        <file>images/macro/print 2@2x.png</file>
+        <file>images/macro/xinzeng 1@2x.png</file>
+        <file>images/macro/bianji 1@2x.png</file>
+        <file>images/macro/shanchu 1@2x.png</file>
+        <file>images/m/bianji.svg</file>
+        <file>images/m/duima.svg</file>
+        <file>images/down-solid.png</file>
+        <file>images/rt/minus-disabled.png</file>
+        <file>images/rt/minus-normal.png</file>
+        <file>images/rt/plug-disabled.png</file>
+        <file>images/rt/plug-normal.png</file>
+        <file>images/play-white.png</file>
+        <file>images/macro/macro-add.png</file>
+        <file>images/macro/macro-clear.png</file>
+        <file>images/macro/macro-save.png</file>
+        <file>images/macro/radio-checked.png</file>
+        <file>images/macro/radio-unchecked.png</file>
     </qresource>
 </RCC>

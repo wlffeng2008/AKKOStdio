@@ -19,8 +19,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow#MainWindow{background-color: rgb(255, 255, 255); border:1px solid skyblue; border-radius: 20px; }
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,1,0">

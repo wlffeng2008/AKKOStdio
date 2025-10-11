@@ -22,6 +22,8 @@ public:
     ~MainWindow();
 
 protected:
+    void paintEvent(QPaintEvent *event) override ;
+    bool eventFilter(QObject *watched, QEvent *event) override ;
     void keyReleaseEvent(QKeyEvent *event) override ;
     void closeEvent(QCloseEvent *event) override ;
 

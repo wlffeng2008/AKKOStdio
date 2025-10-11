@@ -15,8 +15,14 @@ public:
     explicit ModuleRtSet(QWidget *parent = nullptr);
     ~ModuleRtSet();
 
+protected:
+    void paintEvent(QPaintEvent *event) override;
+    bool eventFilter(QObject*,QEvent*) override;
+
 private:
     Ui::ModuleRtSet *ui;
+    void setValue(float value);
+    float getValue();
 };
 
 #endif // MODULERTSET_H

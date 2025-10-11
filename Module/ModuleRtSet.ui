@@ -13,31 +13,11 @@
   <property name="windowTitle">
    <string>Frame</string>
   </property>
-  <widget class="QLabel" name="label1">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>110</y>
-     <width>53</width>
-     <height>15</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MiSans</family>
-     <pointsize>12</pointsize>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>0%</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="labelTitle">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>20</y>
+     <y>15</y>
      <width>161</width>
      <height>31</height>
     </rect>
@@ -46,18 +26,18 @@
     <font>
      <family>MiSans</family>
      <pointsize>14</pointsize>
-     <bold>true</bold>
+     <bold>false</bold>
     </font>
    </property>
    <property name="text">
-    <string>RT增稳模式</string>
+    <string>RT设置</string>
    </property>
   </widget>
   <widget class="ToggleButton" name="checkBoxRTMode">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>30</y>
+     <y>20</y>
      <width>36</width>
      <height>20</height>
     </rect>
@@ -66,78 +46,50 @@
     <string>ON</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label2">
+  <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>100</x>
      <y>110</y>
-     <width>53</width>
-     <height>15</height>
+     <width>101</width>
+     <height>21</height>
     </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MiSans</family>
-     <pointsize>12</pointsize>
-     <bold>false</bold>
-    </font>
    </property>
    <property name="text">
-    <string>100%</string>
+    <string>0.570 mm</string>
+   </property>
+   <property name="maxLength">
+    <number>10</number>
    </property>
    <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
+  <widget class="QPushButton" name="pushButtonMinus">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>70</y>
-     <width>261</width>
-     <height>25</height>
+     <x>50</x>
+     <y>108</y>
+     <width>24</width>
+     <height>24</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <property name="spacing">
-     <number>7</number>
-    </property>
-    <item>
-     <widget class="QPushButton" name="pushButton_1">
-      <property name="text">
-       <string>1</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="text">
-       <string>2</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>3</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="text">
-       <string>4</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="text">
-       <string>5</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonPlug">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>108</y>
+     <width>24</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <customwidgets>

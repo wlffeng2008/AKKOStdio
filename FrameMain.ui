@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1126</width>
+    <width>1130</width>
     <height>800</height>
    </rect>
   </property>
@@ -30,7 +30,7 @@
     <number>0</number>
    </property>
    <item alignment="Qt::AlignmentFlag::AlignTop">
-    <widget class="QFrame" name="">
+    <widget class="QFrame" name="frame">
      <property name="maximumSize">
       <size>
        <width>16777215</width>
@@ -71,10 +71,10 @@
          <string notr="true">background-color: #F6F6F6;border-radius:40px;</string>
         </property>
         <property name="frameShape">
-         <enum>QFrame::Shape::StyledPanel</enum>
+         <enum>QFrame::Shape::NoFrame</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Shadow::Raised</enum>
+         <enum>QFrame::Shadow::Plain</enum>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_7" stretch="0,1">
          <property name="spacing">
@@ -110,12 +110,12 @@
             <widget class="QLabel" name="labelName">
              <property name="font">
               <font>
-               <pointsize>18</pointsize>
-               <bold>true</bold>
+               <pointsize>16</pointsize>
+               <bold>false</bold>
               </font>
              </property>
              <property name="text">
-              <string>3098-9009 </string>
+              <string>5075</string>
              </property>
             </widget>
            </item>
@@ -137,7 +137,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap resource="res.qrc">:/images/Correct.png</pixmap>
+              <pixmap resource="res.qrc">:/images/m/bianji.svg</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -394,7 +394,7 @@
        </widget>
       </item>
       <item alignment="Qt::AlignmentFlag::AlignRight">
-       <widget class="QFrame" name="">
+       <widget class="QFrame" name="frame">
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <property name="spacing">
           <number>24</number>
@@ -426,7 +426,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #F6F6F6;border-radius:40px;</string>
+            <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::Shape::StyledPanel</enum>
@@ -451,7 +451,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #F6F6F6;border-radius:40px;</string>
+            <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::Shape::StyledPanel</enum>
@@ -468,7 +468,7 @@
     </widget>
    </item>
    <item alignment="Qt::AlignmentFlag::AlignBottom">
-    <widget class="QFrame" name="">
+    <widget class="QFrame" name="frame">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -512,7 +512,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: #F6F6F6;border-radius:40px;</string>
+         <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Shape::StyledPanel</enum>
@@ -537,7 +537,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: #F6F6F6;border-radius:40px;</string>
+         <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Shape::StyledPanel</enum>
@@ -548,7 +548,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="">
+       <widget class="QFrame" name="frame">
         <property name="maximumSize">
          <size>
           <width>304</width>
@@ -586,7 +586,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #F6F6F6;border-radius:40px;</string>
+            <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::Shape::StyledPanel</enum>
@@ -611,7 +611,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #F6F6F6;border-radius:40px;</string>
+            <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::Shape::StyledPanel</enum>

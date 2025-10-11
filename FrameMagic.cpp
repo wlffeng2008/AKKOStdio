@@ -14,10 +14,10 @@ FrameMagic::FrameMagic(QWidget *parent)
 
             QPushButton {
                 width: 120px;
-                height: 40px;
+                height: 32px;
                 border-radius: 16px ;
                 font-size: 16px ;
-                font-weight: bold ;
+                font-weight: normal ;
                 font-family: MiSans;
 
                 color: #333;
@@ -32,10 +32,10 @@ FrameMagic::FrameMagic(QWidget *parent)
 
         QLayout *pLayout = ui->frameSet->layout() ;
         pLayout->setSpacing(12) ;
-        pLayout->setContentsMargins(0,10,0,0);
         pLayout->setAlignment(Qt::AlignTop|Qt::AlignHCenter) ;
 
         QList<QPushButton *>btns = {ui->pushButtonSet1,ui->pushButtonSet2,ui->pushButtonSet3,ui->pushButtonSet4,ui->pushButtonSet5} ;
+        QButtonGroup *pBtnGrp = new QButtonGroup(this) ;
         for(int i=0; i<5; i++)
         {
             QPushButton *btn = btns[i] ;
@@ -43,17 +43,13 @@ FrameMagic::FrameMagic(QWidget *parent)
             btn->setCheckable(true) ;
             btn->setStyleSheet(strStyle);
             btn->setFocusPolicy(Qt::NoFocus) ;
+            btn->setCursor(Qt::PointingHandCursor) ;
+            pBtnGrp->addButton(btn,i);
         }
-
-        QButtonGroup *pBtnGrp = new QButtonGroup(this) ;
-        pBtnGrp->addButton(ui->pushButtonSet1,0);
-        pBtnGrp->addButton(ui->pushButtonSet2,1);
-        pBtnGrp->addButton(ui->pushButtonSet3,2);
-        pBtnGrp->addButton(ui->pushButtonSet4,3);
-        pBtnGrp->addButton(ui->pushButtonSet5,4);
         connect(pBtnGrp,&QButtonGroup::idClicked,this,[=](int id){
             qDebug() << "Effect QButtonGroup:" << id ;
         });
+        ui->pushButtonSet1->click() ;
     }
 
 }

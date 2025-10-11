@@ -13,6 +13,8 @@ class FrameMain : public QFrame
 public:
     explicit FrameMain(QWidget *parent = nullptr);
     ~FrameMain();
+protected:
+    bool eventFilter(QObject*watched, QEvent*event) override;
 
 private:
     Ui::FrameMain *ui;

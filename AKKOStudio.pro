@@ -14,6 +14,7 @@ INCLUDEPATH += ./Module
 
 SOURCES += \
     ColorLabel.cpp \
+    ColorSquare.cpp \
     DialogDeviceConnect.cpp \
     DialogMainwork.cpp \
     FrameAbout.cpp \
@@ -22,10 +23,15 @@ SOURCES += \
     FrameMacro.cpp \
     FrameMagic.cpp \
     FrameMain.cpp \
+    LinearFixing1.cpp \
+    LinearFixing2.cpp \
+    Module/ColorSlider.cpp \
+    Module/MacroItem.cpp \
     Module/ModuleEfColor.cpp \
     Module/ModuleEfLumi.cpp \
     Module/ModuleEfMode.cpp \
     Module/ModuleEfSpeed.cpp \
+    Module/ModuleLangMenu.cpp \
     Module/ModuleLinear.cpp \
     Module/ModuleRtSet.cpp \
     Module/ModuleKeyboard.cpp \
@@ -36,6 +42,7 @@ SOURCES += \
 
 HEADERS += \
     ColorLabel.h \
+    ColorSquare.h \
     DialogDeviceConnect.h \
     DialogMainwork.h \
     FrameAbout.h \
@@ -44,11 +51,16 @@ HEADERS += \
     FrameMacro.h \
     FrameMagic.h \
     FrameMain.h \
+    LinearFixing1.h \
+    LinearFixing2.h \
     MainWindow.h \
+    Module/ColorSlider.h \
+    Module/MacroItem.h \
     Module/ModuleEfColor.h \
     Module/ModuleEfLumi.h \
     Module/ModuleEfMode.h \
     Module/ModuleEfSpeed.h \
+    Module/ModuleLangMenu.h \
     Module/ModuleLinear.h \
     Module/ModuleRtSet.h \
     Module/ModuleKeyboard.h \
@@ -65,10 +77,12 @@ FORMS += \
     FrameMagic.ui \
     FrameMain.ui \
     MainWindow.ui \
+    Module/MacroItem.ui \
     Module/ModuleEfColor.ui \
     Module/ModuleEfLumi.ui \
     Module/ModuleEfMode.ui \
     Module/ModuleEfSpeed.ui \
+    Module/ModuleLangMenu.ui \
     Module/ModuleLinear.ui \
     Module/ModuleRtSet.ui \
     Module/ModuleKeyboard.ui

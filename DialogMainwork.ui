@@ -95,6 +95,35 @@ background-color:white;
       </spacer>
      </item>
      <item>
+      <widget class="QPushButton" name="pushButtonPaire">
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string> 对码</string>
+       </property>
+       <property name="icon">
+        <iconset resource="res.qrc">
+         <normaloff>:/images/m/duima.svg</normaloff>:/images/m/duima.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>18</width>
+         <height>18</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="pushButtonReset">
        <property name="font">
         <font>

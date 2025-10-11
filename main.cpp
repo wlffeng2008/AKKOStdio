@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
             break;
         }
     }
+    SetConsoleOutputCP(CP_UTF8);
 
     //QApplication::setStyle("Fusion");
     MainWindow w;
@@ -59,13 +60,15 @@ int main(int argc, char *argv[])
                 border: 2px solid gray;
                 padding: 2px 2px;
                 min-width: 60px;
-                min-height: 12px; }
+                min-height: 12px;
+ }
 
         QPushButton:hover { background-color: #87ceeb; }
         QPushButton:pressed { background-color: #1e90af; }
         QPushButton:checked { background-color: #1e90ff; }
         QPushButton:disabled { background-color: gray; color: #cccccc;}
 
+        QSlider{border-radius: 6px; }
         QSlider::groove:horizontal { height: 12px; background: #DCDCDC; border-radius: 6px; }
         QSlider::sub-page:horizontal { background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #FDDFBA, stop:1 #FFA73C);  border-radius: 6px; }
         QSlider::handle:horizontal {
@@ -93,32 +96,47 @@ int main(int argc, char *argv[])
         QRadioButton::indicator {
             width: 14px;
             height: 14px;
-            border: 2px solid #999999;
+            background: white;
+            border: 2px solid gray;
             border-radius: 8px; }
 
-        QRadioButton::indicator:unchecked { background: #f8f8f8; }
-        QRadioButton::indicator:unchecked:hover { border-color: #666666; background: #f0f0f0; }
+        QRadioButton::indicator:unchecked { background: white; border-color: gray;}
+        QRadioButton::indicator:unchecked:hover {background: #f0f0f0;  border-color: #666666; }
 
         QRadioButton::indicator:checked {
-            border: 2px solid #0085FF;
+            background: transparent;
+            border-color: transparent;
+            width: 18px;
+            height: 18px;
+            border: none;
+            image: url(:/images/macro/radio-checked.png);
+        }
+   /*     QRadioButton::indicator:checked {
+            border: 2px solid #6329B6;
             background: qradialgradient(
                 cx:0.5, cy:0.5, radius:0.4,
                 fx:0.5, fy:0.5,
-                stop:0 #0085FF, stop:1 white
+                stop:0 white, stop:1 #6329B6
             );
-            color: #0085FF;
+            color: #6329B6;
         }
 
         QRadioButton::indicator:checked:hover {
-            border-color: #0066CC;
+            border-color: #6329B6;
             background: qradialgradient(
                 cx:0.5, cy:0.5, radius:0.4,
                 fx:0.5, fy:0.5,
-                stop:0 #0066CC, stop:1 white
+                stop:0 white, stop:1 #6329B6
             );
         }
 
-        QRadioButton::indicator:pressed { border-color: #004499; }
+
+        QRadioButton::indicator:checked {
+            background: transparent;
+            image: url(:/images/macro/radio-unchecked.png);
+        }
+
+        QRadioButton::indicator:pressed { border-color: #004499; }*/
         QRadioButton:disabled { color: #cccccc; }
         QRadioButton:checked {  color: #0085FF; }
         QRadioButton::indicator:disabled { border: 2px solid #dddddd; background: white; }
@@ -205,6 +223,60 @@ QScrollBar::add-page:vertical,
 QScrollBar::add-page:horizontal {background: #626262;}
 QScrollBar::sub-page:vertical,
 QScrollBar::sub-page:horizontal { background: #D9D9D9;}
+
+
+
+QTabWidget {
+    background-color: transparent;
+    border: none;
+    border-radius:0;
+    padding: 0px;
+    margin: 0;
+}
+
+/* 标签栏的样式 - 水平标签栏 */
+QTabBar::tab {
+    background-color: transparent;
+    color: black;
+    border: 3px solid transparent;
+    padding: 5px -6px;
+    margin-right: 20px; /* 标签之间的间距 */
+    min-width: 40px; /* 标签最小宽度 */
+    font-size: 15px;
+    font-weight: bold;
+}
+
+QTabBar::tab:selected {
+    color: #6329B6;
+    border-left: 3px solid transparent;
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid #6329B6;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: transparent;
+    color: #000;
+}
+
+QTabBar::tab:vertical {
+    min-height: 20px;
+}
+
+/* 标签页内容区域的样式 */
+QTabWidget::pane {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0px;
+    margin-top: -1px; /* 与标签栏无缝连接 */
+}
+
+/* 标签栏下方的分隔线 */
+QTabBar::separator {
+    width: 1px;
+    background-color: #aaa;
+}
 
     )");
 

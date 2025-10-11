@@ -1,7 +1,9 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
+#include <QEvent>
 #include <QKeyEvent>
+#include <QPainter>
 #include <QDebug>
 #include <QRadioButton>
 #include <QSpacerItem>
@@ -14,26 +16,27 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() | Qt::FramelessWindowHint|Qt::MSWindowsFixedSizeDialogHint);
-    //setAttribute(Qt::WA_TranslucentBackground);
+    setAttribute(Qt::WA_TranslucentBackground);
+    setStyleSheet("QMainWindow{background-color: rgba(255, 255, 255,1); border: 1px solid skyblue; border-radius: 12px; }");
 
-    QGraphicsDropShadowEffect *shadowEffect = new QGraphicsDropShadowEffect(this);
-    shadowEffect->setBlurRadius(15);    // 阴影模糊半径，值越大越模糊
-    shadowEffect->setColor(QColor(0, 0, 0, 160)); // 阴影颜色和透明度 (RGBA)
-    shadowEffect->setOffset(0, 0);      // 阴影偏移量，设为(0,0)四周均匀
-    //this->setGraphicsEffect(shadowEffect);
-    //centralWidget()->setContentsMargins(10, 10, 10, 10);
+    // QGraphicsDropShadowEffect *shadowEffect = new QGraphicsDropShadowEffect(this);
+    // shadowEffect->setBlurRadius(15);    // 阴影模糊半径，值越大越模糊
+    // shadowEffect->setColor(QColor(0, 0, 0, 160)); // 阴影颜色和透明度 (RGBA)
+    // shadowEffect->setOffset(0, 0);      // 阴影偏移量，设为(0,0)四周均匀
+    // this->setGraphicsEffect(shadowEffect);
+    // centralWidget()->setContentsMargins(10, 10, 10, 10);
 
-    setWindowTitle(QString("AKKO Studio -- By QT")+QT_VERSION_STR);
+    setWindowTitle(QString("AKKO Studio -- By QT") + QT_VERSION_STR);
     resize(1280,900) ;
 
     m_pDevice = new DialogDeviceConnect(this) ;
     m_pMainkwork = new DialogMainwork(this) ;
-
-
     connect(ui->pushButtonDevice,&QPushButton::clicked,this,[=]{
         m_pDevice->show() ;
     });
+
     connect(ui->pushButtonEnter,&QPushButton::clicked,this,[=]{
+        m_pMainkwork->setGeometry(frameGeometry()) ;
         m_pMainkwork->show() ;
     });
 
@@ -48,29 +51,6 @@ MainWindow::MainWindow(QWidget *parent)
         btn->setFocusPolicy(Qt::ClickFocus) ;
     }
 
-    // QButtonGroup *pBtnGroup0 = new QButtonGroup(this) ;
-    // for(int i=0; i<10; i++)
-    // {
-    //     QRadioButton *pBtn = new QRadioButton("选项" + QString::number(i));
-    //     ui->horizontalLayout1->addWidget(pBtn) ;
-    //     pBtnGroup0->addButton(pBtn,i);
-    // }
-
-    // connect(pBtnGroup0,&QButtonGroup::idClicked,this,[=](int id){
-    //     qDebug() << id << pBtnGroup0->button(id)->text();
-    // });
-
-    // QSpacerItem *pHSp1 = new QSpacerItem(0,20,QSizePolicy::Expanding, QSizePolicy::Fixed);
-    // QSpacerItem *pHSp2 = new QSpacerItem(0,20,QSizePolicy::Expanding, QSizePolicy::Fixed);
-
-    // ui->horizontalLayout1->addItem(pHSp1);
-    // ui->horizontalLayout2->addItem(pHSp2) ;
-
-    // for(int i=0; i<10; i++)
-    // {
-    //     QRadioButton *pBtn = new QRadioButton("答案" + QString::number(i));
-    //     ui->horizontalLayout2->addWidget(pBtn) ;
-    // }
 }
 
 MainWindow::~MainWindow()
@@ -84,6 +64,11 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
     QCoreApplication::exit() ;
     QMainWindow::closeEvent(event);
+}
+
+bool MainWindow::eventFilter(QObject *watched, QEvent *event)
+{
+    return QMainWindow::eventFilter(watched, event);
 }
 
 void MainWindow::keyReleaseEvent(QKeyEvent *event)
@@ -127,4 +112,15 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *event)
         event->accept();
     }
     // QMainWindow::mouseReleaseEvent(event);
+}
+
+
+void MainWindow::paintEvent(QPaintEvent *event)
+{
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter p(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+
+    QMainWindow::paintEvent(event);
 }

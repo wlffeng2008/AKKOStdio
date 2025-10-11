@@ -15,69 +15,22 @@ class ToggleButton : public QCheckBox
     Q_OBJECT
 
 public:
-    ToggleButton(QWidget *parent = nullptr) : QCheckBox(parent)
-    {
-        setAttribute(Qt::WA_TranslucentBackground);
-        setStyleSheet(R"(
-            QCheckBox {
-                min-width: 40px;
-                height: 24px;}
-        )");
-    }
+    ToggleButton(QWidget *parent = nullptr);
 
-    bool getChecked(){ return m_bchecked; }
+    bool getChecked();
+    void setChecked(bool checked);
+    void setColor(const QColor&checkedColor,const QColor&UncheckedColor);
+    void setCheckedColor(const QColor&color);
+    void setUnheckedColor(const QColor&color);
+    static void setGlobalColor(const QColor&checkedColor,const QColor&UncheckedColor) ;
 
 protected:
-    bool event(QEvent *event) override
-    {
-        if(event->type() == QEvent::MouseButtonRelease)
-        {
-            m_bchecked = !m_bchecked ;
-            update() ;
-            emit clicked(m_bchecked) ;
-            return true ;
-        }
-        return QCheckBox::event(event) ;
-    }
-
-    void paintEvent(QPaintEvent *event) override
-    {
-        QPainter painter(this) ;
-        painter.setRenderHint(QPainter::Antialiasing);
-
-        float nH = rect().height() ;
-        if(m_bchecked)
-        {
-            painter.setPen(QPen(QColor(0x6329B6)));
-            painter.setBrush(QBrush(QColor(0x6329B6)));
-        }
-        else
-        {
-            painter.setPen(QPen(Qt::gray));
-            painter.setBrush(QBrush(Qt::gray));
-        }
-        painter.drawRoundedRect(rect(),nH/2,nH/2) ;
-
-        int nRadius = nH/2 - 2 ;
-        QRect rc = rect().adjusted(2,2,-2,-2) ;
-        if(m_bchecked)
-        {
-            rc.setLeft(rc.right() - nRadius*2) ;
-        }
-        else
-        {
-            rc.setRight(rc.left() + nRadius*2) ;
-        }
-
-        painter.setPen(QPen(Qt::white));
-        painter.setBrush(QBrush(Qt::white));
-        painter.drawRoundedRect(rc,nRadius,nRadius) ;
-
-        event->accept();
-    }
-
+    bool event(QEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
 private:
-    bool m_bchecked=false ;
+    bool m_bchecked = false ;
+    QColor m_colorChecked = 0x6329B6 ;
+    QColor m_colorUnchecked = Qt::gray ;
 };
 
 #endif // TOGGLEBUTTON_H
