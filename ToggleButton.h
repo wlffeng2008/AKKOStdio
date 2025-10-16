@@ -27,6 +27,7 @@ public:
 protected:
     bool event(QEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
+
 private:
     bool m_bchecked = false ;
     QColor m_colorChecked = 0x6329B6 ;

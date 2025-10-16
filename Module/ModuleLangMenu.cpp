@@ -90,6 +90,7 @@ void ModuleLangMenu::focusOutEvent(QFocusEvent *event)
 {
     QDialog::focusOutEvent(event);
     this->hide() ;
+    qDebug() << "ModuleLangMenu::focusOutEvent." ;
 }
 
 void ModuleLangMenu::paintEvent(QPaintEvent *event)

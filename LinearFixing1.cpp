@@ -16,6 +16,7 @@ LinearFixing1::LinearFixing1(const QString& title,const QString& content, QWidge
     setStyleSheet("QDialog{background-color: rgba(0, 0, 0, 0.8);  border: 1px solid transparent;border-radius:12px;}"); // 黑色半透明
 
     QWidget* pContentWidget = new QWidget(this);
+    pContentWidget->setObjectName("pContentWidget") ;
     pContentWidget->setStyleSheet(R"(
         QWidget {
             background-color: white;
@@ -23,6 +24,8 @@ LinearFixing1::LinearFixing1(const QString& title,const QString& content, QWidge
             padding: 10px;
         }
     )");
+
+    qDebug() << "pContentWidget:" <<pContentWidget->layout() ;
 
     QLabel *pLabTitle = new QLabel("行程校准操作指南", pContentWidget);
     pLabTitle->setStyleSheet("font-size: 16px; color: #333; text-align: center;");
@@ -80,19 +83,20 @@ LinearFixing1::LinearFixing1(const QString& title,const QString& content, QWidge
 
     // 内容布局
     QVBoxLayout* contentLayout = new QVBoxLayout(pContentWidget);
+    contentLayout->setObjectName("contentLayout") ;
     contentLayout->addWidget(pLabTitle);
     contentLayout->addWidget(pLabText,1);
-    //contentLayout->addSpacing(10);
     contentLayout->setSpacing(5);
 
     QHBoxLayout* btnLayout = new QHBoxLayout(pContentWidget) ;
+    btnLayout->setObjectName("btnLayout") ;
     btnLayout->addWidget(cancelBtn);
     btnLayout->addWidget(confirmBtn);
     btnLayout->setAlignment(Qt::AlignHCenter);
     btnLayout->setSpacing(18) ;
     btnLayout->setContentsMargins(10,10,10,10) ;
-    //contentLayout->addItem(btnLayout) ;
-    contentLayout->insertLayout(2,btnLayout);
+    contentLayout->addItem(btnLayout) ;
+    //contentLayout->insertLayout(2,btnLayout);
 
     // 主布局
     QVBoxLayout* mainLayout = new QVBoxLayout(this);

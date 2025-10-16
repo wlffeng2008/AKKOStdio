@@ -15,6 +15,9 @@ public:
     explicit FrameMagic(QWidget *parent = nullptr);
     ~FrameMagic();
 
+protected:
+    bool eventFilter(QObject*watched, QEvent*event) override;
+
 private:
     Ui::FrameMagic *ui;
 };

@@ -25,8 +25,10 @@ SOURCES += \
     FrameMain.cpp \
     LinearFixing1.cpp \
     LinearFixing2.cpp \
+    MacroSquare.cpp \
     Module/ColorSlider.cpp \
     Module/MacroItem.cpp \
+    Module/ModuleDKSItem.cpp \
     Module/ModuleEfColor.cpp \
     Module/ModuleEfLumi.cpp \
     Module/ModuleEfMode.cpp \
@@ -35,6 +37,8 @@ SOURCES += \
     Module/ModuleLinear.cpp \
     Module/ModuleRtSet.cpp \
     Module/ModuleKeyboard.cpp \
+    ModuleScrollValue.cpp \
+    NewTabWidget.cpp \
     SuperLabel.cpp \
     ToggleButton.cpp \
     main.cpp \
@@ -53,9 +57,11 @@ HEADERS += \
     FrameMain.h \
     LinearFixing1.h \
     LinearFixing2.h \
+    MacroSquare.h \
     MainWindow.h \
     Module/ColorSlider.h \
     Module/MacroItem.h \
+    Module/ModuleDKSItem.h \
     Module/ModuleEfColor.h \
     Module/ModuleEfLumi.h \
     Module/ModuleEfMode.h \
@@ -64,6 +70,8 @@ HEADERS += \
     Module/ModuleLinear.h \
     Module/ModuleRtSet.h \
     Module/ModuleKeyboard.h \
+    ModuleScrollValue.h \
+    NewTabWidget.h \
     SuperLabel.h \
     ToggleButton.h
 
@@ -78,6 +86,7 @@ FORMS += \
     FrameMain.ui \
     MainWindow.ui \
     Module/MacroItem.ui \
+    Module/ModuleDKSItem.ui \
     Module/ModuleEfColor.ui \
     Module/ModuleEfLumi.ui \
     Module/ModuleEfMode.ui \
@@ -85,7 +94,8 @@ FORMS += \
     Module/ModuleLangMenu.ui \
     Module/ModuleLinear.ui \
     Module/ModuleRtSet.ui \
-    Module/ModuleKeyboard.ui
+    Module/ModuleKeyboard.ui \
+    ModuleScrollValue.ui
 
 TRANSLATIONS += \
     AKKOStudio_en_US.ts \

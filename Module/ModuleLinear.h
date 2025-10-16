@@ -15,6 +15,8 @@ public:
     explicit ModuleLinear(QWidget *parent = nullptr);
     ~ModuleLinear();
 
+    void setText(const QString&text1,const QString&text2);
+
 private:
     Ui::ModuleLinear *ui;
 };

@@ -112,8 +112,9 @@ void LinearFixing2::paintEvent(QPaintEvent *event)
 
 void LinearFixing2::keyPressEvent(QKeyEvent *event)
 {
-    qDebug() << "LinearFixing2::keyPressEvent" << Qt::hex << event->key() << event->text()  << event->nativeVirtualKey() ;
+    //qDebug() << "LinearFixing2::keyPressEvent" << Qt::hex << event->key() << event->text()  << event->nativeVirtualKey() << event->nativeScanCode() ;
+    qDebug() << QString::asprintf("pushButton_%04X",event->nativeScanCode());
     event->ignore() ;
-    pKeyBoard->setkeyHited(78) ;
-    pKeyBoard->setkeyHited(0) ;
+    pKeyBoard->setkeyHited(event->nativeScanCode()) ;
+    //pKeyBoard->setkeyHited(0) ;
 }

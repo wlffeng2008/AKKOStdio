@@ -20,8 +20,8 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
             padding: 2px 2px;
             color: black;
             background-color: #FFFFFF;
-                min-width:48px;
-                min-height:48px; }
+                min-width:46px;
+                min-height:46px; }
 
             QPushButton:hover { background-color: #EAEAEA; border: 1px solid #EAEAEA;}
 
@@ -31,9 +31,10 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
         )");
 
     //setStyleSheet(strStyle) ;
-    for(int i=0; i<150; i++)
+    int nIndex = 0 ;
+    for(int i=0; i<0xFFFF; i++)
     {
-        QString strName = QString::asprintf("pushButton_%02d",i+1) ;
+        QString strName = QString::asprintf("pushButton_%04X",i) ;
         QPushButton *btn = findChild<QPushButton*>(strName) ;
         if(btn)
         {
@@ -42,9 +43,9 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
             btn->setCheckable(true) ;
             btn->setFocusPolicy(Qt::NoFocus);
             btn->setCursor(Qt::PointingHandCursor) ;
-            ui->buttonGroup->addButton(btn,i) ;
+            ui->buttonGroup->addButton(btn,nIndex++) ;
 
-            if(i==14)
+            if(nIndex==1400)
             {
                 btn->setEnabled(false) ;
                 btn->setFixedSize(48,48) ;
@@ -53,8 +54,8 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
                         border: 1px solid #EAEAEA;
                         border-radius: 24px;
                         padding: 2px 2px;
-                        min-width:48px;
-                        min-height:48px; }
+                        min-width:46px;
+                        min-height:46px; }
 
                     QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }
                 )") ;
@@ -85,22 +86,27 @@ void ModuleKeyboard::keyPressEvent(QKeyEvent *event)
 
 void ModuleKeyboard::setkeyHited(int id)
 {
-    const QList<QAbstractButton*>btns = ui->buttonGroup->buttons() ;
-    if(id >= btns.count() || id < 0)
-        return ;
+    int nCode = id ;
+    if(nCode == 0 || nCode == 0xE000)
+        nCode = 0x81 ;
 
-    ui->buttonGroup->button(id)->setStyleSheet(R"(
+    QString strName = QString::asprintf("pushButton_%04X",nCode) ;
+    QPushButton *btn = findChild<QPushButton*>(strName) ;
+    if(btn)
+    {
+        btn->setStyleSheet(R"(
             QPushButton {
                 border: 1px solid #EAEAEA;
                 border-radius: 14px;
                 padding: 2px 2px;
                 background-color: yellow;
                 color: black;
-                min-width: 48px;
-                min-height: 48px;
+                min-width: 46px;
+                min-height: 46px;
             }
             QPushButton:disabled { background-color: yellow; color: black; }
         )") ;
+    }
 }
 
 void ModuleKeyboard::setKeyCllickable(bool set)
@@ -116,8 +122,8 @@ void ModuleKeyboard::setKeyCllickable(bool set)
                 padding: 2px 2px;
                 background-color: white;
                 color: black;
-                min-width: 48px;
-                min-height: 48px;
+                min-width: 46px;
+                min-height: 46px;
             }
             QPushButton:disabled { background-color: white; color: black; }
         )");

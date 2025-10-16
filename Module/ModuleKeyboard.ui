@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1124</width>
-    <height>420</height>
+    <height>443</height>
    </rect>
   </property>
   <property name="font">
@@ -19,7 +19,28 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">#FrameKeySetting{background-color:white;}
+
+
+QPushButton {
+            border: 1px solid #EAEAEA;
+            border-radius: 14px;
+            padding: 2px 2px;
+            color: black;
+            outline: none;
+            background-color: #FBFBFB;
+                min-width:42px;
+                min-height:42px;
+                font-size: 12px ;
+                font-weight: normal ;
+                font-family: MiSans;
+ }
+
+            QPushButton:hover { background-color: #EAEAEA; border: 1px solid #EAEAEA;}
+
+            QPushButton:pressed { background-color: #3F3F3F; }
+            QPushButton:checked { background-color: #3F3F3F; color: white; }
+            QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
   </property>
   <property name="lineWidth">
    <number>0</number>
@@ -27,8 +48,8 @@
   <widget class="QFrame" name="frameFlag">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>370</y>
+     <x>380</x>
+     <y>385</y>
      <width>281</width>
      <height>36</height>
     </rect>
@@ -117,19 +138,19 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButton_11">
+  <widget class="QPushButton" name="pushButton_0044">
    <property name="geometry">
     <rect>
-     <x>709</x>
-     <y>10</y>
+     <x>719</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -141,7 +162,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -152,19 +173,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_15">
+  <widget class="QPushButton" name="pushButton_E000">
    <property name="geometry">
     <rect>
-     <x>970</x>
-     <y>10</y>
+     <x>980</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -176,7 +197,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -187,19 +208,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_07">
+  <widget class="QPushButton" name="pushButton_0040">
    <property name="geometry">
     <rect>
-     <x>462</x>
-     <y>10</y>
+     <x>472</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -211,7 +232,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -222,19 +243,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_12">
+  <widget class="QPushButton" name="pushButton_0057">
    <property name="geometry">
     <rect>
-     <x>766</x>
-     <y>10</y>
+     <x>776</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -246,7 +267,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -257,19 +278,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_10">
+  <widget class="QPushButton" name="pushButton_0043">
    <property name="geometry">
     <rect>
-     <x>652</x>
-     <y>10</y>
+     <x>662</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -281,7 +302,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -292,19 +313,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_04">
+  <widget class="QPushButton" name="pushButton_003D">
    <property name="geometry">
     <rect>
-     <x>272</x>
-     <y>10</y>
+     <x>282</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -316,7 +337,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -327,19 +348,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_13">
+  <widget class="QPushButton" name="pushButton_0058">
    <property name="geometry">
     <rect>
-     <x>823</x>
-     <y>10</y>
+     <x>833</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -351,7 +372,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -362,19 +383,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_03">
+  <widget class="QPushButton" name="pushButton_003C">
    <property name="geometry">
     <rect>
-     <x>215</x>
-     <y>10</y>
+     <x>225</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -386,7 +407,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -397,19 +418,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_08">
+  <widget class="QPushButton" name="pushButton_0041">
    <property name="geometry">
     <rect>
-     <x>519</x>
-     <y>10</y>
+     <x>529</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -421,7 +442,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -432,19 +453,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_09">
+  <widget class="QPushButton" name="pushButton_003F">
    <property name="geometry">
     <rect>
-     <x>405</x>
-     <y>10</y>
+     <x>415</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -456,7 +477,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -467,19 +488,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_02">
+  <widget class="QPushButton" name="pushButton_003B">
    <property name="geometry">
     <rect>
-     <x>158</x>
-     <y>10</y>
+     <x>168</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -491,7 +512,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -502,19 +523,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_05">
+  <widget class="QPushButton" name="pushButton_003E">
    <property name="geometry">
     <rect>
-     <x>329</x>
-     <y>10</y>
+     <x>339</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -526,7 +547,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -537,19 +558,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_01">
+  <widget class="QPushButton" name="pushButton_0001">
    <property name="geometry">
     <rect>
-     <x>75</x>
-     <y>10</y>
+     <x>85</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -561,7 +582,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -572,19 +593,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_14">
+  <widget class="QPushButton" name="pushButton_E053">
    <property name="geometry">
     <rect>
-     <x>905</x>
-     <y>10</y>
+     <x>915</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -596,7 +617,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -613,19 +634,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_06">
+  <widget class="QPushButton" name="pushButton_0042">
    <property name="geometry">
     <rect>
-     <x>576</x>
-     <y>10</y>
+     <x>586</x>
+     <y>25</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -637,7 +658,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -648,19 +669,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_19">
+  <widget class="QPushButton" name="pushButton_0004">
    <property name="geometry">
     <rect>
-     <x>257</x>
-     <y>75</y>
+     <x>267</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -672,7 +693,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -683,19 +704,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_20">
+  <widget class="QPushButton" name="pushButton_0005">
    <property name="geometry">
     <rect>
-     <x>316</x>
-     <y>75</y>
+     <x>326</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -707,7 +728,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -718,19 +739,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_22">
+  <widget class="QPushButton" name="pushButton_0007">
    <property name="geometry">
     <rect>
-     <x>433</x>
-     <y>75</y>
+     <x>443</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -742,7 +763,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -753,19 +774,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_23">
+  <widget class="QPushButton" name="pushButton_0008">
    <property name="geometry">
     <rect>
-     <x>492</x>
-     <y>75</y>
+     <x>502</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -777,7 +798,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -788,19 +809,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_24">
+  <widget class="QPushButton" name="pushButton_0009">
    <property name="geometry">
     <rect>
-     <x>551</x>
-     <y>75</y>
+     <x>561</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -812,7 +833,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -823,19 +844,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_28">
+  <widget class="QPushButton" name="pushButton_000D">
    <property name="geometry">
     <rect>
-     <x>786</x>
-     <y>75</y>
+     <x>796</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -847,7 +868,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -858,19 +879,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_29">
+  <widget class="QPushButton" name="pushButton_000E">
    <property name="geometry">
     <rect>
-     <x>847</x>
-     <y>75</y>
+     <x>857</x>
+     <y>90</y>
      <width>113</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -882,7 +903,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -893,19 +914,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_25">
+  <widget class="QPushButton" name="pushButton_000A">
    <property name="geometry">
     <rect>
-     <x>609</x>
-     <y>75</y>
+     <x>619</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -917,7 +938,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -928,19 +949,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_16">
+  <widget class="QPushButton" name="pushButton_0029">
    <property name="geometry">
     <rect>
-     <x>75</x>
-     <y>75</y>
+     <x>85</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -952,7 +973,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -963,19 +984,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_17">
+  <widget class="QPushButton" name="pushButton_0002">
    <property name="geometry">
     <rect>
-     <x>139</x>
-     <y>75</y>
+     <x>149</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -987,7 +1008,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -998,19 +1019,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_21">
+  <widget class="QPushButton" name="pushButton_0006">
    <property name="geometry">
     <rect>
-     <x>374</x>
-     <y>75</y>
+     <x>384</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1022,7 +1043,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1033,19 +1054,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_27">
+  <widget class="QPushButton" name="pushButton_000C">
    <property name="geometry">
     <rect>
-     <x>727</x>
-     <y>75</y>
+     <x>737</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1057,7 +1078,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1068,19 +1089,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_30">
+  <widget class="QPushButton" name="pushButton_E047">
    <property name="geometry">
     <rect>
-     <x>970</x>
-     <y>75</y>
+     <x>980</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1092,7 +1113,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1103,19 +1124,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_26">
+  <widget class="QPushButton" name="pushButton_000B">
    <property name="geometry">
     <rect>
-     <x>668</x>
-     <y>75</y>
+     <x>678</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1127,7 +1148,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1138,19 +1159,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_18">
+  <widget class="QPushButton" name="pushButton_0003">
    <property name="geometry">
     <rect>
-     <x>198</x>
-     <y>75</y>
+     <x>208</x>
+     <y>90</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1162,7 +1183,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1173,19 +1194,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_34">
+  <widget class="QPushButton" name="pushButton_0013">
    <property name="geometry">
     <rect>
-     <x>335</x>
-     <y>135</y>
+     <x>345</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1197,7 +1218,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1208,19 +1229,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_33">
+  <widget class="QPushButton" name="pushButton_0011">
    <property name="geometry">
     <rect>
-     <x>219</x>
-     <y>135</y>
+     <x>229</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1232,7 +1253,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1243,19 +1264,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_36">
+  <widget class="QPushButton" name="pushButton_0014">
    <property name="geometry">
     <rect>
-     <x>393</x>
-     <y>135</y>
+     <x>403</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1267,7 +1288,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1278,19 +1299,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_44">
+  <widget class="QPushButton" name="pushButton_002B">
    <property name="geometry">
     <rect>
-     <x>856</x>
-     <y>135</y>
+     <x>866</x>
+     <y>150</y>
      <width>105</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1302,7 +1323,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1313,19 +1334,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_45">
+  <widget class="QPushButton" name="pushButton_E049">
    <property name="geometry">
     <rect>
-     <x>970</x>
-     <y>135</y>
+     <x>980</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1337,7 +1358,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1348,19 +1369,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_32">
+  <widget class="QPushButton" name="pushButton_0010">
    <property name="geometry">
     <rect>
-     <x>161</x>
-     <y>135</y>
+     <x>171</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1372,7 +1393,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1383,19 +1404,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_37">
+  <widget class="QPushButton" name="pushButton_0015">
    <property name="geometry">
     <rect>
-     <x>451</x>
-     <y>135</y>
+     <x>461</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1407,7 +1428,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1418,19 +1439,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_43">
+  <widget class="QPushButton" name="pushButton_001B">
    <property name="geometry">
     <rect>
-     <x>799</x>
-     <y>135</y>
+     <x>809</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1442,7 +1463,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1453,19 +1474,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_38">
+  <widget class="QPushButton" name="pushButton_0016">
    <property name="geometry">
     <rect>
-     <x>509</x>
-     <y>135</y>
+     <x>519</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1477,7 +1498,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1488,19 +1509,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_41">
+  <widget class="QPushButton" name="pushButton_0019">
    <property name="geometry">
     <rect>
-     <x>683</x>
-     <y>135</y>
+     <x>693</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1512,7 +1533,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1523,19 +1544,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_42">
+  <widget class="QPushButton" name="pushButton_001A">
    <property name="geometry">
     <rect>
-     <x>741</x>
-     <y>135</y>
+     <x>751</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1547,7 +1568,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1558,19 +1579,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_40">
+  <widget class="QPushButton" name="pushButton_0018">
    <property name="geometry">
     <rect>
-     <x>625</x>
-     <y>135</y>
+     <x>635</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1582,7 +1603,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1593,19 +1614,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_39">
+  <widget class="QPushButton" name="pushButton_0017">
    <property name="geometry">
     <rect>
-     <x>567</x>
-     <y>135</y>
+     <x>577</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1617,7 +1638,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1628,19 +1649,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_35">
+  <widget class="QPushButton" name="pushButton_0012">
    <property name="geometry">
     <rect>
-     <x>277</x>
-     <y>135</y>
+     <x>287</x>
+     <y>150</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1652,7 +1673,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1663,19 +1684,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_31">
+  <widget class="QPushButton" name="pushButton_000F">
    <property name="geometry">
     <rect>
-     <x>75</x>
-     <y>135</y>
+     <x>85</x>
+     <y>150</y>
      <width>77</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1687,7 +1708,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1698,19 +1719,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_55">
+  <widget class="QPushButton" name="pushButton_0026">
    <property name="geometry">
     <rect>
-     <x>653</x>
-     <y>195</y>
+     <x>663</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1722,7 +1743,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1733,19 +1754,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_53">
+  <widget class="QPushButton" name="pushButton_0024">
    <property name="geometry">
     <rect>
-     <x>534</x>
-     <y>195</y>
+     <x>544</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1757,7 +1778,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1768,19 +1789,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_47">
+  <widget class="QPushButton" name="pushButton_001E">
    <property name="geometry">
     <rect>
-     <x>176</x>
-     <y>195</y>
+     <x>186</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1792,7 +1813,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1803,19 +1824,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_51">
+  <widget class="QPushButton" name="pushButton_0022">
    <property name="geometry">
     <rect>
-     <x>415</x>
-     <y>195</y>
+     <x>425</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1827,7 +1848,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1838,19 +1859,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_56">
+  <widget class="QPushButton" name="pushButton_0027">
    <property name="geometry">
     <rect>
-     <x>712</x>
-     <y>195</y>
+     <x>722</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1862,7 +1883,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1873,19 +1894,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_49">
+  <widget class="QPushButton" name="pushButton_0020">
    <property name="geometry">
     <rect>
-     <x>296</x>
-     <y>195</y>
+     <x>306</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1897,7 +1918,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1908,19 +1929,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_58">
+  <widget class="QPushButton" name="pushButton_001C">
    <property name="geometry">
     <rect>
-     <x>835</x>
-     <y>195</y>
+     <x>845</x>
+     <y>210</y>
      <width>125</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1932,7 +1953,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1943,19 +1964,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_57">
+  <widget class="QPushButton" name="pushButton_0028">
    <property name="geometry">
     <rect>
-     <x>772</x>
-     <y>195</y>
+     <x>782</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1967,7 +1988,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -1978,19 +1999,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_46">
+  <widget class="QPushButton" name="pushButton_003A">
    <property name="geometry">
     <rect>
-     <x>75</x>
-     <y>195</y>
+     <x>85</x>
+     <y>210</y>
      <width>91</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2002,7 +2023,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2013,19 +2034,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_50">
+  <widget class="QPushButton" name="pushButton_0021">
    <property name="geometry">
     <rect>
-     <x>355</x>
-     <y>195</y>
+     <x>365</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2037,7 +2058,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2048,19 +2069,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_52">
+  <widget class="QPushButton" name="pushButton_0023">
    <property name="geometry">
     <rect>
-     <x>474</x>
-     <y>195</y>
+     <x>484</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2072,7 +2093,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2083,19 +2104,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_48">
+  <widget class="QPushButton" name="pushButton_001F">
    <property name="geometry">
     <rect>
-     <x>236</x>
-     <y>195</y>
+     <x>246</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2107,7 +2128,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2118,19 +2139,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_54">
+  <widget class="QPushButton" name="pushButton_0025">
    <property name="geometry">
     <rect>
-     <x>593</x>
-     <y>195</y>
+     <x>603</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2142,7 +2163,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2153,19 +2174,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_60">
+  <widget class="QPushButton" name="pushButton_E051">
    <property name="geometry">
     <rect>
-     <x>970</x>
-     <y>195</y>
+     <x>980</x>
+     <y>210</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2177,7 +2198,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2188,19 +2209,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_64">
+  <widget class="QPushButton" name="pushButton_002E">
    <property name="geometry">
     <rect>
-     <x>317</x>
-     <y>255</y>
+     <x>327</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2212,7 +2233,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2223,19 +2244,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_66">
+  <widget class="QPushButton" name="pushButton_0030">
    <property name="geometry">
     <rect>
-     <x>431</x>
-     <y>255</y>
+     <x>441</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2247,7 +2268,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2258,19 +2279,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_70">
+  <widget class="QPushButton" name="pushButton_0034">
    <property name="geometry">
     <rect>
-     <x>659</x>
-     <y>255</y>
+     <x>669</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2282,7 +2303,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2293,19 +2314,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_62">
+  <widget class="QPushButton" name="pushButton_002C">
    <property name="geometry">
     <rect>
-     <x>203</x>
-     <y>255</y>
+     <x>213</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2317,7 +2338,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2328,19 +2349,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_59">
+  <widget class="QPushButton" name="pushButton_E048">
    <property name="geometry">
     <rect>
-     <x>910</x>
-     <y>255</y>
+     <x>920</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2352,7 +2373,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2367,19 +2388,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_72">
+  <widget class="QPushButton" name="pushButton_0036">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>255</y>
+     <x>790</x>
+     <y>270</y>
      <width>118</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2391,7 +2412,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2402,19 +2423,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_75">
+  <widget class="QPushButton" name="pushButton_E04F">
    <property name="geometry">
     <rect>
-     <x>970</x>
-     <y>255</y>
+     <x>980</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2426,7 +2447,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2437,19 +2458,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_69">
+  <widget class="QPushButton" name="pushButton_0033">
    <property name="geometry">
     <rect>
-     <x>602</x>
-     <y>255</y>
+     <x>612</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2461,7 +2482,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2472,19 +2493,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_67">
+  <widget class="QPushButton" name="pushButton_0031">
    <property name="geometry">
     <rect>
-     <x>488</x>
-     <y>255</y>
+     <x>498</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2496,7 +2517,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2507,19 +2528,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_71">
+  <widget class="QPushButton" name="pushButton_0035">
    <property name="geometry">
     <rect>
-     <x>716</x>
-     <y>255</y>
+     <x>726</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2531,7 +2552,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2542,19 +2563,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_63">
+  <widget class="QPushButton" name="pushButton_002D">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>255</y>
+     <x>270</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2566,7 +2587,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2577,19 +2598,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_68">
+  <widget class="QPushButton" name="pushButton_0032">
    <property name="geometry">
     <rect>
-     <x>545</x>
-     <y>255</y>
+     <x>555</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2601,7 +2622,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2612,19 +2633,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_65">
+  <widget class="QPushButton" name="pushButton_002F">
    <property name="geometry">
     <rect>
-     <x>374</x>
-     <y>255</y>
+     <x>384</x>
+     <y>270</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2636,7 +2657,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2647,19 +2668,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_61">
+  <widget class="QPushButton" name="pushButton_002A">
    <property name="geometry">
     <rect>
-     <x>75</x>
-     <y>255</y>
+     <x>85</x>
+     <y>270</y>
      <width>121</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2671,7 +2692,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2682,19 +2703,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_85">
+  <widget class="QPushButton" name="pushButton_E04D">
    <property name="geometry">
     <rect>
-     <x>970</x>
-     <y>315</y>
+     <x>980</x>
+     <y>330</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2706,7 +2727,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2721,19 +2742,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_81">
+  <widget class="QPushButton" name="pushButton_0081">
    <property name="geometry">
     <rect>
-     <x>726</x>
-     <y>315</y>
+     <x>736</x>
+     <y>330</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2745,7 +2766,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2756,19 +2777,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_78">
+  <widget class="QPushButton" name="pushButton_0038">
    <property name="geometry">
     <rect>
-     <x>192</x>
-     <y>315</y>
+     <x>202</x>
+     <y>330</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2780,7 +2801,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2791,19 +2812,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_82">
+  <widget class="QPushButton" name="pushButton_E01D">
    <property name="geometry">
     <rect>
-     <x>783</x>
-     <y>315</y>
+     <x>793</x>
+     <y>330</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2815,7 +2836,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2826,19 +2847,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_77">
+  <widget class="QPushButton" name="pushButton_001D">
    <property name="geometry">
     <rect>
-     <x>75</x>
-     <y>315</y>
+     <x>85</x>
+     <y>330</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2850,7 +2871,42 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string notr="true">CTRL</string>
+   </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup</string>
+   </attribute>
+  </widget>
+  <widget class="QPushButton" name="pushButton_E05B">
+   <property name="geometry">
+    <rect>
+     <x>145</x>
+     <y>330</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>MiSans</family>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2861,19 +2917,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_76">
+  <widget class="QPushButton" name="pushButton_E038">
    <property name="geometry">
     <rect>
-     <x>135</x>
-     <y>315</y>
+     <x>679</x>
+     <y>330</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2885,42 +2941,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
-     <bold>false</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string notr="true">CTRL</string>
-   </property>
-   <attribute name="buttonGroup">
-    <string notr="true">buttonGroup</string>
-   </attribute>
-  </widget>
-  <widget class="QPushButton" name="pushButton_80">
-   <property name="geometry">
-    <rect>
-     <x>669</x>
-     <y>315</y>
-     <width>50</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>16777215</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <property name="font">
-    <font>
-     <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2931,19 +2952,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_79">
+  <widget class="QPushButton" name="pushButton_0039">
    <property name="geometry">
     <rect>
-     <x>252</x>
-     <y>315</y>
-     <width>400</width>
+     <x>262</x>
+     <y>330</y>
+     <width>410</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2955,7 +2976,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -2966,19 +2987,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_83">
+  <widget class="QPushButton" name="pushButton_E04B">
    <property name="geometry">
     <rect>
-     <x>850</x>
-     <y>315</y>
+     <x>860</x>
+     <y>330</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -2990,7 +3011,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -3005,19 +3026,19 @@
     <string notr="true">buttonGroup</string>
    </attribute>
   </widget>
-  <widget class="QPushButton" name="pushButton_84">
+  <widget class="QPushButton" name="pushButton_E050">
    <property name="geometry">
     <rect>
-     <x>910</x>
-     <y>315</y>
+     <x>920</x>
+     <y>330</y>
      <width>50</width>
      <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>0</width>
-     <height>0</height>
+     <width>48</width>
+     <height>48</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -3029,7 +3050,7 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>10</pointsize>
+     <pointsize>-1</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -3046,56 +3067,56 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>pushButton_01</tabstop>
-  <tabstop>pushButton_05</tabstop>
-  <tabstop>pushButton_09</tabstop>
-  <tabstop>pushButton_08</tabstop>
-  <tabstop>pushButton_10</tabstop>
-  <tabstop>pushButton_12</tabstop>
-  <tabstop>pushButton_15</tabstop>
-  <tabstop>pushButton_18</tabstop>
-  <tabstop>pushButton_26</tabstop>
-  <tabstop>pushButton_27</tabstop>
-  <tabstop>pushButton_28</tabstop>
-  <tabstop>pushButton_30</tabstop>
-  <tabstop>pushButton_31</tabstop>
-  <tabstop>pushButton_35</tabstop>
-  <tabstop>pushButton_40</tabstop>
-  <tabstop>pushButton_42</tabstop>
-  <tabstop>pushButton_43</tabstop>
-  <tabstop>pushButton_44</tabstop>
-  <tabstop>pushButton_45</tabstop>
-  <tabstop>pushButton_46</tabstop>
-  <tabstop>pushButton_47</tabstop>
-  <tabstop>pushButton_48</tabstop>
-  <tabstop>pushButton_49</tabstop>
-  <tabstop>pushButton_50</tabstop>
-  <tabstop>pushButton_51</tabstop>
-  <tabstop>pushButton_52</tabstop>
-  <tabstop>pushButton_53</tabstop>
-  <tabstop>pushButton_54</tabstop>
-  <tabstop>pushButton_55</tabstop>
-  <tabstop>pushButton_56</tabstop>
-  <tabstop>pushButton_57</tabstop>
-  <tabstop>pushButton_58</tabstop>
-  <tabstop>pushButton_60</tabstop>
-  <tabstop>pushButton_61</tabstop>
-  <tabstop>pushButton_63</tabstop>
-  <tabstop>pushButton_68</tabstop>
-  <tabstop>pushButton_70</tabstop>
-  <tabstop>pushButton_72</tabstop>
-  <tabstop>pushButton_75</tabstop>
-  <tabstop>pushButton_59</tabstop>
-  <tabstop>pushButton_76</tabstop>
-  <tabstop>pushButton_77</tabstop>
-  <tabstop>pushButton_78</tabstop>
-  <tabstop>pushButton_79</tabstop>
-  <tabstop>pushButton_80</tabstop>
-  <tabstop>pushButton_81</tabstop>
-  <tabstop>pushButton_82</tabstop>
-  <tabstop>pushButton_83</tabstop>
-  <tabstop>pushButton_84</tabstop>
-  <tabstop>pushButton_85</tabstop>
+  <tabstop>pushButton_0001</tabstop>
+  <tabstop>pushButton_003E</tabstop>
+  <tabstop>pushButton_003F</tabstop>
+  <tabstop>pushButton_0041</tabstop>
+  <tabstop>pushButton_0043</tabstop>
+  <tabstop>pushButton_0057</tabstop>
+  <tabstop>pushButton_E000</tabstop>
+  <tabstop>pushButton_0003</tabstop>
+  <tabstop>pushButton_000B</tabstop>
+  <tabstop>pushButton_000C</tabstop>
+  <tabstop>pushButton_000D</tabstop>
+  <tabstop>pushButton_E047</tabstop>
+  <tabstop>pushButton_000F</tabstop>
+  <tabstop>pushButton_0012</tabstop>
+  <tabstop>pushButton_0018</tabstop>
+  <tabstop>pushButton_001A</tabstop>
+  <tabstop>pushButton_001B</tabstop>
+  <tabstop>pushButton_002B</tabstop>
+  <tabstop>pushButton_E049</tabstop>
+  <tabstop>pushButton_003A</tabstop>
+  <tabstop>pushButton_001E</tabstop>
+  <tabstop>pushButton_001F</tabstop>
+  <tabstop>pushButton_0020</tabstop>
+  <tabstop>pushButton_0021</tabstop>
+  <tabstop>pushButton_0022</tabstop>
+  <tabstop>pushButton_0023</tabstop>
+  <tabstop>pushButton_0024</tabstop>
+  <tabstop>pushButton_0025</tabstop>
+  <tabstop>pushButton_0026</tabstop>
+  <tabstop>pushButton_0027</tabstop>
+  <tabstop>pushButton_0028</tabstop>
+  <tabstop>pushButton_001C</tabstop>
+  <tabstop>pushButton_E051</tabstop>
+  <tabstop>pushButton_002A</tabstop>
+  <tabstop>pushButton_002D</tabstop>
+  <tabstop>pushButton_0032</tabstop>
+  <tabstop>pushButton_0034</tabstop>
+  <tabstop>pushButton_0036</tabstop>
+  <tabstop>pushButton_E04F</tabstop>
+  <tabstop>pushButton_E048</tabstop>
+  <tabstop>pushButton_E05B</tabstop>
+  <tabstop>pushButton_001D</tabstop>
+  <tabstop>pushButton_0038</tabstop>
+  <tabstop>pushButton_0039</tabstop>
+  <tabstop>pushButton_E038</tabstop>
+  <tabstop>pushButton_0081</tabstop>
+  <tabstop>pushButton_E01D</tabstop>
+  <tabstop>pushButton_E04B</tabstop>
+  <tabstop>pushButton_E050</tabstop>
+  <tabstop>pushButton_E04D</tabstop>
  </tabstops>
  <resources>
   <include location="../res.qrc"/>

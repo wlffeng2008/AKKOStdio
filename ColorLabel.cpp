@@ -3,7 +3,7 @@
 #include <QPainter>
 #include <QMap>
 
-static QMap<QWidget *,ColorLabel *>s_map ;
+static QMap<QObject *,ColorLabel *>s_map ;
 
 ColorLabel::ColorLabel(QWidget *parent):QLabel(parent)
 {
@@ -21,6 +21,7 @@ void ColorLabel::paintEvent(QPaintEvent *)
 {
     QPainter painter(this) ;
     painter.setRenderHint(QPainter::Antialiasing, true);
+
     QRect rect = this->rect().adjusted(2,2,-2,-2) ;
     int nOffset = rect.height()/2;
     if(rect.height()>rect.width())
@@ -32,7 +33,7 @@ void ColorLabel::paintEvent(QPaintEvent *)
     int a = 4 ;
     painter.drawRoundedRect(rect.adjusted(a,a,-a,-a),nOffset-a,nOffset-a);
 
-    if(s_map[static_cast<QWidget *>(this->parent())] == this)
+    if(s_map[parent()] == this)
     {
         painter.setPen(QPen(m_color,2));
         painter.setBrush(Qt::NoBrush);
@@ -42,8 +43,8 @@ void ColorLabel::paintEvent(QPaintEvent *)
 
 void ColorLabel::mousePressEvent(QMouseEvent *)
 {
-    ColorLabel *old = s_map[static_cast<QWidget *>(this->parent())] ;
-    s_map[static_cast<QWidget *>(this->parent())] = this ;
+    ColorLabel *old = s_map[parent()] ;
+    s_map[parent()] = this ;
     update() ;
     if(old) old->update();
 }

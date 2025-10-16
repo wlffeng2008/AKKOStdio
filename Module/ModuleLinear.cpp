@@ -1,11 +1,59 @@
 #include "ModuleLinear.h"
 #include "ui_ModuleLinear.h"
 
+#include <QTimer>
+
 ModuleLinear::ModuleLinear(QWidget *parent)
     : QFrame(parent)
     , ui(new Ui::ModuleLinear)
 {
     ui->setupUi(this);
+
+    static QString strStyle1(R"(
+        QPushButton {
+            border: none;
+            border-radius: 0px;
+            color: black;
+            padding: 0 ;
+            background-color: transparent;
+                min-width:20px;
+                min-height:20px;
+                max-width:20px;
+                max-height:20px;
+
+                icon-size: 20px;
+            }
+
+            QPushButton:hover { background-color: #F0F0F0;}
+
+            )") ;
+    ui->pushButtonM1->setStyleSheet(strStyle1) ;
+    ui->pushButtonM2->setStyleSheet(strStyle1) ;
+    ui->pushButtonP1->setStyleSheet(strStyle1) ;
+    ui->pushButtonP2->setStyleSheet(strStyle1) ;
+
+    static QString strStyle3(R"(
+
+        QLineEdit {
+            border: 1px solid #EDEDED;
+            border-radius: 6px;
+            min-height: 20px;
+            min-width: 60px;
+            color: black;
+            text-align: center;
+            background-color: #EDEDED;
+                font-size: 14px ;
+                font-weight: normal ;
+                font-family: MiSans;
+            }
+
+            QLineEdit:hover { background-color: #F0F0F0;}
+
+            QLineEdit:disabled { background-color: transparent; color: #B7B7B7;border: 1px solid transparent;}
+            )") ;
+
+    ui->lineEditValue1->setStyleSheet(strStyle3);
+    ui->lineEditValue2->setStyleSheet(strStyle3);
 
     ui->verticalSlider2->setStyleSheet(R"(
         QSlider::groove:vertical { width: 24px; background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #39E1DC, stop:1 #C3FFFD); border-radius: 12px;}
@@ -15,17 +63,102 @@ ModuleLinear::ModuleLinear(QWidget *parent)
             height: 10px;
             margin: 0 -6px;
             border-radius: 5px;
-            background: #7DFFFB ;
             border: 2px solid white;}
         QSlider::handle:hover { background: #F0F0F0;}
         QSlider::handle:pressed { background: #E0E0E0; border-color: #2D7FDD; }
     )");
-    connect(ui->verticalSlider1,&QSlider::valueChanged,this,[=](int value){ui->labelValue3->setText(QString::asprintf("%.1fmm",value/10.0));});
-    connect(ui->verticalSlider2,&QSlider::valueChanged,this,[=](int value){ui->labelValue4->setText(QString::asprintf("%.1fmm",4.0-value/10.0));});
+    ui->verticalSlider1->setFixedWidth(40) ;
+    ui->verticalSlider2->setFixedWidth(40) ;
+    connect(ui->verticalSlider1,&QSlider::valueChanged,this,[=](int value){ui->lineEditValue1->setText(QString::asprintf("%.03f mm",value/1000.0));});
+    connect(ui->verticalSlider2,&QSlider::valueChanged,this,[=](int value){ui->lineEditValue2->setText(QString::asprintf("%.03f mm",4.0-value/1000.0));});
 
+    ui->verticalSlider1->setValue(2050) ;
+    ui->verticalSlider2->setValue(1950) ;
+
+    ui->pushButtonM1->setAutoRepeat(true);
+    ui->pushButtonM1->setAutoRepeatInterval(100) ;
+    connect(ui->pushButtonM1,&QPushButton::pressed,this,[=]{
+        int value = ui->verticalSlider1->value() - 5 ;
+        ui->verticalSlider1->setValue(value);
+    }) ;
+
+    ui->pushButtonP1->setAutoRepeat(true);
+    ui->pushButtonP1->setAutoRepeatInterval(100) ;
+    connect(ui->pushButtonP1,&QPushButton::pressed,this,[=]{
+        int value = ui->verticalSlider1->value() + 5 ;
+        ui->verticalSlider1->setValue(value);
+    }) ;
+
+    QTimer *pTMUpdate1 = new QTimer(this) ;
+    QTimer *pTMUpdate2 = new QTimer(this) ;
+
+    connect(ui->lineEditValue1,&QLineEdit::textEdited,this,[=](const QString&text){
+        pTMUpdate1->stop() ;
+        pTMUpdate1->start(300) ;
+    });
+
+    connect(pTMUpdate1,&QTimer::timeout,this,[=]{
+        pTMUpdate1->stop() ;
+        QString strTmp ;
+        char szText[100]={0} ;
+        strcpy_s(szText,ui->lineEditValue1->text().trimmed().toStdString().c_str()) ;
+        for(int i=0; i<strlen(szText); i++)
+        {
+            if(szText[i] == '.' || (szText[i] >= '0' && szText[i] <= '9'))
+                continue ;
+            szText[i] = 0 ;
+            strTmp = szText;
+        }
+        int value = strTmp.toFloat() * 1000;
+        if(value>4000) value = 4000 ;
+        if(value<0) value = 0 ;
+        ui->verticalSlider1->setValue(value);
+    });
+
+    ui->pushButtonM2->setAutoRepeat(true);
+    ui->pushButtonM2->setAutoRepeatInterval(100) ;
+    connect(ui->pushButtonM2,&QPushButton::pressed,this,[=]{
+        int value = ui->verticalSlider2->value() - 5 ;
+        ui->verticalSlider2->setValue(value);
+    }) ;
+
+    ui->pushButtonP2->setAutoRepeat(true);
+    ui->pushButtonP2->setAutoRepeatInterval(100) ;
+    connect(ui->pushButtonP2,&QPushButton::pressed,this,[=]{
+        int value = ui->verticalSlider2->value() + 5 ;
+        ui->verticalSlider2->setValue(value);
+    }) ;
+
+    connect(ui->lineEditValue2,&QLineEdit::textEdited,this,[=](const QString&text){
+        pTMUpdate2->stop() ;
+        pTMUpdate2->start(300) ;
+    });
+    connect(pTMUpdate2,&QTimer::timeout,this,[=]{
+        pTMUpdate2->stop() ;
+        QString strTmp ;
+        char szText[100]={0} ;
+        strcpy_s(szText,ui->lineEditValue2->text().trimmed().toStdString().c_str()) ;
+        for(int i=0; i<strlen(szText); i++)
+        {
+            if(szText[i] == '.' || (szText[i] >= '0' && szText[i] <= '9'))
+                continue ;
+            szText[i] = 0 ;
+            strTmp = szText;
+        }
+        int value = strTmp.toFloat() * 1000;
+        if(value>4000) value = 4000 ;
+        if(value<0) value = 0 ;
+        ui->verticalSlider2->setValue(value);
+    });
 }
 
 ModuleLinear::~ModuleLinear()
 {
     delete ui;
+}
+
+void ModuleLinear::setText(const QString&text1,const QString&text2)
+{
+    ui->labelTitle1->setText(text1);
+    ui->labelTitle2->setText(text2);
 }

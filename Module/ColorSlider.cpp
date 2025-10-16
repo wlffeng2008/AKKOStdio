@@ -86,7 +86,7 @@ void ColorSlider::paintEvent(QPaintEvent *)
         const int offset = 8;
         QRect rect = this->rect();
         rect.setHeight(16);
-        QRect sliderRect = rect;//.adjusted(offset,0,-offset,-rect.height()/2);
+        QRect sliderRect = rect;
 
         painter.setPen(Qt::NoPen);
         painter.setBrush(Qt::NoPen);
@@ -95,7 +95,7 @@ void ColorSlider::paintEvent(QPaintEvent *)
 
         const double k = (double)(value() - minimum()) / (maximum()-minimum());
         int x = (int)((rect.width()-2*offset) * k) + offset;
-        // 1. 绘制空心圆（仅轮廓）
+
         painter.save();
         QPen pen1(Qt::white, 4); // 蓝色画笔，线宽3px
         painter.setPen(pen1);

@@ -15,8 +15,10 @@ ToggleButton::ToggleButton(QWidget *parent) : QCheckBox(parent)
 
     setStyleSheet(R"(
             QCheckBox {
-                min-width: 40px;
-                height: 24px;}
+                min-width: 50px;
+                min-height: 24px;
+                border: none;
+            }
         )");
     m_bchecked = this->isChecked() ;
     setColor(s_colorChecked,s_colorUnchecked) ;
@@ -69,8 +71,8 @@ void ToggleButton::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this) ;
     painter.setRenderHint(QPainter::Antialiasing,true);
-
-    float nH = rect().height() ;
+    QRect rect = this->rect().adjusted(1,1,-1,-1);
+    int nH = rect.height() ;
     if(m_bchecked)
     {
         painter.setPen(m_colorChecked);
@@ -81,10 +83,10 @@ void ToggleButton::paintEvent(QPaintEvent *event)
         painter.setPen(m_colorUnchecked);
         painter.setBrush(m_colorUnchecked);
     }
-    painter.drawRoundedRect(rect(),nH/2,nH/2) ;
+    painter.drawRoundedRect(rect,nH/2,nH/2) ;
 
-    int nRadius = nH/2 - 2 ;
-    QRect rc = rect().adjusted(2,2,-2,-2) ;
+    int nRadius = nH/2 -2 ;
+    QRect rc = rect.adjusted(2,2,-2,-2) ;
     if(m_bchecked)
     {
         rc.setLeft(rc.right() - nRadius*2) ;
@@ -94,9 +96,18 @@ void ToggleButton::paintEvent(QPaintEvent *event)
         rc.setRight(rc.left() + nRadius*2) ;
     }
 
-    painter.setPen(QPen(Qt::white));
-    painter.setBrush(QBrush(Qt::white));
+    if(m_bchecked)
+    {
+        painter.setPen(Qt::white);
+        painter.setBrush(Qt::white);
+    }
+    else
+    {
+        painter.setPen(0xE0E0E0);
+        painter.setBrush(0xE0E0E0);
+    }
+
     painter.drawRoundedRect(rc,nRadius,nRadius) ;
 
-    //event->accept();
+    event->accept();
 }

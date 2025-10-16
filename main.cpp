@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
+    qDebug() << a.styleSheet();
     a.setStyleSheet(R"(
 
         QTableView{ border: 1px solid gray; gridline-color: transparent;  background-color: rgb(226, 249, 255) !important; gridline-color: gray;}
@@ -60,15 +61,14 @@ int main(int argc, char *argv[])
                 border: 2px solid gray;
                 padding: 2px 2px;
                 min-width: 60px;
-                min-height: 12px;
- }
+                min-height: 12px; }
 
         QPushButton:hover { background-color: #87ceeb; }
         QPushButton:pressed { background-color: #1e90af; }
         QPushButton:checked { background-color: #1e90ff; }
         QPushButton:disabled { background-color: gray; color: #cccccc;}
 
-        QSlider{border-radius: 6px; }
+        QSlider{border-radius: 12px; }
         QSlider::groove:horizontal { height: 12px; background: #DCDCDC; border-radius: 6px; }
         QSlider::sub-page:horizontal { background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #FDDFBA, stop:1 #FFA73C);  border-radius: 6px; }
         QSlider::handle:horizontal {
@@ -225,7 +225,6 @@ QScrollBar::sub-page:vertical,
 QScrollBar::sub-page:horizontal { background: #D9D9D9;}
 
 
-
 QTabWidget {
     background-color: transparent;
     border: none;
@@ -239,9 +238,10 @@ QTabBar::tab {
     background-color: transparent;
     color: black;
     border: 3px solid transparent;
-    padding: 5px -6px;
-    margin-right: 20px; /* 标签之间的间距 */
-    min-width: 40px; /* 标签最小宽度 */
+    padding: 5px 2px;
+    margin-right: 15px;
+    min-width: 40px;
+    min-height: 40px;
     font-size: 15px;
     font-weight: bold;
 }

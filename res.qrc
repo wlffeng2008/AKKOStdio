@@ -115,5 +115,60 @@
         <file>images/macro/macro-save.png</file>
         <file>images/macro/radio-checked.png</file>
         <file>images/macro/radio-unchecked.png</file>
+        <file>images/macro/fn0/jianpanliangdu.png</file>
+        <file>images/macro/fn0/jianpanliangdujia.png</file>
+        <file>images/macro/fn0/jisuanqi.png</file>
+        <file>images/macro/fn0/shouye.png</file>
+        <file>images/macro/fn0/yuyin.png</file>
+        <file>images/macro/fn1/fangda.png</file>
+        <file>images/macro/fn1/fn.png</file>
+        <file>images/macro/fn1/frame.png</file>
+        <file>images/macro/fn1/guanbiyinliang.png</file>
+        <file>images/macro/fn1/houtui.png</file>
+        <file>images/macro/fn1/jianpanliangdu.png</file>
+        <file>images/macro/fn1/jianpanliangdujia.png</file>
+        <file>images/macro/fn1/jisuanqi.png</file>
+        <file>images/macro/fn1/kuaijin.png</file>
+        <file>images/macro/fn1/shouye.png</file>
+        <file>images/macro/fn1/sousuo.png</file>
+        <file>images/macro/fn1/suoxiao.png</file>
+        <file>images/macro/fn1/yinliangjia.png</file>
+        <file>images/macro/fn1/yinliangjian.png</file>
+        <file>images/macro/fn1/yinyue.png</file>
+        <file>images/macro/fn1/youjian.png</file>
+        <file>images/macro/fn1/yuyin.png</file>
+        <file>images/macro/fn1/zanting.png</file>
+        <file>images/macro/fn0/fangda.png</file>
+        <file>images/macro/fn0/fn.png</file>
+        <file>images/macro/fn0/frame.png</file>
+        <file>images/macro/fn0/guanbiyinliang.png</file>
+        <file>images/macro/fn0/kuaijin.png</file>
+        <file>images/macro/fn0/shuaxin.png</file>
+        <file>images/macro/fn0/sousuo.png</file>
+        <file>images/macro/fn0/suoxiao.png</file>
+        <file>images/macro/fn0/yinliangjia.png</file>
+        <file>images/macro/fn0/yinliangjian.png</file>
+        <file>images/macro/fn0/yinyue.png</file>
+        <file>images/macro/fn0/youjian.png</file>
+        <file>images/macro/fn0/zanting.png</file>
+        <file>images/macro/fn0/houtui.png</file>
+        <file>images/macro/fn1/shuaxin.png</file>
+        <file>images/rt/ciyu_gaming.png</file>
+        <file>images/rt/ciyu_pro.png</file>
+        <file>images/rt/shandian.png</file>
+        <file>images/rt/tianwang.png</file>
+        <file>images/rt/wanciwang.png</file>
+        <file>images/rt/xingyao.png</file>
+        <file>images/rt/xingyinli.png</file>
+        <file>images/rt/zhouti.png</file>
+        <file>images/k/icon_helping.png</file>
+        <file>images/k/icon_lightning.png</file>
+        <file>images/k/add-circle.png</file>
+        <file>images/k/ic_add.png</file>
+        <file>images/k/ic_bottom.png</file>
+        <file>images/k/ic_lift.png</file>
+        <file>images/k/ic_peak.png</file>
+        <file>images/k/ic_press.png</file>
+        <file>images/k/ic_selected.png</file>
     </qresource>
 </RCC>

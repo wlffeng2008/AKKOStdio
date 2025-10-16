@@ -59,6 +59,12 @@
        <height>340</height>
       </size>
      </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>340</height>
+      </size>
+     </property>
      <property name="frameShape">
       <enum>QFrame::Shape::NoFrame</enum>
      </property>
@@ -101,131 +107,135 @@
         <property name="frameShadow">
          <enum>QFrame::Shadow::Raised</enum>
         </property>
-        <widget class="QLabel" name="label">
-         <property name="geometry">
-          <rect>
-           <x>30</x>
-           <y>20</y>
-           <width>91</width>
-           <height>21</height>
-          </rect>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="leftMargin">
+          <number>20</number>
          </property>
-         <property name="font">
-          <font>
-           <family>MiSans</family>
-           <pointsize>16</pointsize>
-           <bold>false</bold>
-          </font>
+         <property name="topMargin">
+          <number>20</number>
          </property>
-         <property name="text">
-          <string>宏目录</string>
+         <property name="rightMargin">
+          <number>20</number>
          </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton">
-         <property name="geometry">
-          <rect>
-           <x>150</x>
-           <y>20</y>
-           <width>24</width>
-           <height>24</height>
-          </rect>
+         <property name="bottomMargin">
+          <number>20</number>
          </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="res.qrc">
-           <normaloff>:/images/macro/xinzeng 1@2x.png</normaloff>:/images/macro/xinzeng 1@2x.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="geometry">
-          <rect>
-           <x>200</x>
-           <y>20</y>
-           <width>24</width>
-           <height>24</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="res.qrc">
-           <normaloff>:/images/macro/print 1@2x.png</normaloff>:/images/macro/print 1@2x.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="geometry">
-          <rect>
-           <x>250</x>
-           <y>20</y>
-           <width>24</width>
-           <height>24</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="res.qrc">
-           <normaloff>:/images/macro/print 2@2x.png</normaloff>:/images/macro/print 2@2x.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-        <widget class="QScrollArea" name="scrollArea">
-         <property name="geometry">
-          <rect>
-           <x>30</x>
-           <y>59</y>
-           <width>251</width>
-           <height>261</height>
-          </rect>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::FocusPolicy::NoFocus</enum>
-         </property>
-         <property name="widgetResizable">
-          <bool>true</bool>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>251</width>
-            <height>261</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3"/>
-         </widget>
-        </widget>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="font">
+              <font>
+               <family>MiSans</family>
+               <pointsize>16</pointsize>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>宏目录</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="res.qrc">
+               <normaloff>:/images/macro/xinzeng 1@2x.png</normaloff>:/images/macro/xinzeng 1@2x.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="res.qrc">
+               <normaloff>:/images/macro/print 1@2x.png</normaloff>:/images/macro/print 1@2x.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="res.qrc">
+               <normaloff>:/images/macro/print 2@2x.png</normaloff>:/images/macro/print 2@2x.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QScrollArea" name="scrollArea1">
+           <property name="focusPolicy">
+            <enum>Qt::FocusPolicy::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: transparent;</string>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents1">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>264</width>
+              <height>264</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3"/>
+           </widget>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
       <item alignment="Qt::AlignmentFlag::AlignRight">
@@ -269,126 +279,89 @@
            <property name="frameShadow">
             <enum>QFrame::Shadow::Raised</enum>
            </property>
-           <widget class="QPushButton" name="pushButtonStart">
+           <widget class="QWidget" name="layoutWidget">
             <property name="geometry">
              <rect>
               <x>20</x>
               <y>20</y>
-              <width>111</width>
-              <height>41</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton{width: 131px;
-height: 40px;
-color:white;
-background: #6329B6;
-border-radius: 16px 16px 16px 16px;
-font-family: MiSans, MiSans;
-font-weight: 600;
-font-size: 14px;
-};
-</string>
-            </property>
-            <property name="text">
-             <string>开始录制</string>
-            </property>
-            <property name="icon">
-             <iconset resource="res.qrc">
-              <normaloff>:/images/play-white.png</normaloff>:/images/play-white.png</iconset>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="pushButtonInsert">
-            <property name="geometry">
-             <rect>
-              <x>160</x>
-              <y>20</y>
-              <width>91</width>
-              <height>40</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>插入按键</string>
-            </property>
-            <property name="icon">
-             <iconset resource="res.qrc">
-              <normaloff>:/images/macro/macro-add.png</normaloff>:/images/macro/macro-add.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>24</width>
-              <height>24</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="pushButtonSave">
-            <property name="geometry">
-             <rect>
-              <x>590</x>
-              <y>20</y>
-              <width>81</width>
-              <height>40</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>保存</string>
-            </property>
-            <property name="icon">
-             <iconset resource="res.qrc">
-              <normaloff>:/images/macro/macro-save.png</normaloff>:/images/macro/macro-save.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>24</width>
-              <height>24</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="pushButtonClear">
-            <property name="geometry">
-             <rect>
-              <x>700</x>
-              <y>20</y>
-              <width>91</width>
-              <height>40</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>清空</string>
-            </property>
-            <property name="icon">
-             <iconset resource="res.qrc">
-              <normaloff>:/images/macro/macro-clear.png</normaloff>:/images/macro/macro-clear.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>24</width>
-              <height>24</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-           <widget class="QWidget" name="layoutWidget">
-            <property name="geometry">
-             <rect>
-              <x>290</x>
-              <y>30</y>
-              <width>281</width>
-              <height>23</height>
+              <width>761</width>
+              <height>42</height>
              </rect>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_3">
              <property name="spacing">
               <number>5</number>
              </property>
+             <item>
+              <widget class="QPushButton" name="pushButtonStart">
+               <property name="styleSheet">
+                <string notr="true">QPushButton{width: 130px;
+height: 36px;
+color:white;
+background: #6329B6;
+border:1px solid #6329B6;
+border-radius: 16px 16px 16px 16px;
+font-family: MiSans, MiSans;
+font-weight: 600;
+font-size: 14px;
+};
+</string>
+               </property>
+               <property name="text">
+                <string>开始录制</string>
+               </property>
+               <property name="icon">
+                <iconset resource="res.qrc">
+                 <normaloff>:/images/play-white.png</normaloff>:/images/play-white.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonInsert">
+               <property name="text">
+                <string>插入按键</string>
+               </property>
+               <property name="icon">
+                <iconset resource="res.qrc">
+                 <normaloff>:/images/macro/macro-add.png</normaloff>:/images/macro/macro-add.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="flat">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
              <item>
               <widget class="QRadioButton" name="radioButton">
                <property name="text">
@@ -410,6 +383,9 @@ font-size: 14px;
                  <height>16777215</height>
                 </size>
                </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit{background-color: #F6F6F6;border:1px solid #A4A4A4;border-radius:5px;}</string>
+               </property>
               </widget>
              </item>
              <item>
@@ -420,7 +396,7 @@ font-size: 14px;
               </widget>
              </item>
              <item>
-              <spacer name="horizontalSpacer">
+              <spacer name="horizontalSpacer_2">
                <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
                </property>
@@ -453,6 +429,75 @@ font-size: 14px;
                  <height>16777215</height>
                 </size>
                </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit{background-color: #F6F6F6;border:1px solid #A4A4A4;border-radius:5px;}</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_3">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonSave">
+               <property name="text">
+                <string>保存</string>
+               </property>
+               <property name="icon">
+                <iconset resource="res.qrc">
+                 <normaloff>:/images/macro/macro-save.png</normaloff>:/images/macro/macro-save.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="flat">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_7">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonClear">
+               <property name="text">
+                <string>清空</string>
+               </property>
+               <property name="icon">
+                <iconset resource="res.qrc">
+                 <normaloff>:/images/macro/macro-clear.png</normaloff>:/images/macro/macro-clear.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="flat">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
             </layout>
@@ -476,190 +521,229 @@ font-size: 14px;
            <property name="frameShadow">
             <enum>QFrame::Shadow::Raised</enum>
            </property>
-           <widget class="QLabel" name="label_2">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>10</y>
-              <width>91</width>
-              <height>21</height>
-             </rect>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="leftMargin">
+             <number>20</number>
             </property>
-            <property name="font">
-             <font>
-              <family>MiSans</family>
-              <pointsize>16</pointsize>
-              <bold>false</bold>
-             </font>
+            <property name="topMargin">
+             <number>20</number>
             </property>
-            <property name="text">
-             <string>宏内容</string>
+            <property name="rightMargin">
+             <number>20</number>
             </property>
-           </widget>
-           <widget class="QFrame" name="frameFlag">
-            <property name="geometry">
-             <rect>
-              <x>570</x>
-              <y>10</y>
-              <width>211</width>
-              <height>21</height>
-             </rect>
+            <property name="bottomMargin">
+             <number>20</number>
             </property>
-            <property name="frameShape">
-             <enum>QFrame::Shape::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <property name="spacing">
-              <number>10</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="labelFlag4">
-               <property name="minimumSize">
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
+            <item>
+             <widget class="QFrame" name="frameFlag">
+              <property name="frameShape">
+               <enum>QFrame::Shape::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Shadow::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <property name="spacing">
+                <number>10</number>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
+               <property name="leftMargin">
+                <number>0</number>
                </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel {width: 16px;height:16px;background-color:#FFFFFF ;border:1px soild #E2E2E2;border-radius:8px;}</string>
+               <property name="topMargin">
+                <number>0</number>
                </property>
-               <property name="text">
-                <string/>
+               <property name="rightMargin">
+                <number>0</number>
                </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="labelTitle">
+                 <property name="font">
+                  <font>
+                   <family>MiSans</family>
+                   <pointsize>16</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>宏内容</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButtonDelete">
+                 <property name="text">
+                  <string>删除</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelFlag11">
+                 <property name="minimumSize">
+                  <size>
+                   <width>16</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel {width: 16px;height:16px;background-color:#FFFFFF ;border:1px soild #E2E2E2;border-radius:8px;}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelFlag12">
+                 <property name="font">
+                  <font>
+                   <family>MiSans</family>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>按下</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelFlag21">
+                 <property name="minimumSize">
+                  <size>
+                   <width>16</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel {width: 16px;height:16px;background-color:#3F3F3F;border:1px soild #3F3F3F;border-radius:8px;}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelFlag22">
+                 <property name="font">
+                  <font>
+                   <family>MiSans</family>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>释放</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelFlag31">
+                 <property name="minimumSize">
+                  <size>
+                   <width>16</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel {width: 16px;height:16px;background-color:#FF9052;border:1px soild #3F3F3F;border-radius:8px;}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelFlag32">
+                 <property name="font">
+                  <font>
+                   <family>MiSans</family>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>延迟</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QScrollArea" name="scrollArea2">
+              <property name="focusPolicy">
+               <enum>Qt::FocusPolicy::NoFocus</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: transparent;</string>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents2">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>760</width>
+                 <height>162</height>
+                </rect>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <layout class="QGridLayout" name="gridLayout"/>
+                </item>
+               </layout>
               </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="labelFlag3">
-               <property name="font">
-                <font>
-                 <family>MiSans</family>
-                 <bold>false</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string>按下</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="labelFlag1">
-               <property name="minimumSize">
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel {width: 16px;height:16px;background-color:#3F3F3F;border:1px soild #3F3F3F;border-radius:8px;}</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="labelFlag2">
-               <property name="font">
-                <font>
-                 <family>MiSans</family>
-                 <bold>false</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string>释放</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="labelFlag1_2">
-               <property name="minimumSize">
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16</width>
-                 <height>16</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLabel {width: 16px;height:16px;background-color:#FF9052;border:1px soild #3F3F3F;border-radius:8px;}</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="labelFlag2_2">
-               <property name="font">
-                <font>
-                 <family>MiSans</family>
-                 <bold>false</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string>延迟</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QScrollArea" name="scrollArea_2">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>40</y>
-              <width>761</width>
-              <height>181</height>
-             </rect>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::FocusPolicy::NoFocus</enum>
-            </property>
-            <property name="widgetResizable">
-             <bool>true</bool>
-            </property>
-            <widget class="QWidget" name="scrollAreaWidgetContents_2">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>761</width>
-               <height>181</height>
-              </rect>
-             </property>
-            </widget>
-           </widget>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>

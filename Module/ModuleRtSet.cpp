@@ -56,10 +56,6 @@ ModuleRtSet::ModuleRtSet(QWidget *parent)
                 min-height:20px;
                 max-width:20px;
                 max-height:20px;
-
-                font-size: 16px ;
-                font-weight: bold ;
-                font-family: MiSans;
                 icon: url(:/images/rt/minus-normal.png);
                 icon-size: 20px;
             }

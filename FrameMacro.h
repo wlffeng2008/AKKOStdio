@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::FrameMacro *ui;
+
+    void updateView();
+    void removeView();
 };
 
 #endif // FRAMEMACRO_H

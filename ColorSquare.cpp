@@ -5,9 +5,12 @@
 
 ColorSquare::ColorSquare(QWidget *parent) :
     QFrame(parent),huem(0),sat(0),val(0),colorX(0),colorY(0),
-    nSquareWidth(248),colorChar('H'),mouseStatus(Nothing)
+    colorChar('H'),mouseStatus(Nothing)
 {
     this->setCursor(Qt::CrossCursor);
+    clickX = 124 ;
+    clickY = 124 ;
+    setSquareWidth(248);
 }
 
 void ColorSquare::setSquareWidth(int width)
@@ -24,8 +27,7 @@ QColor ColorSquare::color() const
 void ColorSquare::setColor(QColor c)
 {
     huem = c.hueF();
-    if ( huem < 0 )
-        huem = 0;
+    if ( huem < 0 ) huem = 0;
     sat = c.saturationF();
     val = c.valueF();
 
@@ -67,41 +69,35 @@ void ColorSquare::RenderRectangle()
             switch(colorChar)
             {
             case 'H':
-                colorSquare.setPixel(i,j,
-                                     QColor::fromHsvF(huem, double(i)/sz, double(sz-1-j)/sz).rgb());
+                colorSquare.setPixel(i,j, QColor::fromHsvF(huem, double(i)/sz, double(sz-1-j)/sz).rgb());
                 break;
 
             case 'S':
-                colorSquare.setPixel(i,j,
-                                     QColor::fromHsvF(double(i)/sz, sat, double(j)/sz).rgb());
+                colorSquare.setPixel(i,j, QColor::fromHsvF(double(i)/sz, sat, double(j)/sz).rgb());
                 break;
 
             case 'V':
-                colorSquare.setPixel(i,j,
-                                     QColor::fromHsvF(double(i)/sz, double(j)/sz, val).rgb());
+                colorSquare.setPixel(i,j, QColor::fromHsvF(double(i)/sz, double(j)/sz, val).rgb());
                 break;
 
             case 'R':
             {
                 qreal r = QColor::fromHsvF(huem, sat, val).redF();
-                colorSquare.setPixel(i,j,
-                                     QColor::fromRgbF(r, double(i)/sz, double(j)/sz).rgb());
+                colorSquare.setPixel(i,j, QColor::fromRgbF(r, double(i)/sz, double(j)/sz).rgb());
                 break;
             }
 
             case 'G':
             {
                 qreal g = QColor::fromHsvF(huem, sat, val).greenF();
-                colorSquare.setPixel(i,j,
-                                     QColor::fromRgbF(double(i)/sz, g, double(j)/sz).rgb());
+                colorSquare.setPixel(i,j, QColor::fromRgbF(double(i)/sz, g, double(j)/sz).rgb());
                 break;
             }
 
             case 'B':
             {
                 qreal b = QColor::fromHsvF(huem, sat, val).blueF();
-                colorSquare.setPixel(i,j,
-                                     QColor::fromRgbF(double(i)/sz, double(j)/sz, b).rgb());
+                colorSquare.setPixel(i,j, QColor::fromRgbF(double(i)/sz, double(j)/sz, b).rgb());
                 break;
             }
             }
@@ -122,12 +118,12 @@ void ColorSquare::paintEvent(QPaintEvent *)
     double selectorWidth = 8;
     painter.setPen(QPen(val > 0.5 ? Qt::black : Qt::white, 4));
     painter.setBrush(Qt::NoBrush);
-    double maxDist = nSquareWidth;
-    painter.drawEllipse(QPointF(clickX - 0/2,
-                                clickY - 0/2),
+    painter.drawEllipse(QPointF(clickX, clickY),
                         selectorWidth, selectorWidth);
 
     // this->setStyleSheet("border:1px; border-style:solid;border-color:black;");
+
+    setStyleSheet("QFrame { border:1px solid gray; border-radius:6px;} ");
 }
 
 void ColorSquare::mousePressEvent(QMouseEvent *ev)

@@ -50,14 +50,19 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QTabWidget" name="tabWidget">
+  <widget class="NewTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>441</width>
-     <height>271</height>
+     <width>431</width>
+     <height>281</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="currentIndex">
     <number>1</number>
@@ -310,6 +315,12 @@ color:gray;
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>NewTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>newtabwidget.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>ToggleButton</class>
    <extends>QCheckBox</extends>
