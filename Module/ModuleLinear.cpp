@@ -69,8 +69,8 @@ ModuleLinear::ModuleLinear(QWidget *parent)
     )");
     ui->verticalSlider1->setFixedWidth(40) ;
     ui->verticalSlider2->setFixedWidth(40) ;
-    connect(ui->verticalSlider1,&QSlider::valueChanged,this,[=](int value){ui->lineEditValue1->setText(QString::asprintf("%.03f mm",value/1000.0));});
-    connect(ui->verticalSlider2,&QSlider::valueChanged,this,[=](int value){ui->lineEditValue2->setText(QString::asprintf("%.03f mm",4.0-value/1000.0));});
+    connect(ui->verticalSlider1,&QSlider::valueChanged,this,[=](int value){ui->lineEditValue1->setText(QString::asprintf("%.03f",value/1000.0));});
+    connect(ui->verticalSlider2,&QSlider::valueChanged,this,[=](int value){ui->lineEditValue2->setText(QString::asprintf("%.03f",4.0-value/1000.0));});
 
     ui->verticalSlider1->setValue(2050) ;
     ui->verticalSlider2->setValue(1950) ;
@@ -159,6 +159,6 @@ ModuleLinear::~ModuleLinear()
 
 void ModuleLinear::setText(const QString&text1,const QString&text2)
 {
-    ui->labelTitle1->setText(text1);
-    ui->labelTitle2->setText(text2);
+    ui->labelTitle1->setText(text1+("(mm)"));
+    ui->labelTitle2->setText(text2+("(mm)"));
 }

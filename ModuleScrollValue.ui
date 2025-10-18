@@ -28,6 +28,9 @@
        <pointsize>12</pointsize>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">color:#B6B6B6</string>
      </property>
@@ -47,6 +50,9 @@
        <pointsize>14</pointsize>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">color:#A6A6A6</string>
      </property>
@@ -63,7 +69,7 @@
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>3</height>
+       <height>2</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -86,8 +92,14 @@
      <property name="font">
       <font>
        <family>MiSans</family>
-       <pointsize>18</pointsize>
+       <pointsize>20</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel:hover{color:#6329B6;}</string>
      </property>
      <property name="text">
       <string>3</string>
@@ -102,7 +114,7 @@
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>3</height>
+       <height>2</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -128,6 +140,9 @@
        <pointsize>14</pointsize>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">color:#A6A6A6</string>
      </property>
@@ -146,6 +161,9 @@
        <family>MiSans</family>
        <pointsize>12</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">color:#B6B6B6</string>

@@ -61,8 +61,14 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <family>MiSans</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <fontweight>Medium</fontweight>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 500 18px &quot;MiSans&quot;;</string>
    </property>
    <property name="currentIndex">
     <number>1</number>
@@ -83,8 +89,9 @@
      <property name="font">
       <font>
        <family>MiSans</family>
-       <pointsize>12</pointsize>
-       <bold>false</bold>
+       <pointsize>-1</pointsize>
+       <italic>false</italic>
+       <fontweight>Medium</fontweight>
       </font>
      </property>
      <property name="cursor">

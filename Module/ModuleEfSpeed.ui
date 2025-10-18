@@ -22,6 +22,11 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="maximum">
     <number>4</number>
    </property>
@@ -50,12 +55,13 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>12</pointsize>
-     <bold>false</bold>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <fontweight>DemiBold</fontweight>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: #6229B4;</string>
+    <string notr="true">color: #6229B4;font: 600 18px &quot;MiSans&quot;;</string>
    </property>
    <property name="text">
     <string>25%</string>
@@ -76,8 +82,13 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>12</pointsize>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <fontweight>Medium</fontweight>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 500 14px &quot;MiSans&quot;;</string>
    </property>
    <property name="text">
     <string>100%</string>
@@ -98,9 +109,13 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>14</pointsize>
-     <bold>false</bold>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <fontweight>DemiBold</fontweight>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 600 18px &quot;MiSans&quot;;</string>
    </property>
    <property name="text">
     <string>灯光速度</string>
@@ -118,8 +133,13 @@
    <property name="font">
     <font>
      <family>MiSans</family>
-     <pointsize>12</pointsize>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <fontweight>Medium</fontweight>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 500 14px &quot;MiSans&quot;;</string>
    </property>
    <property name="text">
     <string>0%</string>

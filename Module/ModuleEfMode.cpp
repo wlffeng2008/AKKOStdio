@@ -13,8 +13,8 @@ ModuleEfMode::ModuleEfMode(QWidget *parent)
         QString strStyle(R"(
 
             QPushButton {
-                width: 230px;
-                height: 38px;
+                width: 220px;
+                height: 32px;
                 border-radius: 16px ;
                 font-size: 14px ;
                 font-weight: normal ;
@@ -31,7 +31,7 @@ ModuleEfMode::ModuleEfMode(QWidget *parent)
             )") ;
         QButtonGroup *pBtnGrp = new QButtonGroup(this) ;
         QLayout *pLayout = ui->scrollAreaWidgetContents->layout() ;
-        pLayout->setSpacing(12) ;
+        pLayout->setSpacing(8) ;
         pLayout->setContentsMargins(0,0,0,0);
 
         QStringList strEFList = QString("常亮(默认)、流星、呼吸、涟漪、如影随形、川流不息、繁星点点、霓虹、光波、层出不穷、彩泉涌动、峰回路转、百花争艳、极光、正弦波、雨滴、斜风细雨、踏雪无痕、聚合、一石二鸟、自定义(驱动)、音乐律动电音(驱动)、音乐律动经典(驱动)、光影模式(驱动)").split("、") ;

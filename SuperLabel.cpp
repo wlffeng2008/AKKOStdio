@@ -5,6 +5,7 @@ static QMap<QObject *,SuperLabel *>s_group ;
 static QMap<QObject *,QString>s_tipStyle ;
 
 static QString s_strDefTipStyle(R"(
+
     background-color: white;
     border: 1px solid #DEDEDE;
     border-radius: 16px;
@@ -34,6 +35,7 @@ CustomTooltip::CustomTooltip(QWidget *parent) : QWidget(parent)
 {
     setWindowFlags(Qt::ToolTip | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
+    setObjectName("newTypeTooltip") ;
     setStyleSheet(s_strDefTipStyle);
 
     content = new QLabel(this);

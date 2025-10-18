@@ -18,19 +18,21 @@ FrameKeySetting::FrameKeySetting(QWidget *parent)
                 max-height: 32px;
                 min-height: 32px;
                 border-radius: 16px ;
-                font-size: 16px ;
-                font-weight: normal ;
-                font-family: MiSans;
+                font:500 17px "MiSans";
                 color: #333;
                 padding-left: 25px;
                 text-align: left;
                 border: 1px soild #ECECEC;
-                background: #ECECEC; }
+                background: transparent; }
 
             QPushButton:checked {
                 color: white;
                 border: 1px soild #6329B6;
                 background: #6329B6; }
+            QPushButton:hover {
+                color: #6329B6;
+                border: 1px soild #6329B6;
+                background: #ECECEC; }
             )") ;
 
         QLayout *pLayout = ui->frameMode->layout() ;
@@ -147,7 +149,6 @@ FrameKeySetting::FrameKeySetting(QWidget *parent)
             pTMUpdate->start(300) ;
         });
     }
-
 }
 
 FrameKeySetting::~FrameKeySetting()

@@ -55,14 +55,15 @@ int main(int argc, char *argv[])
         QTextEdit:focus{ border: 1px solid #50b7c1; border-radius: 4px; background-color: rgb(220, 250, 255);}
 
         QPushButton {
-                background-color: #6C9F50;
+                background-color: #2D7FDD;
                 border-radius: 8px;
                 color: white;
-                border: 2px solid gray;
-                padding: 2px 2px;
-                min-width: 60px;
-                min-height: 12px; }
-
+                border: 1px solid #6C9F50;
+                padding: 1px;
+                min-width: 46px;
+                min-height: 8px;
+                max-width: 800px;
+                max-height: 200px;}
         QPushButton:hover { background-color: #87ceeb; }
         QPushButton:pressed { background-color: #1e90af; }
         QPushButton:checked { background-color: #1e90ff; }
@@ -94,24 +95,19 @@ int main(int argc, char *argv[])
 
         QRadioButton { spacing: 5px; color: #333333; }
         QRadioButton::indicator {
-            width: 14px;
-            height: 14px;
-            background: white;
-            border: 2px solid gray;
-            border-radius: 8px; }
-
-        QRadioButton::indicator:unchecked { background: white; border-color: gray;}
-        QRadioButton::indicator:unchecked:hover {background: #f0f0f0;  border-color: #666666; }
-
-        QRadioButton::indicator:checked {
             background: transparent;
             border-color: transparent;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             border: none;
-            image: url(:/images/macro/radio-checked.png);
-        }
-   /*     QRadioButton::indicator:checked {
+            image: url(:/images/macro/radio-unchecked.png);}
+
+        QRadioButton::indicator:checked { image: url(:/images/macro/radio-checked.png); }
+
+   /*
+        QRadioButton::indicator:unchecked { background: white; border-color: gray;}
+        QRadioButton::indicator:unchecked:hover {background: #f0f0f0;  border-color: #666666; }
+        QRadioButton::indicator:checked {
             border: 2px solid #6329B6;
             background: qradialgradient(
                 cx:0.5, cy:0.5, radius:0.4,
@@ -128,12 +124,6 @@ int main(int argc, char *argv[])
                 fx:0.5, fy:0.5,
                 stop:0 white, stop:1 #6329B6
             );
-        }
-
-
-        QRadioButton::indicator:checked {
-            background: transparent;
-            image: url(:/images/macro/radio-unchecked.png);
         }
 
         QRadioButton::indicator:pressed { border-color: #004499; }*/
@@ -164,16 +154,16 @@ int main(int argc, char *argv[])
             padding: 2px 2px;
         }
 
-
     QScrollBar:vertical,
     QScrollBar:horizontal {
         background: transparent;
         border: none;
         margin: 0px;
+        padding: 0px;
     }
 
     QScrollBar:vertical {
-        width: 4px;
+        width: 10px;
         margin: 0px 0px 0px 0px;
     }
 
@@ -184,16 +174,16 @@ int main(int argc, char *argv[])
 
     QScrollBar::handle:vertical,
     QScrollBar::handle:horizontal {
-        background: rgba(160, 160, 160, 0);
+        background: rgba(160, 160, 160, 0.5);
         border-radius: 0px;
         border: 1px solid rgba(255, 255, 255, 0);
         min-height: 20px;
         min-width: 20px;
     }
 
-    QScrollBar:vertical:hover QScrollBar::handle:vertical,
-    QScrollBar:horizontal:hover QScrollBar::handle:horizontal {
-        background: rgba(160, 160, 160, 0.5);
+    QScrollBar::handle:vertical:hover,
+    QScrollBar::handle:horizontal:hover {
+        background: rgba(160, 250, 160, 0.7);
         border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
@@ -219,11 +209,24 @@ QScrollBar::sub-line:horizontal {
     width: 0px;
 }
 
+
 QScrollBar::add-page:vertical,
 QScrollBar::add-page:horizontal {background: #626262;}
 QScrollBar::sub-page:vertical,
-QScrollBar::sub-page:horizontal { background: #D9D9D9;}
+QScrollBar::sub-page:horizontal { background: #626262;}
 
+QScrollArea { background-color: transparent; }
+
+/*
+QScrollArea {
+    qproperty-verticalScrollBarPolicy: Qt::ScrollBarAlwaysOff;
+    qproperty-horizontalScrollBarPolicy: Qt::ScrollBarAlwaysOff;
+}
+
+QScrollArea:hover {
+    qproperty-verticalScrollBarPolicy: Qt::ScrollBarAsNeeded;
+    qproperty-horizontalScrollBarPolicy: Qt::ScrollBarAsNeeded;
+}*/
 
 QTabWidget {
     background-color: transparent;

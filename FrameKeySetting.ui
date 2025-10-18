@@ -14,7 +14,27 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">
+QPushButton {
+            border: 1px solid #EAEAEA;
+            border-radius: 14px;
+            padding: 2px 2px;
+            color: black;
+            outline: none;
+            background-color: #FBFBFB;
+                min-width:42px;
+                max-width:542px;
+                min-height:42px;
+                font-size: 12px ;
+                font-weight: normal ;
+                font-family: MiSans;
+ }
+
+            QPushButton:hover { background-color: #EAEAEA; border: 1px solid #EAEAEA;}
+
+            QPushButton:pressed { background-color: #3F3F3F; }
+            QPushButton:checked { background-color: #3F3F3F; color: white; }
+            QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
   </property>
   <property name="lineWidth">
    <number>0</number>
@@ -64,6 +84,9 @@
        <width>16777215</width>
        <height>340</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 500 18px &quot;MiSans&quot;;</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::NoFrame</enum>
@@ -119,7 +142,7 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <property name="spacing">
-          <number>12</number>
+          <number>8</number>
          </property>
          <property name="topMargin">
           <number>20</number>
@@ -166,32 +189,14 @@
         <property name="font">
          <font>
           <family>MiSans</family>
-          <bold>false</bold>
+          <pointsize>-1</pointsize>
+          <italic>false</italic>
+          <fontweight>Medium</fontweight>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">#FrameKeySetting{background-color:white;}
-
-
-QPushButton {
-            border: 1px solid #EAEAEA;
-            border-radius: 14px;
-            padding: 2px 2px;
-            color: black;
-            outline: none;
-            background-color: #FBFBFB;
-                min-width:42px;
-                min-height:42px;
-                font-size: 12px ;
-                font-weight: normal ;
-                font-family: MiSans;
- }
-
-            QPushButton:hover { background-color: #EAEAEA; border: 1px solid #EAEAEA;}
-
-            QPushButton:pressed { background-color: #3F3F3F; }
-            QPushButton:checked { background-color: #3F3F3F; color: white; }
-            QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
+</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Shape::NoFrame</enum>
@@ -221,7 +226,7 @@ QPushButton {
             <string notr="true"/>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>2</number>
            </property>
            <widget class="QWidget" name="page1">
             <property name="styleSheet">
@@ -239,7 +244,9 @@ QPushButton {
              <property name="font">
               <font>
                <family>MiSans</family>
-               <pointsize>13</pointsize>
+               <pointsize>-1</pointsize>
+               <italic>false</italic>
+               <fontweight>Medium</fontweight>
               </font>
              </property>
              <property name="currentIndex">
@@ -314,7 +321,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -342,7 +349,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -370,7 +377,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -398,7 +405,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -426,7 +433,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -454,7 +461,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -482,7 +489,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -510,7 +517,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -538,7 +545,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -566,7 +573,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -594,7 +601,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -622,7 +629,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -650,7 +657,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -678,7 +685,7 @@ QPushButton {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>16777215</width>
+                 <width>548</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -1885,7 +1892,9 @@ QPushButton {
               <property name="font">
                <font>
                 <family>MiSans</family>
-                <pointsize>12</pointsize>
+                <pointsize>-1</pointsize>
+                <italic>false</italic>
+                <fontweight>Medium</fontweight>
                </font>
               </property>
               <property name="currentIndex">
@@ -1920,9 +1929,10 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
                   <underline>true</underline>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -1944,7 +1954,9 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>10</pointsize>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="text">
@@ -1963,7 +1975,9 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>10</pointsize>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="text">
@@ -1982,9 +1996,10 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>10</pointsize>
-                  <bold>false</bold>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
                   <underline>true</underline>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="styleSheet">
@@ -2183,7 +2198,9 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>12</pointsize>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="text">
@@ -2208,7 +2225,9 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>12</pointsize>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="text">
@@ -2233,7 +2252,9 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>10</pointsize>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="text">
@@ -2255,7 +2276,9 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>10</pointsize>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="text">
@@ -2321,7 +2344,8 @@ QPushButton {
                  <font>
                   <family>MiSans</family>
                   <pointsize>-1</pointsize>
-                  <bold>false</bold>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="focusPolicy">
@@ -2378,7 +2402,9 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>12</pointsize>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="text">
@@ -2415,7 +2441,8 @@ QPushButton {
                  <font>
                   <family>MiSans</family>
                   <pointsize>-1</pointsize>
-                  <bold>false</bold>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="focusPolicy">
@@ -2472,7 +2499,9 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>12</pointsize>
+                  <pointsize>-1</pointsize>
+                  <italic>false</italic>
+                  <fontweight>Medium</fontweight>
                  </font>
                 </property>
                 <property name="text">
@@ -2521,7 +2550,9 @@ QPushButton {
               <property name="font">
                <font>
                 <family>MiSans</family>
-                <pointsize>14</pointsize>
+                <pointsize>-1</pointsize>
+                <italic>false</italic>
+                <fontweight>Medium</fontweight>
                </font>
               </property>
               <property name="text">
@@ -2576,7 +2607,9 @@ QPushButton {
               <property name="font">
                <font>
                 <family>MiSans</family>
-                <pointsize>14</pointsize>
+                <pointsize>-1</pointsize>
+                <italic>false</italic>
+                <fontweight>Medium</fontweight>
                </font>
               </property>
               <property name="text">
@@ -2631,7 +2664,9 @@ QPushButton {
               <property name="font">
                <font>
                 <family>MiSans</family>
-                <pointsize>14</pointsize>
+                <pointsize>-1</pointsize>
+                <italic>false</italic>
+                <fontweight>Medium</fontweight>
                </font>
               </property>
               <property name="text">

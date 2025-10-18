@@ -11,6 +11,12 @@ ModuleScrollValue::ModuleScrollValue(QWidget *parent)
     ui->setupUi(this);
     QStringList valus = QString("A,B,C,D,D,E,F,1,2,3,4,5,6,7,8,9,0").split(',');
     setValueList(valus);
+
+    ui->labelValue1->installEventFilter(this) ;
+    ui->labelValue2->installEventFilter(this) ;
+    ui->labelValue3->installEventFilter(this) ;
+    ui->labelValue4->installEventFilter(this) ;
+    ui->labelValue5->installEventFilter(this) ;
 }
 
 ModuleScrollValue::~ModuleScrollValue()
@@ -45,6 +51,21 @@ void ModuleScrollValue::rollValues()
         int nX = (i + m_nIndex) % count;
         labels[i]->setText(m_Values[nX]);
     }
+}
+
+bool ModuleScrollValue::eventFilter(QObject*watched,QEvent*event)
+{
+    if(event->type() == QEvent::MouseButtonRelease)
+    {
+        int old = m_nIndex ;
+        if(watched==ui->labelValue1) m_nIndex -= 2 ;
+        if(watched==ui->labelValue2) m_nIndex -= 1 ;
+        if(watched==ui->labelValue4) m_nIndex += 2 ;
+        if(watched==ui->labelValue5) m_nIndex += 1 ;
+        if(m_nIndex != old)  rollValues();
+    }
+
+    return QFrame::eventFilter(watched,event) ;
 }
 
 bool ModuleScrollValue::event(QEvent*event)

@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setWindowFlags(windowFlags() | Qt::FramelessWindowHint|Qt::MSWindowsFixedSizeDialogHint);
     setAttribute(Qt::WA_TranslucentBackground);
-    setStyleSheet("QMainWindow{background-color: rgba(255, 255, 255,1); border: 1px solid skyblue; border-radius: 12px; }");
+    setStyleSheet("QMainWindow{background-color: rgba(255, 255, 255, 0.8); border: 1px solid skyblue; border-radius: 12px; }");
 
     // QGraphicsDropShadowEffect *shadowEffect = new QGraphicsDropShadowEffect(this);
     // shadowEffect->setBlurRadius(15);    // 阴影模糊半径，值越大越模糊

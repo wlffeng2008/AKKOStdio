@@ -176,10 +176,32 @@ bool ModuleRtSet::eventFilter(QObject*watched,QEvent*event)
         QRect tmp = s_Rect.adjusted(-2,0,2,0) ;
         if(tmp.contains(pEV->pos()))
         {
+            m_dragging = true ;
             value = (pEV->pos().x() - s_Rect.left()) * (valueMax-valueMin) / s_Rect.width() + valueMin ;
             setValue(value) ;
         }
     }
+
+    if(event->type() == QEvent::MouseButtonRelease)
+    {
+        m_dragging = false ;
+    }
+
+    if(event->type() == QEvent::MouseMove)
+    {
+        if(m_dragging)
+        {
+            QMouseEvent *pEV = static_cast<QMouseEvent *>(event);
+            QRect tmp = s_Rect.adjusted(-2,0,2,0) ;
+            if(tmp.contains(pEV->pos()))
+            {
+                m_dragging = true ;
+                value = (pEV->pos().x() - s_Rect.left()) * (valueMax-valueMin) / s_Rect.width() + valueMin ;
+                setValue(value) ;
+            }
+        }
+    }
+
     return QFrame::eventFilter(watched,event);
 }
 

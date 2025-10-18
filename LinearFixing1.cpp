@@ -13,7 +13,7 @@ LinearFixing1::LinearFixing1(const QString& title,const QString& content, QWidge
     setAttribute(Qt::WA_TranslucentBackground);
     setModal(true);
 
-    setStyleSheet("QDialog{background-color: rgba(0, 0, 0, 0.8);  border: 1px solid transparent;border-radius:12px;}"); // 黑色半透明
+    setStyleSheet("QDialog{background-color: rgba(120, 120, 120, 0.8);  border: 1px solid transparent;border-radius:12px;}"); // 黑色半透明
 
     QWidget* pContentWidget = new QWidget(this);
     pContentWidget->setObjectName("pContentWidget") ;

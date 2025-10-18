@@ -15,7 +15,8 @@ FrameMagic::FrameMagic(QWidget *parent)
 
             QPushButton {
                 width: 120px;
-                height: 32px;
+                max-height: 32px;
+                min-height: 32px;
                 border-radius: 16px ;
                 font-size: 16px ;
                 font-weight: normal ;

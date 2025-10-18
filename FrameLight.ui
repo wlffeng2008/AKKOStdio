@@ -14,7 +14,8 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">
+            font: 500 18px &quot;MiSans&quot;;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0">
    <property name="spacing">
@@ -215,12 +216,6 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ModuleKeyboard</class>
-   <extends>QFrame</extends>
-   <header>modulekeyboard.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ModuleEfMode</class>
    <extends>QFrame</extends>
    <header location="global">moduleefmode.h</header>
@@ -242,6 +237,12 @@
    <class>ModuleEfSpeed</class>
    <extends>QFrame</extends>
    <header>moduleefspeed.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ModuleKeyboard</class>
+   <extends>QFrame</extends>
+   <header>modulekeyboard.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

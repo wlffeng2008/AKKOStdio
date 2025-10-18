@@ -59,13 +59,15 @@ DialogMainwork::DialogMainwork(QWidget *parent)
     m_pLBtns.push_back(ui->label7);
     setStyleSheet(R"(
         QToolTip {
-            background-color: #f0f0f0;
-            color: #333;
-            border: 1px solid #ccc;
-            padding: 2px;
+            color: white;
+            border: 2px solid red;
+            border-radius: 6px;
+            border: 1px solid #767676;
+            padding: 4px 8px;
+            background-color: rgba(255, 255, 240, 0.8);
             border-radius: 8px;
             font-family: "微软雅黑";
-            font-size: 16px; }
+            font-size: 12px; }
     )");
 
     int index = 0 ;
@@ -88,9 +90,9 @@ DialogMainwork::DialogMainwork(QWidget *parent)
             color: #333;
             margin-left:24px;
             border: none;
+            font: 500 18px "MiSans";
             background: transparent;
             spacing:20px; }
-            QPushButton::icon { margin-right: 18px; }
 
         )") ;
     ui->pushButtonLang->setStyleSheet(strStyle);

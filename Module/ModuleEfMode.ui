@@ -67,6 +67,9 @@
    <property name="focusPolicy">
     <enum>Qt::FocusPolicy::NoFocus</enum>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:transparent;</string>
+   </property>
    <property name="widgetResizable">
     <bool>true</bool>
    </property>
@@ -78,6 +81,9 @@
       <width>241</width>
       <height>221</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:transparent;</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3"/>
    </widget>

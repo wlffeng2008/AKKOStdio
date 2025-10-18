@@ -14,28 +14,6 @@ FrameMacro::FrameMacro(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QString strStyle(R"(
-
-        QPushButton {
-            border: 1px solid transparent;
-            border-radius: 14px;
-            padding: 2px 2px;
-            color: black;
-            outline: none;
-            background-color: transparent;
-                min-width:24px;
-                min-height:24px;
-                max-width:548px;
-                max-height:48px; }
-
-            QPushButton:hover { background-color: #FBFBFB; border: 1px solid #FBFBFB;}
-
-            QPushButton:pressed { background-color: #FBFBFB; }
-            QPushButton:checked { background-color: #FBFBFB; color:white; }
-            QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }
-        )");
-    setStyleSheet(strStyle);
-
     {
         QLayout *pLayout = ui->scrollAreaWidgetContents1->layout() ;
         pLayout->setSpacing(10) ;
@@ -47,18 +25,15 @@ FrameMacro::FrameMacro(QWidget *parent)
             MacroItem *MItem = new MacroItem(this) ;
             MItem->setFixedSize(220,32);
             //MItem->setFocusPolicy(Qt::NoFocus) ;
-
             pLayout->addWidget(MItem);
         }
     }
 
     {
-        QStringList strEFList = QString("A、B、呼吸、涟漪、如影随形、川流不息、繁星点点、霓虹、光波、层出不穷、彩泉涌动、峰回路转、百花争艳、极光、正弦波、雨滴、斜风细雨、踏雪无痕、聚合、一石二鸟、自定义(驱动)、音乐律动电音(驱动)、音乐律动经典(驱动)、光影模式(驱动)").split("、") ;
         srand(time(nullptr));
-        int nCount = strEFList.count() ;
-        for(int i=0; i<nCount; i++)
+        for(int i=0; i<26; i++)
         {
-            MacroSquare *btn = new MacroSquare(strEFList[i],rand()%3,this) ;
+            MacroSquare *btn = new MacroSquare(QString((char)('A'+ i)),rand()%3,this) ;
             btn->setFixedSize(50,50);
             btn->setFocusPolicy(Qt::NoFocus) ;
             s_MSquares.push_back(btn);
@@ -67,6 +42,17 @@ FrameMacro::FrameMacro(QWidget *parent)
 
         connect(ui->pushButtonDelete,&QPushButton::clicked,this,[=]{
             removeView() ;
+        });
+
+        connect(ui->pushButtonInsert,&QPushButton::clicked,this,[=]{
+            for(int i=0; i<10; i++)
+            {
+                MacroSquare *btn = new MacroSquare(QString((char)('A'+ i)),rand()%3,this) ;
+                btn->setFixedSize(50,50);
+                btn->setFocusPolicy(Qt::NoFocus) ;
+                s_MSquares.insert(rand()%s_MSquares.count(),btn);
+            }
+            updateView() ;
         });
     }
 }

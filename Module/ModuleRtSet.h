@@ -23,6 +23,7 @@ private:
     Ui::ModuleRtSet *ui;
     void setValue(float value);
     float getValue();
+    bool m_dragging = false;
 };
 
 #endif // MODULERTSET_H
