@@ -24,7 +24,6 @@ FrameMacro::FrameMacro(QWidget *parent)
         {
             MacroItem *MItem = new MacroItem(this) ;
             MItem->setFixedSize(220,32);
-            //MItem->setFocusPolicy(Qt::NoFocus) ;
             pLayout->addWidget(MItem);
         }
     }

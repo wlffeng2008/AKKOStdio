@@ -17,6 +17,9 @@ public:
 
     void setText(const QString&text1,const QString&text2);
 
+protected:
+    bool eventFilter(QObject*watched, QEvent*event) override;
+
 private:
     Ui::ModuleLinear *ui;
 };

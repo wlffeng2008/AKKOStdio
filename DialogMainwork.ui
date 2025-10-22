@@ -96,19 +96,8 @@ background-color:white;
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonPaire">
-       <property name="font">
-        <font>
-         <family>MiSans</family>
-         <pointsize>-1</pointsize>
-         <italic>false</italic>
-         <fontweight>DemiBold</fontweight>
-        </font>
-       </property>
        <property name="focusPolicy">
         <enum>Qt::FocusPolicy::NoFocus</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 600 18px &quot;MiSans&quot;;</string>
        </property>
        <property name="text">
         <string> 对码</string>
@@ -130,19 +119,11 @@ background-color:white;
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonReset">
-       <property name="font">
-        <font>
-         <family>MiSans</family>
-         <pointsize>-1</pointsize>
-         <italic>false</italic>
-         <fontweight>DemiBold</fontweight>
-        </font>
-       </property>
        <property name="focusPolicy">
         <enum>Qt::FocusPolicy::NoFocus</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 600 18px &quot;MiSans&quot;;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string> 恢复默认</string>
@@ -164,19 +145,11 @@ background-color:white;
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonFixed">
-       <property name="font">
-        <font>
-         <family>MiSans</family>
-         <pointsize>-1</pointsize>
-         <italic>false</italic>
-         <fontweight>DemiBold</fontweight>
-        </font>
-       </property>
        <property name="focusPolicy">
         <enum>Qt::FocusPolicy::NoFocus</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 600 18px &quot;MiSans&quot;;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string> 行程校准</string>
@@ -198,19 +171,11 @@ background-color:white;
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonLang">
-       <property name="font">
-        <font>
-         <family>MiSans</family>
-         <pointsize>-1</pointsize>
-         <italic>false</italic>
-         <fontweight>DemiBold</fontweight>
-        </font>
-       </property>
        <property name="focusPolicy">
         <enum>Qt::FocusPolicy::NoFocus</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 600 18px &quot;MiSans&quot;;</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string> 语种选择</string>

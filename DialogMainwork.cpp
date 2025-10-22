@@ -57,18 +57,6 @@ DialogMainwork::DialogMainwork(QWidget *parent)
     m_pLBtns.push_back(ui->label5);
     m_pLBtns.push_back(ui->label6);
     m_pLBtns.push_back(ui->label7);
-    setStyleSheet(R"(
-        QToolTip {
-            color: white;
-            border: 2px solid red;
-            border-radius: 6px;
-            border: 1px solid #767676;
-            padding: 4px 8px;
-            background-color: rgba(255, 255, 240, 0.8);
-            border-radius: 8px;
-            font-family: "微软雅黑";
-            font-size: 12px; }
-    )");
 
     int index = 0 ;
     static QStringList images={"shouye","jianweishezhi","cizhoushezhi","hongshezhi","dengxiaoshezhi","guanyu","",""};

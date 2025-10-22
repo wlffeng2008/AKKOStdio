@@ -43,7 +43,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="labelValue2">
+    <widget class="QLabel" name="labelTitleL2">
      <property name="font">
       <font>
        <family>MiSans</family>
@@ -88,7 +88,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="labelValue3">
+    <widget class="QLabel" name="labelTitle1">
      <property name="font">
       <font>
        <family>MiSans</family>
@@ -133,7 +133,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="labelValue4">
+    <widget class="QLabel" name="labelTitleL1">
      <property name="font">
       <font>
        <family>MiSans</family>

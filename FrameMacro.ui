@@ -15,24 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#FrameMacro,#frameB,#frameRight{background-color:#FFFFFF;border-radius:0px;}
-QPushButton {
-            border: 1px solid transparent;
-            border-radius: 14px;
-            padding: 2px 2px;
-            color: black;
-            outline: none;
-            background-color: transparent;
-                min-width:24px;
-                max-width:100px;
-                min-height:24px;
-                font-size: 12px ;
-                font-weight: Regular ;
-                font-family: MiSans; }
-
-QPushButton:hover { background-color: #EAEAEA; border: 1px solid #EAEAEA;}
-QPushButton:pressed { background-color: #3F3F3F; }
-QPushButton:checked { background-color: #3F3F3F; color: white; }
-QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0">
    <property name="spacing">
@@ -82,6 +65,22 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
        <width>16777215</width>
        <height>340</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+            border: 1px solid transparent;
+            border-radius: 14px;
+            padding: 2px 2px;
+            color: black;
+            outline: none;
+            background-color: transparent;
+                min-width:24px;
+                max-width:100px;
+                min-height:24px;}
+
+QPushButton:hover { background-color: transparent; border: 1px solid transparent;}
+QPushButton:pressed { background-color: #3F3F3F; }
+QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::NoFrame</enum>
@@ -141,7 +140,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
-            <widget class="QLabel" name="label">
+            <widget class="QLabel" name="labelTitle2">
              <property name="font">
               <font>
                <family>MiSans</family>
@@ -302,8 +301,8 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
              <rect>
               <x>20</x>
               <y>20</y>
-              <width>761</width>
-              <height>50</height>
+              <width>776</width>
+              <height>60</height>
              </rect>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -339,16 +338,31 @@ font-size: 14px;
                <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
                </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>40</width>
+                 <width>10</width>
                  <height>20</height>
                 </size>
                </property>
               </spacer>
              </item>
-             <item>
+             <item alignment="Qt::AlignmentFlag::AlignVCenter">
               <widget class="QPushButton" name="pushButtonInsert">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>106</width>
+                 <height>32</height>
+                </size>
+               </property>
                <property name="text">
                 <string>插入按键</string>
                </property>
@@ -372,9 +386,12 @@ font-size: 14px;
                <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
                </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>40</width>
+                 <width>10</width>
                  <height>20</height>
                 </size>
                </property>
@@ -387,7 +404,7 @@ font-size: 14px;
                </property>
               </widget>
              </item>
-             <item>
+             <item alignment="Qt::AlignmentFlag::AlignVCenter">
               <widget class="QLineEdit" name="lineEditDelay">
                <property name="minimumSize">
                 <size>
@@ -418,9 +435,12 @@ font-size: 14px;
                <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
                </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>40</width>
+                 <width>10</width>
                  <height>20</height>
                 </size>
                </property>
@@ -457,16 +477,31 @@ font-size: 14px;
                <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
                </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>40</width>
+                 <width>10</width>
                  <height>20</height>
                 </size>
                </property>
               </spacer>
              </item>
-             <item>
+             <item alignment="Qt::AlignmentFlag::AlignVCenter">
               <widget class="QPushButton" name="pushButtonSave">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>106</width>
+                 <height>32</height>
+                </size>
+               </property>
                <property name="text">
                 <string>保存</string>
                </property>
@@ -490,16 +525,31 @@ font-size: 14px;
                <property name="orientation">
                 <enum>Qt::Orientation::Horizontal</enum>
                </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>40</width>
+                 <width>10</width>
                  <height>20</height>
                 </size>
                </property>
               </spacer>
              </item>
-             <item>
+             <item alignment="Qt::AlignmentFlag::AlignVCenter">
               <widget class="QPushButton" name="pushButtonClear">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>106</width>
+                 <height>32</height>
+                </size>
+               </property>
                <property name="text">
                 <string>清空</string>
                </property>
@@ -577,7 +627,7 @@ font-size: 14px;
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="labelTitle">
+                <widget class="QLabel" name="labelTitle1">
                  <property name="font">
                   <font>
                    <family>MiSans</family>

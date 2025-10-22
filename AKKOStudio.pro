@@ -10,6 +10,8 @@ LIBS += -L$$PWD -lhidapi
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+DESTDIR = ../../bin
+
 INCLUDEPATH += ./Module
 
 SOURCES += \
@@ -37,6 +39,7 @@ SOURCES += \
     Module/ModuleLinear.cpp \
     Module/ModuleRtSet.cpp \
     Module/ModuleKeyboard.cpp \
+    Module/ModuleVideoItem.cpp \
     ModuleScrollValue.cpp \
     NewTabWidget.cpp \
     SuperLabel.cpp \
@@ -70,6 +73,7 @@ HEADERS += \
     Module/ModuleLinear.h \
     Module/ModuleRtSet.h \
     Module/ModuleKeyboard.h \
+    Module/ModuleVideoItem.h \
     ModuleScrollValue.h \
     NewTabWidget.h \
     SuperLabel.h \
@@ -95,6 +99,7 @@ FORMS += \
     Module/ModuleLinear.ui \
     Module/ModuleRtSet.ui \
     Module/ModuleKeyboard.ui \
+    Module/ModuleVideoItem.ui \
     ModuleScrollValue.ui
 
 TRANSLATIONS += \

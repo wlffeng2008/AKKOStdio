@@ -150,8 +150,9 @@ float ModuleRtSet::getValue()
         if(szText[i] == '.' || (szText[i] >= '0' && szText[i] <= '9'))
             continue ;
         szText[i] = 0 ;
-        text = szText;
+        break;
     }
+    text = szText;
 
     float tmp = text.toFloat() ;
 

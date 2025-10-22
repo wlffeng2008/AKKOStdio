@@ -18,21 +18,19 @@ FrameKeySetting::FrameKeySetting(QWidget *parent)
                 max-height: 32px;
                 min-height: 32px;
                 border-radius: 16px ;
-                font:500 17px "MiSans";
-                color: #333;
+
                 padding-left: 25px;
                 text-align: left;
-                border: 1px soild #ECECEC;
+
+                color: #333;
+                border: 1px solid transparent;
                 background: transparent; }
 
             QPushButton:checked {
                 color: white;
-                border: 1px soild #6329B6;
+                border: 1px solid #6329B6;
                 background: #6329B6; }
-            QPushButton:hover {
-                color: #6329B6;
-                border: 1px soild #6329B6;
-                background: #ECECEC; }
+            QPushButton:hover {border: 1px solid #6329B6; }
             )") ;
 
         QLayout *pLayout = ui->frameMode->layout() ;
@@ -92,7 +90,6 @@ FrameKeySetting::FrameKeySetting(QWidget *parent)
                     icon: url(:/images/macro/fn0/%1);
                     icon-size: 24px 24px;
                     border-radius: 16px ;
-                    font-size: 16px ;
                     border: 1px soild #ECECEC;
                     background: #FFFFFF;
                     padding: 2px; }
@@ -128,16 +125,17 @@ FrameKeySetting::FrameKeySetting(QWidget *parent)
         QTimer *pTMUpdate = new QTimer(this) ;
         connect(pTMUpdate,&QTimer::timeout,this,[=]{
             pTMUpdate->stop();
-            QString strTmp ;
+            QString strTmp = ui->lineEditValue->text().trimmed();
             char szText[100]={0} ;
-            strcpy_s(szText,ui->lineEditValue->text().trimmed().toStdString().c_str()) ;
+            strcpy_s(szText,strTmp.toStdString().c_str()) ;
             for(int i=0; i<strlen(szText); i++)
             {
                 if(szText[i] == '.' || (szText[i] >= '0' && szText[i] <= '9'))
                     continue ;
                 szText[i] = 0 ;
-                strTmp = szText;
+                break;
             }
+            strTmp = szText;
             int value = strTmp.toFloat() ;
             if(value>200) value = 200 ;
             if(value<0) value = 0 ;

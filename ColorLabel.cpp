@@ -1,5 +1,7 @@
 #include "ColorLabel.h"
 
+#include <QTimer>
+#include <QPaintEvent>
 #include <QPainter>
 #include <QMap>
 
@@ -17,7 +19,7 @@ ColorLabel *ColorLabel::Current(QWidget *parent)
     return s_map[parent] ;
 }
 
-void ColorLabel::paintEvent(QPaintEvent *)
+void ColorLabel::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this) ;
     painter.setRenderHint(QPainter::Antialiasing, true);
@@ -39,6 +41,7 @@ void ColorLabel::paintEvent(QPaintEvent *)
         painter.setBrush(Qt::NoBrush);
         painter.drawRoundedRect(rect,nOffset,nOffset);
     }
+    event->accept() ;
 }
 
 void ColorLabel::mousePressEvent(QMouseEvent *)

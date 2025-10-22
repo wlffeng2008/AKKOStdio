@@ -25,13 +25,11 @@ bool FrameMain::eventFilter(QObject*watched,QEvent*event)
     {
         if(watched == ui->labelPriv)
         {
-            qDebug() << "Priv clicked!" ;
             return true ;
         }
 
         if(watched == ui->labelNext)
         {
-            qDebug() << "Next clicked!" ;
             return true ;
         }
     }

@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>70</y>
+     <y>65</y>
      <width>242</width>
      <height>32</height>
     </rect>
@@ -43,7 +43,7 @@
     <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="labelValue">
+  <widget class="QLabel" name="labelTitle2">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -52,16 +52,8 @@
      <height>15</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>MiSans</family>
-     <pointsize>-1</pointsize>
-     <italic>false</italic>
-     <fontweight>DemiBold</fontweight>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">color: #6229B4;font: 600 18px &quot;MiSans&quot;;</string>
+    <string notr="true">color: #2DC3BE;</string>
    </property>
    <property name="text">
     <string>25%</string>
@@ -70,25 +62,17 @@
     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label2">
+  <widget class="QLabel" name="labelTitleL2">
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>110</y>
+     <y>105</y>
      <width>53</width>
-     <height>15</height>
+     <height>20</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>MiSans</family>
-     <pointsize>-1</pointsize>
-     <italic>false</italic>
-     <fontweight>Medium</fontweight>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">font: 500 14px &quot;MiSans&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>100%</string>
@@ -97,7 +81,7 @@
     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="labelTitle">
+  <widget class="QLabel" name="labelTitle1">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -106,40 +90,24 @@
      <height>31</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>MiSans</family>
-     <pointsize>-1</pointsize>
-     <italic>false</italic>
-     <fontweight>DemiBold</fontweight>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">font: 600 18px &quot;MiSans&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>灯光速度</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label1">
+  <widget class="QLabel" name="labelTitleL1">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>110</y>
+     <y>105</y>
      <width>53</width>
-     <height>15</height>
+     <height>20</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>MiSans</family>
-     <pointsize>-1</pointsize>
-     <italic>false</italic>
-     <fontweight>Medium</fontweight>
-    </font>
-   </property>
    <property name="styleSheet">
-    <string notr="true">font: 500 14px &quot;MiSans&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>0%</string>

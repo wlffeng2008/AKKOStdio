@@ -27,17 +27,17 @@ LinearFixing1::LinearFixing1(const QString& title,const QString& content, QWidge
 
     qDebug() << "pContentWidget:" <<pContentWidget->layout() ;
 
-    QLabel *pLabTitle = new QLabel("行程校准操作指南", pContentWidget);
+    QLabel *pLabTitle = new QLabel(tr("行程校准操作指南"), pContentWidget);
     pLabTitle->setStyleSheet("font-size: 16px; color: #333; text-align: center;");
     pLabTitle->setWordWrap(true);
     pLabTitle->setAlignment(Qt::AlignCenter);
 
-    QLabel *pLabText = new QLabel("请依次将每个按键轻按到底并停留至少1秒钟，直到按键变为橙色（表示该按键校准成功），请勿遗漏，可重复按按键。无线下不支持按键校准个数提示。校准过程中请勿拔出数据线。", pContentWidget);
+    QLabel *pLabText = new QLabel(tr("请依次将每个按键轻按到底并停留至少1秒钟，直到按键变为橙色（表示该按键校准成功），请勿遗漏，可重复按按键。无线下不支持按键校准个数提示。校准过程中请勿拔出数据线。"), pContentWidget);
     pLabText->setStyleSheet("font-size: 13px; color: #333; text-align: left; min-height:80px; margin: 5px 20px;");
     pLabText->setWordWrap(true);
     pLabText->setAlignment(Qt::AlignLeft);
 
-    QPushButton* confirmBtn = new QPushButton("开始校准", pContentWidget);
+    QPushButton* confirmBtn = new QPushButton(tr("开始校准"), pContentWidget);
     confirmBtn->setStyleSheet(R"(
         QPushButton {
             background-color: #6329B6;
@@ -59,7 +59,7 @@ LinearFixing1::LinearFixing1(const QString& title,const QString& content, QWidge
         T2.exec() ;
     });
 
-    QPushButton* cancelBtn = new QPushButton("取消", pContentWidget);
+    QPushButton* cancelBtn = new QPushButton(tr("取消"), pContentWidget);
     cancelBtn->setStyleSheet(R"(
         QPushButton {
             background-color: gray;

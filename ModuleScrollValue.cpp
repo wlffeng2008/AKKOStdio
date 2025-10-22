@@ -13,9 +13,9 @@ ModuleScrollValue::ModuleScrollValue(QWidget *parent)
     setValueList(valus);
 
     ui->labelValue1->installEventFilter(this) ;
-    ui->labelValue2->installEventFilter(this) ;
-    ui->labelValue3->installEventFilter(this) ;
-    ui->labelValue4->installEventFilter(this) ;
+    ui->labelTitleL2->installEventFilter(this) ;
+    ui->labelTitle1->installEventFilter(this) ;
+    ui->labelTitleL1->installEventFilter(this) ;
     ui->labelValue5->installEventFilter(this) ;
 }
 
@@ -40,9 +40,9 @@ void ModuleScrollValue::rollValues()
     QList<QLabel*> labels =
     {
         ui->labelValue1,
-        ui->labelValue2,
-        ui->labelValue3,
-        ui->labelValue4,
+        ui->labelTitleL2,
+        ui->labelTitle1,
+        ui->labelTitleL1,
         ui->labelValue5
     };
 
@@ -59,8 +59,8 @@ bool ModuleScrollValue::eventFilter(QObject*watched,QEvent*event)
     {
         int old = m_nIndex ;
         if(watched==ui->labelValue1) m_nIndex -= 2 ;
-        if(watched==ui->labelValue2) m_nIndex -= 1 ;
-        if(watched==ui->labelValue4) m_nIndex += 2 ;
+        if(watched==ui->labelTitleL2) m_nIndex -= 1 ;
+        if(watched==ui->labelTitleL1) m_nIndex += 2 ;
         if(watched==ui->labelValue5) m_nIndex += 1 ;
         if(m_nIndex != old)  rollValues();
     }

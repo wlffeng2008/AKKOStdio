@@ -26,14 +26,23 @@ int main(int argc, char *argv[])
     qDebug() << a.styleSheet();
     a.setStyleSheet(R"(
 
-        QTableView{ border: 1px solid gray; gridline-color: transparent;  background-color: rgb(226, 249, 255) !important; gridline-color: gray;}
+        * { font-family: MiSans;}
+        QLabel { font-size: 14px; font-weight: 500 ;}
+
+        QLabel#labelTitle1,#labelTitle2,#labelTitle3,#labelTitle4,#labelTitle5,#labelTitle,#labelName { font-size: 18px; font-weight: 600 ;}
+        QLabel#labelTitleL1,#labelTitleL2,#labelTitleL3,#labelTitleL4,#labelTitleL5 { font-size: 14px; font-weight: 500 ;}
+        QLabel#labelTitleS1,#labelTitleS2,#labelTitleS3,#labelTitleS4,#labelTitleS5 { font-size: 16px; font-weight: 500 ;}
+
+        QTableView{ border: 1px solid gray; gridline-color: transparent;  background-color: rgb(226, 249, 255) !important; gridline-color: gray;
+                font-size: 10px ;
+                font-weight: 500;}
         QTableView::Item{padding-left:2px;  border-top: 0px solid gray; border-bottom: 1px solid transparent;border-right: 0px solid gray;}
         QTableView::Item::selected{ background-color: #a0bb9e !important; color:white; }
         QTableView QTableCornerButton::section { background-color: skyblue ; min-width: 32px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-left: 0px solid gray; border-right: 1px solid gray; }
 
-        QTableView QHeaderView::section{background-color:skyblue;}
-        QTableView QHeaderView{background-color:skyblue;}
-        QHeaderView::section:horizontal{  padding-left: 2px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-right: 1px solid gray; font-weight: bold;}
+        QTableView QHeaderView::section{background-color:skyblue;font-size: 10px; font-weight: 400 ;}
+        QTableView QHeaderView{background-color:skyblue; font-size: 10px; font-weight: 400 ;}
+        QHeaderView::section:horizontal{ font-size: 10px; font-weight: 400 ; padding-left: 2px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-right: 1px solid gray; font-weight: bold;}
         QHeaderView::section:vertical{  padding-left: 2px; min-width: 36px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-left: 0px solid gray; border-right: 1px solid gray;}
         QTableView::indicator { width: 18px; height: 18px; }
         QTableView::indicator:checked { image: url(:/images/BoxChecked.png); }
@@ -63,7 +72,10 @@ int main(int argc, char *argv[])
                 min-width: 46px;
                 min-height: 8px;
                 max-width: 800px;
-                max-height: 200px;}
+                max-height: 200px;
+                font-size: 13px ;
+                font-weight: 600;
+                }
         QPushButton:hover { background-color: #87ceeb; }
         QPushButton:pressed { background-color: #1e90af; }
         QPushButton:checked { background-color: #1e90ff; }
@@ -93,7 +105,7 @@ int main(int argc, char *argv[])
         QSlider::handle:hover { background: #F0F0F0; }
         QSlider::handle:pressed { background: #E0E0E0; border-color: #2D7FDD; }
 
-        QRadioButton { spacing: 5px; color: #333333; }
+        QRadioButton { spacing: 5px; color: #333333; font-size: 12px; font-weight: 400 ;}
         QRadioButton::indicator {
             background: transparent;
             border-color: transparent;
@@ -104,29 +116,6 @@ int main(int argc, char *argv[])
 
         QRadioButton::indicator:checked { image: url(:/images/macro/radio-checked.png); }
 
-   /*
-        QRadioButton::indicator:unchecked { background: white; border-color: gray;}
-        QRadioButton::indicator:unchecked:hover {background: #f0f0f0;  border-color: #666666; }
-        QRadioButton::indicator:checked {
-            border: 2px solid #6329B6;
-            background: qradialgradient(
-                cx:0.5, cy:0.5, radius:0.4,
-                fx:0.5, fy:0.5,
-                stop:0 white, stop:1 #6329B6
-            );
-            color: #6329B6;
-        }
-
-        QRadioButton::indicator:checked:hover {
-            border-color: #6329B6;
-            background: qradialgradient(
-                cx:0.5, cy:0.5, radius:0.4,
-                fx:0.5, fy:0.5,
-                stop:0 white, stop:1 #6329B6
-            );
-        }
-
-        QRadioButton::indicator:pressed { border-color: #004499; }*/
         QRadioButton:disabled { color: #cccccc; }
         QRadioButton:checked {  color: #0085FF; }
         QRadioButton::indicator:disabled { border: 2px solid #dddddd; background: white; }
@@ -151,8 +140,7 @@ int main(int argc, char *argv[])
             background: #FFFFFF;
             color: #333333;
             font-weight: normal;
-            padding: 2px 2px;
-        }
+            padding: 2px 2px; }
 
     QScrollBar:vertical,
     QScrollBar:horizontal {
@@ -163,7 +151,7 @@ int main(int argc, char *argv[])
     }
 
     QScrollBar:vertical {
-        width: 10px;
+        width: 4px;
         margin: 0px 0px 0px 0px;
     }
 
@@ -234,26 +222,26 @@ QTabWidget {
     border-radius:0;
     padding: 0px;
     margin: 0;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 /* 标签栏的样式 - 水平标签栏 */
 QTabBar::tab {
-    background-color: transparent;
     color: black;
+    background-color: transparent;
     border: 3px solid transparent;
     padding: 5px 2px;
     margin-right: 15px;
     min-width: 40px;
     min-height: 40px;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 QTabBar::tab:selected {
     color: #6329B6;
-    border-left: 3px solid transparent;
-    border-top: 3px solid transparent;
-    border-right: 3px solid transparent;
+    border: 3px solid transparent;
     border-bottom: 3px solid #6329B6;
 }
 
@@ -282,6 +270,8 @@ QTabBar::separator {
 }
 
     )");
+
+    //a.setStyleSheet("");
 
     return a.exec();
 }

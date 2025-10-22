@@ -5,15 +5,15 @@ static QMap<QObject *,SuperLabel *>s_group ;
 static QMap<QObject *,QString>s_tipStyle ;
 
 static QString s_strDefTipStyle(R"(
-
     background-color: white;
     border: 1px solid #DEDEDE;
     border-radius: 16px;
-    font-size: 16px;
     padding-left: 16px;
     padding-right: 16px;
     min-height:42px;
     max-height:42px;
+    font-size: 16px;
+    font-weight:400;
 )");
 
 void CustomTooltip::setDefTipStyle(const QString &stryle)
@@ -35,26 +35,66 @@ CustomTooltip::CustomTooltip(QWidget *parent) : QWidget(parent)
 {
     setWindowFlags(Qt::ToolTip | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
-    setObjectName("newTypeTooltip") ;
     setStyleSheet(s_strDefTipStyle);
 
     content = new QLabel(this);
     content->setAlignment(Qt::AlignCenter);
+
+    m_timer = new QTimer(this) ;
+    connect(m_timer,&QTimer::timeout,this,[=]{m_timer->stop(); hide();});
 }
 
-void CustomTooltip::setText(const QString&strText)
+void CustomTooltip::enterEvent(QEnterEvent *event)
 {
-    content->setText(strText);
-    content->update();
+    m_timer->stop() ;
+    QWidget::enterEvent(event) ;
+}
+
+void CustomTooltip::leaveEvent(QEvent *event)
+{
+    m_timer->stop() ;
+    m_timer->start(1000) ;
+    QWidget::leaveEvent(event) ;
+}
+
+void CustomTooltip::mousePressEvent(QMouseEvent *event)
+{
+    emit onClicked() ;
+    hide() ;
+    m_timer->stop() ;
+    QWidget::mousePressEvent(event) ;
+}
+
+void CustomTooltip::focusOutEvent(QFocusEvent *event)
+{
+    hide() ;
+    QWidget::focusOutEvent(event) ;
+}
+
+void CustomTooltip::showEvent(QShowEvent *event)
+{
+    m_timer->stop() ;
+    m_timer->start(3000) ;
+    adjustSize() ;
+    QWidget::showEvent(event) ;
+}
+
+void CustomTooltip::setText(const QString&text)
+{
+    content->setText(text);
+    adjustSize();
+    content->update(); 
+}
+
+void CustomTooltip::setTextStyle(const QString& stryle)
+{
+    content->setStyleSheet(stryle);
 }
 
 SuperLabel::SuperLabel(QWidget *parent)
     : QLabel{parent}
 {
-    if(!s_group[parent])
-    {
-        s_group[parent] = this ;
-    }
+    if(!s_group[parent]) s_group[parent] = this ;
 
     QTimer::singleShot(100,this,[=]{
         tooltip = new CustomTooltip(this);
@@ -74,6 +114,7 @@ SuperLabel::SuperLabel(QWidget *parent)
             tooltip->show();
         });
     });
+    setAlignment(Qt::AlignCenter) ;
 }
 
 bool SuperLabel::event(QEvent *event)

@@ -7,15 +7,13 @@ class ColorSquare : public QFrame
 {
     Q_OBJECT
 
-    Q_PROPERTY(QColor color READ color WRITE setColor NOTIFY colorChanged DESIGNABLE true STORED false )
     Q_PROPERTY(qreal hue READ hue WRITE setHue DESIGNABLE false )
     Q_PROPERTY(qreal saturation READ saturation WRITE setSaturation DESIGNABLE false )
     Q_PROPERTY(qreal value READ value WRITE setValue DESIGNABLE false )
 
 private:
-    qreal huem, sat, val;
-    qreal colorX, colorY;
-    int nSquareWidth;
+    qreal huem=0, sat=0, val=0;
+
     QImage colorSquare;
     char    colorChar;
     qreal clickX, clickY;
@@ -33,9 +31,6 @@ private:
 
 public:
     explicit ColorSquare(QWidget *parent = 0);
-
-    void setSquareWidth(int width);
-
     QColor color() const;
     qreal hue() const {return huem;}
     qreal saturation() const {return sat;}
@@ -51,21 +46,15 @@ public slots:
 
 signals:
     void colorSelected(QColor);
-    void colorChanged(QColor);
 
 protected:
     void paintEvent(QPaintEvent *);
     void mousePressEvent(QMouseEvent *);
     void mouseMoveEvent(QMouseEvent *);
-    void mouseReleaseEvent(QMouseEvent *);
 
 private:
+    bool m_notify = false ;
     void RenderRectangle();
-
-    QLineF lineToPoint(QPoint p) const
-    {
-        return QLineF(geometry().width()/2, geometry().height()/2, p.x(), p.y());
-    }
 };
 
 #endif // COLORSQUARE_H

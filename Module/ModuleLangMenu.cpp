@@ -14,8 +14,6 @@ ModuleLangMenu::ModuleLangMenu(QWidget *parent)
     ui->setupUi(this);
     setWindowFlags(windowFlags() | Qt::FramelessWindowHint|Qt::MSWindowsFixedSizeDialogHint);
     setAttribute(Qt::WA_TranslucentBackground);
-    //setFocusPolicy(Qt::StrongFocus);
-    //setFixedSize(100,250) ;
 
     static QStringList Langs={tr("中文简体"),tr("English"),tr("한국어"),tr("日本語"),tr("Русский"),tr("Tiếng Việt"),tr("Português")} ;
 
@@ -25,9 +23,6 @@ ModuleLangMenu::ModuleLangMenu(QWidget *parent)
                 width: 86px;
                 height: 24px;
                 border-radius: 10px ;
-                font-size: 12px ;
-                font-weight: normal ;
-                font-family: MiSans;
 
                 color: #333;
                 border: 1px soild white;
@@ -60,17 +55,18 @@ ModuleLangMenu::ModuleLangMenu(QWidget *parent)
         btn->setFixedSize(90,24);
         btn->setCheckable(true) ;
         btn->setStyleSheet(strStyle);
-        //btn->setFocusPolicy(Qt::NoFocus) ;
+        btn->setFocusPolicy(Qt::NoFocus) ;
         btn->setCursor(Qt::PointingHandCursor) ;
 
         m_pBtnGrp->addButton(btn,i);
         pLayout->addWidget(btn);
     }
+    pLayout->setAlignment(Qt::AlignTrailing);
 
-    QTimer::singleShot(100,this,[=]{ m_pBtnGrp->button(0)->click(); });
+    QTimer::singleShot(100,this,[=]{ m_pBtnGrp->button(0)->click(); setFocusPolicy(Qt::StrongFocus);});
 
-    setFocusPolicy(Qt::StrongFocus);
-    setStyleSheet("QDialog{background-color: rgba(255, 255, 255, 1); border: 1px solid #EAEAEA; border-radius:12px;}");
+
+    setStyleSheet("QDialog{background-color: rgba(255, 255, 255, 0.9); border: 1px solid #EAEAEA; border-radius:12px;}");
 }
 
 ModuleLangMenu::~ModuleLangMenu()

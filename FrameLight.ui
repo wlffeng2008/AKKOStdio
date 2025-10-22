@@ -14,12 +14,11 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-            font: 500 18px &quot;MiSans&quot;;</string>
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0">
    <property name="spacing">
-    <number>22</number>
+    <number>24</number>
    </property>
    <property name="leftMargin">
     <number>0</number>

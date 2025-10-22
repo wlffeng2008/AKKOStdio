@@ -14,20 +14,17 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
+   <string notr="true">#FrameKeySetting{background-color: white;}
 QPushButton {
             border: 1px solid #EAEAEA;
             border-radius: 14px;
-            padding: 2px 2px;
+            padding: 1px 1px;
             color: black;
             outline: none;
             background-color: #FBFBFB;
                 min-width:42px;
                 max-width:542px;
                 min-height:42px;
-                font-size: 12px ;
-                font-weight: normal ;
-                font-family: MiSans;
  }
 
             QPushButton:hover { background-color: #EAEAEA; border: 1px solid #EAEAEA;}
@@ -86,7 +83,7 @@ QPushButton {
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 500 18px &quot;MiSans&quot;;</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::NoFrame</enum>
@@ -189,7 +186,6 @@ QPushButton {
         <property name="font">
          <font>
           <family>MiSans</family>
-          <pointsize>-1</pointsize>
           <italic>false</italic>
           <fontweight>Medium</fontweight>
          </font>
@@ -226,7 +222,7 @@ QPushButton {
             <string notr="true"/>
            </property>
            <property name="currentIndex">
-            <number>2</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="page1">
             <property name="styleSheet">
@@ -244,7 +240,6 @@ QPushButton {
              <property name="font">
               <font>
                <family>MiSans</family>
-               <pointsize>-1</pointsize>
                <italic>false</italic>
                <fontweight>Medium</fontweight>
               </font>
@@ -259,8 +254,8 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_45">
                <property name="geometry">
                 <rect>
-                 <x>164</x>
-                 <y>199</y>
+                 <x>670</x>
+                 <y>143</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -275,8 +270,8 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_44">
                <property name="geometry">
                 <rect>
-                 <x>110</x>
-                 <y>199</y>
+                 <x>616</x>
+                 <y>143</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -291,8 +286,8 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_43">
                <property name="geometry">
                 <rect>
-                 <x>56</x>
-                 <y>199</y>
+                 <x>562</x>
+                 <y>143</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -307,7 +302,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_06">
                <property name="geometry">
                 <rect>
-                 <x>326</x>
+                 <x>290</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -315,13 +310,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -335,7 +330,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_01">
                <property name="geometry">
                 <rect>
-                 <x>56</x>
+                 <x>20</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -343,13 +338,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -363,7 +358,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_11">
                <property name="geometry">
                 <rect>
-                 <x>596</x>
+                 <x>560</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -371,13 +366,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -391,7 +386,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_02">
                <property name="geometry">
                 <rect>
-                 <x>110</x>
+                 <x>74</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -399,13 +394,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -419,7 +414,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_07">
                <property name="geometry">
                 <rect>
-                 <x>380</x>
+                 <x>344</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -427,13 +422,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -447,7 +442,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_05">
                <property name="geometry">
                 <rect>
-                 <x>272</x>
+                 <x>236</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -455,13 +450,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -475,7 +470,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_13">
                <property name="geometry">
                 <rect>
-                 <x>704</x>
+                 <x>668</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -483,13 +478,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -503,7 +498,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_03">
                <property name="geometry">
                 <rect>
-                 <x>164</x>
+                 <x>128</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -511,13 +506,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -531,7 +526,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_12">
                <property name="geometry">
                 <rect>
-                 <x>650</x>
+                 <x>614</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -539,13 +534,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -559,7 +554,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_14">
                <property name="geometry">
                 <rect>
-                 <x>758</x>
+                 <x>722</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -567,13 +562,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -587,7 +582,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_09">
                <property name="geometry">
                 <rect>
-                 <x>488</x>
+                 <x>452</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -595,13 +590,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -615,7 +610,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_08">
                <property name="geometry">
                 <rect>
-                 <x>434</x>
+                 <x>398</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -623,13 +618,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -643,7 +638,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_10">
                <property name="geometry">
                 <rect>
-                 <x>542</x>
+                 <x>506</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -651,13 +646,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -671,7 +666,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_04">
                <property name="geometry">
                 <rect>
-                 <x>218</x>
+                 <x>182</x>
                  <y>30</y>
                  <width>48</width>
                  <height>48</height>
@@ -679,13 +674,13 @@ QPushButton {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>48</width>
-                 <height>48</height>
+                 <width>46</width>
+                 <height>46</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>548</width>
+                 <width>546</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -699,7 +694,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_19">
                <property name="geometry">
                 <rect>
-                 <x>272</x>
+                 <x>128</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -715,7 +710,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_21">
                <property name="geometry">
                 <rect>
-                 <x>380</x>
+                 <x>236</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -731,7 +726,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_25">
                <property name="geometry">
                 <rect>
-                 <x>596</x>
+                 <x>452</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -747,7 +742,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_20">
                <property name="geometry">
                 <rect>
-                 <x>326</x>
+                 <x>182</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -763,7 +758,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_18">
                <property name="geometry">
                 <rect>
-                 <x>218</x>
+                 <x>74</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -779,7 +774,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_17">
                <property name="geometry">
                 <rect>
-                 <x>164</x>
+                 <x>20</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -795,7 +790,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_23">
                <property name="geometry">
                 <rect>
-                 <x>488</x>
+                 <x>344</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -811,7 +806,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_28">
                <property name="geometry">
                 <rect>
-                 <x>758</x>
+                 <x>614</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -827,8 +822,8 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_16">
                <property name="geometry">
                 <rect>
-                 <x>110</x>
-                 <y>86</y>
+                 <x>830</x>
+                 <y>30</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -843,7 +838,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_24">
                <property name="geometry">
                 <rect>
-                 <x>542</x>
+                 <x>398</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -859,7 +854,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_22">
                <property name="geometry">
                 <rect>
-                 <x>434</x>
+                 <x>290</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -875,7 +870,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_27">
                <property name="geometry">
                 <rect>
-                 <x>704</x>
+                 <x>560</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -891,8 +886,8 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_15">
                <property name="geometry">
                 <rect>
-                 <x>56</x>
-                 <y>86</y>
+                 <x>776</x>
+                 <y>30</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -907,7 +902,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_26">
                <property name="geometry">
                 <rect>
-                 <x>650</x>
+                 <x>506</x>
                  <y>86</y>
                  <width>48</width>
                  <height>48</height>
@@ -923,7 +918,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_38">
                <property name="geometry">
                 <rect>
-                 <x>542</x>
+                 <x>290</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
@@ -939,7 +934,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_33">
                <property name="geometry">
                 <rect>
-                 <x>272</x>
+                 <x>20</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
@@ -955,8 +950,8 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_32">
                <property name="geometry">
                 <rect>
-                 <x>218</x>
-                 <y>143</y>
+                 <x>830</x>
+                 <y>90</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -971,7 +966,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_39">
                <property name="geometry">
                 <rect>
-                 <x>596</x>
+                 <x>344</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
@@ -987,7 +982,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_37">
                <property name="geometry">
                 <rect>
-                 <x>488</x>
+                 <x>236</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
@@ -1003,8 +998,8 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_31">
                <property name="geometry">
                 <rect>
-                 <x>164</x>
-                 <y>143</y>
+                 <x>776</x>
+                 <y>90</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1019,8 +1014,8 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_30">
                <property name="geometry">
                 <rect>
-                 <x>110</x>
-                 <y>143</y>
+                 <x>722</x>
+                 <y>90</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1035,7 +1030,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_42">
                <property name="geometry">
                 <rect>
-                 <x>758</x>
+                 <x>506</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
@@ -1051,7 +1046,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_35">
                <property name="geometry">
                 <rect>
-                 <x>380</x>
+                 <x>128</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
@@ -1067,7 +1062,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_34">
                <property name="geometry">
                 <rect>
-                 <x>326</x>
+                 <x>74</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
@@ -1083,7 +1078,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_36">
                <property name="geometry">
                 <rect>
-                 <x>434</x>
+                 <x>182</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
@@ -1099,8 +1094,8 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_29">
                <property name="geometry">
                 <rect>
-                 <x>56</x>
-                 <y>143</y>
+                 <x>668</x>
+                 <y>90</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1115,7 +1110,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_40">
                <property name="geometry">
                 <rect>
-                 <x>650</x>
+                 <x>398</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
@@ -1131,7 +1126,7 @@ QPushButton {
               <widget class="QPushButton" name="pushButton_41">
                <property name="geometry">
                 <rect>
-                 <x>704</x>
+                 <x>452</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
@@ -1889,16 +1884,8 @@ QPushButton {
                 <height>311</height>
                </rect>
               </property>
-              <property name="font">
-               <font>
-                <family>MiSans</family>
-                <pointsize>-1</pointsize>
-                <italic>false</italic>
-                <fontweight>Medium</fontweight>
-               </font>
-              </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>3</number>
               </property>
               <widget class="QWidget" name="tab21">
                <attribute name="title">
@@ -1929,7 +1916,6 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>-1</pointsize>
                   <italic>false</italic>
                   <underline>true</underline>
                   <fontweight>Medium</fontweight>
@@ -1954,7 +1940,6 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>-1</pointsize>
                   <italic>false</italic>
                   <fontweight>Medium</fontweight>
                  </font>
@@ -1975,7 +1960,6 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>-1</pointsize>
                   <italic>false</italic>
                   <fontweight>Medium</fontweight>
                  </font>
@@ -1996,7 +1980,6 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>-1</pointsize>
                   <italic>false</italic>
                   <underline>true</underline>
                   <fontweight>Medium</fontweight>
@@ -2159,7 +2142,7 @@ QPushButton {
                  <rect>
                   <x>150</x>
                   <y>110</y>
-                  <width>78</width>
+                  <width>76</width>
                   <height>78</height>
                  </rect>
                 </property>
@@ -2175,7 +2158,7 @@ QPushButton {
                  <rect>
                   <x>260</x>
                   <y>110</y>
-                  <width>78</width>
+                  <width>76</width>
                   <height>78</height>
                  </rect>
                 </property>
@@ -2194,14 +2177,6 @@ QPushButton {
                   <width>391</width>
                   <height>41</height>
                  </rect>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>MiSans</family>
-                  <pointsize>-1</pointsize>
-                  <italic>false</italic>
-                  <fontweight>Medium</fontweight>
-                 </font>
                 </property>
                 <property name="text">
                  <string>选定上方键位，可通过选择单击及长按两种触发模式，设置两个功能（支持组合键）</string>
@@ -2225,7 +2200,6 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>-1</pointsize>
                   <italic>false</italic>
                   <fontweight>Medium</fontweight>
                  </font>
@@ -2252,7 +2226,6 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>-1</pointsize>
                   <italic>false</italic>
                   <fontweight>Medium</fontweight>
                  </font>
@@ -2276,7 +2249,6 @@ QPushButton {
                 <property name="font">
                  <font>
                   <family>MiSans</family>
-                  <pointsize>-1</pointsize>
                   <italic>false</italic>
                   <fontweight>Medium</fontweight>
                  </font>
@@ -2336,8 +2308,8 @@ QPushButton {
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>48</width>
-                  <height>48</height>
+                  <width>46</width>
+                  <height>46</height>
                  </size>
                 </property>
                 <property name="font">
@@ -2345,7 +2317,7 @@ QPushButton {
                   <family>MiSans</family>
                   <pointsize>-1</pointsize>
                   <italic>false</italic>
-                  <fontweight>Medium</fontweight>
+                  <bold>false</bold>
                  </font>
                 </property>
                 <property name="focusPolicy">
@@ -2363,7 +2335,7 @@ QPushButton {
                  <rect>
                   <x>150</x>
                   <y>110</y>
-                  <width>78</width>
+                  <width>76</width>
                   <height>78</height>
                  </rect>
                 </property>
@@ -2379,7 +2351,7 @@ QPushButton {
                  <rect>
                   <x>260</x>
                   <y>110</y>
-                  <width>78</width>
+                  <width>76</width>
                   <height>78</height>
                  </rect>
                 </property>
@@ -2393,19 +2365,11 @@ QPushButton {
                <widget class="QLabel" name="label_6">
                 <property name="geometry">
                  <rect>
-                  <x>60</x>
+                  <x>40</x>
                   <y>40</y>
-                  <width>391</width>
+                  <width>421</width>
                   <height>41</height>
                  </rect>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>MiSans</family>
-                  <pointsize>-1</pointsize>
-                  <italic>false</italic>
-                  <fontweight>Medium</fontweight>
-                 </font>
                 </property>
                 <property name="text">
                  <string>选定上方键位，可通过选择连点及长按两种触发模式，设置两个功能</string>
@@ -2433,8 +2397,8 @@ QPushButton {
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>48</width>
-                  <height>48</height>
+                  <width>46</width>
+                  <height>46</height>
                  </size>
                 </property>
                 <property name="font">
@@ -2442,7 +2406,7 @@ QPushButton {
                   <family>MiSans</family>
                   <pointsize>-1</pointsize>
                   <italic>false</italic>
-                  <fontweight>Medium</fontweight>
+                  <bold>false</bold>
                  </font>
                 </property>
                 <property name="focusPolicy">
@@ -2460,7 +2424,7 @@ QPushButton {
                  <rect>
                   <x>150</x>
                   <y>110</y>
-                  <width>78</width>
+                  <width>76</width>
                   <height>78</height>
                  </rect>
                 </property>
@@ -2476,7 +2440,7 @@ QPushButton {
                  <rect>
                   <x>260</x>
                   <y>110</y>
-                  <width>78</width>
+                  <width>76</width>
                   <height>78</height>
                  </rect>
                 </property>
@@ -2492,17 +2456,9 @@ QPushButton {
                  <rect>
                   <x>70</x>
                   <y>40</y>
-                  <width>341</width>
+                  <width>391</width>
                   <height>41</height>
                  </rect>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>MiSans</family>
-                  <pointsize>-1</pointsize>
-                  <italic>false</italic>
-                  <fontweight>Medium</fontweight>
-                 </font>
                 </property>
                 <property name="text">
                  <string>绑定2个选定按键，当两个按键被同时按下时，以最后按下的按键为准</string>
@@ -2538,7 +2494,7 @@ QPushButton {
              <property name="frameShadow">
               <enum>QFrame::Shadow::Raised</enum>
              </property>
-             <widget class="QLabel" name="label">
+             <widget class="QLabel" name="labelTitle1">
               <property name="geometry">
                <rect>
                 <x>30</x>
@@ -2550,7 +2506,6 @@ QPushButton {
               <property name="font">
                <font>
                 <family>MiSans</family>
-                <pointsize>-1</pointsize>
                 <italic>false</italic>
                 <fontweight>Medium</fontweight>
                </font>
@@ -2595,7 +2550,7 @@ QPushButton {
              <property name="frameShadow">
               <enum>QFrame::Shadow::Raised</enum>
              </property>
-             <widget class="QLabel" name="label_2">
+             <widget class="QLabel" name="labelTitle2">
               <property name="geometry">
                <rect>
                 <x>30</x>
@@ -2607,7 +2562,6 @@ QPushButton {
               <property name="font">
                <font>
                 <family>MiSans</family>
-                <pointsize>-1</pointsize>
                 <italic>false</italic>
                 <fontweight>Medium</fontweight>
                </font>
@@ -2652,7 +2606,7 @@ QPushButton {
              <property name="frameShadow">
               <enum>QFrame::Shadow::Raised</enum>
              </property>
-             <widget class="QLabel" name="label_3">
+             <widget class="QLabel" name="labelTitle3">
               <property name="geometry">
                <rect>
                 <x>30</x>
@@ -2664,7 +2618,6 @@ QPushButton {
               <property name="font">
                <font>
                 <family>MiSans</family>
-                <pointsize>-1</pointsize>
                 <italic>false</italic>
                 <fontweight>Medium</fontweight>
                </font>
@@ -2703,15 +2656,15 @@ QPushButton {
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ModuleKeyboard</class>
-   <extends>QFrame</extends>
-   <header>modulekeyboard.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>NewTabWidget</class>
    <extends>QTabWidget</extends>
    <header>newtabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ModuleKeyboard</class>
+   <extends>QFrame</extends>
+   <header>modulekeyboard.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

@@ -18,21 +18,20 @@ FrameMagic::FrameMagic(QWidget *parent)
                 max-height: 32px;
                 min-height: 32px;
                 border-radius: 16px ;
-                font-size: 16px ;
-                font-weight: normal ;
-                font-family: MiSans;
 
                 padding-left: 25px;
                 text-align: left;
 
                 color: #333;
-                border: 1px soild #ECECEC;
-                background: #ECECEC; }
+                border: 1px solid transparent;
+                background: transparent; }
 
             QPushButton:checked {
                 color: white;
-                border: 1px soild #6329B6;
+                border: 1px solid #6329B6;
                 background: #6329B6; }
+
+            QPushButton:hover {border: 1px solid #6329B6; }
             )") ;
 
         QLayout *pLayout = ui->frameSet->layout() ;
@@ -58,7 +57,7 @@ FrameMagic::FrameMagic(QWidget *parent)
         ui->pushButtonSet1->click() ;
     }
 
-    ui->frameDead->setText("顶部死区","底部死区");
+    ui->frameDead->setText(tr("顶部死区"),tr("底部死区"));
 
     {
         static QString strStyle1(R"(
@@ -94,9 +93,6 @@ FrameMagic::FrameMagic(QWidget *parent)
             color: black;
             text-align: center;
             background-color: #E4E4E4;
-                font-size: 14px ;
-                font-weight: normal ;
-                font-family: MiSans;
             }
 
             QLineEdit:hover { background-color: #F0F0F0;}
@@ -150,16 +146,17 @@ FrameMagic::FrameMagic(QWidget *parent)
         });
         connect(pTMUpdate1,&QTimer::timeout,this,[=]{
             pTMUpdate1->stop() ;
-            QString strTmp ;
+            QString strTmp = ui->lineEditValue1->text();
             char szText[100]={0} ;
-            strcpy_s(szText,ui->lineEditValue1->text().toStdString().c_str()) ;
+            strcpy_s(szText, strTmp.toStdString().c_str()) ;
             for(int i=0; i<strlen(szText); i++)
             {
                 if(szText[i] == '.' || (szText[i] >= '0' && szText[i] <= '9'))
                     continue ;
                 szText[i] = 0 ;
-                strTmp = szText;
+                break;
             }
+            strTmp = szText;
             int value = strTmp.toFloat() * 1000;
             if(value>2500) value = 2500 ;
             if(value<200) value = 200 ;
@@ -186,16 +183,17 @@ FrameMagic::FrameMagic(QWidget *parent)
         });
         connect(pTMUpdate2,&QTimer::timeout,this,[=]{
             pTMUpdate2->stop();
-            QString strTmp ;
+            QString strTmp = ui->lineEditValue2->text();
             char szText[100]={0} ;
-            strcpy_s(szText,ui->lineEditValue2->text().toStdString().c_str()) ;
+            strcpy_s(szText,strTmp.toStdString().c_str()) ;
             for(int i=0; i<strlen(szText); i++)
             {
                 if(szText[i] == '.' || (szText[i] >= '0' && szText[i] <= '9'))
                     continue ;
                 szText[i] = 0 ;
-                strTmp = szText;
+                break;
             }
+            strTmp = szText;
             int value = strTmp.toFloat() * 1000;
             if(value>2500) value = 2500 ;
             if(value<200) value = 200 ;

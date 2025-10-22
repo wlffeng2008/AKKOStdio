@@ -51,7 +51,6 @@ void MacroSquare::paintEvent(QPaintEvent*event)
     }
     else
     {
-
         QColor penColor = 0x4B4B4B ;
         if(m_type == 0)
         {

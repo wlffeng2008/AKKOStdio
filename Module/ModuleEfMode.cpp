@@ -16,18 +16,17 @@ ModuleEfMode::ModuleEfMode(QWidget *parent)
                 width: 220px;
                 height: 32px;
                 border-radius: 16px ;
-                font-size: 14px ;
-                font-weight: normal ;
-                font-family: MiSans;
+                font-weight:500;
 
                 color: #333;
-                border: 1px soild #ECECEC;
+                border: 1px solid #ECECEC;
                 background: #ECECEC; }
 
             QPushButton:checked {
                 color: white;
-                border: 1px soild #6329B6;
+                border: 1px solid #6329B6;
                 background: #6329B6; }
+            QPushButton:hover { border: 1px solid #6329B6; }
             )") ;
         QButtonGroup *pBtnGrp = new QButtonGroup(this) ;
         QLayout *pLayout = ui->scrollAreaWidgetContents->layout() ;

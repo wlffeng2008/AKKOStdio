@@ -16,26 +16,25 @@ LinearFixing2::LinearFixing2(const QString& title,const QString& content, QWidge
     setAttribute(Qt::WA_TranslucentBackground);
     setModal(true);
 
-    setStyleSheet("QDialog{background-color: rgba(0, 0, 0, 0.5);  border: 1px solid transparent;border-radius:12px;}"); // 黑色半透明
+    setStyleSheet("QDialog{background-color: rgba(0, 0, 0, 0);  border: 1px solid transparent;border-radius:12px;}"); // 黑色半透明
 
     QWidget* pContentWidget = new QWidget(this);
     pContentWidget->setStyleSheet(R"(
         QWidget {
             background-color: white;
             border-radius: 32px;
-            padding: 10px;
-        }
+            padding: 10px; }
     )");
 
-    QLabel *pLabTitle = new QLabel("请依次将每个按键轻按到底并停留至少1秒钟，直到按键变为橙色（表示该按键校准成功），请勿遗漏，可重复按按键。无线下不支持按键校准个数提示。校准过程中请勿拔出数据线。", pContentWidget);
-    pLabTitle->setStyleSheet("font-size: 16px; color: #333; text-align: center;padding: 8px 145px;");
+    QLabel *pLabTitle = new QLabel(tr("请依次将每个按键轻按到底并停留至少1秒钟，直到按键变为橙色（表示该按键校准成功），请勿遗漏，可重复按按键。无线下不支持按键校准个数提示。校准过程中请勿拔出数据线。"), pContentWidget);
+    pLabTitle->setStyleSheet("font-size: 16px; font-weight:500; color: #333; text-align: center;padding: 15px 145px;");
     pLabTitle->setWordWrap(true);
     pLabTitle->setAlignment(Qt::AlignCenter);
 
     pKeyBoard = new ModuleKeyboard(pContentWidget) ;
-    pKeyBoard->setKeyCllickable(false) ;
+    pKeyBoard->setKeyCllickable() ;
 
-    QPushButton* confirmBtn = new QPushButton("完成校准", pContentWidget);
+    QPushButton* confirmBtn = new QPushButton(tr("完成校准"), pContentWidget);
     confirmBtn->setStyleSheet(R"(
         QPushButton {
             background-color: #6329B6;
@@ -54,7 +53,7 @@ LinearFixing2::LinearFixing2(const QString& title,const QString& content, QWidge
     )");
     connect(confirmBtn, &QPushButton::clicked, this, &QDialog::accept);
 
-    QPushButton* cancelBtn = new QPushButton("取消", pContentWidget);
+    QPushButton* cancelBtn = new QPushButton(tr("取消"), pContentWidget);
     cancelBtn->setStyleSheet(R"(
         QPushButton {
             background-color: gray;
@@ -82,18 +81,20 @@ LinearFixing2::LinearFixing2(const QString& title,const QString& content, QWidge
     contentLayout->addWidget(pKeyBoard,1);
 
     QHBoxLayout* btnLayout = new QHBoxLayout(pContentWidget) ;
-    btnLayout->addWidget(cancelBtn, 0, Qt::AlignCenter);
-    btnLayout->addWidget(confirmBtn, 0, Qt::AlignCenter);
+    btnLayout->addWidget(cancelBtn);
+    btnLayout->addWidget(confirmBtn);
     btnLayout->setAlignment(Qt::AlignHCenter);
-    btnLayout->setSpacing(18) ;
+    btnLayout->setSpacing(20) ;
     btnLayout->setContentsMargins(10,10,10,10) ;
     contentLayout->addItem(btnLayout) ;
+
+    contentLayout->setContentsMargins(15,15,15,5);
 
     // 主布局
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(pContentWidget, 1, Qt::AlignCenter);
 
-    pContentWidget->setFixedSize(1130,540);
+    pContentWidget->setFixedSize(1130,550);
     pContentWidget->adjustSize();
     QRect geoMetry = QApplication::primaryScreen()->geometry(); ;
     if(parent) geoMetry = parent->geometry() ;

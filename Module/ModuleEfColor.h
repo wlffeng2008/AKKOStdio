@@ -43,7 +43,7 @@ protected:
 
         QRect rect = option.rect ;
         QFont font = item->data(Qt::FontRole).value<QFont>() ;
-        if(m_nSelect == index.column())
+        if(3 == index.column())
         {
             static QImage img(m_strImage) ;
             painter->drawImage(rect,img);

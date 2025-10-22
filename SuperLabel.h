@@ -12,13 +12,25 @@ class CustomTooltip : public QWidget
     Q_OBJECT
 public:
     explicit CustomTooltip(QWidget *parent = nullptr);
-    void setText(const QString&strText);
+    void setText(const QString&text);
+
+    void setTextStyle(const QString& stryle) ;
 
     static void setDefTipStyle(const QString& stryle) ;
     static void setGroupTipStyle( QObject *parent, QString&style) ;
+protected:
+    void mousePressEvent(QMouseEvent *event) override ;
+    void focusOutEvent(QFocusEvent *event) override ;
+    void showEvent(QShowEvent *event) override ;
+    void enterEvent(QEnterEvent *event) override ;
+    void leaveEvent(QEvent *event) override ;
+
+signals:
+    void onClicked() ;
 
 private:
     QLabel *content = nullptr;
+    QTimer *m_timer = nullptr;
 };
 
 class SuperLabel : public QLabel
@@ -30,7 +42,7 @@ public:
     void setImages(const QString&strGetfocus,const QString&strLostfocus);
     void setOwnSheet(const QString&strGetfocus,const QString&strLostfocus);
     void setFocus(bool foucs = true) ;
-    bool getFoucus(){ return m_bFoucs; }
+    bool getFocus(){ return m_bFoucs; }
     CustomTooltip *getToolTip(){ return tooltip; }
     static void setGroupTipStyle(QObject *parent, QString &style) ;
 

@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">font: 500 18px &quot;MiSans&quot;;</string>
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,0">
    <property name="spacing">
@@ -120,7 +120,6 @@
              <property name="font">
               <font>
                <family>MiSans</family>
-               <pointsize>-1</pointsize>
                <italic>false</italic>
                <fontweight>Medium</fontweight>
               </font>
@@ -190,7 +189,6 @@
                <property name="font">
                 <font>
                  <family>MiSans</family>
-                 <pointsize>-1</pointsize>
                  <italic>false</italic>
                  <fontweight>Medium</fontweight>
                 </font>
@@ -211,7 +209,6 @@
                <property name="font">
                 <font>
                  <family>MiSans</family>
-                 <pointsize>-1</pointsize>
                  <italic>false</italic>
                  <fontweight>Medium</fontweight>
                 </font>
@@ -241,7 +238,6 @@
                <property name="font">
                 <font>
                  <family>MiSans</family>
-                 <pointsize>-1</pointsize>
                  <italic>false</italic>
                  <fontweight>Medium</fontweight>
                 </font>
@@ -262,7 +258,6 @@
                <property name="font">
                 <font>
                  <family>MiSans</family>
-                 <pointsize>-1</pointsize>
                  <italic>false</italic>
                  <fontweight>Medium</fontweight>
                 </font>
@@ -292,7 +287,6 @@
                <property name="font">
                 <font>
                  <family>MiSans</family>
-                 <pointsize>-1</pointsize>
                  <italic>false</italic>
                  <fontweight>Medium</fontweight>
                 </font>
@@ -334,7 +328,6 @@
              <property name="font">
               <font>
                <family>MiSans</family>
-               <pointsize>-1</pointsize>
                <italic>false</italic>
                <fontweight>Medium</fontweight>
               </font>
@@ -395,7 +388,6 @@
              <property name="font">
               <font>
                <family>MiSans</family>
-               <pointsize>-1</pointsize>
                <italic>false</italic>
                <fontweight>Medium</fontweight>
               </font>
@@ -501,7 +493,7 @@
              <enum>QFrame::Shadow::Raised</enum>
             </property>
            </widget>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="labelTitle1">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -513,7 +505,6 @@
             <property name="font">
              <font>
               <family>MiSans</family>
-              <pointsize>-1</pointsize>
               <italic>false</italic>
               <fontweight>Medium</fontweight>
              </font>

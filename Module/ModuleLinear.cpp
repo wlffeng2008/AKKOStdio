@@ -2,6 +2,7 @@
 #include "ui_ModuleLinear.h"
 
 #include <QTimer>
+#include <QSlider>
 
 ModuleLinear::ModuleLinear(QWidget *parent)
     : QFrame(parent)
@@ -43,8 +44,7 @@ ModuleLinear::ModuleLinear(QWidget *parent)
             text-align: center;
             background-color: #EDEDED;
                 font-size: 14px ;
-                font-weight: normal ;
-                font-family: MiSans;
+                font-weight: 500 ;
             }
 
             QLineEdit:hover { background-color: #F0F0F0;}
@@ -63,7 +63,7 @@ ModuleLinear::ModuleLinear(QWidget *parent)
             height: 10px;
             margin: 0 -6px;
             border-radius: 5px;
-            border: 2px solid white;}
+            border: 2px solid white;background: #39E1DC;}
         QSlider::handle:hover { background: #F0F0F0;}
         QSlider::handle:pressed { background: #E0E0E0; border-color: #2D7FDD; }
     )");
@@ -99,17 +99,18 @@ ModuleLinear::ModuleLinear(QWidget *parent)
 
     connect(pTMUpdate1,&QTimer::timeout,this,[=]{
         pTMUpdate1->stop() ;
-        QString strTmp ;
+        QString strTmp = ui->lineEditValue1->text().trimmed() ;
         char szText[100]={0} ;
-        strcpy_s(szText,ui->lineEditValue1->text().trimmed().toStdString().c_str()) ;
+        strcpy_s(szText, strTmp.toStdString().c_str()) ;
         for(int i=0; i<strlen(szText); i++)
         {
             if(szText[i] == '.' || (szText[i] >= '0' && szText[i] <= '9'))
                 continue ;
             szText[i] = 0 ;
-            strTmp = szText;
+            break;
         }
-        int value = strTmp.toFloat() * 1000;
+        strTmp = szText;
+        int value = ui->lineEditValue1->text().toFloat() * 1000;
         if(value>4000) value = 4000 ;
         if(value<0) value = 0 ;
         ui->verticalSlider1->setValue(value);
@@ -135,21 +136,27 @@ ModuleLinear::ModuleLinear(QWidget *parent)
     });
     connect(pTMUpdate2,&QTimer::timeout,this,[=]{
         pTMUpdate2->stop() ;
-        QString strTmp ;
+        QString strTmp = ui->lineEditValue2->text().trimmed();
         char szText[100]={0} ;
-        strcpy_s(szText,ui->lineEditValue2->text().trimmed().toStdString().c_str()) ;
+        strcpy_s(szText,strTmp.toStdString().c_str()) ;
+        qDebug()<< szText ;
         for(int i=0; i<strlen(szText); i++)
         {
             if(szText[i] == '.' || (szText[i] >= '0' && szText[i] <= '9'))
                 continue ;
             szText[i] = 0 ;
-            strTmp = szText;
+            break;
         }
-        int value = strTmp.toFloat() * 1000;
+        strTmp = szText;
+
+        int value = ui->lineEditValue2->text().toFloat() * 1000;
         if(value>4000) value = 4000 ;
         if(value<0) value = 0 ;
         ui->verticalSlider2->setValue(value);
     });
+
+    ui->verticalSlider1->installEventFilter(this);
+    ui->verticalSlider2->installEventFilter(this);
 }
 
 ModuleLinear::~ModuleLinear()
@@ -157,8 +164,21 @@ ModuleLinear::~ModuleLinear()
     delete ui;
 }
 
+bool ModuleLinear::eventFilter(QObject*watched,QEvent*event)
+{
+    if (event->type() == QEvent::MouseButtonRelease && (watched == ui->verticalSlider1 || watched == ui->verticalSlider2))
+    {
+        QSlider *pSlider = static_cast<QSlider *>(watched) ;
+
+        int h = pSlider->height() ;
+        int value = (pSlider->maximum() - pSlider->minimum()) * (h - pSlider->mapFromGlobal(cursor().pos()).y()) / h ;
+        pSlider->setValue(value + pSlider->minimum()) ;
+    }
+    return QFrame::eventFilter(watched,event);
+}
+
 void ModuleLinear::setText(const QString&text1,const QString&text2)
 {
-    ui->labelTitle1->setText(text1+("(mm)"));
-    ui->labelTitle2->setText(text2+("(mm)"));
+    ui->labelTitleS1->setText(text1+("(mm)"));
+    ui->labelTitleS2->setText(text2+("(mm)"));
 }

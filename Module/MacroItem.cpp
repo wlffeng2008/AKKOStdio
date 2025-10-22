@@ -7,7 +7,7 @@ MacroItem::MacroItem(QWidget *parent)
 {
     ui->setupUi(this);
     setCursor(Qt::PointingHandCursor) ;
-
+    setStyleSheet("QFrame{font-size:14px;}") ;
     connect(ui->pushButtonEdit,&QPushButton::clicked,this,[=]{emit onOperation(0,this);}) ;
     connect(ui->pushButtonDelete,&QPushButton::clicked,this,[=]{emit onOperation(1,this);}) ;
 }

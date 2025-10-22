@@ -38,7 +38,7 @@
     <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="labelTitle">
+  <widget class="QLabel" name="labelTitle1">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -58,7 +58,7 @@
     <string>灯光亮度</string>
    </property>
   </widget>
-  <widget class="QLabel" name="labelValue">
+  <widget class="QLabel" name="labelTitle2">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -75,7 +75,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: #6229B4;</string>
+    <string notr="true">color: #FF9A1D;</string>
    </property>
    <property name="text">
     <string>25%</string>
@@ -84,7 +84,7 @@
     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label2">
+  <widget class="QLabel" name="labelTitleL2">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -93,13 +93,6 @@
      <height>15</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>MiSans</family>
-     <pointsize>12</pointsize>
-     <bold>false</bold>
-    </font>
-   </property>
    <property name="text">
     <string>100%</string>
    </property>
@@ -107,7 +100,7 @@
     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label1">
+  <widget class="QLabel" name="labelTitleL1">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -115,13 +108,6 @@
      <width>53</width>
      <height>15</height>
     </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MiSans</family>
-     <pointsize>12</pointsize>
-     <bold>false</bold>
-    </font>
    </property>
    <property name="text">
     <string>0%</string>

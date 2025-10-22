@@ -19,7 +19,7 @@ ModuleEfSpeed::ModuleEfSpeed(QWidget *parent)
         QSlider::handle:hover { background: #F0F0F0;}
         QSlider::handle:pressed { background: #E0E0E0; border-color: #2D7FDD; }
     )");
-    connect(ui->horizontalSlider,&QSlider::valueChanged,this,[=](int value){ui->labelValue->setText(QString::asprintf("%d%%",value*25));});
+    connect(ui->horizontalSlider,&QSlider::valueChanged,this,[=](int value){ui->labelTitle2->setText(QString::asprintf("%d%%",value*25));});
 }
 
 ModuleEfSpeed::~ModuleEfSpeed()
