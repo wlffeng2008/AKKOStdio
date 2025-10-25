@@ -72,14 +72,11 @@ ModuleRtSet::ModuleRtSet(QWidget *parent)
 
         QLineEdit {
             border: 1px solid #EDEDED;
+            background-color: #EDEDED;
             border-radius: 6px;
             min-height: 20px;
             color: black;
             text-align: center;
-            background-color: #EDEDED;
-                font-size: 14px ;
-                font-weight: normal ;
-                font-family: MiSans;
             }
 
             QLineEdit:hover { background-color: #F0F0F0;}

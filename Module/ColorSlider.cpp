@@ -25,7 +25,7 @@ void ColorSlider::mousePressEvent(QMouseEvent *event)
     if(event->button() == Qt::LeftButton)
     {
         int w = width() ;
-        setValue(mapFromGlobal(cursor().pos()).x()*(maximum()) / w) ;
+        setValue(mapFromGlobal(cursor().pos()).x()*(maximum() - minimum()) / w + minimum()) ;
     }
 }
 
@@ -61,22 +61,22 @@ void ColorSlider::paintEvent(QPaintEvent *ev)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
 
-    const int offset = 8;
     QRect rect = this->rect();
     rect.setHeight(16);
     QRect sliderRect = rect;
 
     painter.setPen(Qt::NoPen);
-    painter.setBrush(Qt::NoPen);
+    painter.setBrush(Qt::NoBrush);
     painter.setBrush(gradient());
-    painter.drawRoundedRect(sliderRect,8,8);
+    painter.drawRoundedRect(sliderRect,rect.height()/2,rect.height()/2);
 
+    const int offset = rect.height()/2;
     const double k = (double)(value() - minimum()) / (maximum()-minimum());
-    int x = (int)((rect.width()-2*offset) * k) + offset;
+    int x = (int)((rect.width() - 2*offset) * k) + offset;
 
     painter.save();
     QPen pen1(Qt::white, 3);
     painter.setPen(pen1);
-    painter.drawEllipse(QPointF(x, 8), 8, 8);
+    painter.drawEllipse(QPointF(x, rect.height()/2), rect.height()/2, rect.height()/2);
     painter.restore();
 }

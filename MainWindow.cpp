@@ -50,7 +50,6 @@ MainWindow::MainWindow(QWidget *parent)
         btn->setCursor(Qt::PointingHandCursor);
         btn->setFocusPolicy(Qt::ClickFocus) ;
     }
-
 }
 
 MainWindow::~MainWindow()
@@ -69,6 +68,11 @@ void MainWindow::closeEvent(QCloseEvent *event)
 bool MainWindow::eventFilter(QObject *watched, QEvent *event)
 {
     return QMainWindow::eventFilter(watched, event);
+}
+
+void MainWindow::focusOutEvent(QFocusEvent *event)
+{
+    qDebug() << "MainWindow::focusOutEvent" ;
 }
 
 void MainWindow::keyReleaseEvent(QKeyEvent *event)

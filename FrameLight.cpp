@@ -6,7 +6,7 @@ FrameLight::FrameLight(QWidget *parent)
     , ui(new Ui::FrameLight)
 {
     ui->setupUi(this);
-    ui->frameT->showFlag(false) ;
+    ui->frameKeyboard->showFlag(false) ;
 }
 
 FrameLight::~FrameLight()

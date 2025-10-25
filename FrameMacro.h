@@ -15,6 +15,10 @@ public:
     explicit FrameMacro(QWidget *parent = nullptr);
     ~FrameMacro();
 
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
+    void keyReleaseEvent(QKeyEvent *event) override;
+
 private:
     Ui::FrameMacro *ui;
 

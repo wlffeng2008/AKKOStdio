@@ -5,6 +5,7 @@
 #include "MacroSquare.h"
 
 #include <QLayout>
+#include <QKeyEvent>
 
 static QList<MacroSquare*>s_MSquares;
 
@@ -54,6 +55,8 @@ FrameMacro::FrameMacro(QWidget *parent)
             updateView() ;
         });
     }
+
+    setFocusPolicy(Qt::StrongFocus) ;
 }
 
 FrameMacro::~FrameMacro()
@@ -99,4 +102,15 @@ void FrameMacro::removeView()
         }
     }
     updateView() ;
+}
+
+
+void FrameMacro::keyPressEvent(QKeyEvent *event)
+{
+    qDebug() << "FrameMacro::QKeyEvent" << event->key() << event->nativeScanCode() ;
+}
+
+void FrameMacro::keyReleaseEvent(QKeyEvent *event)
+{
+
 }

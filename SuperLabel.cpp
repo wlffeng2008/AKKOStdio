@@ -36,6 +36,7 @@ CustomTooltip::CustomTooltip(QWidget *parent) : QWidget(parent)
     setWindowFlags(Qt::ToolTip | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
     setStyleSheet(s_strDefTipStyle);
+    setCursor(Qt::PointingHandCursor) ;
 
     content = new QLabel(this);
     content->setAlignment(Qt::AlignCenter);

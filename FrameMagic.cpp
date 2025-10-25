@@ -18,6 +18,8 @@ FrameMagic::FrameMagic(QWidget *parent)
                 max-height: 32px;
                 min-height: 32px;
                 border-radius: 16px ;
+                font-size:18px;
+                font-weight:600;
 
                 padding-left: 25px;
                 text-align: left;

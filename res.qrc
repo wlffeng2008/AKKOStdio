@@ -170,5 +170,6 @@
         <file>images/k/ic_peak.png</file>
         <file>images/k/ic_press.png</file>
         <file>images/k/ic_selected.png</file>
+        <file>images/btn-close.png</file>
     </qresource>
 </RCC>

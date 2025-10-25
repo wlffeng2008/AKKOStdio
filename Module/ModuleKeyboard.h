@@ -18,7 +18,7 @@ public:
     explicit ModuleKeyboard(QWidget *parent = nullptr);
     ~ModuleKeyboard();
 
-    void setKeyCllickable() ;
+    void setKeyFixMode() ;
     void setkeyHited(int id) ;
     void showFlag(bool show=true);
     void setKeyEnable(const QString&objname,bool bEnable,bool bSetToAll=false) ;

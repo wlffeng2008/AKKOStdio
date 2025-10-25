@@ -15,8 +15,8 @@ ToggleButton::ToggleButton(QWidget *parent) : QCheckBox(parent)
 
     setStyleSheet(R"(
             QCheckBox {
-                min-width: 50px;
-                min-height: 24px;
+                min-width: 40px;
+                min-height: 18px;
                 border: none; }
         )");
     m_bchecked = this->isChecked() ;

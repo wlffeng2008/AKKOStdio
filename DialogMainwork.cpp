@@ -11,6 +11,8 @@
 #include "FrameAbout.h"
 #include "ModuleLangMenu.h"
 #include "LinearFixing1.h"
+#include "ModuleGeneralMasker.h"
+#include "ModuleLinear.h"
 #include <QMenu>
 #include <QAction>
 
@@ -96,18 +98,28 @@ DialogMainwork::DialogMainwork(QWidget *parent)
     connect(ui->pushButtonLang,&QPushButton::clicked,this,[=]{
         ModuleLangMenu *pLangMenu = m_pLangMenu ;
         if(!pLangMenu->isHidden())
-            return ;
+           return ;
+
+        pLangMenu->setParent(nullptr) ;
         QRect btnRect = ui->pushButtonLang->geometry() ;
         QPoint PT = mapToGlobal(btnRect.bottomLeft());
-        qDebug() << btnRect << PT;
-        int mL,mT,mR,MB ;
-        ui->horizontalLayoutT->getContentsMargins(&mL,&mT,&mR,&MB);
-        pLangMenu->setGeometry(PT.x() + 30,PT.y(),100,250);
+        pLangMenu->setGeometry(PT.x() + 30,PT.y()+5,110,250);
+        pLangMenu->setWindowFlags(Qt::FramelessWindowHint |Qt::WindowStaysOnTopHint|Qt::Tool|Qt::Dialog|Qt::Popup);
         pLangMenu->show() ;
     });
 
     connect(ui->pushButtonFixed,&QPushButton::clicked,this,[=]{
         LinearFixing1 T("","",this) ;
+        T.exec() ;
+    });
+
+    connect(ui->pushButtonPaire,&QPushButton::clicked,this,[=]{
+        //ModuleGeneralMasker T(m_pLangMenu ,this) ;
+        ModuleLinear *pTest = new ModuleLinear(this) ;
+        pTest->setObjectName("TestLinear");
+        pTest->layout()->setContentsMargins(20,20,20,20) ;
+        pTest->setStyleSheet("QFrame#TestLinear{background-color:white;min-height:320px; border-radius:24px;}") ;
+        ModuleGeneralMasker T(pTest ,this) ;
         T.exec() ;
     });
 }
@@ -181,7 +193,7 @@ void DialogMainwork::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
     {
-        m_pLangMenu->hide() ;
+        if(m_pLangMenu) m_pLangMenu->hide() ;
         if(event->pos().y() < 50)
         {
             m_dragPosition = event->globalPos() - frameGeometry().topLeft();
@@ -193,6 +205,11 @@ void DialogMainwork::mousePressEvent(QMouseEvent *event)
     QDialog::mousePressEvent(event);
 }
 
+void DialogMainwork::focusOutEvent(QFocusEvent *event)
+{
+    if(m_pLangMenu) m_pLangMenu->hide() ;
+}
+
 void DialogMainwork::mouseMoveEvent(QMouseEvent *event)
 {
     if (event->buttons() & Qt::LeftButton && m_dragging) {
@@ -200,6 +217,16 @@ void DialogMainwork::mouseMoveEvent(QMouseEvent *event)
         event->accept();
     }
     // QDialog::mouseMoveEvent(event);
+}
+
+void DialogMainwork::keyPressEvent(QKeyEvent *event)
+{
+    qDebug() << "DialogMainwork::QKeyEvent" << event->key() << event->nativeScanCode() ;
+}
+
+void DialogMainwork::keyReleaseEvent(QKeyEvent *event)
+{
+
 }
 
 void DialogMainwork::mouseReleaseEvent(QMouseEvent *event)

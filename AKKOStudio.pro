@@ -17,6 +17,7 @@ INCLUDEPATH += ./Module
 SOURCES += \
     ColorLabel.cpp \
     ColorSquare.cpp \
+    CustumSlider.cpp \
     DialogDeviceConnect.cpp \
     DialogMainwork.cpp \
     FrameAbout.cpp \
@@ -30,11 +31,13 @@ SOURCES += \
     MacroSquare.cpp \
     Module/ColorSlider.cpp \
     Module/MacroItem.cpp \
+    Module/ModuleDKSAdjust.cpp \
     Module/ModuleDKSItem.cpp \
     Module/ModuleEfColor.cpp \
     Module/ModuleEfLumi.cpp \
     Module/ModuleEfMode.cpp \
     Module/ModuleEfSpeed.cpp \
+    Module/ModuleGeneralMasker.cpp \
     Module/ModuleLangMenu.cpp \
     Module/ModuleLinear.cpp \
     Module/ModuleRtSet.cpp \
@@ -50,6 +53,7 @@ SOURCES += \
 HEADERS += \
     ColorLabel.h \
     ColorSquare.h \
+    CustumSlider.h \
     DialogDeviceConnect.h \
     DialogMainwork.h \
     FrameAbout.h \
@@ -64,11 +68,13 @@ HEADERS += \
     MainWindow.h \
     Module/ColorSlider.h \
     Module/MacroItem.h \
+    Module/ModuleDKSAdjust.h \
     Module/ModuleDKSItem.h \
     Module/ModuleEfColor.h \
     Module/ModuleEfLumi.h \
     Module/ModuleEfMode.h \
     Module/ModuleEfSpeed.h \
+    Module/ModuleGeneralMasker.h \
     Module/ModuleLangMenu.h \
     Module/ModuleLinear.h \
     Module/ModuleRtSet.h \
@@ -90,6 +96,7 @@ FORMS += \
     FrameMain.ui \
     MainWindow.ui \
     Module/MacroItem.ui \
+    Module/ModuleDKSAdjust.ui \
     Module/ModuleDKSItem.ui \
     Module/ModuleEfColor.ui \
     Module/ModuleEfLumi.ui \

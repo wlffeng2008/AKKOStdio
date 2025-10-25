@@ -63,7 +63,7 @@ ModuleLinear::ModuleLinear(QWidget *parent)
             height: 10px;
             margin: 0 -6px;
             border-radius: 5px;
-            border: 2px solid white;background: #39E1DC;}
+            border: 2px solid white;background: #7DFFFB;}
         QSlider::handle:hover { background: #F0F0F0;}
         QSlider::handle:pressed { background: #E0E0E0; border-color: #2D7FDD; }
     )");

@@ -33,7 +33,7 @@
     <number>0</number>
    </property>
    <item alignment="Qt::AlignmentFlag::AlignTop">
-    <widget class="ModuleKeyboard" name="frameT">
+    <widget class="QFrame" name="frameT">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -58,6 +58,21 @@
      <property name="lineWidth">
       <number>0</number>
      </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="topMargin">
+       <number>15</number>
+      </property>
+      <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop">
+       <widget class="ModuleKeyboard" name="frameKeyboard">
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item alignment="Qt::AlignmentFlag::AlignBottom">
@@ -215,6 +230,12 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>ModuleKeyboard</class>
+   <extends>QFrame</extends>
+   <header>modulekeyboard.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>ModuleEfMode</class>
    <extends>QFrame</extends>
    <header location="global">moduleefmode.h</header>
@@ -236,12 +257,6 @@
    <class>ModuleEfSpeed</class>
    <extends>QFrame</extends>
    <header>moduleefspeed.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ModuleKeyboard</class>
-   <extends>QFrame</extends>
-   <header>modulekeyboard.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -23,11 +23,13 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    qDebug() << a.styleSheet();
     a.setStyleSheet(R"(
 
         * { font-family: MiSans;}
         QLabel { font-size: 14px; font-weight: 500 ;}
+
+        QLabel:disabled { color: #B3B3B3;}
+        QLineEdit:disabled { color: #B3B3B3; background-color: #E3E3E3;}
 
         QLabel#labelTitle1,#labelTitle2,#labelTitle3,#labelTitle4,#labelTitle5,#labelTitle,#labelName { font-size: 18px; font-weight: 600 ;}
         QLabel#labelTitleL1,#labelTitleL2,#labelTitleL3,#labelTitleL4,#labelTitleL5 { font-size: 14px; font-weight: 500 ;}
@@ -81,9 +83,25 @@ int main(int argc, char *argv[])
         QPushButton:checked { background-color: #1e90ff; }
         QPushButton:disabled { background-color: gray; color: #cccccc;}
 
-        QSlider{border-radius: 12px; }
+        QWidget#pageWakeup QPushButton {
+                background-color: red;
+                border-radius: 8px;
+                color: white;
+                border: 1px solid #6C9F50;
+                padding: 1px;
+                min-width: 46px;
+                min-height: 8px;
+                max-width: 800px;
+                max-height: 200px;
+                font-size: 18px ;
+                font-weight: 600;
+                }
+        QWidget#pageWakeup{background-color: #F6F6F6;border-radius:32px;}
+
+        QSlider { border-radius: 12px; }
         QSlider::groove:horizontal { height: 12px; background: #DCDCDC; border-radius: 6px; }
         QSlider::sub-page:horizontal { background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #FDDFBA, stop:1 #FFA73C);  border-radius: 6px; }
+        QSlider::sub-page:horizontal:disabled { background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 white, stop:1 #B3B3B3);  border-radius: 6px; }
         QSlider::handle:horizontal {
             width: 20px;
             height: 16px;
@@ -91,6 +109,7 @@ int main(int argc, char *argv[])
             border-radius: 12px;
             background: white;
             border: 2px solid #FFB459; }
+        QSlider::handle:horizontal:disabled { border: 2px solid #B3B3B3; }
 
         QSlider::groove:vertical { width: 24px; background: #DCDCDC; border-radius: 12px; }
         QSlider::sub-page:vertical { background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #FDDFBA, stop:1 #FFA73C);  border-radius: 12px; }
@@ -162,9 +181,8 @@ int main(int argc, char *argv[])
 
     QScrollBar::handle:vertical,
     QScrollBar::handle:horizontal {
-        background: rgba(160, 160, 160, 0.5);
-        border-radius: 0px;
-        border: 1px solid rgba(255, 255, 255, 0);
+        background: rgba(160, 160, 160, 0.7);
+        border-radius: 2px;
         min-height: 20px;
         min-width: 20px;
     }
@@ -172,20 +190,13 @@ int main(int argc, char *argv[])
     QScrollBar::handle:vertical:hover,
     QScrollBar::handle:horizontal:hover {
         background: rgba(160, 250, 160, 0.7);
-        border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     QScrollBar::handle:vertical:pressed,
     QScrollBar::handle:horizontal:pressed {
-        background: rgba(120, 220, 120, 0.8);
+        background: rgba(160, 250, 160, 0.98);
     }
 
-QScrollBar:vertical:hover {
-    background: rgba(40, 240, 40, 1.0);
-}
-QScrollBar:horizontal:hover {
-    background: rgba(240, 240, 240, 0.3);
-}
 
 QScrollBar::add-line:vertical,
 QScrollBar::sub-line:vertical,
@@ -198,10 +209,16 @@ QScrollBar::sub-line:horizontal {
 }
 
 
+QScrollBar::add-page:vertical:hover,
+QScrollBar::add-page:horizontal:hover {background: rgba(40, 40, 40, 0.8);}
+QScrollBar::sub-page:vertical:hover,
+QScrollBar::sub-page:horizontal:hover { background: rgba(40, 40, 40, 0.8);}
+
+
 QScrollBar::add-page:vertical,
-QScrollBar::add-page:horizontal {background: #626262;}
+QScrollBar::add-page:horizontal {background: rgba(40, 40, 40, 0.03);}
 QScrollBar::sub-page:vertical,
-QScrollBar::sub-page:horizontal { background: #626262;}
+QScrollBar::sub-page:horizontal { background: rgba(40, 40, 40, 0.03);}
 
 QScrollArea { background-color: transparent; }
 
@@ -254,7 +271,6 @@ QTabBar::tab:vertical {
     min-height: 20px;
 }
 
-/* 标签页内容区域的样式 */
 QTabWidget::pane {
     background-color: transparent;
     border: none;

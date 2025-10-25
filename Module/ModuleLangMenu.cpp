@@ -12,7 +12,8 @@ ModuleLangMenu::ModuleLangMenu(QWidget *parent)
     , ui(new Ui::ModuleLangMenu)
 {
     ui->setupUi(this);
-    setWindowFlags(windowFlags() | Qt::FramelessWindowHint|Qt::MSWindowsFixedSizeDialogHint);
+
+    setWindowFlags(Qt::FramelessWindowHint |Qt::WindowStaysOnTopHint|Qt::Tool|Qt::Dialog|Qt::Popup);
     setAttribute(Qt::WA_TranslucentBackground);
 
     static QStringList Langs={tr("中文简体"),tr("English"),tr("한국어"),tr("日本語"),tr("Русский"),tr("Tiếng Việt"),tr("Português")} ;
@@ -39,12 +40,12 @@ ModuleLangMenu::ModuleLangMenu(QWidget *parent)
             )") ;
     m_pBtnGrp = new QButtonGroup(this) ;
     QLayout *pLayout = ui->verticalLayout ;
-    pLayout->setSpacing(6) ;
+    pLayout->setSpacing(8) ;
     pLayout->setAlignment(Qt::AlignTop|Qt::AlignHCenter) ;
-    pLayout->setContentsMargins(3,3,3,3);
+    pLayout->setContentsMargins(3,10,3,3);
 
     connect(m_pBtnGrp,&QButtonGroup::idClicked,this,[=](int id){
-        qDebug() << "Language QButtonGroup:" << id  << Langs[id];
+        //qDebug() << "Language QButtonGroup:" << id  << Langs[id];
         hide() ;
         emit onLangChanged(id,Langs[id]) ;
     });
@@ -61,12 +62,16 @@ ModuleLangMenu::ModuleLangMenu(QWidget *parent)
         m_pBtnGrp->addButton(btn,i);
         pLayout->addWidget(btn);
     }
-    pLayout->setAlignment(Qt::AlignTrailing);
+    //pLayout->setAlignment(Qt::AlignTrailing|Qt::AlignHCenter);
 
-    QTimer::singleShot(100,this,[=]{ m_pBtnGrp->button(0)->click(); setFocusPolicy(Qt::StrongFocus);});
-
+    QTimer::singleShot(100,this,[=]{ m_pBtnGrp->button(0)->click(); setFocusPolicy(Qt::NoFocus);});
 
     setStyleSheet("QDialog{background-color: rgba(255, 255, 255, 0.9); border: 1px solid #EAEAEA; border-radius:12px;}");
+}
+
+void ModuleLangMenu::showEvent(QShowEvent *event)
+{
+    event->accept() ;
 }
 
 ModuleLangMenu::~ModuleLangMenu()
@@ -84,8 +89,9 @@ void ModuleLangMenu::setLanguage(int langId)
 
 void ModuleLangMenu::focusOutEvent(QFocusEvent *event)
 {
-    QDialog::focusOutEvent(event);
-    this->hide() ;
+    //QDialog::focusOutEvent(event);
+    //hide() ;
+    //event->accept() ;
     qDebug() << "ModuleLangMenu::focusOutEvent." ;
 }
 

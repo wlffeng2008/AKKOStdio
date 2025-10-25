@@ -25,6 +25,7 @@ LinearFixing2::LinearFixing2(const QString& title,const QString& content, QWidge
             border-radius: 32px;
             padding: 10px; }
     )");
+    //pContentWidget->setFixedSize(1280,650);
 
     QLabel *pLabTitle = new QLabel(tr("请依次将每个按键轻按到底并停留至少1秒钟，直到按键变为橙色（表示该按键校准成功），请勿遗漏，可重复按按键。无线下不支持按键校准个数提示。校准过程中请勿拔出数据线。"), pContentWidget);
     pLabTitle->setStyleSheet("font-size: 16px; font-weight:500; color: #333; text-align: center;padding: 15px 145px;");
@@ -32,7 +33,7 @@ LinearFixing2::LinearFixing2(const QString& title,const QString& content, QWidge
     pLabTitle->setAlignment(Qt::AlignCenter);
 
     pKeyBoard = new ModuleKeyboard(pContentWidget) ;
-    pKeyBoard->setKeyCllickable() ;
+    pKeyBoard->setKeyFixMode() ;
 
     QPushButton* confirmBtn = new QPushButton(tr("完成校准"), pContentWidget);
     confirmBtn->setStyleSheet(R"(
@@ -80,7 +81,7 @@ LinearFixing2::LinearFixing2(const QString& title,const QString& content, QWidge
     contentLayout->addWidget(pLabTitle);
     contentLayout->addWidget(pKeyBoard,1);
 
-    QHBoxLayout* btnLayout = new QHBoxLayout(pContentWidget) ;
+    QHBoxLayout* btnLayout = new QHBoxLayout(nullptr) ;
     btnLayout->addWidget(cancelBtn);
     btnLayout->addWidget(confirmBtn);
     btnLayout->setAlignment(Qt::AlignHCenter);
@@ -94,8 +95,7 @@ LinearFixing2::LinearFixing2(const QString& title,const QString& content, QWidge
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(pContentWidget, 1, Qt::AlignCenter);
 
-    pContentWidget->setFixedSize(1130,550);
-    pContentWidget->adjustSize();
+    //pContentWidget->adjustSize();
     QRect geoMetry = QApplication::primaryScreen()->geometry(); ;
     if(parent) geoMetry = parent->geometry() ;
     setFixedSize(geoMetry.width(), geoMetry.height());

@@ -108,8 +108,29 @@ void ModuleDKSItem::paintEvent(QPaintEvent*event)
     int x1 = m_dragX1;
     int x2 = m_dragX2;
 
-    if(x1<140) x1 = 140;
-    if(x2>382) x2 = 382;
+    QList<QLabel*> labels={ui->labelSwitch1,ui->labelSwitch2,ui->labelSwitch3,ui->labelSwitch4};
+    for(int i=0; i<4; i++)
+    {
+        QPoint pos = labels[i]->pos()  ;
+        if(x1<pos.x())
+        {
+            x1 = pos.x() - 15 ;
+            break;
+        }
+    }
+
+    for(int i=0; i<4; i++)
+    {
+        QPoint pos = labels[3-i]->geometry().bottomRight()  ;
+        if(x2>pos.x())
+        {
+            x2 = pos.x() + 50 ;
+            break;
+        }
+    }
+
+    if(x1<130) x1 = 130;
+    if(x2>400) x2 = 400;
 
     int nW = x2-x1 ;
     if(nW<10)

@@ -6,18 +6,13 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QTimer>
-static QList<ModuleKeyboard*>s_kbInstance ;
 
-ModuleKeyboard::ModuleKeyboard(QWidget *parent)
-    : QFrame(parent)
-    , ui(new Ui::ModuleKeyboard)
-{
-    ui->setupUi(this);
-    QString strStyle(R"(
+static QList<ModuleKeyboard*>s_kbInstance ;
+static QString strStyle(R"(
         QPushButton {
                     border: 1px solid #EAEAEA;
                     border-radius: 14px;
-                    padding: 1px 1px;
+                    padding: 2px 2px;
                     color: black;
                     outline: none;
                     background-color: #FBFBFB;
@@ -31,8 +26,23 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
         QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }
         )");
 
-    //QTimer::singleShot(200,this,[=]{ setStyleSheet(strStyle); });
+ModuleKeyboard::ModuleKeyboard(QWidget *parent)
+    : QFrame(parent)
+    , ui(new Ui::ModuleKeyboard)
+{
+    ui->setupUi(this);
 
+    setMinimumHeight(400) ;
+    setMinimumWidth(900) ;
+
+    QTimer::singleShot(100,this,[=]{
+    if(parent)
+    {
+        parent->setMinimumSize(900,400) ;
+        //parent->layout()->setAlignment(Qt::AlignCenter);
+        //qDebug() << "parent->parentWidget()->layout()->setAlignment(Qt::AlignCenter)";
+    }
+    });
     int nIndex = 0 ;
     for(int i=0; i<0xFFFF; i++)
     {
@@ -43,11 +53,12 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
         btn->setCheckable(true) ;
         btn->setFocusPolicy(Qt::NoFocus);
         btn->setCursor(Qt::PointingHandCursor) ;
+        ui->buttonGroup->removeButton(btn);
         ui->buttonGroup->addButton(btn,nIndex++) ;
         if(i== 0xE000) m_spcBtn = btn ;
     }
 
-    QTimer::singleShot(100,this,[=]{m_spcBtn->setStyleSheet("QPushButton{ border-radius:24px; border: 1px solid #EAEAEA;background-color: #FBFBFB;} QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C;}");}) ;
+    QTimer::singleShot(100,this,[=]{m_spcBtn->setStyleSheet(strStyle + "QPushButton{ border-radius:24px;}");}) ;
 
     ui->buttonGroup->setExclusive(false) ;
 
@@ -132,28 +143,28 @@ void ModuleKeyboard::setkeyHited(int id)
     QPushButton *btn = findChild<QPushButton*>(strName) ;
     if(btn)
     {
-        btn->setStyleSheet(R"(
+        btn->setStyleSheet(strStyle + R"(
             QPushButton:disabled { background-color: #FF9052; color: white; }
         )") ;
     }
-    m_spcBtn->setStyleSheet("QPushButton{border-radius:24px;}");
 }
 
-void ModuleKeyboard::setKeyCllickable()
+void ModuleKeyboard::setKeyFixMode()
 {
-    m_bFixMode = true ;
-    const QList<QAbstractButton*>btns = ui->buttonGroup->buttons() ;
-    for(QAbstractButton*btn:btns)
-    {
-        btn->setCheckable(false) ;
-        btn->setStyleSheet(R"(
+    QTimer::singleShot(100,this,[=]{
+        m_bFixMode = true ;
+        const QList<QAbstractButton*>btns = ui->buttonGroup->buttons() ;
+        for(QAbstractButton*btn:btns)
+        {
+            btn->setEnabled(false) ;
+            btn->setStyleSheet(strStyle + R"(
             QPushButton:disabled { background-color: white; color: black; }
         )");
-        btn->setEnabled(false) ;
-    }
-    ui->frameFlag->hide() ;
-
-    m_spcBtn->setStyleSheet("QPushButton { border-radius:24px;} QPushButton:disabled { background-color: white; color: black; }");
+            btn->update() ;
+        }
+        m_spcBtn->setStyleSheet(strStyle + "QPushButton{ border-radius:24px;}  QPushButton:disabled { background-color: white; color: black; }");
+        ui->frameFlag->hide() ;
+    });
 }
 
 bool ModuleKeyboard::event(QEvent *event)

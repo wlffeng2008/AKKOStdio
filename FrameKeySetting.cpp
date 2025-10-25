@@ -3,6 +3,11 @@
 
 #include <QTimer>
 #include <QButtonGroup>
+#include <QTimer>
+
+#include "ModuleDKSAdjust.h"
+#include "ModuleGeneralMasker.h"
+
 
 FrameKeySetting::FrameKeySetting(QWidget *parent)
     : QFrame(parent)
@@ -18,6 +23,8 @@ FrameKeySetting::FrameKeySetting(QWidget *parent)
                 max-height: 32px;
                 min-height: 32px;
                 border-radius: 16px ;
+                font-size:18px;
+                font-weight:600;
 
                 padding-left: 25px;
                 text-align: left;
@@ -147,7 +154,55 @@ FrameKeySetting::FrameKeySetting(QWidget *parent)
             pTMUpdate->start(300) ;
         });
     }
+
+    {
+        ui->labelPress1->installEventFilter(this);
+        ui->labelPress2->installEventFilter(this);
+        ui->labelPress3->installEventFilter(this);
+        ui->labelPress4->installEventFilter(this);
+        ui->labelRelease1->installEventFilter(this);
+        ui->labelRelease2->installEventFilter(this);
+        ui->labelRelease3->installEventFilter(this);
+        ui->labelRelease4->installEventFilter(this);
+    }
+
+    m_adjust = new ModuleDKSAdjust(this) ;
+    m_adjust->setObjectName("DKSAdjust") ;
+    m_adjust->setStyleSheet("QFrame#DKSAdjust{background-color:#F6F6F6;border-radius:20px;min-width:200px;min-height:300px;margin-top:10px;}") ;
+    m_adjust->adjustSize() ;
+    m_adjust->update() ;
+    m_adjust->hide();
+    connect(m_adjust,&ModuleDKSAdjust::onValueSave,this,[=](const QString&text){
+        m_toAdjust->setText(text + " mm") ;
+    });
 }
+
+
+bool FrameKeySetting::eventFilter(QObject*watched,QEvent*event)
+{
+    if (event->type() == QEvent::MouseButtonRelease)
+    {
+        QLabel *labCilck = nullptr ;
+        if(watched == ui->labelPress1   || watched == ui->labelPress3)    labCilck = ui->labelPress1 ;
+        if(watched == ui->labelPress2   || watched == ui->labelPress4)    labCilck = ui->labelPress2 ;
+        if(watched == ui->labelRelease1 || watched == ui->labelRelease3)  labCilck = ui->labelRelease1 ;
+        if(watched == ui->labelRelease2 || watched == ui->labelRelease4)  labCilck = ui->labelRelease2 ;
+
+        if(labCilck)
+        {
+            m_toAdjust = labCilck;
+            ModuleDKSAdjust *Adj = m_adjust;
+            ModuleGeneralMasker M(Adj,ui->frameTab2);
+            M.setStyleSheet("QDialog { background-color: rgba(120, 120, 120, 0.9);  border: none; border-radius: 32px;}");
+            M.exec() ;
+
+            return true ;
+        }
+    }
+
+    return QFrame::eventFilter(watched,event);
+}
+
 
 FrameKeySetting::~FrameKeySetting()
 {
