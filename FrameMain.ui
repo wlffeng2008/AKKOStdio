@@ -16,6 +16,9 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
+  <property name="lineWidth">
+   <number>0</number>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,0">
    <property name="spacing">
     <number>24</number>
@@ -45,6 +48,9 @@
        <width>16777215</width>
        <height>474</height>
       </size>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="spacing">
@@ -535,9 +541,12 @@
        <height>304</height>
       </size>
      </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
-       <number>25</number>
+       <number>24</number>
       </property>
       <property name="leftMargin">
        <number>0</number>
@@ -608,6 +617,9 @@
           <width>304</width>
           <height>16777215</height>
          </size>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
          <property name="spacing">
@@ -685,6 +697,12 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>ModuleLinear</class>
+   <extends>QFrame</extends>
+   <header>modulelinear.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>ModuleEfMode</class>
    <extends>QFrame</extends>
    <header location="global">moduleefmode.h</header>
@@ -706,12 +724,6 @@
    <class>ModuleEfSpeed</class>
    <extends>QFrame</extends>
    <header>moduleefspeed.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ModuleLinear</class>
-   <extends>QFrame</extends>
-   <header>modulelinear.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

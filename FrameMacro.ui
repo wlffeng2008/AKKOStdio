@@ -402,6 +402,12 @@ font-size: 14px;
             </item>
             <item>
              <widget class="QRadioButton" name="radioButtonDelay">
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="text">
                <string>延时</string>
               </property>
@@ -430,8 +436,14 @@ font-size: 14px;
              <widget class="QLabel" name="label_3">
               <property name="minimumSize">
                <size>
-                <width>63</width>
+                <width>30</width>
                 <height>58</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>16777215</height>
                </size>
               </property>
               <property name="text">

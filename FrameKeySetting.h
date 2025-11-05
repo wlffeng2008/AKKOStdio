@@ -21,8 +21,10 @@ protected:
     bool eventFilter(QObject*watched,QEvent*event) override;
 private:
     Ui::FrameKeySetting *ui;
-    ModuleDKSAdjust *m_adjust = nullptr ;
-    QLabel *m_toAdjust = nullptr ;
+    ModuleDKSAdjust *m_adjust = nullptr;
+    QLabel *m_toAdjust = nullptr;
+    QWidget *m_pMask = nullptr;
+
 };
 
 #endif // FRAMEKEYSETTING_H

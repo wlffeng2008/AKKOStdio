@@ -20,7 +20,7 @@ public:
     void setLanguage(int langId) ;
 
 protected:
-    void focusOutEvent(QFocusEvent *event) override;
+    bool eventFilter(QObject *watch, QEvent *event) override;
     void paintEvent(QPaintEvent *event) override;
     void showEvent(QShowEvent *event) override;
 

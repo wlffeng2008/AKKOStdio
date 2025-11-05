@@ -80,7 +80,7 @@ DialogMainwork::DialogMainwork(QWidget *parent)
             color: #333;
             margin-left:24px;
             border: none;
-            font: 500 18px "MiSans";
+            font: 500 16px "MiSans";
             background: transparent;
             spacing:20px; }
 
@@ -90,7 +90,7 @@ DialogMainwork::DialogMainwork(QWidget *parent)
     ui->pushButtonReset->setStyleSheet(strStyle);
     ui->pushButtonPaire->setStyleSheet(strStyle);
 
-    m_pLangMenu =  new ModuleLangMenu(this) ;
+    m_pLangMenu = new ModuleLangMenu(this) ;
     connect(m_pLangMenu,&ModuleLangMenu::onLangChanged,this,[=](int langId,const QString&lang){
         ui->pushButtonLang->setText(QString(" ")+lang) ;
     }) ;
@@ -114,7 +114,7 @@ DialogMainwork::DialogMainwork(QWidget *parent)
     });
 
     connect(ui->pushButtonPaire,&QPushButton::clicked,this,[=]{
-        //ModuleGeneralMasker T(m_pLangMenu ,this) ;
+
         ModuleLinear *pTest = new ModuleLinear(this) ;
         pTest->setObjectName("TestLinear");
         pTest->layout()->setContentsMargins(20,20,20,20) ;
@@ -154,6 +154,7 @@ void DialogMainwork::clickLabel(QLabel *label, int index)
 
 bool DialogMainwork::eventFilter(QObject *watch, QEvent *event)
 {
+    //qDebug() << event->type() ;
     if(event->type() == QEvent::MouseButtonRelease)
     {
         int nCount = m_pLBtns.count() ;
@@ -167,7 +168,7 @@ bool DialogMainwork::eventFilter(QObject *watch, QEvent *event)
             }
         }
     }
-    if(event->type() == QEvent::FocusOut)
+    if(event->type() == QEvent::Paint || event->type() == QEvent::WindowDeactivate || event->type() == QEvent::WindowActivate)
     {
         m_pLangMenu->hide() ;
     }
@@ -188,7 +189,6 @@ void DialogMainwork::paintEvent(QPaintEvent *event)
     event->accept() ;
 }
 
-
 void DialogMainwork::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
@@ -205,11 +205,6 @@ void DialogMainwork::mousePressEvent(QMouseEvent *event)
     QDialog::mousePressEvent(event);
 }
 
-void DialogMainwork::focusOutEvent(QFocusEvent *event)
-{
-    if(m_pLangMenu) m_pLangMenu->hide() ;
-}
-
 void DialogMainwork::mouseMoveEvent(QMouseEvent *event)
 {
     if (event->buttons() & Qt::LeftButton && m_dragging) {
@@ -217,6 +212,21 @@ void DialogMainwork::mouseMoveEvent(QMouseEvent *event)
         event->accept();
     }
     // QDialog::mouseMoveEvent(event);
+}
+
+void DialogMainwork::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton) {
+        m_dragging = false;
+        event->accept();
+    }
+    // QDialog::mouseReleaseEvent(event);
+}
+
+
+void DialogMainwork::focusOutEvent(QFocusEvent *event)
+{
+    if(m_pLangMenu) m_pLangMenu->hide() ;
 }
 
 void DialogMainwork::keyPressEvent(QKeyEvent *event)
@@ -229,11 +239,3 @@ void DialogMainwork::keyReleaseEvent(QKeyEvent *event)
 
 }
 
-void DialogMainwork::mouseReleaseEvent(QMouseEvent *event)
-{
-    if (event->button() == Qt::LeftButton) {
-        m_dragging = false;
-        event->accept();
-    }
-    // QDialog::mouseReleaseEvent(event);
-}

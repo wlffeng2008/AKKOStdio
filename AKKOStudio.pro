@@ -43,6 +43,7 @@ SOURCES += \
     Module/ModuleRtSet.cpp \
     Module/ModuleKeyboard.cpp \
     Module/ModuleVideoItem.cpp \
+    Module/VirtualKeyboard.cpp \
     ModuleScrollValue.cpp \
     NewTabWidget.cpp \
     SuperLabel.cpp \
@@ -80,6 +81,7 @@ HEADERS += \
     Module/ModuleRtSet.h \
     Module/ModuleKeyboard.h \
     Module/ModuleVideoItem.h \
+    Module/VirtualKeyboard.h \
     ModuleScrollValue.h \
     NewTabWidget.h \
     SuperLabel.h \
@@ -107,6 +109,7 @@ FORMS += \
     Module/ModuleRtSet.ui \
     Module/ModuleKeyboard.ui \
     Module/ModuleVideoItem.ui \
+    Module/VirtualKeyboard.ui \
     ModuleScrollValue.ui
 
 TRANSLATIONS += \

@@ -311,6 +311,8 @@ void DialogDeviceConnect::makeCmd(int row, bool autoSend)
     quint8 buf[32] = {0} ;
     int len = m_pModel->item(row,1)->text().toInt() ;
     buf[0] = m_pModel->item(row,2)->text().toInt(nullptr,16) ;
+    if(buf[0]&0x80)
+        len = 8 ;
     for(int i=0; i<len-2; i++)
     {
         buf[i+1] = m_pModel->item(row,i + 3)->text().toInt() ;

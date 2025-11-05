@@ -69,7 +69,7 @@ bool ModuleDKSItem::event(QEvent*event)
         m_TMReset.stop() ;
         m_dragX2 = pMEvent->pos().x() ;
         QList<QLabel*> labels={ui->labelSwitch1,ui->labelSwitch2,ui->labelSwitch3,ui->labelSwitch4};
-        for(int i=0; i<4; i++)
+        for(int i=0; i<3; i++)
         {
             QRect rc = labels[i]->geometry() ;
             if(rc.right()<m_dragX2 && rc.left()>m_dragX1)
@@ -79,7 +79,7 @@ bool ModuleDKSItem::event(QEvent*event)
         }
 
         bool allshow = true;
-        for(int i=0; i<4; i++)
+        for(int i=0; i<3; i++)
         {
             if(labels[i]->isHidden())
             {
@@ -130,7 +130,7 @@ void ModuleDKSItem::paintEvent(QPaintEvent*event)
     }
 
     if(x1<130) x1 = 130;
-    if(x2>400) x2 = 400;
+    if(x2>368) x2 = 368;
 
     int nW = x2-x1 ;
     if(nW<10)

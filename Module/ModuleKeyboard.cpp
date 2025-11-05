@@ -33,12 +33,12 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
     ui->setupUi(this);
 
     setMinimumHeight(400) ;
-    setMinimumWidth(900) ;
+    setMinimumWidth(960) ;
 
     QTimer::singleShot(100,this,[=]{
     if(parent)
     {
-        parent->setMinimumSize(900,400) ;
+        parent->setMinimumSize(960,400) ;
         //parent->layout()->setAlignment(Qt::AlignCenter);
         //qDebug() << "parent->parentWidget()->layout()->setAlignment(Qt::AlignCenter)";
     }
@@ -68,7 +68,7 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
         int nChecked = 0;
         for(QAbstractButton*btn:btns)
         {
-            if(nChecked >= 3)
+            if(nChecked >= m_nSelectCount)
             {
                 btn->setChecked(false);
                 continue ;
@@ -79,11 +79,12 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
         }
 
         QPushButton *btn = static_cast<QPushButton *>(ui->buttonGroup->button(id)) ;
+        emit onKeyClicked(btn->text()) ;
         // qDebug() << "Clicked:" << id << btn->objectName() ;
     });
 
     m_Menu = new CustomTooltip() ;
-    m_Menu->setTextStyle("QLabel{color:red;}") ;
+    m_Menu->setTextStyle("QLabel { color: red; }") ;
 
     connect(m_Menu,&CustomTooltip::onClicked,this,[=]{
         if(m_curBtn->isEnabled())
@@ -107,18 +108,28 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
 ModuleKeyboard::~ModuleKeyboard()
 {
     s_kbInstance.removeAll(this) ;
-    qDebug() << "ModuleKeyboard::~ModuleKeyboard()";
     delete ui;
 }
 
-void ModuleKeyboard::showFlag(bool show)
+void ModuleKeyboard::setSelectCount(int count)
 {
-    ui->frameFlag->setVisible(show) ;
+    m_nSelectCount = count;
+    ui->buttonGroup->setExclusive(false) ;
+}
+
+void ModuleKeyboard::setSingleMode(bool set)
+{
+    ui->buttonGroup->setExclusive(set) ;
 }
 
 void ModuleKeyboard::keyPressEvent(QKeyEvent *event)
 {
     QFrame::keyPressEvent(event) ;
+}
+
+void ModuleKeyboard::showFlag(bool show)
+{
+    ui->frameFlag->setVisible(show) ;
 }
 
 void ModuleKeyboard::setKeyEnable(const QString&objname,bool bEnable,bool bSetToAll)
@@ -194,6 +205,20 @@ bool ModuleKeyboard::event(QEvent *event)
     return QFrame::event(event) ;
 }
 
+
+void ModuleKeyboard::paintEvent(QPaintEvent *event)
+{
+    QFrame::paintEvent(event);
+    if(m_draging)
+    {
+        QPainter painter(this) ;
+        QRect rect(m_clkPt,m_nowPt) ;
+        painter.setBrush(Qt::NoBrush);
+        painter.setPen(QPen(QBrush(Qt::blue),2,Qt::DashLine));
+        painter.drawRect(rect) ;
+    }
+}
+
 bool ModuleKeyboard::eventFilter(QObject *watched,QEvent *event)
 {
     if(event->type() == QEvent::MouseButtonRelease)
@@ -216,4 +241,47 @@ bool ModuleKeyboard::eventFilter(QObject *watched,QEvent *event)
         }
     }
     return QFrame::eventFilter(watched,event);
+}
+
+void ModuleKeyboard::mousePressEvent(QMouseEvent *event)
+{
+    m_draging=true;
+    m_clkPt=event->pos() ;
+    //qDebug() << m_clkPt;
+}
+
+void ModuleKeyboard::mouseMoveEvent(QMouseEvent *event)
+{
+    if(m_draging)
+    {
+        QRect rect(m_clkPt,event->pos()) ;
+
+        const QList<QAbstractButton*>btns = ui->buttonGroup->buttons() ;
+        for(QAbstractButton*btn:btns)
+        {
+            QRect btnRc = btn->rect();
+            //qDebug()<< btn->text() << btn->mapFromParent(btnRc.topLeft());
+            if( rect.contains( btn->mapToParent(btnRc.topLeft()))    ||
+                rect.contains( btn->mapToParent(btnRc.topRight()))   ||
+                rect.contains( btn->mapToParent(btnRc.bottomLeft())) ||
+                rect.contains( btn->mapToParent(btnRc.bottomRight())) )
+            {
+                btn->setStyleSheet(strStyle + R"(
+                    QPushButton { background-color: #3F3F3F; color: white; }
+                )") ;
+            }
+            else
+            {
+                btn->setStyleSheet(strStyle) ;
+            }
+        }
+        m_nowPt = event->pos() ;
+        update() ;
+    }
+}
+
+void ModuleKeyboard::mouseReleaseEvent(QMouseEvent *event)
+{
+    m_draging=false;
+    update() ;
 }

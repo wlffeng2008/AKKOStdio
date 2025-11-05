@@ -27,21 +27,23 @@ QPoint getGlobalPos(QWidget *widget) {
 ModuleGeneralMasker::ModuleGeneralMasker(QWidget *cotnent, QWidget *parent)
     : QDialog(parent)
 {
-    qDebug() << cotnent ;
-    if(!cotnent)
-    {
-        close();
-        return ;
-    }
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::MSWindowsFixedSizeDialogHint);
     setAttribute(Qt::WA_TranslucentBackground);
-    setModal(true);
+    //setModal(true);
 
     setStyleSheet("QDialog { background-color: rgba(120, 120, 120, 0.8);  border: none; border-radius: 24px;}");
 
-    cotnent->setParent(this) ;
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
-    mainLayout->addWidget(cotnent, 1, Qt::AlignCenter);
+
+    if(cotnent)
+    {
+        cotnent->setParent(this) ;
+        mainLayout->addWidget(cotnent, 1, Qt::AlignCenter);
+
+        cotnent->show();
+        cotnent->installEventFilter(this) ;
+        m_watch = cotnent;
+    }
 
     QRect geoMetry = QApplication::primaryScreen()->geometry();
     if(parent)
@@ -52,11 +54,6 @@ ModuleGeneralMasker::ModuleGeneralMasker(QWidget *cotnent, QWidget *parent)
     }
     setGeometry(geoMetry);
     setFixedSize(geoMetry.width(), geoMetry.height());
-
-    cotnent->show() ;
-
-    cotnent->installEventFilter(this) ;
-    m_watch = cotnent;
 }
 
 bool ModuleGeneralMasker::eventFilter(QObject*watched,QEvent*event)

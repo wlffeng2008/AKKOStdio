@@ -47,13 +47,13 @@ ModuleEfColor::ModuleEfColor(QWidget *parent)
         font.setPointSize(24);
         srand(time(nullptr)) ;
 
-        col_list.push_back(0xE9381D);
-        col_list.push_back(0xF4C33C);
+        col_list.push_back(0x4039FF);
+        col_list.push_back(0xFFE6B1);
         col_list.push_back(0x71FB55);
         col_list.push_back(0x6FEAFC);
         col_list.push_back(0x3000F6);
         col_list.push_back(0xEB35D3);
-        col_list.push_back(0xF93030);
+        col_list.push_back(0xFF6A44);
         for(int i=0; i<7; i++)
         {
             QStandardItem *item = m_pModel->item(0,i);

@@ -87,12 +87,14 @@ void ModuleLangMenu::setLanguage(int langId)
     m_pBtnGrp->button(langId)->click() ;
 }
 
-void ModuleLangMenu::focusOutEvent(QFocusEvent *event)
+bool ModuleLangMenu::eventFilter(QObject *watch, QEvent *event)
 {
-    //QDialog::focusOutEvent(event);
-    //hide() ;
-    //event->accept() ;
-    qDebug() << "ModuleLangMenu::focusOutEvent." ;
+    if(event->type() == QEvent::Paint || event->type() == QEvent::WindowDeactivate)
+    {
+        this->hide() ;
+    }
+
+    return QDialog::eventFilter(watch, event);
 }
 
 void ModuleLangMenu::paintEvent(QPaintEvent *event)

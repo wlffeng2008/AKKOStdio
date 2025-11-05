@@ -22,11 +22,20 @@ public:
     void setkeyHited(int id) ;
     void showFlag(bool show=true);
     void setKeyEnable(const QString&objname,bool bEnable,bool bSetToAll=false) ;
+    void setSingleMode(bool set=true) ;
+    void setSelectCount(int count=3) ;
+
+signals:
+    void onKeyClicked(const QString&text);
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     bool event(QEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
     bool eventFilter(QObject *watched,QEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
 private:
     Ui::ModuleKeyboard *ui;
@@ -37,6 +46,11 @@ private:
     CustomTooltip *m_Menu = nullptr;
 
     bool m_bFixMode = false ;
+    int m_nSelectCount = 3 ;
+
+    bool m_draging =false ;
+    QPoint m_clkPt={0,0} ;
+    QPoint m_nowPt={0,0} ;
 };
 
 #endif // MODULEKEYBOARD_H

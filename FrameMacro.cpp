@@ -108,9 +108,10 @@ void FrameMacro::removeView()
 void FrameMacro::keyPressEvent(QKeyEvent *event)
 {
     qDebug() << "FrameMacro::QKeyEvent" << event->key() << event->nativeScanCode() ;
+    QFrame::keyPressEvent(event);
 }
 
 void FrameMacro::keyReleaseEvent(QKeyEvent *event)
 {
-
+    QFrame::keyReleaseEvent(event);
 }

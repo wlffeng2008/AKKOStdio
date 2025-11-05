@@ -16,7 +16,10 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0">
+  <property name="lineWidth">
+   <number>0</number>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="2,0">
    <property name="spacing">
     <number>24</number>
    </property>
@@ -37,7 +40,7 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>470</height>
+       <height>500</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -154,6 +157,9 @@
       </item>
       <item alignment="Qt::AlignmentFlag::AlignRight">
        <widget class="QFrame" name="frameBR">
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayoutB_2">
          <property name="spacing">
           <number>24</number>
