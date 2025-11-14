@@ -15,9 +15,11 @@ public:
     void setText(const QString&text);
 
     void setTextStyle(const QString& stryle) ;
+    void setAutohide(bool bSet=true){m_bAutohide = bSet;}
 
     static void setDefTipStyle(const QString& stryle) ;
     static void setGroupTipStyle( QObject *parent, QString&style) ;
+
 protected:
     void mousePressEvent(QMouseEvent *event) override ;
     void focusOutEvent(QFocusEvent *event) override ;
@@ -31,6 +33,7 @@ signals:
 private:
     QLabel *content = nullptr;
     QTimer *m_timer = nullptr;
+    bool m_bAutohide= true;
 };
 
 class SuperLabel : public QLabel

@@ -17,7 +17,9 @@ public:
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
+    void focusOutEvent(QFocusEvent *event) override;
 
 private:
     Ui::FrameMacro *ui;

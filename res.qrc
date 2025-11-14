@@ -171,5 +171,15 @@
         <file>images/k/ic_press.png</file>
         <file>images/k/ic_selected.png</file>
         <file>images/btn-close.png</file>
+        <file>font/MiSans-Bold.ttf</file>
+        <file>font/MiSans-Demibold.ttf</file>
+        <file>font/MiSans-ExtraLight.ttf</file>
+        <file>font/MiSans-Heavy.ttf</file>
+        <file>font/MiSans-Light.ttf</file>
+        <file>font/MiSans-Medium.ttf</file>
+        <file>font/MiSans-Normal.ttf</file>
+        <file>font/MiSans-Regular.ttf</file>
+        <file>font/MiSans-Semibold.ttf</file>
+        <file>font/MiSans-Thin.ttf</file>
     </qresource>
 </RCC>

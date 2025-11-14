@@ -104,6 +104,15 @@ void FrameMacro::removeView()
     updateView() ;
 }
 
+void FrameMacro::focusOutEvent(QFocusEvent *event)
+{
+    MacroSquare::LostFocus();
+}
+
+void FrameMacro::mousePressEvent(QMouseEvent *event)
+{
+    MacroSquare::LostFocus();
+}
 
 void FrameMacro::keyPressEvent(QKeyEvent *event)
 {

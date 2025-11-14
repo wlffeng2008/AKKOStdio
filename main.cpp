@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QFontDatabase>
 
 int main(int argc, char *argv[])
 {
@@ -18,6 +19,17 @@ int main(int argc, char *argv[])
         }
     }
     SetConsoleOutputCP(CP_UTF8);
+
+    QFontDatabase::addApplicationFont(":/font/MiSans-Bold.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Demibold.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-ExtraLight.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Heavy.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Light.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Medium.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Normal.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Semibold.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Thin.ttf");
 
     //QApplication::setStyle("Fusion");
     MainWindow w;
@@ -253,11 +265,12 @@ QTabBar::tab {
     min-width: 40px;
     min-height: 40px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 QTabBar::tab:selected {
     color: #6329B6;
+    font-weight: 900;
     border: 3px solid transparent;
     border-bottom: 3px solid #6329B6;
 }

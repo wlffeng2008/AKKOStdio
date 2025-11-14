@@ -7,7 +7,10 @@ ModuleEfLumi::ModuleEfLumi(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(ui->horizontalSlider,&QSlider::valueChanged,this,[=](int value){ui->labelTitle2->setText(QString::asprintf("%d%%",value*25));});
+    connect(ui->horizontalSlider,&QSlider::valueChanged,this,[=](int value){
+        ui->labelTitle2->setText(QString::asprintf("%d%%",value*25));
+        emit onBrightChanged(value);
+    });
 }
 
 ModuleEfLumi::~ModuleEfLumi()

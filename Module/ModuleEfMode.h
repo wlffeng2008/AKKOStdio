@@ -14,7 +14,8 @@ class ModuleEfMode: public QFrame
 public:
     explicit ModuleEfMode(QWidget *parent = nullptr);
     ~ModuleEfMode();
-
+signals:
+    void onModeChanged(int mode);
 private:
     Ui::ModuleEfMode *ui;
 };

@@ -64,11 +64,18 @@ static QList<HidCmd> CmdTable =
     {"",0,8,0,0,0,0,0,0,0}
 };
 
+static DialogDeviceConnect *s_connect = nullptr ;
+DialogDeviceConnect *DialogDeviceConnect::instance()
+{
+    return s_connect ;
+}
+
 DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::DialogDeviceConnect)
 {
     ui->setupUi(this);
+    s_connect = this ;
     setWindowFlags(windowFlags()|Qt::MSWindowsFixedSizeDialogHint);
     setWindowFlags(windowFlags()&~Qt::WindowContextHelpButtonHint);
     connect(ui->checkBoxOntop,&QCheckBox::clicked,this,[=](bool checked){
@@ -195,10 +202,10 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
         hid_device_info *pRoot = hid_enumerate(VID,0);
         while(pRoot)
         {
-            // qDebug() << pRoot->path  << pRoot->usage << pRoot->usage_page ;
-
             if(pRoot->usage_page == 0xFFFF)
             {
+                qDebug() << pRoot->path  << pRoot->usage << pRoot->usage_page ;
+
                 if(pRoot->usage == 1)
                 {
                     m_pDev0 = hid_open_path(pRoot->path) ;
@@ -206,6 +213,7 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
                     hid_set_nonblocking(m_pDev0,1) ;
                     ui->labelFlag0->setPixmap(QString(":/images/General_OK4.png"));
                 }
+
                 if(pRoot->usage == 2)
                 {
                     m_pDev1 = hid_open_path(pRoot->path) ;
@@ -229,11 +237,8 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
     });
 
     connect(ui->pushButtonWrite,&QPushButton::clicked,this,[=]{
-        if(!m_pDev1)
-        {
-            return ;
-        }
-        QString strCmd = ui->lineEditCmd->text().trimmed();//"8F 00 00 00 00 00 00 70" ;
+        if(!m_pDev1) return ;
+        QString strCmd = ui->lineEditCmd->text().trimmed(); //"8F 00 00 00 00 00 00 70" ;
         QByteArray data(QByteArray::fromHex(strCmd.toLatin1())) ;
         if(data.size()<8)
         {
@@ -247,7 +252,9 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
 
         qDebug() << "hid_send_feature_report:" << data.toHex(' ').toUpper();
         data.insert(0,(char)0) ; // report id
-        hid_send_feature_report(m_pDev1,(quint8 *)data.data(),data.size()) ;
+        char padding[128]={0} ;
+        data.append(padding,64);
+        hid_send_feature_report(m_pDev1,(quint8 *)data.data(),65) ;
 
         QTimer::singleShot(30,this,[=]{
             ui->pushButtonRead->click() ;
@@ -255,12 +262,9 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
     });
 
     connect(ui->pushButtonRead,&QPushButton::clicked,this,[=]{
-        if(!m_pDev1)
-        {
-            return ;
-        }
+
         char buf[1024]={0} ;
-        int nlen = hid_get_feature_report(m_pDev1,(quint8 *)buf,1024);
+        int nlen = hid_get_feature_report(m_pDev1,(quint8 *)buf,65);
         if( nlen>0 )
         {
             QByteArray data(buf+1,nlen-1) ;
@@ -278,8 +282,9 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
         if(m_pDev0)
         {
             char buf[1024] = {0} ;
-            int nlen = hid_read(m_pDev0,(quint8 *)buf,1024) ;
-            //int nlen = hid_get_input_report(m_pDev0,(quint8 *)buf,1024) ;
+            int nlen = hid_read(m_pDev0,(quint8 *)buf,64) ;
+            //int nlen = hid_get_feature_report(m_pDev1,(quint8 *)buf,64);
+
             if( nlen>0 )
             {
                 QByteArray data(buf,nlen) ;
@@ -358,4 +363,46 @@ bool DialogDeviceConnect::nativeEvent(const QByteArray &eventType, void *message
     }
 
     return QDialog::nativeEvent(eventType, message, result);
+}
+
+int DialogDeviceConnect::getRow(int cmd)
+{
+    int count = m_pModel->rowCount();
+    for(int i=0; i<count; i++)
+    {
+        int value = m_pModel->item(i,2)->text().toInt(nullptr,16);
+        if(value == cmd)
+            return i;
+    }
+    return -1 ;
+}
+
+void DialogDeviceConnect::setRowValue(int row, int col, int value)
+{
+    QStandardItem *item =m_pModel->item(row,col);
+    if(item)item->setText(QString::number(value));
+}
+
+void DialogDeviceConnect::setLEDMode(int mode)
+{
+    int row = getRow(CMD_SET_LEDPARAM);
+    if(row == -1) return ;
+    setRowValue(row,3,mode);
+    makeCmd(row,true);
+}
+
+void DialogDeviceConnect::setLEDSpeed(int speed)
+{
+    int row = getRow(CMD_SET_LEDPARAM);
+    if(row == -1) return ;
+    setRowValue(row,4,speed);
+    makeCmd(row,true);
+}
+
+void DialogDeviceConnect::setLEDBright(int bright)
+{
+    int row = getRow(CMD_SET_LEDPARAM);
+    if(row == -1) return ;
+    setRowValue(row,5,bright);
+    makeCmd(row,true);
 }

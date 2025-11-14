@@ -46,7 +46,7 @@ private:
     CustomTooltip *m_Menu = nullptr;
 
     bool m_bFixMode = false ;
-    int m_nSelectCount = 3 ;
+    int m_nSelectCount = 30 ;
 
     bool m_draging =false ;
     QPoint m_clkPt={0,0} ;

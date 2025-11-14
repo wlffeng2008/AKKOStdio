@@ -167,17 +167,21 @@ FrameKeySetting::FrameKeySetting(QWidget *parent)
 
     m_adjust = new ModuleDKSAdjust(this) ;
     m_adjust->setObjectName("DKSAdjust") ;
-    m_adjust->setStyleSheet("QFrame#DKSAdjust{background-color:#F6F6F6;border-radius:20px;min-width:200px;min-height:300px;margin-top:10px;}") ;
+    m_adjust->setStyleSheet("QFrame#DKSAdjust{background-color:#F6F6F6; border-radius:20px; min-width:200px; min-height:240px;margin:20px;}") ;
     m_adjust->adjustSize() ;
     m_adjust->update() ;
     m_adjust->hide();
     connect(m_adjust,&ModuleDKSAdjust::onValueSave,this,[=](const QString&text){
-        m_toAdjust->setText(text + " mm") ;
+        ui->labelPress1->setText(QString::asprintf("%.2f",text.toFloat()) + " mm") ;
+        ui->labelRelease2->setText(QString::asprintf("%.2f",text.toFloat()) + " mm") ;
+
+        ui->labelPress2->setText(QString::asprintf("%.2f",3.9 - text.toFloat()) + " mm") ;
+        ui->labelRelease1->setText(QString::asprintf("%.2f",3.9 - text.toFloat()) + " mm") ;
     });
 
     connect(ui->pushButton_Snap1,&QPushButton::clicked,this,[=]{
         static ModuleGeneralMasker *mask = new ModuleGeneralMasker(nullptr,ui->frameTab2) ;
-        mask->setStyleSheet("QDialog { background-color: rgba(255, 255, 255, 0.8);  border: none; border-radius: 32px;}");
+        mask->setStyleSheet("QDialog { background-color: rgba(255, 255, 255, 0.8); border: none; border-radius: 32px; }");
         mask->show() ;
         m_pMask = mask ;
     });
@@ -202,15 +206,18 @@ bool FrameKeySetting::eventFilter(QObject*watched,QEvent*event)
     {
         QLabel *labCilck = nullptr ;
         if(watched == ui->labelPress1   || watched == ui->labelPress3  )  labCilck = ui->labelPress1 ;
-        if(watched == ui->labelPress2   || watched == ui->labelPress4  )  labCilck = ui->labelPress2 ;
-        if(watched == ui->labelRelease1 || watched == ui->labelRelease3)  labCilck = ui->labelRelease1 ;
+        //if(watched == ui->labelPress2   || watched == ui->labelPress4  )  labCilck = ui->labelPress2 ;
+        //if(watched == ui->labelRelease1 || watched == ui->labelRelease3)  labCilck = ui->labelRelease1 ;
         if(watched == ui->labelRelease2 || watched == ui->labelRelease4)  labCilck = ui->labelRelease2 ;
 
         if(labCilck)
         {
             m_toAdjust = labCilck;
+            QString strValue =labCilck->text();
+            strValue.replace("mm","");
+            m_adjust->setOriginValue(strValue.trimmed()) ;
             ModuleGeneralMasker M(m_adjust,ui->frameTab2);
-            M.setStyleSheet("QDialog { background-color: rgba(120, 120, 120, 0.9);  border: none; border-radius: 32px;}");
+            M.setStyleSheet("QDialog { background-color: rgba(240, 240, 240, 0.9);  border: none; border-radius: 32px;}");
             M.exec() ;
 
             return true ;
