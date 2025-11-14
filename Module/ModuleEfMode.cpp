@@ -50,7 +50,8 @@ ModuleEfMode::ModuleEfMode(QWidget *parent)
         }
 
         connect(pBtnGrp,&QButtonGroup::idClicked,this,[=](int id){
-            qDebug() << "Effect QButtonGroup:" << id ;
+            //qDebug() << "Effect QButtonGroup:" << id ;
+           emit onModeChanged(id) ;
         });
     }
 

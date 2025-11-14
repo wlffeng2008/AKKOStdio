@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QFontDatabase>
 
 int main(int argc, char *argv[])
 {
@@ -19,13 +20,24 @@ int main(int argc, char *argv[])
     }
     SetConsoleOutputCP(CP_UTF8);
 
+    QFontDatabase::addApplicationFont(":/font/MiSans-Bold.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Demibold.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-ExtraLight.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Heavy.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Light.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Medium.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Normal.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Semibold.ttf");
+    QFontDatabase::addApplicationFont(":/font/MiSans-Thin.ttf");
+
     //QApplication::setStyle("Fusion");
     MainWindow w;
     w.show();
 
     a.setStyleSheet(R"(
 
-        * { font-family: MiSans;}
+        * { font-family: MiSans,MiSans;}
         QLabel { font-size: 14px; font-weight: 500 ;}
 
         QLabel:disabled { color: #B3B3B3;}
@@ -34,6 +46,9 @@ int main(int argc, char *argv[])
         QLabel#labelTitle1,#labelTitle2,#labelTitle3,#labelTitle4,#labelTitle5,#labelTitle,#labelName { font-size: 18px; font-weight: 600 ;}
         QLabel#labelTitleL1,#labelTitleL2,#labelTitleL3,#labelTitleL4,#labelTitleL5 { font-size: 14px; font-weight: 500 ;}
         QLabel#labelTitleS1,#labelTitleS2,#labelTitleS3,#labelTitleS4,#labelTitleS5 { font-size: 16px; font-weight: 500 ;}
+        QLabel#labelValue1,#labelValue5{ font-size: 10px; font-weight: 500 ;}
+        QLabel#labelValue2,#labelValue4{ font-size: 14px; font-weight: 500 ;}
+        QLabel#labelValue3{ font-size: 18px; font-weight: 600 ;}
 
         QTableView{ border: 1px solid gray; gridline-color: transparent;  background-color: rgb(226, 249, 255) !important; gridline-color: gray;
                 font-size: 10px ;
@@ -253,11 +268,12 @@ QTabBar::tab {
     min-width: 40px;
     min-height: 40px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 QTabBar::tab:selected {
     color: #6329B6;
+    font-weight: 900;
     border: 3px solid transparent;
     border-bottom: 3px solid #6329B6;
 }

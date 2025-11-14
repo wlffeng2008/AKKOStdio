@@ -31,7 +31,7 @@ ModuleGeneralMasker::ModuleGeneralMasker(QWidget *cotnent, QWidget *parent)
     setAttribute(Qt::WA_TranslucentBackground);
     //setModal(true);
 
-    setStyleSheet("QDialog { background-color: rgba(120, 120, 120, 0.8);  border: none; border-radius: 24px;}");
+    setStyleSheet("QDialog { background-color: rgba(180, 180, 180, 0.8);  border: none; border-radius: 24px;}");
 
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
 

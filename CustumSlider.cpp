@@ -49,7 +49,6 @@ void CustumSlider::mouseMoveEvent(QMouseEvent *event)
 void CustumSlider::paintEvent(QPaintEvent *ev)
 {
     QSlider::paintEvent(ev) ;
-    qDebug() << styleSheet() << rect() ;
 
     QPainter painter(this) ;
 

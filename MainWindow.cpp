@@ -8,6 +8,7 @@
 #include <QRadioButton>
 #include <QSpacerItem>
 #include <QButtonGroup>
+#include <QMovie>
 #include <QGraphicsDropShadowEffect>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -17,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setWindowFlags(windowFlags() | Qt::FramelessWindowHint|Qt::MSWindowsFixedSizeDialogHint);
     setAttribute(Qt::WA_TranslucentBackground);
-    setStyleSheet("QMainWindow{background-color: rgba(255, 255, 255, 0.8); border: 1px solid skyblue; border-radius: 12px; }");
+    setStyleSheet("QMainWindow{background-color: rgba(255, 255, 255, 1); border: 1px solid skyblue; border-radius: 12px; }");
 
     // QGraphicsDropShadowEffect *shadowEffect = new QGraphicsDropShadowEffect(this);
     // shadowEffect->setBlurRadius(15);    // 阴影模糊半径，值越大越模糊
@@ -29,15 +30,31 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle(QString("AKKO Studio -- By QT") + QT_VERSION_STR);
     resize(1280,900) ;
 
-    m_pDevice = new DialogDeviceConnect(this) ;
+    QTimer *pTMConnect = new QTimer(this) ;
+
+    m_pDevice = new DialogDeviceConnect(this);
     m_pMainkwork = new DialogMainwork(this) ;
     connect(ui->pushButtonDevice,&QPushButton::clicked,this,[=]{
         m_pDevice->show() ;
     });
 
     connect(ui->pushButtonEnter,&QPushButton::clicked,this,[=]{
-        m_pMainkwork->setGeometry(frameGeometry()) ;
-        m_pMainkwork->show() ;
+        if(m_nStatus==1)
+        {
+            m_pMainkwork->setGeometry(frameGeometry()) ;
+            m_pMainkwork->show() ;
+        }
+        else
+        {
+            setConnect(0);
+            pTMConnect->start(5000);
+            m_pDevice->startConnect();
+        }
+    });
+
+    connect(pTMConnect,&QTimer::timeout,this,[=]{
+        m_pMainkwork->close() ;
+        setConnect(2);
     });
 
     connect(ui->pushButtonExit,&QPushButton::clicked,this,[=]{
@@ -50,11 +67,58 @@ MainWindow::MainWindow(QWidget *parent)
         btn->setCursor(Qt::PointingHandCursor);
         btn->setFocusPolicy(Qt::ClickFocus) ;
     }
+
+    QMovie *pWMovie = new QMovie(":/images/inworing.gif");
+    ui->labelGif->setMovie(pWMovie);
+    ui->labelGif->setFixedSize(282,60) ;
+    pWMovie->start();
+
+    connect(m_pDevice,&DialogDeviceConnect::onConnect,this,[=]{
+        pTMConnect->stop();
+        setConnect(1);
+    });
+    connect(m_pDevice,&DialogDeviceConnect::onDisconnect,this,[=]{
+        m_pMainkwork->close() ;
+        pTMConnect->stop();
+        setConnect(2);
+    });
+
+    ui->pushButtonEnter->click() ;
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setConnect(int nFlag)
+{
+    m_nStatus = nFlag;
+    ui->labelStatus->setTextFormat(Qt::RichText);
+    ui->pushButtonEnter->setHidden(true);
+    ui->labelGif->setHidden(true) ;
+    ui->labelKeyboard->setHidden(true) ;
+    switch(nFlag)
+    {
+    case 1:
+        ui->labelStatus->setText(R"(<html><head/><body><p><span style=" font-size:16pt;">欢迎使用AKKO产品，</span><span style=" font-size:16pt; color:#35ac4f;">连接成功</span></p></body></html>)") ;
+        ui->pushButtonEnter->setText("立即进入") ;
+        ui->pushButtonEnter->setHidden(false);
+        ui->labelKeyboard->setHidden(false) ;
+        break;
+
+    case 2:
+        ui->labelStatus->setText(R"(<html><head/><body><p><span style=" font-size:16pt;">暂未搜索到有效设备，请检查设备是否已正常连接</span></p></body></html>)");
+        ui->pushButtonEnter->setText("重新搜索") ;
+        ui->pushButtonEnter->setHidden(false);
+        break;
+
+    default:
+        ui->labelStatus->setText(R"(<html><head/><body><p><span style=" font-size:16pt;">正在搜索设备......</span></p></body></html>)");
+        ui->labelGif->setHidden(false) ;
+        break;
+    }
+    update() ;
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)

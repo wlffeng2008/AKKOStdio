@@ -46,7 +46,8 @@ void CustomTabBar::paintEvent(QPaintEvent *event)
     painter.setBrush(QColor(52, 152, 219));
     painter.drawRoundedRect(m_currentX, height() - 3, m_currentWidth, 3, 1.5, 1.5);
 
-    for (int i = 0; i < tabCount; ++i) {
+    for (int i = 0; i < tabCount; ++i)
+    {
         bool isSelected = (currentIndex() == i);
         bool isHover = (m_hoverIndex == i);
 
@@ -70,6 +71,7 @@ void CustomTabBar::paintEvent(QPaintEvent *event)
         QFont font = static_cast<QWidget*>(this->parent())->font();
         //font.setBold(true) ;
         //font.setBold(isSelected);
+        font.setWeight(isSelected?QFont::ExtraBold : QFont::DemiBold) ;
         painter.setFont(font);
 
         QString text = tabText(i);

@@ -483,7 +483,7 @@
            <property name="frameShadow">
             <enum>QFrame::Shadow::Raised</enum>
            </property>
-           <widget class="ModuleLinear" name="frame_4">
+           <widget class="ModuleLinear" name="frameRTSetting">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -561,7 +561,7 @@
        <number>0</number>
       </property>
       <item alignment="Qt::AlignmentFlag::AlignLeft">
-       <widget class="ModuleEfMode" name="frame_3">
+       <widget class="ModuleEfMode" name="frameLEDMode">
         <property name="minimumSize">
          <size>
           <width>304</width>
@@ -586,7 +586,7 @@
        </widget>
       </item>
       <item>
-       <widget class="ModuleEfColor" name="frame_11">
+       <widget class="ModuleEfColor" name="frameLEDColor">
         <property name="minimumSize">
          <size>
           <width>468</width>
@@ -638,7 +638,7 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="ModuleEfLumi" name="frame_8">
+          <widget class="ModuleEfLumi" name="frameLEDBright">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -663,7 +663,7 @@
           </widget>
          </item>
          <item>
-          <widget class="ModuleEfSpeed" name="frame_9">
+          <widget class="ModuleEfSpeed" name="frameLEDSpeed">
            <property name="minimumSize">
             <size>
              <width>0</width>

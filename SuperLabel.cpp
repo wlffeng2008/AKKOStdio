@@ -35,14 +35,16 @@ CustomTooltip::CustomTooltip(QWidget *parent) : QWidget(parent)
 {
     setWindowFlags(Qt::ToolTip | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
+    setCursor(Qt::PointingHandCursor);
+    setFocusPolicy(Qt::StrongFocus);
     setStyleSheet(s_strDefTipStyle);
-    setCursor(Qt::PointingHandCursor) ;
 
     content = new QLabel(this);
+    content->setWordWrap(true);
     content->setAlignment(Qt::AlignCenter);
 
     m_timer = new QTimer(this) ;
-    connect(m_timer,&QTimer::timeout,this,[=]{m_timer->stop(); hide();});
+    connect(m_timer,&QTimer::timeout,this,[=]{ if(m_bAutohide) {m_timer->stop(); hide();} });
 }
 
 void CustomTooltip::enterEvent(QEnterEvent *event)
@@ -76,13 +78,13 @@ void CustomTooltip::showEvent(QShowEvent *event)
 {
     m_timer->stop() ;
     m_timer->start(3000) ;
-    adjustSize() ;
     QWidget::showEvent(event) ;
 }
 
 void CustomTooltip::setText(const QString&text)
 {
     content->setText(text);
+    content->adjustSize();
     adjustSize();
     content->update(); 
 }
@@ -143,13 +145,13 @@ bool SuperLabel::event(QEvent *event)
 
 void SuperLabel::setOwnSheet(const QString&strGetfocus,const QString&strLostfocus)
 {
-    m_strSheetGetfocus = strGetfocus ;
-    m_strSheetLostfocus= strLostfocus ;
+    m_strSheetGetfocus = strGetfocus;
+    m_strSheetLostfocus= strLostfocus;
 }
 
 void SuperLabel::setImages(const QString&strGetfocus, const QString&strLostfocus)
 {
-    m_strGetfocus = strGetfocus;
+    m_strGetfocus  = strGetfocus;
     m_strLostfocus = strLostfocus;
     setFocus(false) ;
 }

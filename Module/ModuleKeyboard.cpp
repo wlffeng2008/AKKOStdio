@@ -148,7 +148,7 @@ void ModuleKeyboard::setKeyEnable(const QString&objname,bool bEnable,bool bSetTo
 void ModuleKeyboard::setkeyHited(int id)
 {
     int nCode = id ;
-    if(nCode == 0) nCode = 0x81 ;
+    if(nCode == 0) nCode = 0x81;
 
     QString strName = QString::asprintf("pushButton_%04X",nCode) ;
     QPushButton *btn = findChild<QPushButton*>(strName) ;
@@ -245,14 +245,13 @@ bool ModuleKeyboard::eventFilter(QObject *watched,QEvent *event)
 
 void ModuleKeyboard::mousePressEvent(QMouseEvent *event)
 {
-    m_draging=true;
-    m_clkPt=event->pos() ;
-    //qDebug() << m_clkPt;
+    m_clkPt = event->pos() ;
+    QTimer::singleShot(100,this,[=]{ m_draging = true; });
 }
 
 void ModuleKeyboard::mouseMoveEvent(QMouseEvent *event)
 {
-    if(m_draging)
+    if(m_draging && m_clkPt.x()>0)
     {
         QRect rect(m_clkPt,event->pos()) ;
 
@@ -260,7 +259,6 @@ void ModuleKeyboard::mouseMoveEvent(QMouseEvent *event)
         for(QAbstractButton*btn:btns)
         {
             QRect btnRc = btn->rect();
-            //qDebug()<< btn->text() << btn->mapFromParent(btnRc.topLeft());
             if( rect.contains( btn->mapToParent(btnRc.topLeft()))    ||
                 rect.contains( btn->mapToParent(btnRc.topRight()))   ||
                 rect.contains( btn->mapToParent(btnRc.bottomLeft())) ||
@@ -282,6 +280,6 @@ void ModuleKeyboard::mouseMoveEvent(QMouseEvent *event)
 
 void ModuleKeyboard::mouseReleaseEvent(QMouseEvent *event)
 {
-    m_draging=false;
+    m_draging = false;
     update() ;
 }

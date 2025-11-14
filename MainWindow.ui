@@ -22,22 +22,15 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,1,0">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,1,0,0,0">
     <property name="spacing">
-     <number>20</number>
+     <number>45</number>
     </property>
     <property name="bottomMargin">
-     <number>50</number>
+     <number>45</number>
     </property>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="pushButtonLang">
-        <property name="text">
-         <string>English</string>
-        </property>
-       </widget>
-      </item>
       <item>
        <widget class="QPushButton" name="pushButtonDevice">
         <property name="text">
@@ -71,30 +64,104 @@
       </item>
      </layout>
     </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
     <item alignment="Qt::AlignmentFlag::AlignHCenter">
      <widget class="QLabel" name="labelFlag">
+      <property name="minimumSize">
+       <size>
+        <width>215</width>
+        <height>64</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>215</width>
+        <height>64</height>
+       </size>
+      </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
        <pixmap resource="res.qrc">:/images/AkkoFlag.png</pixmap>
       </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
      </widget>
     </item>
     <item alignment="Qt::AlignmentFlag::AlignHCenter">
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="labelStatus">
+      <property name="minimumSize">
+       <size>
+        <width>436</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>436</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:24px;</string>
+      </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;欢迎使用####产品，&lt;/span&gt;&lt;span style=&quot; font-size:16pt; color:#55ff7f;&quot;&gt;连接成功&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;欢迎使用AKKO产品，&lt;/span&gt;&lt;span style=&quot; font-size:16pt; color:#35ac4f;&quot;&gt;连接成功&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
     <item alignment="Qt::AlignmentFlag::AlignHCenter">
      <widget class="QLabel" name="labelKeyboard">
+      <property name="minimumSize">
+       <size>
+        <width>627</width>
+        <height>286</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>627</width>
+        <height>286</height>
+       </size>
+      </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
        <pixmap resource="res.qrc">:/images/Akko-Kb0.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+     <widget class="QLabel" name="labelGif">
+      <property name="text">
+       <string>Gif</string>
       </property>
      </widget>
     </item>
@@ -103,12 +170,12 @@
       <property name="minimumSize">
        <size>
         <width>352</width>
-        <height>62</height>
+        <height>56</height>
        </size>
       </property>
       <property name="font">
        <font>
-        <pointsize>32</pointsize>
+        <pointsize>-1</pointsize>
         <bold>false</bold>
        </font>
       </property>
@@ -117,14 +184,28 @@
 border: 1px solid rgb(112, 0, 168);
 border-radius:25px;
 background-color: rgb(112, 0, 168);
-
-                min-width: 350px;
-                min-height: 60px;</string>
+min-width: 350px;
+min-height: 54px;
+font-size:24px;
+font-weight:400;</string>
       </property>
       <property name="text">
        <string>立即进入</string>
       </property>
      </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
   </widget>

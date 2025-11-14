@@ -14,8 +14,11 @@ class ModuleDKSAdjust : public QFrame
 public:
     explicit ModuleDKSAdjust(QWidget *parent = nullptr);
     ~ModuleDKSAdjust();
+    void setOriginValue(const QString&strValue);
+
 signals:
     void onValueSave(const QString&text) ;
+
 private:
     Ui::ModuleDKSAdjust *ui;
 };

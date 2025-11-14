@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1130</width>
-    <height>814</height>
+    <height>828</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -106,7 +106,7 @@
        <number>0</number>
       </property>
       <item alignment="Qt::AlignmentFlag::AlignLeft">
-       <widget class="ModuleEfMode" name="frameMode">
+       <widget class="ModuleEfMode" name="frameLEDMode">
         <property name="minimumSize">
          <size>
           <width>304</width>
@@ -236,12 +236,6 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ModuleKeyboard</class>
-   <extends>QFrame</extends>
-   <header>modulekeyboard.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ModuleEfMode</class>
    <extends>QFrame</extends>
    <header location="global">moduleefmode.h</header>
@@ -263,6 +257,12 @@
    <class>ModuleEfSpeed</class>
    <extends>QFrame</extends>
    <header>moduleefspeed.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ModuleKeyboard</class>
+   <extends>QFrame</extends>
+   <header>modulekeyboard.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

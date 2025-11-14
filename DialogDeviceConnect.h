@@ -94,10 +94,23 @@ class DialogDeviceConnect : public QDialog
 public:
     explicit DialogDeviceConnect(QWidget *parent = nullptr);
     ~DialogDeviceConnect();
-    void disconnect() ;
-protected:
 
-    bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result)  override;
+    static DialogDeviceConnect *instance() ;
+
+    void disconnect() ;
+    void startConnect();
+
+    void setLEDMode(int mode);
+    void setLEDSpeed(int speed);
+    void setLEDBright(int bright);
+
+signals:
+    void onConnect();
+    void onDisconnect();
+
+protected:
+    bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result) override;
+
 private:
     Ui::DialogDeviceConnect *ui;
 
@@ -111,6 +124,8 @@ private:
     QStandardItemModel *m_pModel = nullptr;
     QTableView *m_pTable = nullptr;
     void makeCmd(int row,bool autoSend=false);
+    int  getRow(int cmd);
+    void setRowValue(int row, int col,int value);
 };
 
 #endif // DIALOGDEVICECONNECT_H

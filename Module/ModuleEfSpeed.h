@@ -15,6 +15,9 @@ public:
     explicit ModuleEfSpeed(QWidget *parent = nullptr);
     ~ModuleEfSpeed();
 
+signals:
+    void onSpeedChanged(int speed);
+
 private:
     Ui::ModuleEfSpeed *ui;
 };

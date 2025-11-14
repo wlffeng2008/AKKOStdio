@@ -109,3 +109,8 @@ ModuleDKSAdjust::~ModuleDKSAdjust()
 {
     delete ui;
 }
+
+void ModuleDKSAdjust::setOriginValue(const QString&strValue)
+{
+    ui->lineEditValue1->setText(strValue) ;
+}

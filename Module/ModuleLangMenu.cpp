@@ -16,7 +16,15 @@ ModuleLangMenu::ModuleLangMenu(QWidget *parent)
     setWindowFlags(Qt::FramelessWindowHint |Qt::WindowStaysOnTopHint|Qt::Tool|Qt::Dialog|Qt::Popup);
     setAttribute(Qt::WA_TranslucentBackground);
 
-    static QStringList Langs={tr("中文简体"),tr("English"),tr("한국어"),tr("日本語"),tr("Русский"),tr("Tiếng Việt"),tr("Português")} ;
+    static QStringList Langs={
+        tr("中文简体"),
+        tr("English"),
+        tr("한국어"),
+        tr("日本語"),
+        tr("Русский"),
+        tr("Tiếng Việt"),
+        tr("Português")
+    } ;
 
     QString strStyle(R"(
 
@@ -38,6 +46,7 @@ ModuleLangMenu::ModuleLangMenu(QWidget *parent)
                 border: 1px soild #6329B6;
                 background: #6329B6; }
             )") ;
+
     m_pBtnGrp = new QButtonGroup(this) ;
     QLayout *pLayout = ui->verticalLayout ;
     pLayout->setSpacing(8) ;

@@ -1,17 +1,17 @@
 #include "ToggleButton.h"
 
-static QColor s_colorChecked = 0x6329B6 ;
-static QColor s_colorUnchecked = Qt::gray ;
+static QColor s_colorChecked   = 0x6329B6;
+static QColor s_colorUnchecked = Qt::gray;
 
 void ToggleButton::setGlobalColor(const QColor&checkedColor,const QColor&UncheckedColor)
 {
-    s_colorChecked = checkedColor ;
-    s_colorUnchecked = UncheckedColor ;
+    s_colorChecked   = checkedColor;
+    s_colorUnchecked = UncheckedColor;
 }
 
 ToggleButton::ToggleButton(QWidget *parent) : QCheckBox(parent)
 {
-    setAttribute(Qt::WA_TranslucentBackground);
+   // setAttribute(Qt::WA_TranslucentBackground);
 
     setStyleSheet(R"(
             QCheckBox {
@@ -37,8 +37,8 @@ void ToggleButton::setChecked(bool checked)
 
 void ToggleButton::setColor(const QColor&checkedColor,const QColor&UncheckedColor)
 {
-    m_colorChecked = checkedColor ;
-    m_colorUnchecked = UncheckedColor ;
+    m_colorChecked   = checkedColor;
+    m_colorUnchecked = UncheckedColor;
     update() ;
 }
 

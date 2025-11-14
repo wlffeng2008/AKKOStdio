@@ -22,6 +22,7 @@ public:
     void setColor(const QColor&checkedColor,const QColor&UncheckedColor);
     void setCheckedColor(const QColor&color);
     void setUnheckedColor(const QColor&color);
+
     static void setGlobalColor(const QColor&checkedColor,const QColor&UncheckedColor) ;
 
 protected:

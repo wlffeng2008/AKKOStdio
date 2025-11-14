@@ -11,6 +11,7 @@ ModuleLinear::ModuleLinear(QWidget *parent)
     ui->setupUi(this);
 
     static QString strStyle1(R"(
+
         QPushButton {
             border: none;
             border-radius: 0px;
@@ -25,9 +26,10 @@ ModuleLinear::ModuleLinear(QWidget *parent)
                 icon-size: 20px;
             }
 
-            QPushButton:hover { background-color: #F0F0F0;}
+        QPushButton:hover { background-color: #F0F0F0;}
 
-            )") ;
+    )") ;
+
     ui->pushButtonM1->setStyleSheet(strStyle1) ;
     ui->pushButtonM2->setStyleSheet(strStyle1) ;
     ui->pushButtonP1->setStyleSheet(strStyle1) ;

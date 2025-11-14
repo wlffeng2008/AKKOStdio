@@ -31,13 +31,18 @@ protected:
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
     void focusOutEvent(QFocusEvent *event) override;
+
 private:
     Ui::MainWindow *ui;
     QPoint m_dragPosition;
     bool m_dragging = false;
 
-    DialogDeviceConnect *m_pDevice = nullptr ;
-    DialogMainwork *m_pMainkwork = nullptr ;
+    DialogDeviceConnect *m_pDevice = nullptr;
+    DialogMainwork *m_pMainkwork = nullptr;
+
+
+    int m_nStatus = 0;
+    void setConnect(int nFlag);
 
 };
 #endif // MAINWINDOW_H
