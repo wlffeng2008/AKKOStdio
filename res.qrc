@@ -181,6 +181,7 @@
         <file>font/MiSans-Regular.ttf</file>
         <file>font/MiSans-Semibold.ttf</file>
         <file>font/MiSans-Thin.ttf</file>
-        <file>images/inworing.gif</file>
+        <file>images/inworking.gif</file>
+
     </qresource>
 </RCC>

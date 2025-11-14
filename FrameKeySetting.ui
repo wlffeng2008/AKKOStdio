@@ -236,7 +236,7 @@ QPushButton {
             <string notr="true"/>
            </property>
            <property name="currentIndex">
-            <number>2</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="page1">
             <property name="styleSheet">
@@ -1280,7 +1280,7 @@ QPushButton {
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="res.qrc">
+                <iconset>
                  <normaloff>:/images/macro/fn0/fn.png</normaloff>:/images/macro/fn0/fn.png</iconset>
                </property>
               </widget>
@@ -1733,7 +1733,7 @@ QPushButton {
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap resource="res.qrc">:/images/k/ic_press.png</pixmap>
+                 <pixmap>:/images/k/ic_press.png</pixmap>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1755,7 +1755,7 @@ QPushButton {
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap resource="res.qrc">:/images/k/ic_bottom.png</pixmap>
+                 <pixmap>:/images/k/ic_bottom.png</pixmap>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1777,7 +1777,7 @@ QPushButton {
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap resource="res.qrc">:/images/k/ic_lift.png</pixmap>
+                 <pixmap>:/images/k/ic_lift.png</pixmap>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1799,7 +1799,7 @@ QPushButton {
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap resource="res.qrc">:/images/k/ic_peak.png</pixmap>
+                 <pixmap>:/images/k/ic_peak.png</pixmap>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -2477,9 +2477,7 @@ QPushButton {
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="res.qrc"/>
- </resources>
+ <resources/>
  <connections/>
  <buttongroups>
   <buttongroup name="buttonGroup"/>

@@ -36,7 +36,7 @@
     <number>0</number>
    </property>
    <item alignment="Qt::AlignmentFlag::AlignTop">
-    <widget class="QFrame" name="frame">
+    <widget class="QFrame" name="frame_3">
      <property name="minimumSize">
       <size>
        <width>474</width>
@@ -69,7 +69,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QFrame" name="frame">
+       <widget class="QFrame" name="frameA">
         <property name="minimumSize">
          <size>
           <width>796</width>
@@ -153,7 +153,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap resource="res.qrc">:/images/m/bianji.svg</pixmap>
+              <pixmap>:/images/m/bianji.svg</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -203,7 +203,7 @@
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="res.qrc">:/images/connect/2.4g-2.png</pixmap>
+                <pixmap>:/images/connect/2.4g-2.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -252,7 +252,7 @@
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="res.qrc">:/images/connect/USB-1.png</pixmap>
+                <pixmap>:/images/connect/USB-1.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -301,7 +301,7 @@
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="res.qrc">:/images/connect/BLE-1.png</pixmap>
+                <pixmap>:/images/connect/BLE-1.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -345,7 +345,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap resource="res.qrc">:/images/a-left.png</pixmap>
+              <pixmap>:/images/a-left.png</pixmap>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -370,7 +370,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap resource="res.qrc">:/images/Akko-Kb0.png</pixmap>
+              <pixmap>:/images/Akko-Kb0.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -405,7 +405,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap resource="res.qrc">:/images/a-right.png</pixmap>
+              <pixmap>:/images/a-right.png</pixmap>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -528,7 +528,7 @@
     </widget>
    </item>
    <item alignment="Qt::AlignmentFlag::AlignBottom">
-    <widget class="QFrame" name="frame">
+    <widget class="QFrame" name="frameC">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -611,7 +611,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame">
+       <widget class="QFrame" name="frameB">
         <property name="maximumSize">
          <size>
           <width>304</width>
@@ -733,8 +733,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="res.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

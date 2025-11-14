@@ -68,7 +68,7 @@ MainWindow::MainWindow(QWidget *parent)
         btn->setFocusPolicy(Qt::ClickFocus) ;
     }
 
-    QMovie *pWMovie = new QMovie(":/images/inworing.gif");
+    QMovie *pWMovie = new QMovie(":/images/inworking.gif");
     ui->labelGif->setMovie(pWMovie);
     ui->labelGif->setFixedSize(282,60) ;
     pWMovie->start();
