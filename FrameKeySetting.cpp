@@ -213,11 +213,10 @@ bool FrameKeySetting::eventFilter(QObject*watched,QEvent*event)
         if(labCilck)
         {
             m_toAdjust = labCilck;
-            QString strValue =labCilck->text();
-            strValue.replace("mm","");
-            m_adjust->setOriginValue(strValue.trimmed()) ;
+            QString strValue =labCilck->text().replace("mm","").trimmed();
+            m_adjust->setOriginValue(strValue) ;
             ModuleGeneralMasker M(m_adjust,ui->frameTab2);
-            M.setStyleSheet("QDialog { background-color: rgba(240, 240, 240, 0.9);  border: none; border-radius: 32px;}");
+            M.setStyleSheet("QDialog { background-color: rgba(240, 240, 240, 0.8);  border: none; border-radius: 32px;}");
             M.exec() ;
 
             return true ;

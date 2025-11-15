@@ -195,7 +195,6 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
     });
 
     connect(ui->pushButtonRefresh,&QPushButton::clicked,this,[=]{
-        pTMUsb->stop();
         disconnect();
 
         quint32 VID = ui->lineEditVID->text().trimmed().toUInt(nullptr,16) ;
@@ -233,10 +232,6 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
         if(!m_pDev0 || !m_pDev1)
         {
             emit onDisconnect();
-            if(!this->isHidden())
-            {
-                // QMessageBox::critical(this,tr("Notice"),tr("Fail to connect the device!"));
-            }
         }
     });
 

@@ -255,6 +255,7 @@ void ModuleKeyboard::mouseMoveEvent(QMouseEvent *event)
     {
         QRect rect(m_clkPt,event->pos()) ;
 
+        bool hit = false;
         const QList<QAbstractButton*>btns = ui->buttonGroup->buttons() ;
         for(QAbstractButton*btn:btns)
         {
@@ -267,6 +268,7 @@ void ModuleKeyboard::mouseMoveEvent(QMouseEvent *event)
                 btn->setStyleSheet(strStyle + R"(
                     QPushButton { background-color: #3F3F3F; color: white; }
                 )") ;
+                if(btn == m_spcBtn) hit = true ;
             }
             else
             {
@@ -274,6 +276,12 @@ void ModuleKeyboard::mouseMoveEvent(QMouseEvent *event)
             }
         }
         m_nowPt = event->pos() ;
+
+        if(hit)
+            m_spcBtn->setStyleSheet(strStyle + "QPushButton{ border-radius:24px;background-color: #3F3F3F; color: white; }");
+        else
+            m_spcBtn->setStyleSheet(strStyle) ;
+
         update() ;
     }
 }

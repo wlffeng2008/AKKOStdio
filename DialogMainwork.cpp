@@ -21,11 +21,12 @@ DialogMainwork::DialogMainwork(QWidget *parent)
     , ui(new Ui::DialogMainwork)
 {
     ui->setupUi(this);
+    setFixedSize(1280,900) ;
     setWindowFlags(windowFlags() | Qt::FramelessWindowHint|Qt::MSWindowsFixedSizeDialogHint|Qt::Desktop);
     setAttribute(Qt::WA_TranslucentBackground);
     setFocusPolicy(Qt::StrongFocus) ;
 
-    setFixedSize(1280,900) ;
+    ui->pushButtonPaire->hide();
 
     FrameKeySetting *pKS = new FrameKeySetting(this) ;
     FrameMain *pFM = new FrameMain(this) ;
@@ -103,7 +104,7 @@ DialogMainwork::DialogMainwork(QWidget *parent)
         pLangMenu->setParent(nullptr) ;
         QRect btnRect = ui->pushButtonLang->geometry() ;
         QPoint PT = mapToGlobal(btnRect.bottomLeft());
-        pLangMenu->setGeometry(PT.x() + 30,PT.y()+5,110,250);
+        pLangMenu->setGeometry(PT.x() + 25,PT.y(),110,250);
         pLangMenu->setWindowFlags(Qt::FramelessWindowHint |Qt::WindowStaysOnTopHint|Qt::Tool|Qt::Dialog|Qt::Popup);
         pLangMenu->show() ;
     });

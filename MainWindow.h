@@ -4,6 +4,13 @@
 #include <QMainWindow>
 #include <QTimer>
 
+#include <QLabel>
+#include <QTimer>
+#include <QPaintEvent>
+#include "SuperLabel.h"
+#include "ModuleLangMenu.h"
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -43,6 +50,13 @@ private:
 
     int m_nStatus = 0;
     void setConnect(int nFlag);
+
+
+    QList<SuperLabel *>m_pLBtns ;
+    QList<QFrame *>m_pFrames ;
+    void clickLabel(QLabel *label,int index=0);
+
+    ModuleLangMenu *m_pLangMenu = nullptr ;
 
 };
 #endif // MAINWINDOW_H

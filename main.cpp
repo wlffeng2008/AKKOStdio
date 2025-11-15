@@ -196,7 +196,7 @@ int main(int argc, char *argv[])
 
     QScrollBar::handle:vertical,
     QScrollBar::handle:horizontal {
-        background: rgba(160, 160, 160, 0.7);
+        background: rgba(160, 160, 160, 0.8);
         border-radius: 2px;
         min-height: 20px;
         min-width: 20px;
@@ -223,17 +223,15 @@ QScrollBar::sub-line:horizontal {
     width: 0px;
 }
 
-
 QScrollBar::add-page:vertical:hover,
-QScrollBar::add-page:horizontal:hover {background: rgba(40, 40, 40, 0.8);}
+QScrollBar::add-page:horizontal:hover {background: transparent;}
 QScrollBar::sub-page:vertical:hover,
-QScrollBar::sub-page:horizontal:hover { background: rgba(40, 40, 40, 0.8);}
-
+QScrollBar::sub-page:horizontal:hover { background: rgba(40, 40, 40, 0.1);}
 
 QScrollBar::add-page:vertical,
-QScrollBar::add-page:horizontal {background: rgba(40, 40, 40, 0.03);}
+QScrollBar::add-page:horizontal {background: transparent;}
 QScrollBar::sub-page:vertical,
-QScrollBar::sub-page:horizontal { background: rgba(40, 40, 40, 0.03);}
+QScrollBar::sub-page:horizontal { background: transparent;}
 
 QScrollArea { background-color: transparent; }
 
@@ -254,21 +252,21 @@ QTabWidget {
     border-radius:0;
     padding: 0px;
     margin: 0;
+    color: black;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 /* 标签栏的样式 - 水平标签栏 */
 QTabBar::tab {
-    color: black;
     background-color: transparent;
     border: 3px solid transparent;
-    padding: 5px 2px;
-    margin-right: 15px;
+    padding: 4px 2px;
+    margin-right: 10px;
     min-width: 40px;
     min-height: 40px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 QTabBar::tab:selected {
@@ -285,6 +283,7 @@ QTabBar::tab:hover:!selected {
 
 QTabBar::tab:vertical {
     min-height: 20px;
+    margin-bottom: 10px;
 }
 
 QTabWidget::pane {
