@@ -2,6 +2,7 @@
 #define MODULEEFMODE_H
 
 #include <QFrame>
+#include <QButtonGroup>
 
 namespace Ui {
 class ModuleEfMode;
@@ -14,10 +15,13 @@ class ModuleEfMode: public QFrame
 public:
     explicit ModuleEfMode(QWidget *parent = nullptr);
     ~ModuleEfMode();
+    void setEfMode(int mode);
 signals:
     void onModeChanged(int mode);
 private:
     Ui::ModuleEfMode *ui;
+    QButtonGroup *pBtnGrp = nullptr;
+    bool m_bOutSet=false;
 };
 
 #endif // MODULEEFMODE_H

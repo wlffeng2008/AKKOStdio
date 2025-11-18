@@ -28,12 +28,12 @@ ModuleEfMode::ModuleEfMode(QWidget *parent)
                 background: #6329B6; }
             QPushButton:hover { border: 1px solid #6329B6; }
             )") ;
-        QButtonGroup *pBtnGrp = new QButtonGroup(this) ;
+        pBtnGrp = new QButtonGroup(this) ;
         QLayout *pLayout = ui->scrollAreaWidgetContents->layout() ;
         pLayout->setSpacing(8) ;
         pLayout->setContentsMargins(0,0,0,0);
 
-        QStringList strEFList = QString("常亮(默认)、流星、呼吸、涟漪、如影随形、川流不息、繁星点点、霓虹、光波、层出不穷、彩泉涌动、峰回路转、百花争艳、极光、正弦波、雨滴、斜风细雨、踏雪无痕、聚合、一石二鸟、自定义(驱动)、音乐律动电音(驱动)、音乐律动经典(驱动)、光影模式(驱动)").split("、") ;
+        QStringList strEFList = QString("关闭,常亮,呼吸,光谱循环,光波,涟漪,繁星点点,川流不息,如影随形,聚合,彩泉涌动,百花争艳,自定义,一石二鸟,峰回路转,斜风细雨,雨滴,流星,踏雪无痕,正弦波,音乐律动3,光影,音乐律动2,极光,层出不穷,灯效编辑").split(",") ;
 
         for(int i=0; i<strEFList.count(); i++)
         {
@@ -51,13 +51,21 @@ ModuleEfMode::ModuleEfMode(QWidget *parent)
 
         connect(pBtnGrp,&QButtonGroup::idClicked,this,[=](int id){
             //qDebug() << "Effect QButtonGroup:" << id ;
-           emit onModeChanged(id) ;
+            if(!m_bOutSet)
+                emit onModeChanged(id) ;
+            m_bOutSet=false;
         });
+        ui->checkBoxEFMode->hide() ;
     }
-
 }
 
 ModuleEfMode::~ModuleEfMode()
 {
     delete ui;
+}
+
+void ModuleEfMode::setEfMode(int mode)
+{
+    m_bOutSet =true;
+    pBtnGrp->button(mode)->click();
 }

@@ -14,15 +14,35 @@ FrameMain::FrameMain(QWidget *parent)
 
     ui->labelPriv->installEventFilter(this);
     ui->labelNext->installEventFilter(this);
+
+    ui->labelPriv->setEnabled(false) ;
+    ui->labelNext->setEnabled(false) ;
+
+    DialogDeviceConnect *pConnector = DialogDeviceConnect::instance();
     
     connect(ui->frameLEDMode,&ModuleEfMode::onModeChanged,this,[=](int mode){
-        DialogDeviceConnect::instance()->setLEDMode(mode);
+        pConnector->setLEDMode(mode);
     });
     connect(ui->frameLEDBright,&ModuleEfLumi::onBrightChanged,this,[=](int bright){
-        DialogDeviceConnect::instance()->setLEDBright(bright);
+        pConnector->setLEDBright(bright);
     });
     connect(ui->frameLEDSpeed,&ModuleEfSpeed::onSpeedChanged,this,[=](int speed){
-        DialogDeviceConnect::instance()->setLEDSpeed(speed);
+        pConnector->setLEDSpeed(speed);
+    });
+    connect(ui->frameLEDColor,&ModuleEfColor::onSetColor,this,[=](const QColor&color){
+        pConnector->setLEDColor(color);
+    });
+
+    connect(pConnector,&DialogDeviceConnect::onReadBack,[=](const QByteArray&data){
+        quint8 *pPack = (quint8 *)data.data() ;
+        quint8 cmd = pPack[0] ;
+        qDebug() << "---------------" << cmd;
+        if(cmd == CMD_GET_LEDPARAM)
+        {
+            ui->frameLEDMode->setEfMode(pPack[1]);
+            ui->frameLEDSpeed->setSpeed(pPack[2]);
+            ui->frameLEDBright->setBright(pPack[3]);
+        }
     });
 }
 

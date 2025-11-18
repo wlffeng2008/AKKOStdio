@@ -162,16 +162,16 @@ void ModuleKeyboard::setkeyHited(int id)
 
 void ModuleKeyboard::setKeyFixMode()
 {
-    QTimer::singleShot(100,this,[=]{
+    QTimer::singleShot(10,this,[=]{
         m_bFixMode = true ;
         const QList<QAbstractButton*>btns = ui->buttonGroup->buttons() ;
         for(QAbstractButton*btn:btns)
         {
-            btn->setEnabled(false) ;
+            btn->setEnabled(false);
             btn->setStyleSheet(strStyle + R"(
             QPushButton:disabled { background-color: white; color: black; }
-        )");
-            btn->update() ;
+            )");
+            btn->update();
         }
         m_spcBtn->setStyleSheet(strStyle + "QPushButton{ border-radius:24px;}  QPushButton:disabled { background-color: white; color: black; }");
         ui->frameFlag->hide() ;
@@ -182,24 +182,26 @@ bool ModuleKeyboard::event(QEvent *event)
 {
     if(event->type() == QEvent::MouseButtonRelease)
     {
-        QMouseEvent *pME = static_cast<QMouseEvent *>(event) ;
+        m_draging=false;
+        QMouseEvent *pME = static_cast<QMouseEvent *>(event);
         if(pME->button() == Qt::RightButton)
         {
             QPoint clkPt = mapFromGlobal(cursor().pos()) ;
-            const QList<QAbstractButton*>btns = ui->buttonGroup->buttons() ;
+            const QList<QAbstractButton*>btns = ui->buttonGroup->buttons();
             for(QAbstractButton*btn:btns)
             {
                 if(btn->geometry().contains(clkPt))
                 {
-                    m_curBtn = btn ;
+                    m_curBtn = btn;
                     m_Menu->setText(tr("禁用该按键")) ;
                     QPoint pos = btn->mapToGlobal(QPoint(btn->width()+5,(btn->height() - m_Menu->height())/2));
                     m_Menu->move(pos);
-                    m_Menu->show() ;
-                    break ;
+                    m_Menu->show();
+                    break;
                 }
             }
         }
+        update();
     }
 
     return QFrame::event(event) ;
@@ -209,6 +211,7 @@ bool ModuleKeyboard::event(QEvent *event)
 void ModuleKeyboard::paintEvent(QPaintEvent *event)
 {
     QFrame::paintEvent(event);
+
     if(m_draging)
     {
         QPainter painter(this) ;
@@ -247,6 +250,7 @@ void ModuleKeyboard::mousePressEvent(QMouseEvent *event)
 {
     m_clkPt = event->pos() ;
     QTimer::singleShot(100,this,[=]{ m_draging = true; });
+    QFrame::mousePressEvent(event);
 }
 
 void ModuleKeyboard::mouseMoveEvent(QMouseEvent *event)
@@ -278,16 +282,19 @@ void ModuleKeyboard::mouseMoveEvent(QMouseEvent *event)
         m_nowPt = event->pos() ;
 
         if(hit)
-            m_spcBtn->setStyleSheet(strStyle + "QPushButton{ border-radius:24px;background-color: #3F3F3F; color: white; }");
+            m_spcBtn->setStyleSheet(strStyle + "QPushButton{ border-radius:24px; background-color: #3F3F3F; }");
         else
-            m_spcBtn->setStyleSheet(strStyle) ;
+            m_spcBtn->setStyleSheet(strStyle + "QPushButton{ border-radius:24px; }") ;
 
         update() ;
     }
+
+    QFrame::mouseMoveEvent(event);
 }
 
 void ModuleKeyboard::mouseReleaseEvent(QMouseEvent *event)
 {
-    m_draging = false;
+    m_draging=false;
     update() ;
+    QFrame::mouseReleaseEvent(event);
 }

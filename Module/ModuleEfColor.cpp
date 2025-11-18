@@ -54,6 +54,7 @@ ModuleEfColor::ModuleEfColor(QWidget *parent)
         col_list.push_back(0x3000F6);
         col_list.push_back(0xEB35D3);
         col_list.push_back(0xFF6A44);
+
         for(int i=0; i<7; i++)
         {
             QStandardItem *item = m_pModel->item(0,i);
@@ -84,16 +85,19 @@ ModuleEfColor::ModuleEfColor(QWidget *parent)
 
     pCSq->setFixedSize(266,200);
     pCSl->setFixedWidth(266) ;
-    ui->verticalLayout->addWidget(pCSq,0,Qt::AlignCenter);
+    ui->verticalLayout1->addWidget(pCSq,0,Qt::AlignCenter);
     ui->verticalLayout2->addWidget(pCSl,0,Qt::AlignCenter);
 
-    ui->verticalLayout->setAlignment(Qt::AlignCenter) ;
+    ui->verticalLayout1->setAlignment(Qt::AlignCenter);
 
     connect(pCSl,&ColorSlider::valueChanged,this,[=](int value){
         pCSq->setHue(value/360.0);
     });
+
     connect(pCSq,&ColorSquare::colorSelected,this,[=](QColor color){
-        ColorLabel::Current(ui->tab2)->setColor(color) ;
+        ColorLabel *pLab = ColorLabel::Current(ui->tab2);
+        if(pLab) pLab->setColor(color);
+        emit onSetColor(color);
     });
 }
 

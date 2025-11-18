@@ -10,7 +10,9 @@
 #include <QButtonGroup>
 #include <QMovie>
 #include <QGraphicsDropShadowEffect>
-
+#include <QSystemTrayIcon>
+#include <QMenu>       // 用于托盘菜单
+#include <QAction>     // 用于菜单动作
 
 #include "FrameMain.h"
 #include "FrameKeySetting.h"
@@ -49,6 +51,8 @@ MainWindow::MainWindow(QWidget *parent)
         setFocusPolicy(Qt::StrongFocus) ;
 
         ui->pushButtonPaire->hide();
+
+        m_pDevice = new DialogDeviceConnect(this);
 
         FrameKeySetting *pKS = new FrameKeySetting(this) ;
         FrameMain *pFM = new FrameMain(this) ;
@@ -126,7 +130,7 @@ MainWindow::MainWindow(QWidget *parent)
             pLangMenu->setParent(nullptr) ;
             QRect btnRect = ui->pushButtonLang->geometry() ;
             QPoint PT = mapToGlobal(btnRect.bottomLeft());
-            pLangMenu->setGeometry(PT.x() + 25,PT.y(),110,250);
+            pLangMenu->setGeometry(PT.x() + 25,PT.y()+30,110,250);
             pLangMenu->setWindowFlags(Qt::FramelessWindowHint |Qt::WindowStaysOnTopHint|Qt::Tool|Qt::Dialog|Qt::Popup);
             pLangMenu->show() ;
         });
@@ -147,12 +151,9 @@ MainWindow::MainWindow(QWidget *parent)
         });
     }
 
-
-
     QTimer *pTMConnect = new QTimer(this) ;
 
-    m_pDevice = new DialogDeviceConnect(this);
-    m_pMainkwork = new DialogMainwork(this) ;
+    //m_pMainkwork = new DialogMainwork(this) ;
     connect(ui->pushButtonDevice,&QPushButton::clicked,this,[=]{
         m_pDevice->show() ;
     });
@@ -160,8 +161,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButtonEnter,&QPushButton::clicked,this,[=]{
         if(m_nStatus==1)
         {
-            m_pMainkwork->setGeometry(frameGeometry()) ;
-            m_pMainkwork->show() ;
+            ui->stackedWidget->setCurrentIndex(1);
+            //m_pMainkwork->setGeometry(frameGeometry()) ;
+            //m_pMainkwork->show() ;
         }
         else
         {
@@ -172,7 +174,8 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     connect(pTMConnect,&QTimer::timeout,this,[=]{
-        m_pMainkwork->close() ;
+        //m_pMainkwork->close() ;
+        ui->stackedWidget->setCurrentIndex(0);
         setConnect(2);
     });
 
@@ -197,12 +200,49 @@ MainWindow::MainWindow(QWidget *parent)
         setConnect(1);
     });
     connect(m_pDevice,&DialogDeviceConnect::onDisconnect,this,[=]{
-        m_pMainkwork->close() ;
+        //m_pMainkwork->close() ;
+        ui->stackedWidget->setCurrentIndex(0);
         pTMConnect->stop();
         setConnect(2);
     });
 
+    ui->stackedWidget->setCurrentIndex(0);
     ui->pushButtonEnter->click() ;
+
+    {
+        QSystemTrayIcon *trayIcon = new QSystemTrayIcon(this);
+        trayIcon->setIcon(QIcon("://images/AkkoFlag.png"));  // 替换为你的图标路径
+        trayIcon->setToolTip("AKKO Cloud Driver");
+        trayIcon->show();
+
+        connect(trayIcon,&QSystemTrayIcon::activated,this,[=](QSystemTrayIcon::ActivationReason reason){
+            if(reason != QSystemTrayIcon::Context)
+            {
+                if(isHidden())
+                    showNormal() ;
+                else
+                    hide() ;
+            }
+        }) ;
+
+        QMenu *trayMenu = new QMenu(this);
+
+        QAction *showAction = new QAction("显示窗口", this);
+        QAction *hideAction = new QAction("隐藏窗口", this);
+        QAction *exitAction = new QAction("退出程序", this);
+
+        trayMenu->addAction(showAction);
+        trayMenu->addAction(hideAction);
+        trayMenu->addSeparator();
+        trayMenu->addAction(exitAction);
+
+        connect(exitAction, &QAction::triggered, this, &QApplication::quit);
+        connect(showAction, &QAction::triggered, this, &QMainWindow::showNormal);
+        connect(hideAction, &QAction::triggered, this, &QMainWindow::hide);
+        trayIcon->setContextMenu(trayMenu);
+    }
+
+    m_pDevice->readSetting();
 }
 
 MainWindow::~MainWindow()
@@ -215,7 +255,7 @@ void MainWindow::clickLabel(QLabel *label, int index)
 {
     if(index == 6)
     {
-        hide() ;
+        // hide() ;
         return ;
     }
 
@@ -292,14 +332,26 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::focusOutEvent(QFocusEvent *event)
 {
-    qDebug() << "MainWindow::focusOutEvent" ;
+    //qDebug() << "MainWindow::focusOutEvent" ;
+    QMainWindow::focusOutEvent(event);
 }
 
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    qDebug() <<"MainWindow::keyPressEvent: " << event->nativeScanCode() << event->nativeVirtualKey() ;
+    if(event->key() == Qt::Key_Escape)
+    {
+        //close() ;
+    }
+
+    QMainWindow::keyPressEvent(event);
+}
 void MainWindow::keyReleaseEvent(QKeyEvent *event)
 {
     if(event->key() == Qt::Key_Escape)
     {
-        close() ;
+        //close() ;
+        return ;
     }
 
     QMainWindow::keyReleaseEvent(event);

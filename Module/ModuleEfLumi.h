@@ -14,12 +14,13 @@ class ModuleEfLumi : public QFrame
 public:
     explicit ModuleEfLumi(QWidget *parent = nullptr);
     ~ModuleEfLumi();
-
+    void setBright(quint8 bright);
 signals:
     void onBrightChanged(int bright);
 
 private:
     Ui::ModuleEfLumi *ui;
+    bool m_bOutSet = false;
 };
 
 #endif // MODULEEFLUMI_H

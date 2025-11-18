@@ -7,6 +7,11 @@
 
 int main(int argc, char *argv[])
 {
+#if(QT_VERSION>=QT_VERSION_CHECK(5,6,0))
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);// 启用高分辨率 pixmap
+#endif
+
     QApplication a(argc, argv);
 
     QTranslator translator;
@@ -32,8 +37,6 @@ int main(int argc, char *argv[])
     QFontDatabase::addApplicationFont(":/font/MiSans-Thin.ttf");
 
     //QApplication::setStyle("Fusion");
-    MainWindow w;
-    w.show();
 
     a.setStyleSheet(R"(
 
@@ -86,13 +89,13 @@ int main(int argc, char *argv[])
                 color: white;
                 border: 1px solid #6C9F50;
                 padding: 1px;
-                min-width: 46px;
+                min-width: 32px;
                 min-height: 8px;
                 max-width: 800px;
                 max-height: 200px;
-                font-size: 13px ;
-                font-weight: 600;
-                }
+                font-size: 14px ;
+                font-weight: 400;
+            }
         QPushButton:hover { background-color: #87ceeb; }
         QPushButton:pressed { background-color: #1e90af; }
         QPushButton:checked { background-color: #1e90ff; }
@@ -100,7 +103,7 @@ int main(int argc, char *argv[])
 
         QWidget#pageWakeup QPushButton {
                 background-color: red;
-                border-radius: 8px;
+                border-radius: 10px;
                 color: white;
                 border: 1px solid #6C9F50;
                 padding: 1px;
@@ -110,8 +113,8 @@ int main(int argc, char *argv[])
                 max-height: 200px;
                 font-size: 18px ;
                 font-weight: 600;
-                }
-        QWidget#pageWakeup{background-color: #F6F6F6;border-radius:32px;}
+            }
+        QWidget#pageWakeup{ background-color: #F6F6F6;border-radius:32px;}
 
         QSlider { border-radius: 12px; }
         QSlider::groove:horizontal { height: 12px; background: #DCDCDC; border-radius: 6px; }
@@ -203,14 +206,10 @@ int main(int argc, char *argv[])
     }
 
     QScrollBar::handle:vertical:hover,
-    QScrollBar::handle:horizontal:hover {
-        background: rgba(160, 250, 160, 0.7);
-    }
+    QScrollBar::handle:horizontal:hover { background: rgba(160, 250, 160, 0.7); }
 
     QScrollBar::handle:vertical:pressed,
-    QScrollBar::handle:horizontal:pressed {
-        background: rgba(160, 250, 160, 0.98);
-    }
+    QScrollBar::handle:horizontal:pressed { background: rgba(160, 250, 160, 0.98); }
 
 
 QScrollBar::add-line:vertical,
@@ -224,12 +223,12 @@ QScrollBar::sub-line:horizontal {
 }
 
 QScrollBar::add-page:vertical:hover,
-QScrollBar::add-page:horizontal:hover {background: transparent;}
+QScrollBar::add-page:horizontal:hover { background: transparent;}
 QScrollBar::sub-page:vertical:hover,
-QScrollBar::sub-page:horizontal:hover { background: rgba(40, 40, 40, 0.1);}
+QScrollBar::sub-page:horizontal:hover { background: transparent;}
 
 QScrollBar::add-page:vertical,
-QScrollBar::add-page:horizontal {background: transparent;}
+QScrollBar::add-page:horizontal { background: transparent;}
 QScrollBar::sub-page:vertical,
 QScrollBar::sub-page:horizontal { background: transparent;}
 
@@ -264,7 +263,7 @@ QTabBar::tab {
     padding: 4px 2px;
     margin-right: 10px;
     min-width: 40px;
-    min-height: 40px;
+    min-height: 20px;
     font-size: 18px;
     font-weight: 400;
 }
@@ -283,7 +282,6 @@ QTabBar::tab:hover:!selected {
 
 QTabBar::tab:vertical {
     min-height: 20px;
-    margin-bottom: 10px;
 }
 
 QTabWidget::pane {
@@ -302,7 +300,7 @@ QTabBar::separator {
 
     )");
 
-    //a.setStyleSheet("");
-
+    MainWindow w;
+    w.show();
     return a.exec();
 }

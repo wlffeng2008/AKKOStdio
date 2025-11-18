@@ -131,7 +131,7 @@
        </widget>
       </item>
       <item alignment="Qt::AlignmentFlag::AlignHCenter">
-       <widget class="ModuleEfColor" name="frameColor">
+       <widget class="ModuleEfColor" name="frameLEDColor">
         <property name="minimumSize">
          <size>
           <width>468</width>
@@ -177,7 +177,7 @@
           <number>0</number>
          </property>
          <item alignment="Qt::AlignmentFlag::AlignRight">
-          <widget class="ModuleEfLumi" name="frameLuni">
+          <widget class="ModuleEfLumi" name="frameLEDBright">
            <property name="minimumSize">
             <size>
              <width>304</width>
@@ -202,7 +202,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignmentFlag::AlignRight">
-          <widget class="ModuleEfSpeed" name="frameSpeed">
+          <widget class="ModuleEfSpeed" name="frameLEDSpeed">
            <property name="minimumSize">
             <size>
              <width>304</width>

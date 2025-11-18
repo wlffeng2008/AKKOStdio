@@ -79,6 +79,9 @@ public:
     explicit ModuleEfColor(QWidget *parent = nullptr);
     ~ModuleEfColor();
 
+signals:
+    void onSetColor(const QColor&color);
+
 protected:
     bool eventFilter(QObject* watched, QEvent *event) override;
 
