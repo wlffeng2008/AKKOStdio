@@ -31,7 +31,8 @@ public:
 protected:
     void paintEvent(QPaintEvent *event) override ;
     bool eventFilter(QObject *watched, QEvent *event) override ;
-    void keyReleaseEvent(QKeyEvent *event) override ;
+    void keyPressEvent(QKeyEvent *event) override;
+    void keyReleaseEvent(QKeyEvent *event) override;
     void closeEvent(QCloseEvent *event) override ;
 
     void mousePressEvent(QMouseEvent *event) override;
@@ -45,7 +46,9 @@ private:
     bool m_dragging = false;
 
     DialogDeviceConnect *m_pDevice = nullptr;
-    DialogMainwork *m_pMainkwork = nullptr;
+
+
+    // DialogMainwork *m_pMainkwork = nullptr;
 
 
     int m_nStatus = 0;

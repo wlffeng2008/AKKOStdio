@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">#frameInfo,#frameRTSetting,#frameLinear,#frameLEDBright,#frameLEDSpeed,#frameLEDColor,#frameLEDMode{background-color: #F6F6F6;border-radius:32px;}</string>
   </property>
   <property name="lineWidth">
    <number>0</number>
@@ -36,7 +36,7 @@
     <number>0</number>
    </property>
    <item alignment="Qt::AlignmentFlag::AlignTop">
-    <widget class="QFrame" name="frame_3">
+    <widget class="QFrame" name="frameTop">
      <property name="minimumSize">
       <size>
        <width>474</width>
@@ -48,6 +48,9 @@
        <width>16777215</width>
        <height>474</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="lineWidth">
       <number>0</number>
@@ -69,7 +72,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QFrame" name="frameA">
+       <widget class="QFrame" name="frameInfo">
         <property name="minimumSize">
          <size>
           <width>796</width>
@@ -83,7 +86,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: #F6F6F6;border-radius:40px;</string>
+         <string notr="true"/>
         </property>
         <property name="frameShape">
          <enum>QFrame::Shape::NoFrame</enum>
@@ -116,10 +119,13 @@
             <number>30</number>
            </property>
            <property name="topMargin">
-            <number>20</number>
+            <number>15</number>
            </property>
            <property name="rightMargin">
             <number>20</number>
+           </property>
+           <property name="bottomMargin">
+            <number>5</number>
            </property>
            <item alignment="Qt::AlignmentFlag::AlignVCenter">
             <widget class="QLabel" name="labelName">
@@ -153,7 +159,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>:/images/m/bianji.svg</pixmap>
+              <pixmap resource="res.qrc">:/images/m/bianji.svg</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -203,7 +209,7 @@
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>:/images/connect/2.4g-2.png</pixmap>
+                <pixmap resource="res.qrc">:/images/connect/2.4g-2.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -252,7 +258,7 @@
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>:/images/connect/USB-1.png</pixmap>
+                <pixmap resource="res.qrc">:/images/connect/USB-1.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -301,7 +307,7 @@
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>:/images/connect/BLE-1.png</pixmap>
+                <pixmap resource="res.qrc">:/images/connect/BLE-1.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -345,7 +351,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>:/images/a-left.png</pixmap>
+              <pixmap resource="res.qrc">:/images/a-left.png</pixmap>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -370,7 +376,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>:/images/Akko-Kb0.png</pixmap>
+              <pixmap resource="res.qrc">:/images/Akko-Kb0.png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -405,7 +411,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>:/images/a-right.png</pixmap>
+              <pixmap resource="res.qrc">:/images/a-right.png</pixmap>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -418,7 +424,7 @@
        </widget>
       </item>
       <item alignment="Qt::AlignmentFlag::AlignRight">
-       <widget class="QFrame" name="frame">
+       <widget class="QFrame" name="frameRight">
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <property name="spacing">
           <number>24</number>
@@ -436,7 +442,7 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="ModuleRtSet" name="frame_2">
+          <widget class="ModuleRtSet" name="frameRTSetting">
            <property name="minimumSize">
             <size>
              <width>300</width>
@@ -450,7 +456,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
+            <string notr="true"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::Shape::StyledPanel</enum>
@@ -461,7 +467,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QFrame" name="frame_7">
+          <widget class="QFrame" name="frameLinear">
            <property name="minimumSize">
             <size>
              <width>304</width>
@@ -475,7 +481,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
+            <string notr="true"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::Shape::StyledPanel</enum>
@@ -483,7 +489,7 @@
            <property name="frameShadow">
             <enum>QFrame::Shadow::Raised</enum>
            </property>
-           <widget class="ModuleLinear" name="frameRTSetting">
+           <widget class="ModuleLinear" name="frameLinearSet">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -528,7 +534,7 @@
     </widget>
    </item>
    <item alignment="Qt::AlignmentFlag::AlignBottom">
-    <widget class="QFrame" name="frameC">
+    <widget class="QFrame" name="frameBottom">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -575,7 +581,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
+         <string notr="true"/>
         </property>
         <property name="frameShape">
          <enum>QFrame::Shape::StyledPanel</enum>
@@ -600,7 +606,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
+         <string notr="true"/>
         </property>
         <property name="frameShape">
          <enum>QFrame::Shape::StyledPanel</enum>
@@ -611,7 +617,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frameB">
+       <widget class="QFrame" name="frameBR">
         <property name="maximumSize">
          <size>
           <width>304</width>
@@ -652,7 +658,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
+            <string notr="true"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::Shape::StyledPanel</enum>
@@ -677,7 +683,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #F6F6F6;border-radius:32px;</string>
+            <string notr="true"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::Shape::StyledPanel</enum>
@@ -733,6 +739,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -47,13 +47,14 @@ ModuleEfColor::ModuleEfColor(QWidget *parent)
         font.setPointSize(24);
         srand(time(nullptr)) ;
 
-        col_list.push_back(0x4039FF);
-        col_list.push_back(0xFFE6B1);
-        col_list.push_back(0x71FB55);
-        col_list.push_back(0x6FEAFC);
-        col_list.push_back(0x3000F6);
-        col_list.push_back(0xEB35D3);
-        col_list.push_back(0xFF6A44);
+        col_list.push_back(0xFF0000);
+        col_list.push_back(0x00FF00);
+        col_list.push_back(0x0000FF);
+        col_list.push_back(0xFFFF00);
+        col_list.push_back(0xFF00FF);
+        col_list.push_back(0xFF8000);
+        col_list.push_back(0x00FFFF);
+
         for(int i=0; i<7; i++)
         {
             QStandardItem *item = m_pModel->item(0,i);
@@ -72,6 +73,17 @@ ModuleEfColor::ModuleEfColor(QWidget *parent)
                 item->setForeground(QBrush(col_list[(i+s_pos)%7])) ;
             }
             ui->tableView->update() ;
+
+            QColor selColor = m_pModel->item(0,3)->data(Qt::ForegroundRole).value<QBrush>().color();
+            for(int i=0; i<7; i++)
+            {
+                if(selColor == col_list[i])
+                {
+                    qDebug() << selColor << i;
+                    emit onSetColor(selColor,i);
+                    break;
+                }
+            }
         });
     }
 
@@ -84,16 +96,19 @@ ModuleEfColor::ModuleEfColor(QWidget *parent)
 
     pCSq->setFixedSize(266,200);
     pCSl->setFixedWidth(266) ;
-    ui->verticalLayout->addWidget(pCSq,0,Qt::AlignCenter);
+    ui->verticalLayout1->addWidget(pCSq,0,Qt::AlignCenter);
     ui->verticalLayout2->addWidget(pCSl,0,Qt::AlignCenter);
 
-    ui->verticalLayout->setAlignment(Qt::AlignCenter) ;
+    ui->verticalLayout1->setAlignment(Qt::AlignCenter);
 
     connect(pCSl,&ColorSlider::valueChanged,this,[=](int value){
         pCSq->setHue(value/360.0);
     });
+
     connect(pCSq,&ColorSquare::colorSelected,this,[=](QColor color){
-        ColorLabel::Current(ui->tab2)->setColor(color) ;
+        ColorLabel *pLab = ColorLabel::Current(ui->tab2);
+        if(pLab) pLab->setColor(color);
+        emit onSetColor(color,8);
     });
 }
 

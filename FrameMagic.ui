@@ -109,7 +109,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QFrame" name="frameSet">
+       <widget class="QFrame" name="frameBL">
         <property name="minimumSize">
          <size>
           <width>180</width>
@@ -224,7 +224,7 @@
             <property name="styleSheet">
              <string notr="true"/>
             </property>
-            <widget class="QFrame" name="frame_3">
+            <widget class="QFrame" name="frameBR">
              <property name="geometry">
               <rect>
                <x>582</x>
@@ -287,7 +287,7 @@
               </property>
              </widget>
             </widget>
-            <widget class="QFrame" name="frame_6">
+            <widget class="QFrame" name="frameBM">
              <property name="geometry">
               <rect>
                <x>0</x>
@@ -464,7 +464,7 @@
               <property name="spacing">
                <number>10</number>
               </property>
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignLeft">
                <widget class="QLabel" name="label_5">
                 <property name="font">
                  <font>
@@ -480,7 +480,7 @@
                 </property>
                </widget>
               </item>
-              <item>
+              <item alignment="Qt::AlignmentFlag::AlignLeft">
                <widget class="ToggleButton" name="checkBox3">
                 <property name="minimumSize">
                  <size>
@@ -534,7 +534,7 @@
               </font>
              </property>
              <property name="text">
-              <string>再次按下按键触发所需的行程</string>
+              <string>再次按下按键触发所需的行程(mm)</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -557,7 +557,7 @@
               </font>
              </property>
              <property name="text">
-              <string>松开按键重置所需的行程</string>
+              <string>松开按键重置所需的行程(mm)</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -594,7 +594,7 @@
               <item>
                <widget class="QLabel" name="label_8">
                 <property name="text">
-                 <string>0.2 mm</string>
+                 <string>0.2</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -617,7 +617,7 @@
               <item>
                <widget class="QLabel" name="label_9">
                 <property name="text">
-                 <string>2.5 mm</string>
+                 <string>2.5</string>
                 </property>
                </widget>
               </item>
@@ -751,7 +751,7 @@
               <item>
                <widget class="QLabel" name="label_13">
                 <property name="text">
-                 <string>2.5 mm</string>
+                 <string>2.5</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -774,7 +774,7 @@
               <item>
                <widget class="QLabel" name="label_14">
                 <property name="text">
-                 <string>0.2 mm</string>
+                 <string>0.2</string>
                 </property>
                </widget>
               </item>
@@ -1758,6 +1758,17 @@ QPushButton:checked { border-color: #6329B6; }</string>
  </widget>
  <customwidgets>
   <customwidget>
+   <class>ToggleButton</class>
+   <extends>QCheckBox</extends>
+   <header>togglebutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ModuleLinear</class>
+   <extends>QFrame</extends>
+   <header>modulelinear.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>NewTabWidget</class>
    <extends>QTabWidget</extends>
    <header>newtabwidget.h</header>
@@ -1769,17 +1780,6 @@ QPushButton:checked { border-color: #6329B6; }</string>
    <header>modulekeyboard.h</header>
    <container>1</container>
   </customwidget>
-  <customwidget>
-   <class>ModuleLinear</class>
-   <extends>QFrame</extends>
-   <header>modulelinear.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ToggleButton</class>
-   <extends>QCheckBox</extends>
-   <header>togglebutton.h</header>
-  </customwidget>
  </customwidgets>
  <resources>
   <include location="res.qrc"/>
@@ -1787,7 +1787,7 @@ QPushButton:checked { border-color: #6329B6; }</string>
  <connections/>
  <buttongroups>
   <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>

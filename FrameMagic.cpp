@@ -36,7 +36,7 @@ FrameMagic::FrameMagic(QWidget *parent)
             QPushButton:hover {border: 1px solid #6329B6; }
             )") ;
 
-        QLayout *pLayout = ui->frameSet->layout() ;
+        QLayout *pLayout = ui->frameBL->layout() ;
         pLayout->setSpacing(12) ;
         pLayout->setAlignment(Qt::AlignTop|Qt::AlignHCenter) ;
 
@@ -85,25 +85,6 @@ FrameMagic::FrameMagic(QWidget *parent)
         ui->pushButtonP1->setStyleSheet(strStyle1) ;
         ui->pushButtonP2->setStyleSheet(strStyle1) ;
 
-        static QString strStyle3(R"(
-
-        QLineEdit {
-            border: 1px solid #E4E4E4;
-            border-radius: 6px;
-            min-height: 20px;
-            min-width: 60px;
-            color: black;
-            text-align: center;
-            background-color: #E4E4E4;
-            }
-
-            QLineEdit:hover { background-color: #F0F0F0;}
-
-            QLineEdit:disabled { background-color: transparent; color: #B7B7B7;border: 1px solid transparent;}
-            )") ;
-
-        ui->lineEditValue1->setStyleSheet(strStyle3);
-        ui->lineEditValue2->setStyleSheet(strStyle3);
         ui->horizontalSlider2->setStyleSheet(R"(
         QSlider::sub-page:horizontal { background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #C3FFFD, stop:1 #39E1DC);  border-radius: 6px;}
         QSlider::handle:horizontal {
@@ -119,8 +100,8 @@ FrameMagic::FrameMagic(QWidget *parent)
 
         ui->horizontalSlider1->setFixedHeight(40) ;
         ui->horizontalSlider2->setFixedHeight(40) ;
-        connect(ui->horizontalSlider1,&QSlider::valueChanged,this,[=](int value){ui->lineEditValue1->setText(QString::asprintf("%.03f mm",value/1000.0));});
-        connect(ui->horizontalSlider2,&QSlider::valueChanged,this,[=](int value){ui->lineEditValue2->setText(QString::asprintf("%.03f mm",2.7-value/1000.0));});
+        connect(ui->horizontalSlider1,&QSlider::valueChanged,this,[=](int value){ui->lineEditValue1->setText(QString::asprintf("%.03f",value/1000.0));});
+        connect(ui->horizontalSlider2,&QSlider::valueChanged,this,[=](int value){ui->lineEditValue2->setText(QString::asprintf("%.03f",2.7-value/1000.0));});
 
         ui->horizontalSlider1->setValue(2050) ;
         ui->horizontalSlider2->setValue(1950) ;

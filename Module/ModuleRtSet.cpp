@@ -19,102 +19,34 @@ ModuleRtSet::ModuleRtSet(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // {
-        static QString strStyle1(R"(
-        QPushButton {
-            border: 3px solid transparent;
-            border-radius: 0px;
-            color: black;
-            background-color: transparent;
-                min-width:20px;
-                min-height:20px;
-                max-width:20px;
-                max-height:20px;
+    connect(ui->checkBoxRTMode,&QCheckBox::clicked,this,[&](bool checked){
+        ui->pushButtonMinus->setEnabled(checked);
+        ui->pushButtonPlug->setEnabled(checked);
+        ui->lineEdit->setEnabled(checked);
+        update() ;
+    }) ;
 
-                font-size: 16px ;
-                font-weight: bold ;
-                font-family: MiSans;
-                icon: url(:/images//rt/plug-normal.png);
-                icon-size: 20px;
-            }
+    ui->checkBoxRTMode->setChecked(true);
 
-            QPushButton:hover { background-color: #F0F0F0;}
+    connect(ui->lineEdit,&QLineEdit::textEdited,this,[=](const QString &text){
+        value = getValue() ;
+        update() ;
+    });
 
-            QPushButton:pressed { background-color: transparent; }
-            QPushButton:checked { background-color: transparent; color: #6329B6; border-bottom: 3px solid #6329B6;}
-            QPushButton:disabled { background-color: transparent; color: transparent; icon: url(:/images/rt/plug-disabled.png);}
-            )") ;
-    ui->pushButtonPlug->setStyleSheet(strStyle1) ;
+    ui->pushButtonMinus->setAutoRepeat(true);
+    ui->pushButtonMinus->setAutoRepeatInterval(100) ;
+    connect(ui->pushButtonMinus,&QPushButton::pressed,this,[=]{
+        value = getValue() - 0.005 ;
+        setValue(value) ;
+    }) ;
 
-        static QString strStyle2(R"(
-        QPushButton {
-            border: 3px solid transparent;
-            border-radius: 0px;
-            color: black;
-            background-color: transparent;
-                min-width:20px;
-                min-height:20px;
-                max-width:20px;
-                max-height:20px;
-                icon: url(:/images/rt/minus-normal.png);
-                icon-size: 20px;
-            }
-
-            QPushButton:hover { background-color: #F0F0F0;}
-
-            QPushButton:pressed { background-color: transparent; }
-            QPushButton:checked { background-color: transparent; color: #6329B6; border-bottom: 3px solid #6329B6;}
-            QPushButton:disabled { background-color: transparent; color: transparent; icon: url(:/images/rt/minus-disabled.png);}
-            )") ;
-    ui->pushButtonMinus->setStyleSheet(strStyle2) ;
-
-        static QString strStyle3(R"(
-
-        QLineEdit {
-            border: 1px solid #EDEDED;
-            background-color: #EDEDED;
-            border-radius: 6px;
-            min-height: 20px;
-            color: black;
-            text-align: center;
-            }
-
-            QLineEdit:hover { background-color: #F0F0F0;}
-
-            QLineEdit:disabled { background-color: transparent; color: #B7B7B7;border: 1px solid transparent;}
-            )") ;
-
-        ui->lineEdit->setStyleSheet(strStyle3);
-
-        connect(ui->checkBoxRTMode,&QCheckBox::clicked,this,[&](bool checked){
-            ui->pushButtonMinus->setEnabled(checked);
-            ui->pushButtonPlug->setEnabled(checked);
-            ui->lineEdit->setEnabled(checked);
-            update() ;
-        }) ;
-    // }
-
-        ui->checkBoxRTMode->setChecked(true);
-
-        connect(ui->lineEdit,&QLineEdit::textEdited,this,[=](const QString &text){
-            value = getValue() ;
-            update() ;
-        });
-
-        ui->pushButtonMinus->setAutoRepeat(true);
-        ui->pushButtonMinus->setAutoRepeatInterval(100) ;
-        connect(ui->pushButtonMinus,&QPushButton::pressed,this,[=]{
-            value = getValue() - 0.005 ;
-            setValue(value) ;
-        }) ;
-
-        ui->pushButtonPlug->setAutoRepeat(true);
-        ui->pushButtonPlug->setAutoRepeatInterval(100) ;
-        connect(ui->pushButtonPlug,&QPushButton::pressed,this,[=]{
-            value = getValue() + 0.005 ;
-            setValue(value) ;
-            update() ;
-        }) ;
+    ui->pushButtonPlug->setAutoRepeat(true);
+    ui->pushButtonPlug->setAutoRepeatInterval(100) ;
+    connect(ui->pushButtonPlug,&QPushButton::pressed,this,[=]{
+        value = getValue() + 0.005 ;
+        setValue(value) ;
+        update() ;
+    }) ;
 
     installEventFilter(this) ;
     setMouseTracking(true) ;
@@ -222,10 +154,9 @@ void ModuleRtSet::paintEvent(QPaintEvent *event)
         painter.drawLine(QPoint(s_Rect.left()+i*xStep,85),QPoint(s_Rect.left()+i*xStep,100)) ;
     }
 
-    int nTriLen = 10;
+    int nTriLen = 12;
     float value = getValue();
     int nImgX = s_Rect.left() + s_Rect.width() * (value - valueMin) / (valueMax - valueMin) - nTriLen/2 ;
-
 
     painter.drawLine(QPoint(nImgX+nTriLen/2,72),QPoint(nImgX+nTriLen/2,100)) ;
     painter.setRenderHint(QPainter::Antialiasing,true) ;
@@ -236,4 +167,5 @@ void ModuleRtSet::paintEvent(QPaintEvent *event)
     triangle<<QPoint(nImgX+nTriLen/2,s_Rect.top() + nTriLen/2 * sqrt(3)) ;
     painter.drawPolygon(triangle);
 
+    event->accept();
 }

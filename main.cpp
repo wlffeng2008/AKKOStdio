@@ -4,9 +4,30 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QFontDatabase>
+#include <locale.h>
+
+#ifdef _WIN32
+#include <windows.h>
+#include <tchar.h>
+#include <wchar.h>
+#include <shellapi.h>
+#endif
 
 int main(int argc, char *argv[])
 {
+#if(QT_VERSION>=QT_VERSION_CHECK(5,6,0))
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);// 启用高分辨率 pixmap
+#endif
+
+#ifdef _WIN32
+    setlocale(LC_ALL, ".UTF-8");
+#else
+    setlocale(LC_ALL, "");
+#endif
+
+    //ws_tzset();
+
     QApplication a(argc, argv);
 
     QTranslator translator;
@@ -32,53 +53,59 @@ int main(int argc, char *argv[])
     QFontDatabase::addApplicationFont(":/font/MiSans-Thin.ttf");
 
     //QApplication::setStyle("Fusion");
-    MainWindow w;
-    w.show();
 
     a.setStyleSheet(R"(
 
         * { font-family: MiSans,MiSans;}
-        QLabel { font-size: 14px; font-weight: 500 ;}
+        QLabel { font-size: 14px; font-weight: 400 ;}
 
         QLabel:disabled { color: #B3B3B3;}
-        QLineEdit:disabled { color: #B3B3B3; background-color: #E3E3E3;}
 
-        QLabel#labelTitle1,#labelTitle2,#labelTitle3,#labelTitle4,#labelTitle5,#labelTitle,#labelName { font-size: 18px; font-weight: 600 ;}
+
+        QLineEdit {
+            border: 1px solid #EDEDED;
+            background-color: #EDEDED;
+            border-radius: 6px;
+            min-height: 20px;
+            color: black;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            }
+
+        QLineEdit:hover { background-color: #F0F0F0;}
+        QLineEdit:focus{ border: 1px solid #50b7c1; border-radius: 4px;  background-color: rgb(230, 240, 255);}
+        QLineEdit:disabled { background-color: transparent; color: #B7B7B7;border: 1px solid transparent;}
+
+        QLabel#labelTitle1,#labelTitle2,#labelTitle3,#labelTitle4,#labelTitle5,#labelTitle,#labelName{ font-size: 18px; font-weight: 600 ;}
         QLabel#labelTitleL1,#labelTitleL2,#labelTitleL3,#labelTitleL4,#labelTitleL5 { font-size: 14px; font-weight: 500 ;}
         QLabel#labelTitleS1,#labelTitleS2,#labelTitleS3,#labelTitleS4,#labelTitleS5 { font-size: 16px; font-weight: 500 ;}
-        QLabel#labelValue1,#labelValue5{ font-size: 10px; font-weight: 500 ;}
-        QLabel#labelValue2,#labelValue4{ font-size: 14px; font-weight: 500 ;}
-        QLabel#labelValue3{ font-size: 18px; font-weight: 600 ;}
+        QLabel#labelValue1,#labelValue5{ font-size: 10px; font-weight: 500;}
+        QLabel#labelValue2,#labelValue4{ font-size: 14px; font-weight: 500;}
+        QLabel#labelValue3{ font-size: 18px; font-weight: 600;}
 
-        QTableView{ border: 1px solid gray; gridline-color: transparent;  background-color: rgb(226, 249, 255) !important; gridline-color: gray;
-                font-size: 10px ;
-                font-weight: 500;}
-        QTableView::Item{padding-left:2px;  border-top: 0px solid gray; border-bottom: 1px solid transparent;border-right: 0px solid gray;}
-        QTableView::Item::selected{ background-color: #a0bb9e !important; color:white; }
+        QTableView{
+                 border: 1px solid gray;
+                 gridline-color: transparent;
+                 background-color: rgb(230, 240, 255);
+                 gridline-color: gray;
+                 font-size: 10px ;
+                 font-weight: 400;
+            }
+        QTableView::item{padding-left:2px;  border-top: 0px solid gray; border-bottom: 1px solid transparent;border-right: 0px solid gray;}
+        QTableView::item::selected{ background-color: #a0bb9e; color:white; }
         QTableView QTableCornerButton::section { background-color: skyblue ; min-width: 32px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-left: 0px solid gray; border-right: 1px solid gray; }
 
         QTableView QHeaderView::section{background-color:skyblue;font-size: 10px; font-weight: 400 ;}
         QTableView QHeaderView{background-color:skyblue; font-size: 10px; font-weight: 400 ;}
-        QHeaderView::section:horizontal{ font-size: 10px; font-weight: 400 ; padding-left: 2px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-right: 1px solid gray; font-weight: bold;}
-        QHeaderView::section:vertical{  padding-left: 2px; min-width: 36px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-left: 0px solid gray; border-right: 1px solid gray;}
         QTableView::indicator { width: 18px; height: 18px; }
         QTableView::indicator:checked { image: url(:/images/BoxChecked.png); }
         QTableView::indicator:unchecked { image: url(:/images/BoxUncheck.png); }
+
+        QHeaderView::section:horizontal{ font-size: 10px; font-weight: 400; padding-left: 2px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-right: 1px solid gray;}
+        QHeaderView::section:vertical{ padding-left: 2px; min-width: 36px; border-top: 0px solid gray; border-bottom: 1px solid gray; border-left: 0px solid gray; border-right: 1px solid gray;}
         QHeaderView::section:vertical{ text-align: right;}
 
-        QLineEdit { border: 1px solid gray; border-radius: 4px; }
-        QLineEdit:focus{ border: 1px solid #50b7c1; border-radius: 4px;  background-color: rgb(230, 240, 255);}
-
-        QTextEdit {border: 1px solid gray; border-radius: 0px; }
-        QTextEdit:focus{ border: 1px solid #50b7c1; border-radius: 4px; background-color: rgb(230, 240, 255);}
-
-        QTableView::indicator:indeterminate { border: 2px solid #888; background-color: #ccc; }
-
-        QLineEdit {border: 1px solid gray; border-radius: 4px; }
-        QLineEdit:focus{ border: 1px solid #50b7c1; border-radius: 4px; background-color: rgb(220, 250, 255);}
-
-        QTextEdit {border: 1px solid gray; border-radius: 4px; }
-        QTextEdit:focus{ border: 1px solid #50b7c1; border-radius: 4px; background-color: rgb(220, 250, 255);}
 
         QPushButton {
                 background-color: #2D7FDD;
@@ -86,21 +113,40 @@ int main(int argc, char *argv[])
                 color: white;
                 border: 1px solid #6C9F50;
                 padding: 1px;
-                min-width: 46px;
+                min-width: 32px;
                 min-height: 8px;
                 max-width: 800px;
                 max-height: 200px;
-                font-size: 13px ;
-                font-weight: 600;
-                }
+                font-size: 14px ;
+                font-weight: 400;
+            }
         QPushButton:hover { background-color: #87ceeb; }
         QPushButton:pressed { background-color: #1e90af; }
         QPushButton:checked { background-color: #1e90ff; }
         QPushButton:disabled { background-color: gray; color: #cccccc;}
 
+
+        #pushButtonPlug,#pushButtonMinus{
+                border: none;
+                border-radius: 0px;
+                background-color: transparent;
+                min-width:20px;
+                min-height:20px;
+                max-width:20px;
+                max-height:20px;
+                icon-size: 16px;
+            }
+
+        #pushButtonPlug,#pushButtonMinus:hover { background-color: #F0F0F0;}
+
+        #pushButtonPlug { icon: url(:/images/rt/plug-normal.png);}
+        #pushButtonPlug:disabled { icon: url(:/images/rt/plug-disabled.png);}
+        #pushButtonMinus { icon: url(:/images/rt/minus-normal.png);}
+        #pushButtonMinus:disabled { icon: url(:/images/rt/minus-disabled.png);}
+
         QWidget#pageWakeup QPushButton {
                 background-color: red;
-                border-radius: 8px;
+                border-radius: 10px;
                 color: white;
                 border: 1px solid #6C9F50;
                 padding: 1px;
@@ -110,8 +156,8 @@ int main(int argc, char *argv[])
                 max-height: 200px;
                 font-size: 18px ;
                 font-weight: 600;
-                }
-        QWidget#pageWakeup{background-color: #F6F6F6;border-radius:32px;}
+            }
+        QWidget#pageWakeup{ background-color: #F6F6F6;border-radius:32px;}
 
         QSlider { border-radius: 12px; }
         QSlider::groove:horizontal { height: 12px; background: #DCDCDC; border-radius: 6px; }
@@ -138,6 +184,11 @@ int main(int argc, char *argv[])
 
         QSlider::handle:hover { background: #F0F0F0; }
         QSlider::handle:pressed { background: #E0E0E0; border-color: #2D7FDD; }
+
+        #horiCyanSlider::sub-page:horizontal { background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #C3FFFD, stop:1 #39E1DC);  border-radius: 6px;}
+        #horiCyanSlider::handle:horizontal { border: 2px solid #5CFFFA; }
+        #horiCyanSlider::handle:hover { background: #F0F0F0;}
+        #horiCyanSlider::handle:pressed { background: #E0E0E0; border-color: #2D7FDD;}
 
         QRadioButton { spacing: 5px; color: #333333; font-size: 12px; font-weight: 400 ;}
         QRadioButton::indicator {
@@ -196,21 +247,18 @@ int main(int argc, char *argv[])
 
     QScrollBar::handle:vertical,
     QScrollBar::handle:horizontal {
-        background: rgba(160, 160, 160, 0.8);
+        background: rgba(220, 220, 220, 0.3);
         border-radius: 2px;
         min-height: 20px;
+        max-height: 20px;
         min-width: 20px;
     }
 
     QScrollBar::handle:vertical:hover,
-    QScrollBar::handle:horizontal:hover {
-        background: rgba(160, 250, 160, 0.7);
-    }
+    QScrollBar::handle:horizontal:hover { background: rgba(160, 250, 160, 0.7); }
 
     QScrollBar::handle:vertical:pressed,
-    QScrollBar::handle:horizontal:pressed {
-        background: rgba(160, 250, 160, 0.98);
-    }
+    QScrollBar::handle:horizontal:pressed { background: rgba(160, 250, 160, 0.98); }
 
 
 QScrollBar::add-line:vertical,
@@ -224,16 +272,16 @@ QScrollBar::sub-line:horizontal {
 }
 
 QScrollBar::add-page:vertical:hover,
-QScrollBar::add-page:horizontal:hover {background: transparent;}
+QScrollBar::add-page:horizontal:hover { background: transparent;}
 QScrollBar::sub-page:vertical:hover,
-QScrollBar::sub-page:horizontal:hover { background: rgba(40, 40, 40, 0.1);}
+QScrollBar::sub-page:horizontal:hover { background: transparent;}
 
 QScrollBar::add-page:vertical,
-QScrollBar::add-page:horizontal {background: transparent;}
+QScrollBar::add-page:horizontal { background: transparent;}
 QScrollBar::sub-page:vertical,
 QScrollBar::sub-page:horizontal { background: transparent;}
 
-QScrollArea { background-color: transparent; }
+QScrollArea { background-color: white;border:none }
 
 /*
 QScrollArea {
@@ -264,7 +312,7 @@ QTabBar::tab {
     padding: 4px 2px;
     margin-right: 10px;
     min-width: 40px;
-    min-height: 40px;
+    min-height: 20px;
     font-size: 18px;
     font-weight: 400;
 }
@@ -283,7 +331,6 @@ QTabBar::tab:hover:!selected {
 
 QTabBar::tab:vertical {
     min-height: 20px;
-    margin-bottom: 10px;
 }
 
 QTabWidget::pane {
@@ -302,7 +349,7 @@ QTabBar::separator {
 
     )");
 
-    //a.setStyleSheet("");
-
+    MainWindow w;
+    w.show();
     return a.exec();
 }

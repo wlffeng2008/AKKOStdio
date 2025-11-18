@@ -73,7 +73,7 @@ ModuleLangMenu::ModuleLangMenu(QWidget *parent)
     }
     //pLayout->setAlignment(Qt::AlignTrailing|Qt::AlignHCenter);
 
-    QTimer::singleShot(100,this,[=]{ m_pBtnGrp->button(0)->click(); setFocusPolicy(Qt::NoFocus);});
+    QTimer::singleShot(100,this,[=]{ m_pBtnGrp->button(0)->click(); /*setFocusPolicy(Qt::NoFocus);*/});
 
     setStyleSheet("QDialog{background-color: rgba(255, 255, 255, 0.9); border: 1px solid #EAEAEA; border-radius:12px;}");
 }

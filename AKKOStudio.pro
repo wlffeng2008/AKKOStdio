@@ -10,6 +10,14 @@ CODECFORTR = UTF-8
 CODECFORSRC = UTF-8
 
 DESTDIR = ../../bin
+RC_ICONS = AKKO.ico
+VERSION = 1.0.0.0
+TARGET = AKKOStudio
+QMAKE_TARGET_COMPANY = "AKKO"
+QMAKE_TARGET_PRODUCT = "AKKO "
+QMAKE_TARGET_DESCRIPTION = "AKKO: Created by Qt6.10.0"
+QMAKE_TARGET_COPYRIGHT = "AKKO(2025.10)"
+RC_LANG = 0x0004
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.

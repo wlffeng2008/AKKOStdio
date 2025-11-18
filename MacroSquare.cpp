@@ -23,44 +23,9 @@ MacroSquare::MacroSquare(const QString &text, int type, QWidget *parent)
 {
     setCursor(Qt::PointingHandCursor) ;
     setFocusPolicy(Qt::StrongFocus) ;
-    // qDebug() << parent;
 
     m_type = type;
     m_text = text;
-
-    m_tTip=new CustomTooltip(this);
-    m_rTip=new CustomTooltip(this);
-    m_bTip=new CustomTooltip(this);
-
-    m_tTip->setAutohide(false);
-    m_rTip->setAutohide(false);
-    m_bTip->setAutohide(false);
-
-    m_tTip->setStyleSheet(s_strTipBtnStyle);
-    m_rTip->setStyleSheet(s_strTipBtnStyle);
-    m_bTip->setStyleSheet(s_strTipBtnStyle);
-
-    m_tTip->setText(tr("添加"));
-    m_rTip->setText(tr("修改"));
-    m_bTip->setText(tr("删除"));
-
-    connect(m_tTip,&CustomTooltip::onClicked,this,[=]{
-        m_tTip->hide();
-        m_rTip->hide();
-        m_bTip->hide();
-    });
-
-    connect(m_rTip,&CustomTooltip::onClicked,this,[=]{
-        m_tTip->hide();
-        m_rTip->hide();
-        m_bTip->hide();
-    });
-
-    connect(m_bTip,&CustomTooltip::onClicked,this,[=]{
-        m_tTip->hide();
-        m_rTip->hide();
-        m_bTip->hide();
-    });
 
     if(type == 1)
     {
@@ -75,13 +40,35 @@ MacroSquare::MacroSquare(const QString &text, int type, QWidget *parent)
             m_text=QString::number(value);
         });
     }
+    else
+    {
+        m_tTip=new CustomTooltip(this);
+        m_rTip=new CustomTooltip(this);
+        m_bTip=new CustomTooltip(this);
 
-    m_tTip->installEventFilter(this);
+        m_tTip->setAutohide(false);
+        m_rTip->setAutohide(false);
+        m_bTip->setAutohide(false);
+
+        m_tTip->setStyleSheet(s_strTipBtnStyle);
+        m_rTip->setStyleSheet(s_strTipBtnStyle);
+        m_bTip->setStyleSheet(s_strTipBtnStyle);
+
+        m_tTip->setText(tr("添加"));
+        m_rTip->setText(tr("修改"));
+        m_bTip->setText(tr("删除"));
+
+        connect(m_tTip,&CustomTooltip::onClicked,this,[=]{ closeItems(); });
+        connect(m_rTip,&CustomTooltip::onClicked,this,[=]{ closeItems(); });
+        connect(m_bTip,&CustomTooltip::onClicked,this,[=]{ closeItems(); });
+        m_tTip->installEventFilter(this);
+    }
+
 }
 
 void MacroSquare::closeItems()
 {
-    if(m_spin) m_spin->hide();
+    //if(m_spin) m_spin->hide();
 
     if(m_tTip)
     {
@@ -177,7 +164,9 @@ bool MacroSquare::eventFilter(QObject *watched, QEvent *event)
     }
 
     if (event->type() == QEvent::FocusOut) {
+        //qDebug() << "MacroSquare::eventFilter:FocusOut" ;
         closeItems() ;
+        if(watched == m_spin) m_spin->hide() ;
     }
 
     return QWidget::eventFilter(watched, event);
@@ -187,6 +176,7 @@ bool MacroSquare::event(QEvent *event)
 {
     if(event->type() == QEvent::FocusOut)
     {
+        //qDebug() << "MacroSquare::event:FocusOut" ;
         closeItems();
     }
 

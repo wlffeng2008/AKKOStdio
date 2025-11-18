@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1183</width>
+    <width>1244</width>
     <height>651</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
     <rect>
      <x>10</x>
      <y>70</y>
-     <width>301</width>
+     <width>424</width>
      <height>21</height>
     </rect>
    </property>
@@ -32,9 +32,9 @@
   <widget class="QPushButton" name="pushButtonRead">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>362</x>
      <y>100</y>
-     <width>70</width>
+     <width>72</width>
      <height>24</height>
     </rect>
    </property>
@@ -47,7 +47,7 @@
     <rect>
      <x>10</x>
      <y>130</y>
-     <width>301</width>
+     <width>425</width>
      <height>511</height>
     </rect>
    </property>
@@ -70,8 +70,8 @@
     <rect>
      <x>60</x>
      <y>10</y>
-     <width>51</width>
-     <height>21</height>
+     <width>56</width>
+     <height>22</height>
     </rect>
    </property>
    <property name="text">
@@ -81,8 +81,8 @@
   <widget class="QPushButton" name="pushButtonRefresh">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>10</y>
+     <x>302</x>
+     <y>8</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -110,7 +110,7 @@
   <widget class="QLabel" name="labelFlag0">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>230</x>
      <y>10</y>
      <width>20</width>
      <height>20</height>
@@ -129,7 +129,7 @@
   <widget class="QLabel" name="labelFlag1">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>230</x>
      <y>40</y>
      <width>20</width>
      <height>20</height>
@@ -148,7 +148,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>150</x>
      <y>10</y>
      <width>71</width>
      <height>20</height>
@@ -164,7 +164,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>150</x>
      <y>40</y>
      <width>71</width>
      <height>20</height>
@@ -182,8 +182,8 @@
     <rect>
      <x>60</x>
      <y>40</y>
-     <width>51</width>
-     <height>21</height>
+     <width>56</width>
+     <height>22</height>
     </rect>
    </property>
    <property name="text">
@@ -209,8 +209,8 @@
   <widget class="QCheckBox" name="checkBoxOntop">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>40</y>
+     <x>304</x>
+     <y>36</y>
      <width>80</width>
      <height>19</height>
     </rect>
@@ -222,9 +222,9 @@
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>446</x>
      <y>10</y>
-     <width>841</width>
+     <width>787</width>
      <height>631</height>
     </rect>
    </property>

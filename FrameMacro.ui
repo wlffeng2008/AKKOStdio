@@ -14,7 +14,10 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#FrameMacro,#frameB,#frameRight{background-color:#FFFFFF;border-radius:0px;}
+   <string notr="true">#FrameMacro{background-color:#FFFFFF;border:none;}
+#frameT{background-color: #FBFBFB;border-radius:32px;}
+#frameMList,#frameContent,#frameBar{background-color:#F0F0F0;border-radius:32px;}
+QScrollArea{background-color:#FFFFFF;border:none;}
 </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0">
@@ -42,7 +45,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">QFrame{background-color: #FBFBFB;border-radius:32px;}</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
@@ -84,18 +87,18 @@
      <property name="styleSheet">
       <string notr="true">QPushButton {
             border: 1px solid transparent;
-            border-radius: 14px;
+            border-radius: 6px;
             padding: 2px 2px;
             color: black;
             outline: none;
             background-color: transparent;
                 min-width:24px;
                 max-width:100px;
-                min-height:24px;}
-
-QPushButton:hover { background-color: transparent; border: 1px solid transparent;}
-QPushButton:pressed { background-color: #3F3F3F; }
-QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
+                min-height:24px;
+                max-height:24px;
+}
+QPushButton::hover{background-color: #E0E0E0;}
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::NoFrame</enum>
@@ -123,7 +126,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
        <number>0</number>
       </property>
       <item>
-       <widget class="QFrame" name="frameMode">
+       <widget class="QFrame" name="frameMList">
         <property name="maximumSize">
          <size>
           <width>304</width>
@@ -131,7 +134,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QFrame{background-color: #F6F6F6;border-radius:32px;}</string>
+         <string notr="true"/>
         </property>
         <property name="frameShape">
          <enum>QFrame::Shape::StyledPanel</enum>
@@ -249,7 +252,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
             <enum>Qt::FocusPolicy::NoFocus</enum>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: transparent;</string>
+            <string notr="true"/>
            </property>
            <property name="widgetResizable">
             <bool>true</bool>
@@ -278,6 +281,9 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
           <height>0</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayoutB" stretch="0,1">
          <property name="spacing">
           <number>24</number>
@@ -295,7 +301,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
           <number>0</number>
          </property>
          <item alignment="Qt::AlignmentFlag::AlignVCenter">
-          <widget class="QFrame" name="frameLuni">
+          <widget class="QFrame" name="frameBar">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -303,7 +309,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QFrame{background-color: #F6F6F6;border-radius:16px;}</string>
+            <string notr="true"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::Shape::StyledPanel</enum>
@@ -312,7 +318,16 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
             <enum>QFrame::Shadow::Raised</enum>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
-            <item>
+            <property name="leftMargin">
+             <number>15</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item alignment="Qt::AlignmentFlag::AlignVCenter">
              <widget class="QPushButton" name="pushButtonStart">
               <property name="styleSheet">
                <string notr="true">QPushButton{width: 130px;
@@ -321,7 +336,6 @@ color:white;
 background: #6329B6;
 border:1px solid #6329B6;
 border-radius: 16px 16px 16px 16px;
-font-family: MiSans, MiSans;
 font-weight: 600;
 font-size: 14px;
 };
@@ -352,7 +366,7 @@ font-size: 14px;
               </property>
              </spacer>
             </item>
-            <item>
+            <item alignment="Qt::AlignmentFlag::AlignVCenter">
              <widget class="QPushButton" name="pushButtonInsert">
               <property name="minimumSize">
                <size>
@@ -363,7 +377,7 @@ font-size: 14px;
               <property name="maximumSize">
                <size>
                 <width>106</width>
-                <height>32</height>
+                <height>30</height>
                </size>
               </property>
               <property name="text">
@@ -520,7 +534,7 @@ font-size: 14px;
               <property name="maximumSize">
                <size>
                 <width>106</width>
-                <height>32</height>
+                <height>30</height>
                </size>
               </property>
               <property name="text">
@@ -568,7 +582,7 @@ font-size: 14px;
               <property name="maximumSize">
                <size>
                 <width>106</width>
-                <height>32</height>
+                <height>30</height>
                </size>
               </property>
               <property name="text">
@@ -593,7 +607,7 @@ font-size: 14px;
           </widget>
          </item>
          <item>
-          <widget class="QFrame" name="frameSpeed">
+          <widget class="QFrame" name="frameContent">
            <property name="minimumSize">
             <size>
              <width>100</width>
@@ -601,7 +615,7 @@ font-size: 14px;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QFrame{background-color: #F6F6F6;border-radius:32px;}</string>
+            <string notr="true"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::Shape::StyledPanel</enum>
@@ -610,11 +624,14 @@ font-size: 14px;
             <enum>QFrame::Shadow::Raised</enum>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="spacing">
+             <number>5</number>
+            </property>
             <property name="leftMargin">
-             <number>20</number>
+             <number>18</number>
             </property>
             <property name="topMargin">
-             <number>20</number>
+             <number>15</number>
             </property>
             <property name="rightMargin">
              <number>20</number>
@@ -632,7 +649,7 @@ font-size: 14px;
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_2">
                <property name="spacing">
-                <number>10</number>
+                <number>5</number>
                </property>
                <property name="leftMargin">
                 <number>0</number>
@@ -662,6 +679,12 @@ font-size: 14px;
                </item>
                <item>
                 <widget class="QPushButton" name="pushButtonDelete">
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
                  <property name="text">
                   <string>删除</string>
                  </property>
@@ -716,6 +739,22 @@ font-size: 14px;
                 </widget>
                </item>
                <item>
+                <spacer name="horizontalSpacer_8">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Policy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>15</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
                 <widget class="QLabel" name="labelFlag21">
                  <property name="minimumSize">
                   <size>
@@ -749,6 +788,22 @@ font-size: 14px;
                   <string>释放</string>
                  </property>
                 </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_9">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Policy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>15</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
                <item>
                 <widget class="QLabel" name="labelFlag31">
@@ -804,8 +859,8 @@ font-size: 14px;
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>760</width>
-                 <height>160</height>
+                 <width>762</width>
+                 <height>164</height>
                 </rect>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_5">

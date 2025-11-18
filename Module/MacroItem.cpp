@@ -7,7 +7,7 @@ MacroItem::MacroItem(QWidget *parent)
 {
     ui->setupUi(this);
     setCursor(Qt::PointingHandCursor) ;
-    setStyleSheet("QFrame{font-size:14px;}") ;
+    //setStyleSheet("QFrame{font-size:14px;}") ;
     connect(ui->pushButtonEdit,&QPushButton::clicked,this,[=]{emit onOperation(0,this);}) ;
     connect(ui->pushButtonDelete,&QPushButton::clicked,this,[=]{emit onOperation(1,this);}) ;
 }
@@ -21,8 +21,8 @@ bool MacroItem::event(QEvent *event)
 {
     if(event->type() == QEvent::MouseButtonPress)
     {
-        setStyleSheet("QFrame { background-color: #F6F6F6; border-radius: 4px;}");
-        return true;
+        //setStyleSheet("QFrame { background-color: #F6F6F6; border-radius: 4px;}");
+        //return true;
     }
     return QFrame::event(event) ;
 }

@@ -3,6 +3,39 @@
 
 #include <QButtonGroup>
 
+typedef struct{
+    QString name ;
+    quint8 mode ;
+}EfMode;
+
+static QList<EfMode> EfModeList={
+
+    {"常亮",0x01},
+    {"呼吸",0x2},
+    {"流星",0x12},
+    {"涟漪",0x05},
+    {"极光",0x17},
+    {"雨滴",0x11},
+    {"聚合",0x09},
+    {"川流不息",0x07},
+    {"霓虹",0x03},
+    {"光波",0x04},
+    {"繁星点点",0x06},
+    {"如影随形",0x08},
+    {"正弦波",0x0A},
+    {"彩泉涌动",0x0B},
+    {"百花争艳",0x0C},
+    {"一石二鸟",0x0E},
+    {"峰回路转",0x0F}, //自定义色彩
+    {"斜风细雨",0x10},
+    {"踏雪无痕",0x13},
+    {"层出不穷",0x18},
+    {"光影",0x15},  //持续发送音律 0E --------
+    {"音乐律动",0x16}, //持续发送音律 0D --------
+    {"自定义",0x0D} // 选图案
+};
+
+
 ModuleEfMode::ModuleEfMode(QWidget *parent)
     : QFrame(parent)
     , ui(new Ui::ModuleEfMode)
@@ -17,6 +50,7 @@ ModuleEfMode::ModuleEfMode(QWidget *parent)
                 height: 32px;
                 border-radius: 16px ;
                 font-weight:500;
+                outline: none;
 
                 color: #333;
                 border: 1px solid #ECECEC;
@@ -28,36 +62,46 @@ ModuleEfMode::ModuleEfMode(QWidget *parent)
                 background: #6329B6; }
             QPushButton:hover { border: 1px solid #6329B6; }
             )") ;
-        QButtonGroup *pBtnGrp = new QButtonGroup(this) ;
+        pBtnGrp = new QButtonGroup(this) ;
         QLayout *pLayout = ui->scrollAreaWidgetContents->layout() ;
         pLayout->setSpacing(8) ;
         pLayout->setContentsMargins(0,0,0,0);
-
-        QStringList strEFList = QString("常亮(默认)、流星、呼吸、涟漪、如影随形、川流不息、繁星点点、霓虹、光波、层出不穷、彩泉涌动、峰回路转、百花争艳、极光、正弦波、雨滴、斜风细雨、踏雪无痕、聚合、一石二鸟、自定义(驱动)、音乐律动电音(驱动)、音乐律动经典(驱动)、光影模式(驱动)").split("、") ;
-
-        for(int i=0; i<strEFList.count(); i++)
+        for(int i=0; i<EfModeList.count(); i++)
         {
-            QPushButton *btn = new QPushButton(strEFList[i],this) ;
+            QPushButton *btn = new QPushButton(EfModeList[i].name,this) ;
             btn->setFixedSize(200,44);
             btn->setCheckable(true) ;
             btn->setStyleSheet(strStyle);
-            btn->setFocusPolicy(Qt::NoFocus) ;
 
-            pBtnGrp->addButton(btn,i);
+            pBtnGrp->addButton(btn,EfModeList[i].mode);
             pLayout->addWidget(btn);
             if(i==0)
                 btn->click() ;
+            btn->setFocusPolicy(Qt::NoFocus) ;
         }
 
         connect(pBtnGrp,&QButtonGroup::idClicked,this,[=](int id){
-            //qDebug() << "Effect QButtonGroup:" << id ;
-           emit onModeChanged(id) ;
-        });
-    }
 
+            if(!m_bOutSet)
+                emit onModeChanged(id) ;
+            m_bOutSet = false;
+            ui->comboBoxPic->setHidden(id != 0x0D);
+            ui->labelPicture->setHidden(id != 0x0D);
+
+        });
+
+        connect(ui->checkBoxEFMode,&QCheckBox::clicked,this,[=](bool checked){ emit onModeChanged(0,checked); });
+        connect(ui->comboBoxPic,&QComboBox::currentIndexChanged,this,[=](int index){ emit onModePicture(index); });
+    }
 }
 
 ModuleEfMode::~ModuleEfMode()
 {
     delete ui;
+}
+
+void ModuleEfMode::setEfMode(int mode)
+{
+    m_bOutSet =true;
+    pBtnGrp->button(mode)->click();
 }

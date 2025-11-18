@@ -172,7 +172,6 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
             const QModelIndex index = m_pTable->indexAt(pos) ;
             int row = index.row() ;
             int col = index.column() ;
-            qDebug() << index;
             if(col <= 2)
             {
                 makeCmd(row,true);
@@ -203,12 +202,10 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
         {
             if(pRoot->usage_page == 0xFFFF)
             {
-                qDebug() << pRoot->path  << pRoot->usage << pRoot->usage_page ;
-
                 if(pRoot->usage == 1)
                 {
                     m_pDev0 = hid_open_path(pRoot->path) ;
-                    qDebug() << "Open m_pDev0: " << pRoot->path ;
+                    qDebug() << "Open m_pDev0: " << pRoot->path << pRoot->usage << pRoot->usage_page;
                     hid_set_nonblocking(m_pDev0,1) ;
                     ui->labelFlag0->setPixmap(QString(":/images/General_OK4.png"));
                 }
@@ -216,7 +213,7 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
                 if(pRoot->usage == 2)
                 {
                     m_pDev1 = hid_open_path(pRoot->path) ;
-                    qDebug() << "Open m_pDev1: " << pRoot->path ;
+                    qDebug() << "Open m_pDev1: " << pRoot->path << pRoot->usage << pRoot->usage_page;
                     ui->labelFlag1->setPixmap(QString(":/images/General_OK4.png"));
                 }
             }
@@ -248,16 +245,8 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
             sum = 0xFF - (sum & 0xFF) ;
             data[7] = sum ;
         }
-
-        qDebug() << "hid_send_feature_report:" << data.toHex(' ').toUpper();
-        data.insert(0,(char)0) ; // report id
-        char padding[128]={0} ;
-        data.append(padding,64);
-        hid_send_feature_report(m_pDev1,(quint8 *)data.data(),65) ;
-
-        QTimer::singleShot(30,this,[=]{
-            ui->pushButtonRead->click() ;
-        });
+        addReadCmd(data);
+        readSetting();
     });
 
     connect(ui->pushButtonRead,&QPushButton::clicked,this,[=]{
@@ -267,16 +256,35 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
         if( nlen>0 )
         {
             QByteArray data(buf+1,nlen-1) ;
+            emit onReadBack(data);
             qDebug() << "hid_get_feature_report:" << data.toHex(' ').toUpper();
+            quint8 cmd = (quint8)data[0] ;
+            switch (cmd)
+            {
+            case CMD_GET_LEDPARAM:
+            case CMD_GET_SLEDPARAM:
+            {
+                int row = getRow(cmd);
+                for(int i=1; i<9; i++)
+                {
+                    setRowValue(row,2+i,(quint8)data[i]) ;
+                }
+            }
 
-            ui->plainTextEdit->setPlainText(data.toHex(' ').toUpper() + "\n") ;
+            break;
+            default:
+                break;
+            }
+
+            addLog(data);
+            readSetting();
         }
     });
 
     m_pRdInput = new QTimer(this) ;
-    m_pRdInput->start(20) ;
+    m_pRdInput->start(20);
 
-    QTimer *pTMClear = new QTimer(this);
+    pTMClear = new QTimer(this);
     connect(pTMClear,&QTimer::timeout,this,[=]{
         pTMClear->stop();
         m_bClear=true;
@@ -286,32 +294,100 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
         m_pRdInput->stop() ;
         if(m_pDev0)
         {
-            char buf[1024] = {0} ;
+            char buf[1024] = {0};
             int nlen = hid_read(m_pDev0,(quint8 *)buf,64) ;
 
             if( nlen>0 )
             {
                 QByteArray data(buf,nlen) ;
                 qDebug() << "hid_read:" << data.toHex(' ').toUpper();
-
-                if(m_bClear) ui->plainTextEdit->clear() ;
-
-                ui->plainTextEdit->appendPlainText(data.toHex(' ').toUpper() + "\n") ;
-                m_bClear = false ;
-                pTMClear->stop();
-                pTMClear->start(500);
+                addLog(data) ;
             }
         }
 
         m_pRdInput->start(20) ;
     });
 
-    //ui->pushButtonRefresh->click() ;
+    ui->lineEditCmd->setStyleSheet(" ");
+    ui->lineEditPID->setStyleSheet(" ");
+    ui->lineEditVID->setStyleSheet(" ");
+    ui->lineEditCmd->setStyleSheet("font-family: Fixedsys;");
+    ui->lineEditPID->setStyleSheet("font-family: Fixedsys;");
+    ui->lineEditVID->setStyleSheet("font-family: Fixedsys;");
+    ui->plainTextEdit->setStyleSheet("font-family: Fixedsys;");
+
+    addReadCmd(CMD_GET_REPORT);
+    addReadCmd(CMD_GET_PROFILE);
+    addReadCmd(CMD_GET_LEDPARAM);
+    addReadCmd(CMD_GET_SLEDPARAM);
+
+    for(quint8 i=0; i<4; i++)
+    {
+        for(quint8 j=0; j<8; j++)
+        {
+            quint8 tmp[8]={0x8A,0x00,0xFF,j,i,0,0,0} ;
+            QByteArray cmd((char *)tmp,8);
+            addReadCmd(cmd);
+        }
+    }
 }
 
 DialogDeviceConnect::~DialogDeviceConnect()
 {
     delete ui;
+}
+
+void DialogDeviceConnect::addLog(const QByteArray&log)
+{
+    if(m_bClear) ui->plainTextEdit->clear() ;
+    QString strLog(log.toHex(' ').toUpper());
+    int nLen = strLog.length() ;
+    for(int at=nLen-12; at>0; at -= 12)
+        strLog.insert(at,' ');
+    ui->plainTextEdit->appendPlainText(strLog + "\n") ;
+    m_bClear = false ;
+    pTMClear->stop();
+    pTMClear->start(500);
+}
+
+void DialogDeviceConnect::addReadCmd(quint8 cmd, int len)
+{
+    QByteArray data(len,0);
+    data[0]=cmd;
+    addReadCmd(data);
+}
+
+void DialogDeviceConnect::addReadCmd(QByteArray&cmd)
+{
+    int len=cmd.size();
+
+    quint8 sum = 0 ;
+    for(int i=0; i<len-1; i++)
+        sum += cmd[i];
+    sum = 0xFF - (sum & 0xFF) ;
+    cmd[len-1] = sum ;
+    m_readList.push_back(cmd);
+}
+
+void DialogDeviceConnect::readSetting()
+{
+    if(m_readList.count() <= 0)
+        return;
+
+    QByteArray cmd = m_readList[0];
+    m_readList.pop_front() ;
+
+    qDebug() << "hid_send_feature_report:" << cmd.toHex(' ').toUpper();
+    cmd.insert(0,(char)0) ; // report id
+    char padding[128]={0} ;
+    cmd.append(padding,64);
+    hid_send_feature_report(m_pDev1,(quint8 *)cmd.data(),65) ;
+
+    QTimer::singleShot(30,this,[=]{
+        ui->pushButtonRead->click() ;
+    });
+    //makeCmd(getRow(CMD_GET_LEDPARAM),true);
+    //QTimer::singleShot(100,this,[=]{ makeCmd(getRow(CMD_GET_SLEDPARAM),true); });
 }
 
 void DialogDeviceConnect::startConnect()
@@ -342,6 +418,11 @@ void DialogDeviceConnect::makeCmd(int row, bool autoSend)
     ui->lineEditCmd->setText(data.toHex(' ').toUpper()) ;
     if(autoSend)
         ui->pushButtonWrite->click() ;
+}
+
+void DialogDeviceConnect::reset()
+{
+    makeCmd(getRow(CMD_SET_RESET),true);
 }
 
 void DialogDeviceConnect::disconnect()
@@ -388,14 +469,47 @@ int DialogDeviceConnect::getRow(int cmd)
 void DialogDeviceConnect::setRowValue(int row, int col, int value)
 {
     QStandardItem *item =m_pModel->item(row,col);
-    if(item)item->setText(QString::number(value));
+    if(item) item->setText(QString::number(value));
+}
+
+void DialogDeviceConnect::setLEDOn(bool on)
+{
+    int row = getRow(CMD_SET_LEDONOFF);
+    if(row == -1) return;
+    m_bLedOn = on;
+    setRowValue(row,3,on?0:1);
+    setRowValue(row,4,on?0:1);
+    makeCmd(row,true);
+}
+
+void DialogDeviceConnect::setLEDPicture(int index)
+{
+    int row = getRow(CMD_SET_LEDPARAM);
+    if(row == -1) return ;
+
+    setRowValue(row,6,0x10 * (index));
+    setLEDMode(0x0D);
+}
+
+void DialogDeviceConnect::setLEDOption(int option)
+{
+    int row = getRow(CMD_SET_LEDPARAM);
+    if(row == -1) return ;
+
+    setRowValue(row,6,option);
+    makeCmd(row,true);
 }
 
 void DialogDeviceConnect::setLEDMode(int mode)
 {
+    // if(!m_bLedOn) setLEDOn(true) ;
+    // m_bLedOn = true ;
+
     int row = getRow(CMD_SET_LEDPARAM);
     if(row == -1) return ;
     setRowValue(row,3,mode);
+    if(mode != 0x0D)
+    setRowValue(row,6,7);
     makeCmd(row,true);
 }
 
@@ -412,5 +526,20 @@ void DialogDeviceConnect::setLEDBright(int bright)
     int row = getRow(CMD_SET_LEDPARAM);
     if(row == -1) return ;
     setRowValue(row,5,bright);
+    makeCmd(row,true);
+}
+
+
+void DialogDeviceConnect::setLEDColor(const QColor&color,int option)
+{
+    int row = getRow(CMD_SET_LEDPARAM);
+    if(row == -1) return ;
+    setRowValue(row,6,option);
+    if(option>6)
+    {
+        setRowValue(row,7,color.red());
+        setRowValue(row,8,color.green());
+        setRowValue(row,9,color.blue());
+    }
     makeCmd(row,true);
 }

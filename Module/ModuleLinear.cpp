@@ -35,28 +35,6 @@ ModuleLinear::ModuleLinear(QWidget *parent)
     ui->pushButtonP1->setStyleSheet(strStyle1) ;
     ui->pushButtonP2->setStyleSheet(strStyle1) ;
 
-    static QString strStyle3(R"(
-
-        QLineEdit {
-            border: 1px solid #EDEDED;
-            border-radius: 6px;
-            min-height: 20px;
-            min-width: 60px;
-            color: black;
-            text-align: center;
-            background-color: #EDEDED;
-                font-size: 14px ;
-                font-weight: 500 ;
-            }
-
-            QLineEdit:hover { background-color: #F0F0F0;}
-
-            QLineEdit:disabled { background-color: transparent; color: #B7B7B7;border: 1px solid transparent;}
-            )") ;
-
-    ui->lineEditValue1->setStyleSheet(strStyle3);
-    ui->lineEditValue2->setStyleSheet(strStyle3);
-
     ui->verticalSlider2->setStyleSheet(R"(
         QSlider::groove:vertical { width: 24px; background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #39E1DC, stop:1 #C3FFFD); border-radius: 12px;}
         QSlider::sub-page:vertical { background: #DCDCDC;  border-radius: 12px; }
