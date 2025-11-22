@@ -270,7 +270,6 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
                     setRowValue(row,2+i,(quint8)data[i]) ;
                 }
             }
-
             break;
             default:
                 break;
@@ -386,8 +385,6 @@ void DialogDeviceConnect::readSetting()
     QTimer::singleShot(30,this,[=]{
         ui->pushButtonRead->click() ;
     });
-    //makeCmd(getRow(CMD_GET_LEDPARAM),true);
-    //QTimer::singleShot(100,this,[=]{ makeCmd(getRow(CMD_GET_SLEDPARAM),true); });
 }
 
 void DialogDeviceConnect::startConnect()
@@ -466,20 +463,19 @@ int DialogDeviceConnect::getRow(int cmd)
     return -1 ;
 }
 
+void DialogDeviceConnect::setLEDOn(bool on)
+{
+    int row = getRow(CMD_SET_LEDONOFF);
+    if(row == -1) return ;
+    setRowValue(row,3,on?0:1);
+    setRowValue(row,4,on?0:1);
+    makeCmd(row,true);
+}
+
 void DialogDeviceConnect::setRowValue(int row, int col, int value)
 {
     QStandardItem *item =m_pModel->item(row,col);
     if(item) item->setText(QString::number(value));
-}
-
-void DialogDeviceConnect::setLEDOn(bool on)
-{
-    int row = getRow(CMD_SET_LEDONOFF);
-    if(row == -1) return;
-    m_bLedOn = on;
-    setRowValue(row,3,on?0:1);
-    setRowValue(row,4,on?0:1);
-    makeCmd(row,true);
 }
 
 void DialogDeviceConnect::setLEDPicture(int index)
@@ -504,7 +500,6 @@ void DialogDeviceConnect::setLEDMode(int mode)
 {
     // if(!m_bLedOn) setLEDOn(true) ;
     // m_bLedOn = true ;
-
     int row = getRow(CMD_SET_LEDPARAM);
     if(row == -1) return ;
     setRowValue(row,3,mode);
@@ -529,7 +524,6 @@ void DialogDeviceConnect::setLEDBright(int bright)
     makeCmd(row,true);
 }
 
-
 void DialogDeviceConnect::setLEDColor(const QColor&color,int option)
 {
     int row = getRow(CMD_SET_LEDPARAM);
@@ -541,5 +535,6 @@ void DialogDeviceConnect::setLEDColor(const QColor&color,int option)
         setRowValue(row,8,color.green());
         setRowValue(row,9,color.blue());
     }
+
     makeCmd(row,true);
 }

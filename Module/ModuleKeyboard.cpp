@@ -219,8 +219,7 @@ bool ModuleKeyboard::event(QEvent *event)
         }
         update();
     }
-
-    return QFrame::event(event);
+    return QFrame::event(event) ;
 }
 
 bool ModuleKeyboard::eventFilter(QObject *watched,QEvent *event)
@@ -290,5 +289,6 @@ void ModuleKeyboard::mouseReleaseEvent(QMouseEvent *event)
     m_draging=false;
     m_clkPt = event->pos();
     update();
+
     QFrame::mouseReleaseEvent(event);
 }

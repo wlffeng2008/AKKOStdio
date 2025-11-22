@@ -108,6 +108,7 @@ ModuleEfColor::ModuleEfColor(QWidget *parent)
     connect(pCSq,&ColorSquare::colorSelected,this,[=](QColor color){
         ColorLabel *pLab = ColorLabel::Current(ui->tab2);
         if(pLab) pLab->setColor(color);
+
         emit onSetColor(color,8);
     });
 }

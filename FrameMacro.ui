@@ -99,6 +99,7 @@ QScrollArea{background-color:#FFFFFF;border:none;}
 }
 QPushButton::hover{background-color: #E0E0E0;}
 </string>
+
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::NoFrame</enum>

@@ -19,7 +19,7 @@ FrameMain::FrameMain(QWidget *parent)
     ui->labelNext->setEnabled(false) ;
 
     DialogDeviceConnect *pConnector = DialogDeviceConnect::instance();
-    
+
     connect(ui->frameLEDMode,&ModuleEfMode::onModeChanged,this,[=](int mode,bool on){
         if(mode == 0)
         {
@@ -39,6 +39,7 @@ FrameMain::FrameMain(QWidget *parent)
     });
     connect(ui->frameLEDColor,&ModuleEfColor::onSetColor,this,[=](const QColor&color, int option){
         pConnector->setLEDColor(color,option);
+
     });
 
     connect(pConnector,&DialogDeviceConnect::onReadBack,[=](const QByteArray&data){
