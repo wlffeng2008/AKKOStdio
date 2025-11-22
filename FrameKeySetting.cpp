@@ -168,8 +168,8 @@ FrameKeySetting::FrameKeySetting(QWidget *parent)
     m_adjust = new ModuleDKSAdjust(this) ;
     m_adjust->setObjectName("DKSAdjust") ;
     m_adjust->setStyleSheet("QFrame#DKSAdjust{background-color:#F6F6F6; border-radius:20px; min-width:200px; min-height:240px;margin:20px;}") ;
-    m_adjust->adjustSize() ;
-    m_adjust->update() ;
+    m_adjust->adjustSize();
+    m_adjust->update();
     m_adjust->hide();
     connect(m_adjust,&ModuleDKSAdjust::onValueSave,this,[=](const QString&text){
         ui->labelPress1->setText(QString::asprintf("%.2f",text.toFloat()) + " mm") ;

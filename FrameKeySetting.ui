@@ -235,7 +235,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
             <string notr="true"/>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="page1">
             <property name="styleSheet">
@@ -267,14 +267,14 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
               <widget class="QPushButton" name="pushButton_45">
                <property name="geometry">
                 <rect>
-                 <x>670</x>
+                 <x>668</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
                </property>
                <property name="text">
-                <string>/</string>
+                <string>/?</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -283,14 +283,14 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
               <widget class="QPushButton" name="pushButton_44">
                <property name="geometry">
                 <rect>
-                 <x>616</x>
+                 <x>614</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
                </property>
                <property name="text">
-                <string>,</string>
+                <string>.&gt;</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -299,14 +299,14 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
               <widget class="QPushButton" name="pushButton_43">
                <property name="geometry">
                 <rect>
-                 <x>562</x>
+                 <x>560</x>
                  <y>143</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
                </property>
                <property name="text">
-                <string>'</string>
+                <string>,&lt;</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -826,7 +826,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>2</string>
+                <string>2@</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -890,7 +890,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>1</string>
+                <string>1!</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -938,7 +938,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>=</string>
+                <string>=+</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -954,7 +954,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>7</string>
+                <string>7&amp;</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -970,7 +970,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>6</string>
+                <string>6^</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -986,7 +986,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>[</string>
+                <string>{[</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -1002,7 +1002,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>-</string>
+                <string>-_</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -1018,7 +1018,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>5</string>
+                <string>5%</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -1034,7 +1034,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>4</string>
+                <string>4$</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -1050,7 +1050,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>;</string>
+                <string>'&quot;</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -1066,7 +1066,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>9</string>
+                <string>9(</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -1082,7 +1082,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>8</string>
+                <string>8*</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -1098,7 +1098,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>0</string>
+                <string>0)</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -1114,7 +1114,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>3</string>
+                <string>3#</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -1130,7 +1130,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>]</string>
+                <string>]}</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
@@ -1146,11 +1146,697 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 </rect>
                </property>
                <property name="text">
-                <string>\</string>
+                <string>:;</string>
                </property>
                <attribute name="buttonGroup">
                 <string notr="true">buttonGroup</string>
                </attribute>
+              </widget>
+              <widget class="QPushButton" name="pushButton_46">
+               <property name="geometry">
+                <rect>
+                 <x>722</x>
+                 <y>144</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>|</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_47">
+               <property name="geometry">
+                <rect>
+                 <x>776</x>
+                 <y>146</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>`~</string>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_000F">
+               <property name="geometry">
+                <rect>
+                 <x>20</x>
+                 <y>206</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">TAB</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_001C">
+               <property name="geometry">
+                <rect>
+                 <x>182</x>
+                 <y>204</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">Enter</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_003A">
+               <property name="geometry">
+                <rect>
+                 <x>74</x>
+                 <y>206</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">CAPS</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_0038">
+               <property name="geometry">
+                <rect>
+                 <x>507</x>
+                 <y>204</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">L-
+ALT</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_E01D">
+               <property name="geometry">
+                <rect>
+                 <x>344</x>
+                 <y>204</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">R-
+CTRL</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_E038">
+               <property name="geometry">
+                <rect>
+                 <x>562</x>
+                 <y>204</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">R-
+ALT</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_E05D">
+               <property name="geometry">
+                <rect>
+                 <x>672</x>
+                 <y>204</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">Menu</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_001D">
+               <property name="geometry">
+                <rect>
+                 <x>290</x>
+                 <y>204</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">L-
+CTRL</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_E05B">
+               <property name="geometry">
+                <rect>
+                 <x>617</x>
+                 <y>204</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">WIN</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_002A">
+               <property name="geometry">
+                <rect>
+                 <x>398</x>
+                 <y>204</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">L-
+SHIFT</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_0039">
+               <property name="geometry">
+                <rect>
+                 <x>236</x>
+                 <y>204</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">SPACE</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_000E">
+               <property name="geometry">
+                <rect>
+                 <x>128</x>
+                 <y>206</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">Back
+space</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_0036">
+               <property name="geometry">
+                <rect>
+                 <x>452</x>
+                 <y>204</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">R-
+SHIFT</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_007B">
+               <property name="geometry">
+                <rect>
+                 <x>842</x>
+                 <y>260</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true">Print
+Screen</string>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_E04D">
+               <property name="geometry">
+                <rect>
+                 <x>787</x>
+                 <y>260</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true"/>
+               </property>
+               <property name="icon">
+                <iconset resource="res.qrc">
+                 <normaloff>:/images/k/key-right.png</normaloff>:/images/k/key-right.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>14</width>
+                 <height>14</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_E04B">
+               <property name="geometry">
+                <rect>
+                 <x>677</x>
+                 <y>260</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true"/>
+               </property>
+               <property name="icon">
+                <iconset resource="res.qrc">
+                 <normaloff>:/images/k/key-left.png</normaloff>:/images/k/key-left.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>14</width>
+                 <height>14</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_E048">
+               <property name="geometry">
+                <rect>
+                 <x>622</x>
+                 <y>260</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true"/>
+               </property>
+               <property name="icon">
+                <iconset resource="res.qrc">
+                 <normaloff>:/images/k/key-up.png</normaloff>:/images/k/key-up.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>14</width>
+                 <height>14</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="pushButton_E050">
+               <property name="geometry">
+                <rect>
+                 <x>732</x>
+                 <y>260</y>
+                 <width>49</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>46</width>
+                 <height>46</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>546</width>
+                 <height>48</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MiSans</family>
+                 <fontweight>DemiBold</fontweight>
+                </font>
+               </property>
+               <property name="text">
+                <string notr="true"/>
+               </property>
+               <property name="icon">
+                <iconset resource="res.qrc">
+                 <normaloff>:/images/k/key-dpwn.png</normaloff>:/images/k/key-dpwn.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>14</width>
+                 <height>14</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
               </widget>
              </widget>
              <widget class="QWidget" name="tab12">
@@ -1270,7 +1956,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="geometry">
                 <rect>
                  <x>20</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1282,12 +1968,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                 <iconset resource="res.qrc">
                  <normaloff>:/images/macro/fn0/fn.png</normaloff>:/images/macro/fn0/fn.png</iconset>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F02">
                <property name="geometry">
                 <rect>
                  <x>80</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1295,12 +1984,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F03">
                <property name="geometry">
                 <rect>
                  <x>140</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1308,12 +2000,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F04">
                <property name="geometry">
                 <rect>
                  <x>200</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1321,12 +2016,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F05">
                <property name="geometry">
                 <rect>
                  <x>260</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1334,12 +2032,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F06">
                <property name="geometry">
                 <rect>
                  <x>320</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1347,12 +2048,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F07">
                <property name="geometry">
                 <rect>
                  <x>380</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1360,12 +2064,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F08">
                <property name="geometry">
                 <rect>
                  <x>440</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1373,12 +2080,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F09">
                <property name="geometry">
                 <rect>
                  <x>500</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1386,12 +2096,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F10">
                <property name="geometry">
                 <rect>
                  <x>560</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1399,12 +2112,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F11">
                <property name="geometry">
                 <rect>
                  <x>620</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1412,12 +2128,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F12">
                <property name="geometry">
                 <rect>
                  <x>680</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1425,12 +2144,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F13">
                <property name="geometry">
                 <rect>
                  <x>740</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1438,12 +2160,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F14">
                <property name="geometry">
                 <rect>
                  <x>800</x>
-                 <y>30</y>
+                 <y>52</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1451,12 +2176,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F15">
                <property name="geometry">
                 <rect>
                  <x>20</x>
-                 <y>100</y>
+                 <y>122</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1464,12 +2192,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F16">
                <property name="geometry">
                 <rect>
                  <x>80</x>
-                 <y>100</y>
+                 <y>122</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1477,12 +2208,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F17">
                <property name="geometry">
                 <rect>
                  <x>140</x>
-                 <y>100</y>
+                 <y>122</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1490,12 +2224,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F18">
                <property name="geometry">
                 <rect>
                  <x>200</x>
-                 <y>100</y>
+                 <y>122</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
@@ -1503,18 +2240,194 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                <property name="text">
                 <string>F1</string>
                </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
               </widget>
               <widget class="QPushButton" name="pushButton_F19">
                <property name="geometry">
                 <rect>
                  <x>260</x>
-                 <y>100</y>
+                 <y>122</y>
                  <width>48</width>
                  <height>48</height>
                 </rect>
                </property>
                <property name="text">
                 <string>F1</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
+              </widget>
+              <widget class="QPushButton" name="pushButton_F21">
+               <property name="geometry">
+                <rect>
+                 <x>382</x>
+                 <y>122</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>F1</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
+              </widget>
+              <widget class="QPushButton" name="pushButton_F20">
+               <property name="geometry">
+                <rect>
+                 <x>322</x>
+                 <y>122</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>F1</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
+              </widget>
+              <widget class="QPushButton" name="pushButton_F28">
+               <property name="geometry">
+                <rect>
+                 <x>382</x>
+                 <y>222</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>m7</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
+              </widget>
+              <widget class="QPushButton" name="pushButton_F27">
+               <property name="geometry">
+                <rect>
+                 <x>322</x>
+                 <y>222</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>m6</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
+              </widget>
+              <widget class="QPushButton" name="pushButton_F23">
+               <property name="geometry">
+                <rect>
+                 <x>80</x>
+                 <y>222</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>m2</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
+              </widget>
+              <widget class="QPushButton" name="pushButton_F22">
+               <property name="geometry">
+                <rect>
+                 <x>20</x>
+                 <y>222</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>m1</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
+              </widget>
+              <widget class="QPushButton" name="pushButton_F24">
+               <property name="geometry">
+                <rect>
+                 <x>140</x>
+                 <y>222</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>m3</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
+              </widget>
+              <widget class="QPushButton" name="pushButton_F25">
+               <property name="geometry">
+                <rect>
+                 <x>200</x>
+                 <y>222</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>m4</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
+              </widget>
+              <widget class="QPushButton" name="pushButton_F26">
+               <property name="geometry">
+                <rect>
+                 <x>260</x>
+                 <y>222</y>
+                 <width>48</width>
+                 <height>48</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>m5</string>
+               </property>
+               <attribute name="buttonGroup">
+                <string notr="true">buttonGroupFN</string>
+               </attribute>
+              </widget>
+              <widget class="QLabel" name="label">
+               <property name="geometry">
+                <rect>
+                 <x>24</x>
+                 <y>20</y>
+                 <width>53</width>
+                 <height>15</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>键盘功能</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_2">
+               <property name="geometry">
+                <rect>
+                 <x>26</x>
+                 <y>194</y>
+                 <width>53</width>
+                 <height>15</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>鼠标功能</string>
                </property>
               </widget>
              </widget>
@@ -1527,7 +2440,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
             <widget class="QFrame" name="frame">
              <property name="geometry">
               <rect>
-               <x>564</x>
+               <x>572</x>
                <y>4</y>
                <width>349</width>
                <height>333</height>
@@ -1585,7 +2498,7 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
                </rect>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="tab21">
                <attribute name="title">
@@ -2446,15 +3359,15 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>NewTabWidget</class>
-   <extends>QTabWidget</extends>
-   <header>newtabwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ModuleKeyboard</class>
    <extends>QFrame</extends>
    <header>modulekeyboard.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NewTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>newtabwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -2481,9 +3394,10 @@ QPushButton:disabled { background-color: #EAEAEA; color: #8C8C8C; }</string>
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroupTGL"/>
-  <buttongroup name="buttonGroupSnap"/>
   <buttongroup name="buttonGroupMT"/>
+  <buttongroup name="buttonGroupTGL"/>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroupSnap"/>
+  <buttongroup name="buttonGroupFN"/>
  </buttongroups>
 </ui>

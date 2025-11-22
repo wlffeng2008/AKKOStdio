@@ -66,6 +66,7 @@ ModuleEfMode::ModuleEfMode(QWidget *parent)
         QLayout *pLayout = ui->scrollAreaWidgetContents->layout() ;
         pLayout->setSpacing(8) ;
         pLayout->setContentsMargins(0,0,0,0);
+
         for(int i=0; i<EfModeList.count(); i++)
         {
             QPushButton *btn = new QPushButton(EfModeList[i].name,this) ;
@@ -81,7 +82,6 @@ ModuleEfMode::ModuleEfMode(QWidget *parent)
         }
 
         connect(pBtnGrp,&QButtonGroup::idClicked,this,[=](int id){
-
             if(!m_bOutSet)
                 emit onModeChanged(id) ;
             m_bOutSet = false;

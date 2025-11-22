@@ -10,6 +10,9 @@ namespace Ui {
 class ModuleKeyboard;
 }
 
+
+
+
 class ModuleKeyboard : public QFrame
 {
     Q_OBJECT

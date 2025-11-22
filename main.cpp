@@ -26,8 +26,6 @@ int main(int argc, char *argv[])
     setlocale(LC_ALL, "");
 #endif
 
-    //ws_tzset();
-
     QApplication a(argc, argv);
 
     QTranslator translator;

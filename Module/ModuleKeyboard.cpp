@@ -7,7 +7,141 @@
 #include <QPainter>
 #include <QTimer>
 
+typedef struct __keymap__{
+    QString value;
+    quint16 hid;
+    quint16 code=0;
+
+}keyMapItem;
+
+static QList<keyMapItem> s_keMapTable=
+{
+    { "`",  53, 41 },
+    { "1",  30, 2  },
+    { "2",  31, 3  },
+    { "3",  32, 4  },
+    { "4",  33, 5  },
+    { "5",  34, 6  },
+    { "6",  35, 7  },
+    { "7",  36, 8  },
+    { "8",  37, 9  },
+    { "9",  38, 10 },
+    { "0",  39, 11 },
+    { "-",  45, 12 },
+    { "=",  46, 13 },
+    { "¥", 137, 0x0000},
+    { "BackSpace", 42,14 },
+
+    { "Tab", 43,15 },
+    { "Q",   20,16 },
+    { "W",   26,17 },
+    { "E",   8 ,18 },
+    { "R",   21,19 },
+    { "T",   23,20 },
+    { "Y",   28,21 },
+    { "U",   24,22 },
+    { "I",   12,23 },
+    { "O",   18,24 },
+    { "P",   19,25 },
+    { "[",   47,26 },
+    { "]" ,  48,27 },
+    { "\\",  49,43 },
+
+    { "Caps_Lock", 57,58 },
+    { "A",   4, 30 },
+    { "S",  22, 31 },
+    { "D",   7, 32 },
+    { "F",   9, 33 },
+    { "G",  10, 34 },
+    { "H",  11, 35 },
+    { "J",  13, 36 },
+    { "K",  14, 37 },
+    { "L",  15, 38 },
+    { ";",  51, 39 },
+    { "\"", 52, 40 },
+    { "__]", 50,0x0000 },
+    { "Enter", 40,28 },
+
+    { "L_Shift", 0xe1,42 },
+    { "L_\\", 100,53 },
+    { "Z",  29, 44 },
+    { "X",  27, 45 },
+    { "C",   6, 46 },
+    { "V",  25, 47 },
+    { "B",   5, 48 },
+    { "N",  17, 49 },
+    { "M",  16, 50 },
+    { ",",  54, 51 },
+    { ".",  55, 52 },
+    { "/",  56, 53 },
+    { "R_\\"   , 135,43 },
+    { "R_Shift", 229,54 },
+
+    { "L_Ctrl", 224,29    },
+    { "L_Alt",  226,56    },
+    { "Win",    227,57435 },
+    { "Menu",   101,57437 },
+    { "Space",  44 ,57    },
+    { "R_Alt",  230,57400 },
+    { "R_Ctrl", 228,57373 },
+
+    { "Insert", 73,57426 },
+    { "Delete", 76,57427 },
+    { "←"    , 80,75    },
+    { "Home",   74,57415 },
+    { "End",    77,57423  },
+    { "↑",     82,72 },
+    { "↓",     81,80 },
+    { "Page_Up",   75,57417 },
+    { "Page_Down", 78,57425 },
+    { "→",       79,77 },
+    { "Num_Lock", 83,57413 },
+    { "num_7",    95,71 },
+    { "num_Home", 0x4A,71 },
+    { "num_4",    92,75 },
+    { "num_←",   0x50,75 },
+    { "num_1",    89,79 },
+    { "num_End",  0x4D,79 },
+    { "num_/",    84,57397 },
+    { "num_8",    96,72 },
+    { "num_↑",   0x52,72 },
+    { "num_5",    93,76 },
+    { "num_2",    90,80 },
+    { "num_↓",   0x51,80 },
+    { "num_0",    98,82 },
+    { "num_*",    85,55 },
+    { "num_9",    97,73 },
+    { "num_Pgup", 0x4B,73 },
+    { "num_6",    94,77 },
+    { "num_→",   0x4F,77 },
+    { "num_3",    91,81 },
+    { "num_Pgdn", 0x4E,82 },
+    { "num_.",    99,83 },
+    { "num_-",    86,74 },
+    { "num_+",    87,78 },
+    { "num_Enter", 88,57372 },
+    { "Esc", 41, 1 },
+    { "F1",  58,59 },
+    { "F2",  59,60 },
+    { "F3",  60,61 },
+    { "F4",  61,62 },
+    { "F5",  62,63 },
+    { "F6",  63,64 },
+    { "F7",  64,65 },
+    { "F8",  65,66 },
+    { "F9",  66,67 },
+    { "F10", 67,68 },
+    { "F11", 68,87 },
+    { "F12", 69,88 },
+    { "Print_Screen", 70,57436 },
+    { "Scroll_Lock" , 71,   70 },
+    { "Pause"       , 72,69 }
+};
+
+
 static QList<ModuleKeyboard*>s_kbInstance ;
+
+
 static QString strStyle(R"(
         QPushButton {
                 border: 1px solid #EAEAEA;
@@ -37,12 +171,12 @@ ModuleKeyboard::ModuleKeyboard(QWidget *parent)
     setMinimumWidth(960) ;
 
     QTimer::singleShot(100,this,[=]{
-    if(parent)
-    {
-        //parent->setMinimumSize(960,400) ;
-        //parent->layout()->setAlignment(Qt::AlignCenter);
-        //qDebug() << "parent->parentWidget()->layout()->setAlignment(Qt::AlignCenter)";
-    }
+        if(parent)
+        {
+            //parent->setMinimumSize(960,400) ;
+            //parent->layout()->setAlignment(Qt::AlignCenter);
+            //qDebug() << "parent->parentWidget()->layout()->setAlignment(Qt::AlignCenter)";
+        }
     });
     int nIndex = 0 ;
     for(int i=0; i<0xFFFF; i++)
@@ -219,8 +353,7 @@ bool ModuleKeyboard::event(QEvent *event)
         }
         update();
     }
-
-    return QFrame::event(event);
+    return QFrame::event(event) ;
 }
 
 bool ModuleKeyboard::eventFilter(QObject *watched,QEvent *event)
@@ -290,5 +423,6 @@ void ModuleKeyboard::mouseReleaseEvent(QMouseEvent *event)
     m_draging=false;
     m_clkPt = event->pos();
     update();
+
     QFrame::mouseReleaseEvent(event);
 }
