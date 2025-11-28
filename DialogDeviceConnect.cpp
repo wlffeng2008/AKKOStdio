@@ -257,18 +257,20 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
         {
             QByteArray data(buf+1,nlen-1) ;
             emit onReadBack(data);
-            qDebug() << "hid_get_feature_report:" << data.toHex(' ').toUpper();
+            qDebug() << "hid_get__feature_report:" << data.toHex(' ').toUpper();
             quint8 cmd = (quint8)data[0] ;
+            int row = getRow(cmd);
+
+            for(int i=1; i<9; i++)
+            {
+                setRowValue(row,2+i,(quint8)data[i]) ;
+            }
+
             switch (cmd)
             {
             case CMD_GET_LEDPARAM:
             case CMD_GET_SLEDPARAM:
             {
-                int row = getRow(cmd);
-                for(int i=1; i<9; i++)
-                {
-                    setRowValue(row,2+i,(quint8)data[i]) ;
-                }
             }
             break;
             default:
@@ -320,11 +322,12 @@ DialogDeviceConnect::DialogDeviceConnect(QWidget *parent)
     addReadCmd(CMD_GET_LEDPARAM);
     addReadCmd(CMD_GET_SLEDPARAM);
 
-    for(quint8 i=0; i<4; i++)
+    quint8 nProfile=0 ;
+    for(quint8 i=0; i<4; i++) // sonProfile;
     {
-        for(quint8 j=0; j<8; j++)
+        for(quint8 j=0; j<8; j++) // page
         {
-            quint8 tmp[8]={0x8A,0x00,0xFF,j,i,0,0,0} ;
+            quint8 tmp[8] = {0x8A,nProfile,0xFF,j,i,0,0,0} ;
             QByteArray cmd((char *)tmp,8);
             addReadCmd(cmd);
         }
